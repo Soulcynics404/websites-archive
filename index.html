@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shirley Cafe — Full English Breakfasts &amp; Homemade Cakes in Shirley, Croydon</title>
+<meta name="description" content="Shirley Cafe on Wickham Road, Shirley, Croydon. Proper full English breakfasts, homemade cakes and proper tea. Rated 4.6★ from 342 Google reviews. Call 020 8655 1111.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Shirley Cafe","telephone":"+44 20 8655 1111","address":{"@type":"PostalAddress","streetAddress":"Wickham Road","addressLocality":"Shirley, Croydon","postalCode":"CR0 8SS","addressCountry":"GB"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"342"}}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span><span class="brand-name">Shirley Cafe</span><span class="brand-sub">Shirley Village · Croydon</span></span>
+    </a>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="menu.html">Order Breakfast</a></li>
+      </ul>
+    </nav>
+    <button class="cart-btn" id="cartBtn" type="button" onclick="location.href='menu.html#order'">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14h9.9c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.74-.96-3.58 6.48H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7.2z"/></svg>
+      Order <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= 3D HERO ================= -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Village cafe warmth since 1998</p>
+      <h1>A proper <em>fry-up</em>,<br>a friendly face,<br>and cake worth staying for.</h1>
+      <p class="hero-lede">Tucked into Shirley village on Wickham Road, we've been frying, baking and pouring tea for Croydon locals for over twenty-five years.</p>
+      <div class="hero-actions">
+        <a class="btn btn-rust" href="menu.html">See the Menu</a>
+        <a class="btn btn-outline" href="contact.html">Find Us</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>4.6</strong> from <strong>342</strong> Google reviews
+      </div>
+    </div>
+
+    <!-- Perspective scene: layered depth cards -->
+    <div class="hero-scene" id="heroScene" aria-hidden="false">
+      <div class="scene-ring" data-depth="10"></div>
+      <figure class="float-card fc-main" data-depth="26">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80" alt="Full English breakfast" width="800" height="533" onerror="this.closest('figure').classList.add('noimg')">
+        <figcaption>The Full Shirley — £8.95</figcaption>
+      </figure>
+      <figure class="float-card fc-cake" data-depth="46">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=480&q=80" alt="Chocolate fudge cake slice" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+        <figcaption>Chocolate fudge cake</figcaption>
+      </figure>
+      <figure class="float-card fc-coffee" data-depth="64">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=420&q=80" alt="Flat white with latte art" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+        <figcaption>Flat white · £2.80</figcaption>
+      </figure>
+      <div class="mini-badge mb-hours" data-depth="34"><strong>Open from 7am</strong><span>seven days a week</span></div>
+      <div class="mini-badge mb-review" data-depth="52"><span class="stars">★★★★★</span><span><strong>4.6★</strong> · 342 reviews</span></div>
+    </div>
+  </div>
+  <div class="hero-wave" aria-hidden="true"></div>
+</section>
+
+<!-- ================= TILT CARDS ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What we're known for</p>
+      <h2>Three good reasons to pull up a chair</h2>
+      <p>Everything made downstairs, everything served with a smile.</p>
+    </div>
+    <div class="tilt-grid">
+      <article class="tilt-card reveal" style="--rd:.05s">
+        <div class="tilt-inner">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Avocado toast with poached eggs" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="tilt-body">
+            <h3>Big breakfasts</h3>
+            <p>From The Full Shirley to veggie fry-ups — proper ingredients, generous plates, all day if you like.</p>
+            <a class="text-link" href="menu.html">Browse breakfasts →</a>
+          </div>
+        </div>
+      </article>
+      <article class="tilt-card reveal" style="--rd:.15s">
+        <div class="tilt-inner">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" alt="Strawberry sponge cake" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="tilt-body">
+            <h3>Cakes we bake ourselves</h3>
+            <p>The counter changes daily — coffee &amp; walnut, lemon drizzle, Victoria sponge and our famous fudge cake.</p>
+            <a class="text-link" href="menu.html#cakes">Today's cakes →</a>
+          </div>
+        </div>
+      </article>
+      <article class="tilt-card reveal" style="--rd:.25s">
+        <div class="tilt-inner">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Inside the warm village cafe" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="tilt-body">
+            <h3>Village warmth</h3>
+            <p>Regulars' tables, newspapers on the rack and tea that arrives before you've finished asking.</p>
+            <a class="text-link" href="about.html">Our story →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS BAND ================= -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div class="reveal"><span class="band-num">25+</span><span class="band-label">years on Wickham Road</span></div>
+    <div class="reveal" style="--rd:.1s"><span class="band-num">4.6★</span><span class="band-label">from 342 Google reviews</span></div>
+    <div class="reveal" style="--rd:.2s"><span class="band-num">7am</span><span class="band-label">doors open, every day</span></div>
+    <div class="reveal" style="--rd:.3s"><span class="band-num">12</span><span class="band-label">cakes baked fresh weekly</span></div>
+  </div>
+</section>
+
+<!-- ================= MENU TEASER ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Fresh today</p>
+      <h2>Start here — you can't go wrong</h2>
+      <p>Add something to your order and collect from the counter.</p>
+    </div>
+    <div class="teaser-grid">
+      <article class="teaser-card reveal">
+        <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=600&q=80" alt="Eggs Benedict" loading="lazy" onerror="this.classList.add('noimg')">
+        <div class="teaser-body">
+          <h3>Eggs Benedict</h3>
+          <p>Muffin, ham, perfectly poached eggs and silky hollandaise.</p>
+          <div class="teaser-row"><span class="price">£8.50</span><button class="btn btn-honey btn-sm" data-add="Eggs Benedict" data-price="8.50">Add to Order</button></div>
+        </div>
+      </article>
+      <article class="teaser-card reveal" style="--rd:.1s">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Butter croissants" loading="lazy" onerror="this.classList.add('noimg')">
+        <div class="teaser-body">
+          <h3>Butter Croissant</h3>
+          <p>Baked every morning, still warm at half seven.</p>
+          <div class="teaser-row"><span class="price">£2.20</span><button class="btn btn-honey btn-sm" data-add="Butter Croissant" data-price="2.20">Add to Order</button></div>
+        </div>
+      </article>
+      <article class="teaser-card reveal" style="--rd:.2s">
+        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Chocolate brownie" loading="lazy" onerror="this.classList.add('noimg')">
+        <div class="teaser-body">
+          <h3>Walnut Brownie</h3>
+          <p>Dense, dark and slightly warm from the oven.</p>
+          <div class="teaser-row"><span class="price">£2.95</span><button class="btn btn-honey btn-sm" data-add="Walnut Brownie" data-price="2.95">Add to Order</button></div>
+        </div>
+      </article>
+    </div>
+    <div class="center reveal"><a class="btn btn-rust" href="menu.html">See the full menu</a></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brandline">Shirley Cafe</p>
+      <p>Your local village cafe on Wickham Road, Shirley — serving Croydon a proper breakfast since 1998.</p>
+      <p class="stars" aria-hidden="true">★★★★★</p>
+      <p>4.6 stars · 342 Google reviews</p>
+    </div>
+    <div>
+      <h3>Visit us</h3>
+      <ul>
+        <li>Wickham Road, Shirley<br>Croydon CR0 8SS</li>
+        <li><a href="tel:+442086551111">020 8655 1111</a></li>
+        <li>Mon–Sat 7:00–15:30<br>Sunday 8:00–14:30</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu &amp; Ordering</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Contact &amp; Find Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Shirley Cafe, Croydon. Baked with butter and pride.</span>
+    <span>Wickham Road · Shirley Village · CR0 8SS</span>
+  </div>
+</footer>
+
+<div class="toast" id="cartToast" role="status" aria-live="polite"></div>
+
+<script src="js/cart.js"></script>
+<script>
+/* ---- Hero mouse parallax (rAF-throttled) ---- */
+(function () {
+  var scene = document.getElementById("heroScene");
+  if (!scene || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var layers = scene.querySelectorAll("[data-depth]");
+  var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+  function loop() {
+    cx += (tx - cx) * 0.08;
+    cy += (ty - cy) * 0.08;
+    layers.forEach(function (el) {
+      var d = parseFloat(el.dataset.depth);
+      el.style.transform = "translate3d(" + (-cx * d).toFixed(2) + "px," + (-cy * d).toFixed(2) + "px,0)";
+    });
+    if (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) raf = requestAnimationFrame(loop);
+    else raf = null;
+  }
+  window.addEventListener("mousemove", function (e) {
+    tx = (e.clientX / window.innerWidth - 0.5) * 2;
+    ty = (e.clientY / window.innerHeight - 0.5) * 2;
+    if (!raf) raf = requestAnimationFrame(loop);
+  }, { passive: true });
+
+  /* gentle idle float so the scene feels alive without a mouse */
+  layers.forEach(function (el) {
+    var d = parseFloat(el.dataset.depth);
+    el.style.animation = "bob " + (5 + d % 4) + "s ease-in-out " + (d / 40) + "s infinite alternate";
+  });
+})();
+</script>
+</body>
+</html>
