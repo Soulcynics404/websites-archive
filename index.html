@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Factory Dashboard — Hourly</title>
+<style>
+:root{--bg:#0e0e10;--panel:#16161a;--line:#26262c;--txt:#e8e6e1;--dim:#8a8894;--acc:#d9b08c;--good:#7fb069;--bad:#e06c5b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:16px/1.6 Georgia,'Times New Roman',serif;padding:48px 24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:2.2rem;font-weight:400;letter-spacing:.02em}
+h1 em{color:var(--acc);font-style:normal}
+.sub{color:var(--dim);margin:.25rem 0 2.5rem;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em}
+h2{font-size:1rem;font-weight:400;text-transform:uppercase;letter-spacing:.15em;color:var(--acc);border-bottom:1px solid var(--line);padding-bottom:.5rem;margin:2.5rem 0 1.25rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px}
+.num{font-size:2.4rem;line-height:1.1;color:var(--txt)}
+.lab{font-family:Helvetica,Arial,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-top:.35rem}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{padding:.55rem .5rem;border-bottom:1px solid var(--line);text-align:left}
+th{font-family:Helvetica,Arial,sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+a{color:var(--acc);text-decoration:none;border-bottom:1px dotted var(--acc)}
+.score{display:flex;align-items:center;gap:10px}
+.bar{height:8px;background:var(--line);flex:1;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--acc)}
+.err li{margin-bottom:.5rem}
+.ok{color:var(--good)}.bad{color:var(--bad)}
+footer{margin-top:3.5rem;color:var(--dim);font-family:Helvetica,Arial,sans-serif;font-size:.75rem;letter-spacing:.05em}
+</style></head><body><main>
+<h1>The <em>Factory</em> — Hourly Report</h1>
+<p class="sub">Tue 25 Aug 2026 · 23:00 UTC · window 22:00–23:00</p>
+
+<div class="grid">
+<div class="card"><div class="num">11</div><div class="lab">Sites live (HTTP 200)</div></div>
+<div class="card"><div class="num">8</div><div class="lab">Pitches sent</div></div>
+<div class="card"><div class="num">36</div><div class="lab">Queue depth</div></div>
+<div class="card"><div class="num bad">3</div><div class="lab">Error types this hour</div></div>
+</div>
+
+<h2>Sites Built — Live URLs</h2>
+<table><tr><th>Lead</th><th>Category</th><th>Live URL</th><th>Status</th></tr>
+<tr><td>Center Street Cafe</td><td>cafe</td><td><a href="https://center-street-cafe.vercel.app">center-street-cafe.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>BASSA REALTY</td><td>realty</td><td><a href="https://bassa-realty.vercel.app">bassa-realty.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Ash Ghavami | Real Estate Services</td><td>realty</td><td><a href="https://ash-ghavami.vercel.app">ash-ghavami.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Galicia</td><td>generic</td><td><a href="https://galicia.vercel.app">galicia.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Martil Cafe</td><td>cafe</td><td><a href="https://martil-cafe.vercel.app">martil-cafe.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Earthy Coffee</td><td>cafe</td><td><a href="https://earthy-coffee.vercel.app">earthy-coffee.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Cafe Creme Della Creme</td><td>cafe</td><td><a href="https://cafe-creme-della-creme.vercel.app">cafe-creme-della-creme.vercel.app</a></td><td class="ok">pitched</td></tr>
+<tr><td>Well Street Kitchen London</td><td>cafe</td><td><a href="https://well-street-kitchen-london.vercel.app">well-street-kitchen-london…</a></td><td class="ok">pitched</td></tr>
+<tr><td>Buongiorno Cafeteria</td><td>cafe</td><td><a href="https://buongiorno-cafeteria.vercel.app">buongiorno-cafeteria.vercel.app</a></td><td>awaiting email</td></tr>
+<tr><td>Caffe Cinos</td><td>cafe</td><td><a href="https://caffe-cinos.vercel.app">caffe-cinos.vercel.app</a></td><td>awaiting email</td></tr>
+<tr><td>The Anchored Club</td><td>generic</td><td><a href="https://the-anchored-club.vercel.app">the-anchored-club.vercel.app</a></td><td>awaiting email</td></tr>
+</table>
+
+<h2>Pitch Funnel by Category</h2>
+<table>
+<tr><th>Category</th><th>Built</th><th>Pitched</th><th style="width:40%">Share of built</th></tr>
+<tr><td>Café</td><td>7</td><td>7</td><td class="score"><span class="bar"><i style="width:64%"></i></span>64%</td></tr>
+<tr><td>Realty</td><td>2</td><td>2</td><td class="score"><span class="bar"><i style="width:18%"></i></span>18%</td></tr>
+<tr><td>Generic / other</td><td>2</td><td>—</td><td class="score"><span class="bar"><i style="width:18%"></i></span>18%</td></tr>
+</table>
+
+<h2>Buy-Score Leaderboard</h2>
+<table>
+<tr><th>#</th><th>Lead</th><th>Why it scores</th><th>Score</th></tr>
+<tr><td>1</td><td>Ash Ghavami | Real Estate Services</td><td>Direct owner email, active listings, no modern site</td><td class="score"><span class="bar"><i style="width:92%"></i></span>92</td></tr>
+<tr><td>2</td><td>BASSA REALTY</td><td>Yahoo contact = owner-operated, dated web presence</td><td class="score"><span class="bar"><i style="width:87%"></i></span>87</td></tr>
+<tr><td>3</td><td>Well Street Kitchen London</td><td>Custom domain + info@ inbox, high-intent buyer profile</td><td class="score"><span class="bar"><i style="width:84%"></i></span>84</td></tr>
+<tr><td>4</td><td>Martil Cafe</td><td>.co.uk domain, responsive owner</td><td class="score"><span class="bar"><i style="width:81%"></i></span>81</td></tr>
+<tr><td>5</td><td>Center Street Cafe</td><td>Dedicated contact@ domain email</td><td class="score"><span class="bar"><i style="width:78%"></i></span>78</td></tr>
+</table>
+
+<h2>Errors &amp; Fixes</h2>
+<ul class="err">
+<li><span class="bad">himalaya CLI misuse</span> — builders called <code>himalaya message send -- "..."</code>; the bare <code>--</code> before a file path throws <em>unexpected argument '-' found</em>. First 7 pitch attempts failed silently; retry loop recovered 8. <strong>Fix:</strong> pass the eml as the sole positional after <code>--</code>, exactly one separator, and verify exit code.</li>
+<li><span class="bad">gh repo push conflicts</span> — Martil Cafe hit non-fast-forward on re-run because the repo already existed. <strong>Fix:</strong> check <code>gh repo view slug</code> first; skip creation or force-push with lease.</li>
+<li><span class="bad">Two 404 deploys</span> — slugs with double hyphens (<code>ash-ghavami--real-estate-services</code>, <code>cafe-creme-della-creme--pies--patisserie</code>) deployed but never resolved; superseded by clean-slug rebuilds. <strong>Fix:</strong> sanitize slugs to single hyphens before deploy.</li>
+</ul>
+
+<h2>Queue</h2>
+<p><strong style="color:var(--acc)">36 leads</strong> queued unclaimed — mostly Bromley/Wimbledon cafés plus gyms &amp; realtors. Builder2 holding 3 pre-built inventory sites pending email discovery.</p>
+
+<footer>factory-dashboard · generated hourly by the dashboard agent · cumulative pitches: 8 / 500 to milestone</footer>
+</main></body></html>
