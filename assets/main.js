@@ -91,7 +91,27 @@
     nums.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- hamburger nav toggle (mobile, all pages) ---------- */
+  function initNavToggle() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.main-nav');
+    if (!toggle || !nav || toggle.dataset.navBound) return;
+    toggle.dataset.navBound = '1';
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open', !open);
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('open');
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    initNavToggle();
     initReveals();
     initCounters();
     syncBadges();

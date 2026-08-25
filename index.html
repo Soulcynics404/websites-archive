@@ -15,7 +15,7 @@
 <header class="site-header">
   <div class="nav-wrap">
     <a class="brand" href="index.html"><span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Stonehenge <em>Cafe</em></a>
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a>
       <a href="menu.html">Menu</a>
       <a href="reviews.html">Reviews</a>
@@ -25,6 +25,7 @@
     <div style="display:flex;align-items:center;gap:.7rem">
       <a class="cart-link" aria-label="View your order" href="menu.html">🛒<span class="cart-count" data-cart-count>0</span></a>
       <a class="btn btn-primary nav-cta" href="menu.html" style="padding:.6rem 1.3rem;font-size:.88rem">Order Now</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
