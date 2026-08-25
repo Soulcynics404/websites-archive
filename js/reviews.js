@@ -34,7 +34,7 @@
     { n: "Michael Osman",    t: "Best-kept secret in Croydon. Superb breakfast, honest prices, five-star welcome every single time. Deserves every one of its stars.", d: "6 weeks ago" }
   ];
 
-  const PALETTE = ["#C4622D", "#1F4E45", "#9E4A1F", "#B8814F", "#7A5230", "#2E7D4F"];
+  const PALETTE = ["#A84E1F", "#1F4E45", "#9E4A1F", "#8A5A32", "#7A5230", "#2E7D4F"];
   const avatarColor = (name) => {
     let h = 0;
     for (const c of name) h = (h * 31 + c.charCodeAt(0)) >>> 0;

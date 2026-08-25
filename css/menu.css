@@ -82,6 +82,9 @@
   .menu-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
+  .cat-title { flex-wrap: wrap; gap: 8px 14px; }
+  .cat-line { display: none; }
+  .cat-note { white-space: normal; }
   .dish-card { grid-template-columns: 118px 1fr; }
   .dish-photo { min-height: 150px; }
   .dish-body { padding: 14px; }

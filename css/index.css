@@ -127,8 +127,8 @@
 /* ---------- Rating strip ---------- */
 .rating-strip { background: var(--teal); color: var(--cream); padding: 58px 0; }
 .strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; text-align: center; }
-.strip-num { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--gold); }
-.strip-label { font-size: .92rem; margin-top: 6px; color: rgba(250,243,231,.85); }
+.strip-num { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #F1D48C; }
+.strip-label { font-size: .92rem; margin-top: 6px; color: rgba(250,243,231,.92); }
 
 /* ---------- Visit band ---------- */
 .visit-band {
@@ -145,7 +145,7 @@
 
 @media (max-width: 1020px) {
   .fc-3 { display: none; }
-  .fc-2 { right: 4%; bottom: 2%; }
+  .fc-2 { right: 2%; bottom: 2%; max-width: 40vw; }
 }
 @media (max-width: 900px) {
   .welcome-grid, .visit-grid { grid-template-columns: 1fr; gap: 40px; }

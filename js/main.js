@@ -173,6 +173,20 @@ document.addEventListener("click", (e) => {
   els.forEach((el) => io.observe(el));
 })();
 
+/* ---------------- Mobile nav toggle ---------------- */
+(() => {
+  const toggle = document.querySelector(".nav-toggle");
+  if (!toggle) return;
+  const close = () => { document.body.classList.remove("nav-open"); toggle.setAttribute("aria-expanded", "false"); };
+  toggle.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  // Close when a nav link is used or when resizing back to desktop
+  document.querySelectorAll(".nav-links a").forEach((a) => a.addEventListener("click", close));
+  window.addEventListener("resize", () => { if (window.innerWidth > 820) close(); });
+})();
+
 /* ---------------- Footer year ---------------- */
 (() => {
   const y = document.getElementById("yr");
