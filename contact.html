@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Find Us — Stonehenge Cafe Bromley</title>
+<meta name="description" content="Find Stonehenge Cafe at 161 High St, Bromley BR1 1NJ. Call 020 8466 1990 or send us a message — bookings, group breakfasts and general chat welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B2F26'/%3E%3Crect x='6' y='14' width='4' height='12' rx='2' fill='%238C8577' transform='rotate(-6 8 20)'/%3E%3Crect x='13' y='9' width='5' height='17' rx='2.5' fill='%23A3403A'/%3E%3Crect x='21' y='11' width='4' height='15' rx='2' fill='%23FAF6EF'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Stonehenge <em>Cafe</em></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <a class="cart-link" aria-label="View your order" href="menu.html">🛒<span class="cart-count" data-cart-count>0</span></a>
+      <a class="btn btn-primary nav-cta" href="menu.html" style="padding:.6rem 1.3rem;font-size:.88rem">Order Now</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="page-banner">
+  <span class="eyebrow">Contact</span>
+  <h1>Kettle's on. <span class="accent">Come say hello.</span></h1>
+  <p>Bookings for big tables, group breakfasts, or just to check we've got your favourite paper in.</p>
+</div>
+
+<section class="contact-grid">
+  <!-- ============ FORM ============ -->
+  <form class="contact-card reveal" id="contactForm" action="https://formsubmit.co/harshraj8253@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="☕ New website enquiry — Stonehenge Cafe">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <h2>Send us a message</h2>
+    <div class="form-grid">
+      <div class="field">
+        <label for="name">Your name *</label>
+        <input id="name" name="name" type="text" required placeholder="Jane Smith">
+      </div>
+      <div class="field">
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required placeholder="jane@example.com">
+      </div>
+      <div class="field">
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" placeholder="07… or 020 …">
+      </div>
+      <div class="field">
+        <label for="topic">What's it about?</label>
+        <select id="topic" name="topic">
+          <option>Booking a table</option>
+          <option>Group / team breakfast</option>
+          <option>Catering & takeaway orders</option>
+          <option>Feedback</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Table for six on Saturday, two veggie…"></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" style="width:100%;margin-top:1.2rem">Send message →</button>
+    <p class="drawer-note">Goes straight to our inbox — we usually reply the same day.</p>
+  </form>
+
+  <!-- ============ INFO ============ -->
+  <div class="contact-card reveal" data-d="1">
+    <h2>Visit the cafe</h2>
+    <ul class="info-list">
+      <li><span class="ic">📍</span><div><b>Address</b><span>161 High St, Bromley BR1 1NJ, UK</span></div></li>
+      <li><span class="ic">📞</span><div><b>Phone</b><span><a href="tel:+442084661990" style="text-decoration:underline">020 8466 1990</a> — call ahead for takeaway</span></div></li>
+      <li><span class="ic">🕒</span><div><b>Hours</b><span>Mon–Sat: 7:00–15:00<br>Sun: 8:00–14:00</span></div></li>
+      <li><span class="ic">🚉</span><div><b>Getting here</b><span>2 min walk from Bromley South station, by the High Street bus stops.</span></div></li>
+      <li><span class="ic">⭐</span><div><b>Google rating</b><span>4.2 ★ from 351 reviews</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<div class="map-embed">
+  <iframe
+    title="Map — Stonehenge Cafe, 161 High St, Bromley BR1 1NJ"
+    src="https://www.google.com/maps?q=161%20High%20St%2C%20Bromley%20BR1%201NJ&amp;output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen></iframe>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h4>Stonehenge Cafe</h4>
+      <p>Proper fry-ups and friendly faces on Bromley High Street since 2008. Eat in or take away — either way, the tea's hot.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Order</a>
+      <a href="reviews.html">Reviews</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="contact.html">Contact &amp; Directions</a>
+      <a href="tel:+442084661990">020 8466 1990</a>
+      <a href="about.html">Our Story</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Stonehenge Cafe · 161 High St, Bromley BR1 1NJ · Rated 4.2★ by 351 customers</div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

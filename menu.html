@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu &amp; Order Online — Stonehenge Cafe Bromley</title>
+<meta name="description" content="The full Stonehenge Cafe menu — full English breakfasts, sandwiches, sides and proper coffee. Add to your order online and collect on Bromley High Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B2F26'/%3E%3Crect x='6' y='14' width='4' height='12' rx='2' fill='%238C8577' transform='rotate(-6 8 20)'/%3E%3Crect x='13' y='9' width='5' height='17' rx='2.5' fill='%23A3403A'/%3E%3Crect x='21' y='11' width='4' height='15' rx='2' fill='%23FAF6EF'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Stonehenge <em>Cafe</em></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <a class="cart-link" aria-label="View your order" href="#order-summary">🛒<span class="cart-count" data-cart-count>0</span></a>
+      <a class="btn btn-primary nav-cta" href="#order-summary" style="padding:.6rem 1.3rem;font-size:.88rem">Your Order</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="page-banner">
+  <span class="eyebrow">Menu · Served all day until 15:00</span>
+  <h1>Fry-ups, <span class="accent">sarnies</span> &amp; proper coffee.</h1>
+  <p>Everything cooked to order. Tap “Add” to build your order, then choose collection time — we'll have it hot and ready.</p>
+</div>
+
+<section class="menu-section">
+  <div class="cat-chips" id="catChips" role="tablist" aria-label="Menu categories"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- ============ ORDER SUMMARY ============ -->
+<section class="section" id="order-summary">
+  <div class="section-head reveal">
+    <span class="eyebrow">Your order</span>
+    <h2>Ready when you are.</h2>
+    <p>Check your order below, tell us who it's for, and we'll fire up the grill.</p>
+  </div>
+
+  <form id="orderForm" class="contact-card reveal" style="max-width:720px;margin:0 auto" action="https://formsubmit.co/harshraj8253@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="🍳 New online order — Stonehenge Cafe">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="order_details" id="orderDetailsField">
+
+    <div id="summaryLines" style="border-bottom:1px dashed var(--line);margin-bottom:1.2rem;padding-bottom:.4rem"></div>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="custName">Your name *</label>
+        <input id="custName" name="name" type="text" required placeholder="e.g. Dave from the yard">
+      </div>
+      <div class="field">
+        <label for="custPhone">Phone *</label>
+        <input id="custPhone" name="phone" type="tel" required placeholder="07000 000000">
+      </div>
+      <div class="field">
+        <label for="pickupTime">Collection time</label>
+        <select id="pickupTime" name="collection_time">
+          <option>As soon as it's ready (~15 min)</option>
+          <option>In 30 minutes</option>
+          <option>In 1 hour</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="orderNotes">Notes (brown sauce? runny eggs?)</label>
+        <textarea id="orderNotes" name="notes" placeholder="Eggs scrambled, extra crisp bacon, no tomatoes…"></textarea>
+      </div>
+    </div>
+
+    <div class="total-row" style="margin-top:1.2rem"><span>Total</span><span id="summaryTotal">£0.00</span></div>
+    <button class="btn btn-primary" type="submit" id="placeOrderBtn" style="width:100%">Send order to the kitchen →</button>
+    <p class="drawer-note">This sends your order by email — we'll ring to confirm. Pay on collection. Or call <a href="tel:+442084661990" style="text-decoration:underline;color:var(--bacon)">020 8466 1990</a>.</p>
+  </form>
+
+  <div id="emptySummary" class="cart-empty" style="display:none">
+    <div class="big">🍽️</div>
+    <p><b>Your tray's empty.</b></p>
+    <p>Add a few things from the menu above and they'll appear here.</p>
+  </div>
+
+  <div id="orderThanks" style="display:none;text-align:center;padding:2rem 1rem">
+    <div style="font-size:3rem">✅</div>
+    <h2 style="font-family:var(--serif);font-size:1.8rem;margin:.6rem 0 .4rem">Order sent!</h2>
+    <p style="color:rgba(59,47,38,.75)">Thanks — we've got it. We'll call to confirm shortly. See you at the counter.</p>
+  </div>
+</section>
+</main>
+
+<!-- ============ CART DRAWER ============ -->
+<button class="cart-bar" id="cartBar" aria-label="Open your order">
+  <span class="cart-count" data-cart-count>0</span> items · <b id="cartBarTotal">£0.00</b> · View order
+</button>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order" role="dialog">
+  <div class="drawer-head">
+    <h2>Your order</h2>
+    <button class="drawer-close" id="drawerClose" aria-label="Close order panel">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><span id="drawerTotal">£0.00</span></div>
+    <a class="btn btn-primary" href="#order-summary" id="checkoutBtn" style="text-decoration:none">Go to order summary</a>
+    <p class="drawer-note">Collection from 161 High St, Bromley BR1 1NJ</p>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h4>Stonehenge Cafe</h4>
+      <p>Proper fry-ups and friendly faces on Bromley High Street since 2008. Eat in or take away — either way, the tea's hot.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <a href="index.html">Home</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">Our Story</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="contact.html">Contact &amp; Directions</a>
+      <a href="tel:+442084661990">020 8466 1990</a>
+      <a href="#order-summary">Your Order</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Stonehenge Cafe · 161 High St, Bromley BR1 1NJ · Rated 4.2★ by 351 customers</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script src="assets/menu.js"></script>
+</body>
+</html>
