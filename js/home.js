@@ -4,6 +4,10 @@
   var scene = document.getElementById("hero-scene");
   if (!scene || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+  // Parallax only makes sense with a real mouse on a roomy screen.
+  // Skip it entirely on touch devices and narrow viewports (no hover, saves battery/CPU).
+  if (!window.matchMedia("(pointer: fine)").matches || window.innerWidth < 900) return;
+
   var layers = scene.querySelectorAll("[data-depth]");
   var targetX = 0, targetY = 0, curX = 0, curY = 0, raf = null;
   var MAX_TILT = 6;   // deg
