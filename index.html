@@ -328,7 +328,8 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
 .rating-stars{font-size:1.25rem;color:var(--gold);letter-spacing:.14em;margin:.6rem 0 .7rem}
 .rating-src{font-size:.86rem;color:rgba(247,243,235,.72)}
 .rating-src strong{color:var(--cream);font-weight:500}
-.rev-grid{display:grid;gap:1.2rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:768px){.rev-grid{grid-template-columns:1fr}.rev-grid .quote:nth-child(n+2){display:none}}
 .quote{
   background:var(--cream-soft);color:var(--ink-2);
   border-radius:1.1rem;padding:1.6rem 1.7rem;
@@ -600,10 +601,18 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
           <p class="rating-src"><strong>1,147 reviews</strong> on Google<br>across diners old and new</p>
         </div>
       </div>
-      <div class="rev-grid">
-        <figure class="quote rotator" id="rev-rotator">
-          <blockquote id="rot-quote">"The gambas al ajillo alone is worth the trip &mdash; garlic, chilli, oil still sizzling when it lands."</blockquote>
-          <figcaption><span id="rot-name">Maria</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+      <div class="rev-grid" id="rev-grid">
+        <figure class="quote">
+          <blockquote data-rot-quote>"The gambas al ajillo alone is worth the trip &mdash; garlic, chilli, oil still sizzling when it lands."</blockquote>
+          <figcaption><span data-rot-name>Maria</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-rot-quote>"Best Spanish food in Croydon, full stop. The paella came out in the pan and the whole table went quiet."</blockquote>
+          <figcaption><span data-rot-name>James O.</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-rot-quote>"Churros with chocolate took me straight to Madrid. Family-run warmth in every plate."</blockquote>
+          <figcaption><span data-rot-name>Priya S.</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
         </figure>
       </div>
       <script>
@@ -618,21 +627,43 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
           ["Sofia L.","The croquetas are little clouds. My kids demand Galicia night every Friday now."],
           ["Robert P.","Sunday lunch here is a Croydon institution. Book ahead — word is out."]
         ];
-        var qi = document.getElementById('rot-quote'), ni = document.getElementById('rot-name');
-        var fig = document.getElementById('rev-rotator');
-        var i = 0;
+        var grid = document.getElementById('rev-grid');
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.quote'));
+        var SET = 3;
+        var sets = Math.ceil(R.length / SET);   /* 8 reviews -> 3 sets (3+3+2) */
+        var s = 0;
+
+        function fill(setIndex){
+          for(var k = 0; k < SET; k++){
+            var r = R[(setIndex * SET + k) % R.length];
+            var card = cards[k];
+            card.querySelector('[data-rot-quote]').textContent = '"' + r[1] + '"';
+            card.querySelector('[data-rot-name]').textContent = r[0];
+          }
+        }
+        fill(0);
+
+        /* On mobile only one card is shown; keep its text in sync too. */
+        function syncMobile(){
+          if(window.matchMedia('(max-width:768px)').matches && !grid.dataset.mobileFilled){
+            grid.dataset.mobileFilled = '1';
+            fill(s);
+          }
+        }
+        window.addEventListener('resize', syncMobile);
+        syncMobile();
+
         setInterval(function(){
-          i = (i + 1) % R.length;
-          fig.style.transition = 'opacity .45s ease, filter .45s ease';
-          fig.style.opacity = '0';
-          fig.style.filter = 'blur(6px)';
+          s = (s + 1) % sets;
+          grid.style.transition = 'opacity .45s ease, filter .45s ease';
+          grid.style.opacity = '0';
+          grid.style.filter = 'blur(6px)';
           setTimeout(function(){
-            qi.textContent = '"' + R[i][1] + '"';
-            ni.textContent = R[i][0];
-            fig.style.opacity = '1';
-            fig.style.filter = 'blur(0)';
+            fill(s);
+            grid.style.opacity = '1';
+            grid.style.filter = 'blur(0)';
           }, 460);
-        }, 4200);
+        }, 1600);
       })();
       </script>
     </section>
