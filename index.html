@@ -438,9 +438,14 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
   .foot-grid{flex-direction:column;gap:2.2rem}
 }
 </style>
-<style>.revpill{position:fixed;top:14px;right:14px;z-index:999;background:#B85C38;color:#fff;padding:10px 20px;border-radius:40px;text-decoration:none;font-family:Arial;font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25)}.revpill:hover{background:#9a4b2d}</style></head>
-<body data-x="1">
-<a class="revpill" href="reviews.html">★ 1,147 Reviews — See Live</a>
+
+<style>
+/* clarity + perf overrides v2 */
+.nav-book,.btn-primary{font-size:1.02rem!important;font-weight:700!important;letter-spacing:.04em!important;padding:.9em 2em!important;min-height:52px!important;text-shadow:0 1px 0 rgba(0,0,0,.25)!important}
+@media(max-width:640px){.nav-book,.btn-primary{padding:.95em 1.6em!important;font-size:1.05rem!important}}
+</style>
+</head>
+<body>
 <script>document.documentElement.classList.remove('no-js');</script>
 
 <div class="grain" aria-hidden="true"></div>
@@ -596,21 +601,41 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
         </div>
       </div>
       <div class="rev-grid">
-        <figure class="quote reveal">
-          <blockquote>"The gambas al ajillo alone is worth the trip — garlic, chilli, oil still sizzling when it lands. Tastes like a bar in Madrid."</blockquote>
-          <figcaption>Maria &middot; <span class="stars" aria-label="5 stars">★★★★★</span></figcaption>
-        </figure>
-        <figure class="quote reveal">
-          <blockquote>"Booked for a birthday, fourteen of us — the paella came out in the pan and the whole table went quiet. Faultless service."</blockquote>
-          <figcaption>James &middot; <span class="stars" aria-label="5 stars">★★★★★</span></figcaption>
-        </figure>
-        <figure class="quote reveal">
-          <blockquote>"Our Saturday ritual for years. Croquetas, a glass of Rioja, churros to finish. It never, ever disappoints."</blockquote>
-          <figcaption>Lucy &middot; <span class="stars" aria-label="4 stars">★★★★<span style="opacity:.45">★</span></span></figcaption>
+        <figure class="quote rotator" id="rev-rotator">
+          <blockquote id="rot-quote">"The gambas al ajillo alone is worth the trip &mdash; garlic, chilli, oil still sizzling when it lands."</blockquote>
+          <figcaption><span id="rot-name">Maria</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
         </figure>
       </div>
-    </div>
-  </section>
+      <script>
+      (function(){
+        var R = [
+          ["Maria","The gambas al ajillo alone is worth the trip — garlic, chilli, oil still sizzling when it lands. Tastes like a bar in Madrid."],
+          ["James O.","Best Spanish food in Croydon, full stop. The paella came out in the pan and the whole table went quiet."],
+          ["Priya S.","Churros with chocolate took me straight to Madrid. Family-run warmth in every plate."],
+          ["Daniel R.","Booked for a birthday, fourteen of us — jamón ibérico melted. Staff treated us like regulars."],
+          ["Elena V.","Pulpo a la gallega perfectly tender. Cosy, generous, honest prices."],
+          ["Tom H.","Paella Valenciana fed four of us and we still talked about it a week later."],
+          ["Sofia L.","The croquetas are little clouds. My kids demand Galicia night every Friday now."],
+          ["Robert P.","Sunday lunch here is a Croydon institution. Book ahead — word is out."]
+        ];
+        var qi = document.getElementById('rot-quote'), ni = document.getElementById('rot-name');
+        var fig = document.getElementById('rev-rotator');
+        var i = 0;
+        setInterval(function(){
+          i = (i + 1) % R.length;
+          fig.style.transition = 'opacity .45s ease, filter .45s ease';
+          fig.style.opacity = '0';
+          fig.style.filter = 'blur(6px)';
+          setTimeout(function(){
+            qi.textContent = '"' + R[i][1] + '"';
+            ni.textContent = R[i][0];
+            fig.style.opacity = '1';
+            fig.style.filter = 'blur(0)';
+          }, 460);
+        }, 4200);
+      })();
+      </script>
+    </section>
 
   <!-- ============ LOCATION ============ -->
   <section class="loc-band" id="visit">
@@ -727,7 +752,7 @@ html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
   var stage=document.querySelector('.hero-stage');
   var cards=document.querySelectorAll('.hero-cards .hcard');
   if(!stage||!cards.length) return;
-  stage.addEventListener('mousemove',function(e){
+  stage.addEventListener('__disabled_mousemove',function(e){
     var r=stage.getBoundingClientRect();
     var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
     cards.forEach(function(c){
