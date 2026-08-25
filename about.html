@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Story — Well Street Kitchen | A Hackney Neighbourhood Kitchen Since Day One</title>
 <meta name="description" content="The story of Well Street Kitchen — a small kitchen on 203 Well Street, Hackney E9 serving modern British brunch to the neighbourhood since day one. Rated 4.7★ by 683 locals.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,8 +29,21 @@ img{display:block;max-width:100%}
 .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
 .nav-links a:hover{background-size:100% 2px}
 .nav-links a.active{color:var(--sage-deep);font-weight:600}
-.nav-cta{background:var(--terracotta)!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
-@media(max-width:760px){.nav{flex-wrap:wrap;padding-bottom:.55rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
 
 .page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2.6rem;background:
   radial-gradient(ellipse 70% 90% at 80% -30%, rgba(122,139,111,.16), transparent 60%),
@@ -50,7 +64,7 @@ img{display:block;max-width:100%}
 
 .quote-band{background:var(--sage-deep);color:var(--ivory);text-align:center;padding:clamp(3rem,6vw,4.5rem) 1.5rem}
 .quote-band blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.35rem,3vw,2rem);max-width:820px;margin:0 auto 1rem;line-height:1.35}
-.quote-band cite{font-style:normal;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,248,241,.75)}
+.quote-band cite{font-style:normal;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,248,241,.95)}
 
 .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:2.5rem auto 0;padding:0 clamp(1.2rem,4vw,3rem)}
 .value-card{background:#fff;border-radius:18px;padding:1.7rem 1.6rem;box-shadow:0 14px 32px -14px var(--shadow-ink);border-top:3px solid var(--sage);transition:transform .3s ease,box-shadow .3s ease}
@@ -65,8 +79,8 @@ img{display:block;max-width:100%}
 .gallery figure:hover img{transform:scale(1.06)}
 .gallery figcaption{
   position:absolute;left:0;right:0;bottom:0;
-  background:linear-gradient(transparent, rgba(38,36,31,.78));
-  color:var(--ivory);font-size:.86rem;padding:2rem 1.1rem .9rem;
+  background:linear-gradient(transparent, rgba(38,36,31,.88));
+  color:var(--ivory);font-size:.86rem;padding:2.4rem 1.1rem .9rem;font-weight:500;
 }
 
 .team-band{display:flex;gap:clamp(2rem,5vw,4rem);align-items:center;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem)}
@@ -75,7 +89,7 @@ img{display:block;max-width:100%}
 .team-copy h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1rem}
 .team-copy p{color:#4a4740;margin-bottom:1rem}
 .btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:var(--terracotta);color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary{background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
 .btn-primary:hover{background:#b85c38;transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
 .btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
@@ -106,7 +120,18 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
     <a href="contact.html">Contact</a>
     <a href="menu.html" class="nav-cta">Order Pickup</a>
   </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
 
 <header class="page-head">
   <h1>Born on Well Street,<br>raised by Hackney</h1>

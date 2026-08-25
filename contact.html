@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact &amp; Find Us — Well Street Kitchen | 203 Well St, London E9 6QU</title>
 <meta name="description" content="Find Well Street Kitchen at 203 Well Street, London E9 6QU. Call 07904 558596, send a message, or get directions to Hackney's favourite brunch spot.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,8 +29,21 @@ img{display:block}
 .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
 .nav-links a:hover{background-size:100% 2px}
 .nav-links a.active{color:var(--sage-deep);font-weight:600}
-.nav-cta{background:var(--terracotta)!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
-@media(max-width:760px){.nav{flex-wrap:wrap;padding-bottom:.55rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
 
 .page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2.2rem;background:
   radial-gradient(ellipse 70% 90% at 20% -30%, rgba(122,139,111,.16), transparent 60%),
@@ -78,13 +92,13 @@ img{display:block}
 }
 .field textarea{resize:vertical;min-height:120px}
 .send-btn{
-  width:100%;background:var(--terracotta);color:#fff;border:none;cursor:pointer;
+  width:100%;background:#A85534;color:#fff;border:none;cursor:pointer;
   font-family:inherit;font-weight:600;font-size:1.03rem;border-radius:999px;
   padding:1rem;box-shadow:3px 4px 0 rgba(38,36,31,.22);
   transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
 }
 .send-btn:hover{background:#b85c38;transform:translateY(-2px);box-shadow:4px 6px 0 rgba(38,36,31,.25)}
-.form-note{font-size:.78rem;color:#8a857a;text-align:center;margin-top:.8rem}
+.form-note{font-size:.8rem;color:#6a665c;text-align:center;margin-top:.8rem}
 .honeypot{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
 
 .map-card{border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -16px var(--shadow-ink);border:6px solid #fff;margin-top:clamp(1.8rem,4vw,3rem)}
@@ -98,10 +112,10 @@ img{display:block}
 }
 .directions-band{background:var(--sage-deep);color:var(--ivory);text-align:center;padding:clamp(2.4rem,5vw,3.4rem) 1.5rem}
 .directions-band h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.5rem}
-.directions-band p{color:rgba(251,248,241,.85);max-width:44rem;margin:0 auto 1.4rem}
+.directions-band p{color:#F2EFE6;max-width:44rem;margin:0 auto 1.4rem}
 .dir-chips{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 .chip-d{background:rgba(251,248,241,.12);border:1px solid rgba(251,248,241,.3);border-radius:999px;padding:.55rem 1.2rem;font-size:.9rem}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;border:none;cursor:pointer;background:var(--terracotta);color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.25)}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;border:none;cursor:pointer;background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.25)}
 .btn-primary:hover{background:#b85c38;transform:translateY(-2px)}
 
 footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
@@ -124,7 +138,18 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
     <a href="contact.html" class="active">Contact</a>
     <a href="menu.html" class="nav-cta">Order Pickup</a>
   </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
 
 <header class="page-head">
   <h1>Come say hello</h1>
@@ -150,7 +175,7 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
         <div class="ico">☎️</div>
         <div>
           <h3>Phone</h3>
-          <p><a href="tel:+447904558596">07904 558596</a><br><span style="font-size:.83rem;color:#8a857a">Quick answers during opening hours</span></p>
+          <p><a href="tel:+447904558596">07904 558596</a><br><span style="font-size:.83rem;color:#6a665c">Quick answers during opening hours</span></p>
         </div>
       </div>
 
@@ -195,7 +220,7 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
 
         <div class="frow">
           <div class="field">
-            <label for="phone">Phone <span style="color:#b9b3a6">(optional)</span></label>
+            <label for="phone">Phone <span style="color:#6a665c">(optional)</span></label>
             <input type="tel" id="phone" name="phone" placeholder="07…">
           </div>
           <div class="field">

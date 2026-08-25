@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu &amp; Order Online — Well Street Kitchen | Brunch in Hackney E9</title>
 <meta name="description" content="Full menu for Well Street Kitchen: brunch classics, hotcakes, grain bowls, specialty coffee. Add to your pickup order — ready in 15 minutes. 203 Well St, London E9 6QU.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -29,12 +30,25 @@ img{display:block;max-width:100%}
 .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
 .nav-links a:hover{background-size:100% 2px}
 .nav-links a.active{color:var(--sage-deep);font-weight:600}
-.nav-cta{background:var(--terracotta)!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
-@media(max-width:760px){.nav{flex-wrap:wrap;padding-bottom:.55rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
 
 .cart-btn{
   position:relative;display:inline-flex;align-items:center;gap:.5rem;
-  background:var(--sage)!important;color:#fff!important;
+  background:#5C6B53!important;color:#fff!important;
   padding:.5rem 1.05rem!important;border-radius:999px!important;
   font-weight:600;cursor:pointer;border:none;font-family:inherit;font-size:.92rem;
   background-size:0 0!important;box-shadow:2px 3px 0 rgba(38,36,31,.18);
@@ -64,8 +78,8 @@ img{display:block;max-width:100%}
 .dish-card figure{height:190px;overflow:hidden;margin:0;position:relative}
 .dish-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .dish-card:hover img{transform:scale(1.06)}
-.tagchip{position:absolute;top:12px;left:12px;background:rgba(251,248,241,.94);border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:.28rem .7rem;text-transform:uppercase}
-.tagchip.veg{color:#4C7A3F}.tagchip.hot{color:var(--terracotta)}.tagchip.halal{color:#3E7D5B}
+.tagchip{position:absolute;top:12px;left:12px;background:rgba(251,248,241,.94);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:.28rem .7rem;text-transform:uppercase}
+.tagchip.veg{color:#4C7A3F}.tagchip.hot{color:#A85534}.tagchip.halal{color:#3E7D5B}
 .dish-body{padding:1.15rem 1.25rem 1.25rem;display:flex;flex-direction:column;flex-grow:1}
 .dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.35rem}
 .dish-top h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;line-height:1.2}
@@ -93,7 +107,7 @@ img{display:block;max-width:100%}
 .order-bar.show{transform:translateX(-50%) translateY(0)}
 .order-bar b{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem}
 .order-bar small{display:block;font-size:.75rem;opacity:.72;font-family:'Work Sans',sans-serif}
-.view-order-btn{background:var(--terracotta);color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:.95rem;padding:.72rem 1.35rem;cursor:pointer;transition:background .2s}
+.view-order-btn{background:#A85534;color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:.95rem;padding:.72rem 1.35rem;cursor:pointer;transition:background .2s}
 .view-order-btn:hover{background:#b85c38}
 
 /* drawer */
@@ -128,7 +142,7 @@ img{display:block;max-width:100%}
 .drawer-foot{padding:1.2rem 1.5rem 1.5rem;border-top:1px solid rgba(38,36,31,.1);background:#fff}
 .totline{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:.45rem}
 .totline.grand{font-weight:700;font-size:1.12rem;font-family:'Fraunces',serif;margin:.7rem 0 1rem}
-.checkout{width:100%;background:var(--terracotta);color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:1.02rem;padding:.95rem;cursor:pointer;box-shadow:3px 4px 0 rgba(38,36,31,.22);transition:all .2s}
+.checkout{width:100%;background:#A85534;color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:1.02rem;padding:.95rem;cursor:pointer;box-shadow:3px 4px 0 rgba(38,36,31,.22);transition:all .2s}
 .checkout:hover{background:#b85c38;transform:translateY(-2px);box-shadow:4px 6px 0 rgba(38,36,31,.25)}
 
 .confirm-pop{
@@ -144,7 +158,7 @@ img{display:block;max-width:100%}
 .order-ref{display:inline-block;background:#fff;border:1.5px dashed var(--sage);border-radius:10px;padding:.45rem 1rem;font-weight:700;letter-spacing:.06em;margin:.7rem 0 1.3rem}
 .pop-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 .btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;border-radius:999px;padding:.8rem 1.5rem;transition:all .2s}
-.btn-primary{background:var(--terracotta);color:#fff;border:none;box-shadow:3px 4px 0 rgba(38,36,31,.22)}
+.btn-primary{background:#A85534;color:#fff;border:none;box-shadow:3px 4px 0 rgba(38,36,31,.22)}
 .btn-primary:hover{background:#b85c38;transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
 .btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
@@ -171,7 +185,18 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82);margin-top:3rem}
     <a href="contact.html">Contact</a>
     <button class="cart-btn" id="openCart" aria-label="Open your order">🛒 Order <span id="cartCount">0</span></button>
   </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
 
 <header class="page-head">
   <span class="kicker">Kitchen open · pickup in ~15 min</span>

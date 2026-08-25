@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reviews — Well Street Kitchen | 4.7★ from 683+ Google Reviews</title>
 <meta name="description" content="Read what Hackney says about Well Street Kitchen — 4.7 stars from 683 Google reviews. Neighbourhood gem, brilliant brunch, E9's favourite kitchen table.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,8 +29,21 @@ img{display:block}
 .nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
 .nav-links a:hover{background-size:100% 2px}
 .nav-links a.active{color:var(--sage-deep);font-weight:600}
-.nav-cta{background:var(--terracotta)!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
-@media(max-width:760px){.nav{flex-wrap:wrap;padding-bottom:.55rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
 
 .page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2rem;background:
   radial-gradient(ellipse 70% 90% at 15% -30%, rgba(122,139,111,.16), transparent 60%),
@@ -55,7 +69,7 @@ img{display:block}
 .livedot{width:8px;height:8px;border-radius:50%;background:var(--terracotta);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,111,74,.5)}60%{box-shadow:0 0 0 8px rgba(201,111,74,0)}}
 .rating-summary{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}
-.rating-summary .stars{color:var(--gold);letter-spacing:2px;font-size:1.2rem}
+.rating-summary .stars{color:#8C6510;letter-spacing:2px;font-size:1.2rem;text-shadow:0 1px 1px rgba(255,255,255,.6)}
 .rating-summary b{font-size:1.15rem}
 .rating-summary span{color:#6a665c;font-size:.95rem}
 
@@ -83,11 +97,11 @@ img{display:block}
 }
 .gcard:hover{box-shadow:0 22px 42px -16px rgba(38,36,31,.28)}
 .gcard-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
-.avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.95rem;flex-shrink:0}
+.avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.95rem;flex-shrink:0;text-shadow:0 1px 2px rgba(38,36,31,.45)}
 .gcard-name{font-weight:600;font-size:.94rem;line-height:1.25}
-.gcard-date{font-size:.78rem;color:#8a857a}
+.gcard-date{font-size:.78rem;color:#6a665c}
 .glogo{margin-left:auto;font-family:'Product Sans',Arial,sans-serif;font-style:italic;font-weight:700;color:#e7711b;font-size:1.05rem}
-.gstars{color:#fbbc04;font-size:.92rem;letter-spacing:1.5px;margin-bottom:.45rem}
+.gstars{color:#9A6504;font-size:.92rem;letter-spacing:1.5px;margin-bottom:.45rem}
 .gtext{font-size:.92rem;color:#4a4740;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 
 .legend{max-width:1150px;margin:1.6rem auto 0;padding:0 1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;font-size:.85rem;color:#6a665c}
@@ -104,7 +118,7 @@ img{display:block}
 .cta-band h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.6rem}
 .cta-band p{color:#55524a;margin-bottom:1.6rem}
 .btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:var(--terracotta);color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary{background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
 .btn-primary:hover{background:#b85c38;transform:translateY(-2px);box-shadow:5px 8px 0 rgba(38,36,31,.24)}
 .btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
 .btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
@@ -132,7 +146,18 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
     <a href="contact.html">Contact</a>
     <a href="menu.html" class="nav-cta">Order Pickup</a>
   </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
 
 <header class="page-head">
   <h1>Kind words from the neighbourhood</h1>
@@ -244,7 +269,7 @@ function cardHTML(r,i){
       '<span><span class="gcard-name">'+r.n+'</span><br><span class="gcard-date">'+r.d+' · Google</span></span>'+
       '<span class="glogo">G</span>'+
     '</div>'+
-    '<div class="gstars">'+starStr(r.s)+'<span style="color:#8a857a;letter-spacing:0;margin-left:.4rem">'+r.s+'.0</span></div>'+
+    '<div class="gstars">'+starStr(r.s)+'<span style="color:#6a665c;letter-spacing:0;margin-left:.4rem">'+r.s+'.0</span></div>'+
     '<p class="gtext">“'+r.t+'”</p>'+
   '</article>';
 }

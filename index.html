@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Well Street Kitchen — Modern British Brunch in Hackney, East London</title>
 <meta name="description" content="Well Street Kitchen, 203 Well St, London E9 6QU. Modern British brunch, specialty coffee and all-day plates. Rated 4.7★ from 683 Google reviews. Call 07904 558596.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -62,15 +63,25 @@ a{color:inherit}
 .nav-links a:hover{background-size:100% 2px}
 .nav-links a.active{color:var(--sage-deep);font-weight:600}
 .nav-cta{
-  background:var(--terracotta)!important;color:#fff!important;
+  background:#A85534!important;color:#fff!important;
   padding:.5rem 1.15rem!important;border-radius:999px;
   box-shadow:2px 3px 0 rgba(38,36,31,.2);
   transition:transform .2s ease, box-shadow .2s ease!important;
 }
 .nav-cta:hover{background:#b85c38!important;transform:translateY(-2px);box-shadow:3px 5px 0 rgba(38,36,31,.25);background-size:0 0!important}
+.nav-toggle{display:none}
 @media(max-width:760px){
-  .nav{flex-wrap:wrap;padding-bottom:.55rem}
-  .nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
 }
 
 /* ---------- HERO (3D parallax scene) ---------- */
@@ -136,13 +147,13 @@ h1 em{font-style:italic;color:var(--sage-deep)}
   transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
   will-change:transform;
 }
-.btn-primary{background:var(--terracotta);color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary{background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
 .btn-primary:hover{transform:translate(-2px,-3px);box-shadow:6px 9px 0 rgba(38,36,31,.24)}
 .btn-primary:active{transform:translate(1px,2px);box-shadow:2px 3px 0 rgba(38,36,31,.2)}
 .btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
 .btn-ghost:hover{background:var(--charcoal);color:var(--ivory);transform:translateY(-2px)}
 .rating-row{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-.stars{color:var(--gold);letter-spacing:2px;font-size:1.05rem}
+.stars{color:#8C6510;letter-spacing:2px;font-size:1.05rem;text-shadow:0 1px 1px rgba(255,255,255,.6)}
 .rating-row b{font-size:1.05rem}
 .rating-row span{font-size:.92rem;color:#5d594f}
 .rating-row .sep{opacity:.4}
@@ -253,11 +264,11 @@ h1 em{font-style:italic;color:var(--sage-deep)}
 /* ---------- NUMBERS BAND ---------- */
 .numbers{background:var(--sage-deep);color:var(--ivory)}
 .numbers .section-head h2{color:var(--ivory)}
-.numbers .section-head p{color:rgba(251,248,241,.82)}
+.numbers .section-head p{color:rgba(251,248,241,.95)}
 .numbers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2rem;max-width:1050px;margin:0 auto;text-align:center}
 .num-item b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:#fff}
-.num-item b em{font-style:normal;color:var(--gold)}
-.num-item span{font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,248,241,.75)}
+.num-item b em{font-style:normal;color:#FFE49B}
+.num-item span{font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;color:#FFE49B}
 
 /* ---------- STORY SPLIT ---------- */
 .story-split{
@@ -291,6 +302,7 @@ h1 em{font-style:italic;color:var(--sage-deep)}
   background:var(--sage);color:#fff;
   display:flex;align-items:center;justify-content:center;
   font-weight:600;font-size:.9rem;flex-shrink:0;
+  text-shadow:0 1px 2px rgba(38,36,31,.45);
 }
 .glogo{
   margin-left:auto;color:#e7711b;font-family:'Product Sans',Arial,sans-serif;font-weight:700;font-style:italic;font-size:1rem;
@@ -331,7 +343,18 @@ footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
     <a href="contact.html">Contact</a>
     <a href="menu.html" class="nav-cta">Order Pickup</a>
   </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
 </nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
 
 <!-- ===================== HERO ===================== -->
 <header class="hero" id="heroScene">
