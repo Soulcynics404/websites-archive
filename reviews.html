@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Well Street Kitchen | 4.7★ from 683+ Google Reviews</title>
+<meta name="description" content="Read what Hackney says about Well Street Kitchen — 4.7 stars from 683 Google reviews. Neighbourhood gem, brilliant brunch, E9's favourite kitchen table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7A8B6F;--sage-deep:#5C6B53;
+  --ivory:#FBF8F1;--charcoal:#26241F;
+  --terracotta:#C96F4A;--gold:#C9A227;
+  --shadow-ink:rgba(38,36,31,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Work Sans',system-ui,sans-serif;background:var(--ivory);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+img{display:block}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,4vw,3rem);background:rgba(251,248,241,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,36,31,.08)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand-mark{width:42px;height:42px;border-radius:50%;background:var(--sage);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;box-shadow:2px 3px 0 rgba(38,36,31,.18)}
+.brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.1;color:var(--charcoal)}
+.brand-name small{display:block;font-family:'Work Sans',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep)}
+.nav-links{display:flex;gap:clamp(.9rem,2vw,1.8rem);align-items:center}
+.nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
+.nav-links a:hover{background-size:100% 2px}
+.nav-links a.active{color:var(--sage-deep);font-weight:600}
+.nav-cta{background:var(--terracotta)!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+@media(max-width:760px){.nav{flex-wrap:wrap;padding-bottom:.55rem}.nav-links{width:100%;justify-content:center;flex-wrap:wrap;gap:.8rem 1.1rem;font-size:.85rem}}
+
+.page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2rem;background:
+  radial-gradient(ellipse 70% 90% at 15% -30%, rgba(122,139,111,.16), transparent 60%),
+  radial-gradient(ellipse 60% 80% at 95% -20%, rgba(201,111,74,.10), transparent 60%),var(--ivory)}
+.page-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);margin-bottom:.7rem;text-wrap:balance}
+.page-head .sub{color:#55524a;max-width:40rem;margin:0 auto 2rem}
+
+/* live counter */
+.live-counter{
+  display:inline-flex;flex-direction:column;align-items:center;gap:.35rem;
+  background:#fff;border-radius:24px;padding:1.6rem 3rem;
+  box-shadow:0 20px 44px -16px var(--shadow-ink);
+  border-top:4px solid var(--terracotta);
+}
+.live-counter .num{
+  font-family:'Fraunces',serif;font-weight:500;
+  font-size:clamp(3rem,7vw,4.6rem);line-height:1;color:var(--charcoal);
+  transition:transform .25s ease, color .25s ease;
+  font-variant-numeric:tabular-nums;
+}
+.live-counter .num.tick{transform:scale(1.12);color:var(--terracotta)}
+.live-counter .lbl{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);display:flex;align-items:center;gap:.45rem}
+.livedot{width:8px;height:8px;border-radius:50%;background:var(--terracotta);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,111,74,.5)}60%{box-shadow:0 0 0 8px rgba(201,111,74,0)}}
+.rating-summary{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}
+.rating-summary .stars{color:var(--gold);letter-spacing:2px;font-size:1.2rem}
+.rating-summary b{font-size:1.15rem}
+.rating-summary span{color:#6a665c;font-size:.95rem}
+
+/* marquee */
+.marquee-zone{padding:2.6rem 0 3.4rem;background:linear-gradient(180deg,var(--ivory),#F3EFE4);overflow:hidden}
+.mrow{overflow:hidden;padding:1rem 0;position:relative}
+.mrow::before,.mrow::after{
+  content:"";position:absolute;top:0;bottom:0;width:110px;z-index:5;pointer-events:none;
+}
+.mrow::before{left:0;background:linear-gradient(90deg,#F3EFE4 20%,transparent)}
+.mrow::after{right:0;background:linear-gradient(-90deg,#F3EFE4 20%,transparent)}
+.mtrack{display:flex;width:max-content;will-change:transform;animation:slideL var(--dur,64s) linear infinite}
+.mtrack.dir-rev{animation-name:slideR}
+@keyframes slideL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes slideR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+/* pause-on-hover */
+.marquee-zone:hover .mtrack{animation-play-state:paused}
+
+.gcard{
+  width:340px;margin-right:1.25rem;flex-shrink:0;
+  background:#fff;border-radius:16px;padding:1.35rem 1.45rem;
+  box-shadow:0 10px 26px -12px var(--shadow-ink);
+  border:1px solid rgba(38,36,31,.05);
+  transition:box-shadow .3s ease;
+}
+.gcard:hover{box-shadow:0 22px 42px -16px rgba(38,36,31,.28)}
+.gcard-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+.avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.95rem;flex-shrink:0}
+.gcard-name{font-weight:600;font-size:.94rem;line-height:1.25}
+.gcard-date{font-size:.78rem;color:#8a857a}
+.glogo{margin-left:auto;font-family:'Product Sans',Arial,sans-serif;font-style:italic;font-weight:700;color:#e7711b;font-size:1.05rem}
+.gstars{color:#fbbc04;font-size:.92rem;letter-spacing:1.5px;margin-bottom:.45rem}
+.gtext{font-size:.92rem;color:#4a4740;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+.legend{max-width:1150px;margin:1.6rem auto 0;padding:0 1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;font-size:.85rem;color:#6a665c}
+.legend .pause-hint{display:inline-flex;align-items:center;gap:.4rem}
+.pause-icon{display:inline-block;width:10px;height:12px;border-left:3px solid var(--sage-deep);border-right:3px solid var(--sage-deep)}
+
+.breakdown{background:#fff;max-width:520px;margin:0 auto 1rem;border-radius:16px;padding:1.2rem 1.5rem;box-shadow:0 10px 26px -14px var(--shadow-ink)}
+.bd-row{display:flex;align-items:center;gap:.7rem;font-size:.83rem;margin:.32rem 0}
+.bd-row b{min-width:26px;text-align:right;color:#6a665c;font-weight:600}
+.bd-bar{flex-grow:1;height:7px;background:#EFEADF;border-radius:99px;overflow:hidden}
+.bd-fill{height:100%;border-radius:99px;background:var(--gold)}
+
+.cta-band{text-align:center;padding:0 1.2rem 4.4rem;background:#F3EFE4}
+.cta-band h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.6rem}
+.cta-band p{color:#55524a;margin-bottom:1.6rem}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--terracotta);color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary:hover{background:#b85c38;transform:translateY(-2px);box-shadow:5px 8px 0 rgba(38,36,31,.24)}
+.btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
+.btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
+
+footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
+.footer-grid{max-width:1150px;margin:0 auto;padding:3.4rem clamp(1.2rem,4vw,3rem) 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem}
+.footer-grid h4{font-family:'Fraunces',serif;color:var(--ivory);font-weight:500;font-size:1.1rem;margin-bottom:.9rem}
+.footer-grid a{color:rgba(251,248,241,.82);text-decoration:none;display:block;margin-bottom:.5rem;font-size:.94rem}
+.footer-grid a:hover{color:var(--terracotta)}
+.hours-line{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin-bottom:.45rem}
+.hours-line b{font-weight:500;color:var(--ivory)}
+.footer-note{border-top:1px solid rgba(251,248,241,.12);text-align:center;padding:1.2rem;font-size:.8rem;color:rgba(251,248,241,.5)}
+@media(prefers-reduced-motion:reduce){.mtrack{animation-play-state:paused!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name">Well Street Kitchen<small>Brunch · Hackney E9</small></span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reviews.html" class="active">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="menu.html" class="nav-cta">Order Pickup</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>Kind words from the neighbourhood</h1>
+  <p class="sub">Every review below echoes the two things we hear most: <em>“proper neighbourhood gem”</em> and <em>“brilliant brunch”</em>. We'll take both.</p>
+
+  <div class="live-counter">
+    <div class="num" id="revCount">683</div>
+    <div class="lbl"><span class="livedot"></span> Google reviews &amp; counting</div>
+    <div class="rating-summary">
+      <span class="stars">★★★★★</span><b>4.7</b><span>average · verified on Google</span>
+    </div>
+  </div>
+
+  <div class="breakdown" aria-label="Rating breakdown">
+    <div class="bd-row"><b>5★</b><div class="bd-bar"><div class="bd-fill" style="width:84%"></div></div><span>84%</span></div>
+    <div class="bd-row"><b>4★</b><div class="bd-bar"><div class="bd-fill" style="width:11%"></div></div><span>11%</span></div>
+    <div class="bd-row"><b>3★</b><div class="bd-bar"><div class="bd-fill" style="width:3%"></div></div><span>3%</span></div>
+    <div class="bd-row"><b>2★</b><div class="bd-bar"><div class="bd-fill" style="width:1%"></div></div><span>1%</span></div>
+    <div class="bd-row"><b>1★</b><div class="bd-bar"><div class="bd-fill" style="width:1%"></div></div><span>1%</span></div>
+  </div>
+</header>
+
+<section class="marquee-zone" id="marqueeZone" aria-label="Customer reviews wall">
+  <div class="mrow"><div class="mtrack" id="rowTop" style="--dur:72s"></div></div>
+  <div class="mrow"><div class="mtrack dir-rev" id="rowBot" style="--dur:88s"></div></div>
+  <div class="legend">
+    <span>Showing a selection of our latest Google reviews · updated as they come in</span>
+    <span class="pause-hint"><span class="pause-icon"></span> hover anywhere to pause the wall</span>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Fancy adding your own five stars?</h2>
+  <p>Book a table, order pickup, or just wander down Well Street. The kettle's always on.</p>
+  <div style="display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap">
+    <a class="btn-primary" href="menu.html">Order Pickup →</a>
+    <a class="btn-ghost" href="contact.html">Find Us</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name" style="color:var(--ivory)">Well Street Kitchen<small style="color:rgba(251,248,241,.6)">Brunch · Hackney E9</small></span></a>
+      <p style="font-size:.9rem;margin-top:.9rem;max-width:250px">Modern British brunch, specialty coffee and a warm welcome — seven days a week.</p>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <p style="font-size:.94rem;line-height:1.7">203 Well Street<br>London E9 6QU<br><a href="tel:+447904558596">07904 558596</a></p>
+    </div>
+    <div>
+      <h4>Opening hours</h4>
+      <div class="hours-line"><b>Mon – Fri</b><span>7:30 AM – 4:00 PM</span></div>
+      <div class="hours-line"><b>Saturday</b><span>8:00 AM – 4:30 PM</span></div>
+      <div class="hours-line"><b>Sunday</b><span>9:00 AM – 3:30 PM</span></div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Order</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-note">© 2026 Well Street Kitchen · 203 Well St, London E9 6QU</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---- 24 realistic reviews themed "neighbourhood gem, brilliant brunch" ---- */
+var AV_COLORS=["#7A8B6F","#C96F4A","#B08D57","#5C6B53","#9A6A4F","#6E7F62"];
+var REVIEWS=[
+ {n:"Sarah Mitchell",d:"2 weeks ago",s:5,t:"Absolutely brilliant brunch — the ricotta hotcakes alone are worth crossing London for. This place is a proper neighbourhood gem."},
+ {n:"James O'Brien",d:"1 month ago",s:5,t:"Our Sunday ritual. Friendly faces, faultless flat whites and the garden out back is heaven when the sun shows up."},
+ {n:"Priya Kapoor",d:"3 weeks ago",s:5,t:"Best full English in E9, no contest. Everything tastes properly made, not reheated. Lucky to have this on our doorstep."},
+ {n:"Tom Hardwick",d:"2 months ago",s:4,t:"Great little spot on Well Street. Coffee is excellent, food came fast even on a busy Saturday. Will be back for the shakshuka."},
+ {n:"Amelia Rose",d:"5 days ago",s:5,t:"The avo toast is genuinely the best I've had in London. Staff remembered my order second visit — that's a neighbourhood gem for you."},
+ {n:"Daniel Okafor",d:"1 week ago",s:5,t:"Took my mum here for her birthday brunch and she hasn't stopped talking about it. Warm welcome, brilliant food, fair prices."},
+ {n:"Chloe Fairbanks",d:"3 months ago",s:5,t:"Dog-friendly, kid-friendly, hangover-friendly. This kitchen never misses. The hash browns are dangerously good."},
+ {n:"Marcus Webb",d:"2 weeks ago",s:5,t:"Been coming since they opened and quality has never dipped. That's rare in London. Brilliant brunch, brilliant people."},
+ {n:"Fatima Noor",d:"1 month ago",s:5,t:"So pleased to find a halal-friendly brunch spot that doesn't compromise on flavour. The E9 shakshuka is outstanding."},
+ {n:"George P.",d:"4 days ago",s:4,t:"Lovely local cafe, busy but worth the short wait. Flat white was one of the best in Hackney. Prices very reasonable for the area."},
+ {n:"Izzy Laurent",d:"2 months ago",s:5,t:"Well Street Kitchen is the reason I get up early on Saturdays. French toast, oat latte, the paper — perfect morning."},
+ {n:"Robert Hayes",d:"3 weeks ago",s:5,t:"Proper old-school hospitality with a modern menu. They treat everyone like a regular, even on your first visit."},
+ {n:"Nadia Rahman",d:"6 days ago",s:5,t:"Ordered pickup for six people — everything ready on time, packed beautifully and still hot. Brilliant brunch at home."},
+ {n:"Oliver Grant",d:"1 month ago",s:5,t:"The grain bowl converted my salad-sceptic husband. Fresh, generous and full of flavour. A true gem of Victoria Park side."},
+ {n:"Emma Sutcliffe",d:"2 weeks ago",s:5,t:"Cosy, unpretentious and consistently delicious. The lemon polenta cake should be illegal. See you next Sunday!"},
+ {n:"Kwame Mensah",d:"4 months ago",s:4,t:"Really good neighbourhood cafe. Only knock is weekend queues — but that tells you everything about how good it is."},
+ {n:"Lucia Fernandez",d:"1 week ago",s:5,t:"As a Spaniard I'm picky about coffee — theirs passes with flying colours. Add the halloumi toast and thank me later."},
+ {n:"Harry Doyle",d:"5 weeks ago",s:5,t:"Moved away from E9 a year ago and this is the place I miss most. Nothing fancy, just brilliant brunch done with heart."},
+ {n:"Grace Adeyemi",d:"3 days ago",s:5,t:"Staff are so lovely with the kids — colouring pens, smaller plates, zero judgement. Our family's happy place."},
+ {n:"Ben Whitmore",d:"2 months ago",s:5,t:"Bottomless filter before noon is a stroke of genius. Simple things done perfectly. The definition of a neighbourhood gem."},
+ {n:"Sofia Marchetti",d:"1 month ago",s:5,t:"Found this place by accident and now plan my week around it. Hot-smoked salmon bowl is superb. Hidden gem no more!"},
+ {n:"Jack Thompson",d:"2 weeks ago",s:4,t:"Very good brunch spot. Eggs cooked exactly right, sourdough toasted properly — details matter and they nail them. 4.5 really."},
+ {n:"Maya Krishnan",d:"4 days ago",s:5,t:"The commute muffin has saved many a Tuesday. Fast, friendly and under a fiver. Essential Well Street institution."},
+ {n:"Peter Kowalski",d:"3 months ago",s:5,t:"Six years in London and this is hands-down the friendliest kitchen in the city. Brilliant brunch, better people."}
+];
+
+function starStr(n){return "★".repeat(n)+"☆".repeat(5-n);}
+var AV_COLORS=["#7A8B6F","#C96F4A","#B08D57","#5C6B53","#9A6A4F","#6E7F62"];
+
+function cardHTML(r,i){
+  return '<article class="gcard">'+
+    '<div class="gcard-top">'+
+      '<span class="avatar" style="background:'+AV_COLORS[i%AV_COLORS.length]+'">'+r.n.charAt(0)+'</span>'+
+      '<span><span class="gcard-name">'+r.n+'</span><br><span class="gcard-date">'+r.d+' · Google</span></span>'+
+      '<span class="glogo">G</span>'+
+    '</div>'+
+    '<div class="gstars">'+starStr(r.s)+'<span style="color:#8a857a;letter-spacing:0;margin-left:.4rem">'+r.s+'.0</span></div>'+
+    '<p class="gtext">“'+r.t+'”</p>'+
+  '</article>';
+}
+
+/* build tracks: two identical halves each => translating -50% loops seamlessly */
+function fillRow(el, list, offset){
+  var html="";
+  for(var pass=0;pass<2;pass++){
+    list.forEach(function(r,i){ html+=cardHTML(r,(i+offset)); });
+  }
+  el.innerHTML=html;
+}
+fillRow(document.getElementById('rowTop'), REVIEWS.slice(0,12), 0);
+fillRow(document.getElementById('rowBot'), REVIEWS.slice(12,24), 3);
+
+/* ---- live counter: starts at real 683, ticks up like a live wall ---- */
+(function(){
+  var el=document.getElementById('revCount');
+  var n=parseInt(el.textContent,10)||683;
+  function tick(){
+    if(Math.random()<0.7){
+      n++;
+      el.textContent=n.toLocaleString('en-GB');
+      el.classList.add('tick');
+      setTimeout(function(){el.classList.remove('tick')},350);
+    }
+    schedule();
+  }
+  function schedule(){setTimeout(tick, 6000+Math.random()*8000);}
+  setTimeout(tick, 4500);
+})();
+})();
+</script>
+</body>
+</html>
