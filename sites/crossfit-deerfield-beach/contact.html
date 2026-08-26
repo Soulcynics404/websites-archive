@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · CrossFit Deerfield Beach</title>
+<meta name="description" content="Book your free intro at CrossFit Deerfield Beach. Call or text (754) 227-5658 or send a message — first class is free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CF<span>DB</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Free intro</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Get started</p>
+    <h1>BOOK YOUR FREE INTRO.</h1>
+    <p class="lede">One form, one text back, one free workout. That's the whole funnel — we don't do pressure.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="split contact-split">
+    <form class="contact-card form" id="contactForm" novalidate>
+      <h2>Claim your free class</h2>
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email">
+      <label for="cf-phone">Phone (for a quick text)</label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+      <label for="cf-exp">Experience level</label>
+      <select id="cf-exp" name="experience">
+        <option>Total beginner</option>
+        <option>Some gym experience</option>
+        <option>CrossFit elsewhere</option>
+        <option>Returning after time off</option>
+      </select>
+      <label for="cf-msg">Anything we should know?</label>
+      <textarea id="cf-msg" name="message" rows="4" placeholder="Injuries, goals, schedule…"></textarea>
+      <button class="btn" type="submit">Send it</button>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+
+    <aside class="info-card">
+      <h2>The box</h2>
+      <dl class="facts">
+        <div><dt>Gym</dt><dd>CrossFit Deerfield Beach<br>Deerfield Beach, FL 33064</dd></div>
+        <div><dt>Call / text</dt><dd><a href="tel:+17542275658">(754) 227-5658</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:crossfitdfb@gmail.com">crossfitdfb@gmail.com</a></dd></div>
+        <div><dt>Class times</dt><dd>Mon–Fri · 5:30, 6:30, 12:00, 17:30, 18:30<br>Sat · 8:00 &amp; 9:30 team WOD</dd></div>
+      </dl>
+      <div class="tilt info-media"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80" alt="Athlete wrapping hands before training" width="800" height="560"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-row">
+    <div>
+      <h2>DROP-IN FROM ANOTHER BOX?</h2>
+      <p>$25 at the door — reserve a spot by text so we save you a rig lane.</p>
+    </div>
+    <a class="btn btn-light" href="tel:+17542275658">(754) 227-5658</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CF<span>DB</span></p><p>CrossFit Deerfield Beach<br>Deerfield Beach, FL 33064</p></div>
+    <div><p class="foot-h">Train</p><p><a href="index.html">Home</a><br><a href="programs.html">Programs</a><br><a href="about.html">About</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+17542275658">(754) 227-5658</a><br><a href="mailto:crossfitdfb@gmail.com">crossfitdfb@gmail.com</a></p></div>
+    <div><p class="foot-h">Hours</p><p>Mon–Fri 5:30 – 19:30<br>Sat 8:00 – 11:00</p></div>
+  </div>
+  <p class="fineprint container">© 2026 CrossFit Deerfield Beach. Train hard, recover harder.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
