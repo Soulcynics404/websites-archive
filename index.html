@@ -1,85 +1,48 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Website Factory — Dashboard</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Factory Dashboard</title>
 <style>
-:root{--bg:#111214;--card:#1a1c1f;--ink:#e8e4da;--mut:#8a8578;--acc:#d4a24e;--line:#2a2d31}
+:root{--bg:#0e0e10;--panel:#161618;--ink:#e8e6e3;--mut:#8a8782;--acc:#c9a86a;--line:#26262a}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,'Times New Roman',serif;padding:48px 20px;max-width:960px;margin:auto}
-h1{font-size:34px;font-weight:400;letter-spacing:.5px;border-bottom:1px solid var(--line);padding-bottom:14px}
-h1 span{color:var(--acc)}
-.meta{color:var(--mut);font-style:italic;margin:8px 0 32px}
-h2{font-size:13px;text-transform:uppercase;letter-spacing:3px;color:var(--acc);margin:40px 0 14px}
-.stats{display:flex;flex-wrap:wrap;gap:12px}
-.stat{background:var(--card);border:1px solid var(--line);padding:18px 26px;min-width:130px}
-.stat b{display:block;font-size:30px;color:var(--ink)}
-.stat span{color:var(--mut);text-transform:uppercase;font-size:11px;letter-spacing:2px;font-family:sans-serif}
-table{width:100%;border-collapse:collapse;background:var(--card)}
-td{padding:10px 14px;border-bottom:1px solid var(--line);font-size:15px}
-.n{font-style:italic} .score{color:var(--acc);font-weight:bold}
-a{color:#a9c4e2;text-decoration:none;border-bottom:1px dotted #555}
-.chart{display:flex;align-items:flex-end;gap:22px;height:180px;background:var(--card);border:1px solid var(--line);padding:20px}
-.barwrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;flex:1}
-.bar{width:46px;background:linear-gradient(#e8c37a,#a97c2f);border-radius:2px 2px 0 0}
-.barwrap span{margin-top:8px;color:var(--mut);font-size:11px;text-align:center;font-family:sans-serif}
-footer{margin-top:56px;color:#555;font-size:12px;border-top:1px solid var(--line);padding-top:12px}
-</style></head><body>
-<h1>The Website <span>Factory</span></h1>
-<p class='meta'>Hourly production report · 2026-08-25 23:56 UTC</p>
-<h2>Pipeline</h2><div class='stats'>
-<div class='stat'><b>39</b><span>leads found</span></div>
-<div class='stat'><b>26</b><span>sites live</span></div>
-<div class='stat'><b>26</b><span>pitches sent</span></div>
-<div class='stat'><b>7</b><span>pitches failed</span></div>
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif;padding:48px 24px}
+.wrap{max-width:960px;margin:0 auto}
+header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:32px}
+h1{font-weight:normal;font-size:34px;letter-spacing:.5px}
+.kicker{color:var(--acc);font-size:12px;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;font-family:Helvetica,Arial,sans-serif}
+.updated{color:var(--mut);font-size:13px;margin-top:8px;font-family:Helvetica,Arial,sans-serif}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:36px}
+.stat{background:var(--panel);border:1px solid var(--line);padding:20px}
+.stat b{display:block;font-size:34px;color:var(--acc);font-family:Helvetica,Arial,sans-serif;font-weight:600}
+.stat span{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:2px;font-family:Helvetica,Arial,sans-serif}
+.card{background:var(--panel);border:1px solid var(--line);padding:24px;margin-bottom:28px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:2.5px;color:var(--acc);margin-bottom:16px;font-family:Helvetica,Arial,sans-serif;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td{padding:7px 8px;border-bottom:1px solid var(--line)}
+.num{text-align:right;font-family:Helvetica,Arial,sans-serif}
+.score{color:var(--acc);font-weight:bold}
+.fail{color:#d06a5f}
+.bar{height:8px;background:var(--acc);opacity:.85;min-width:4px}
+a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--mut)} a:hover{color:var(--acc)}
+.chart{display:flex;align-items:flex-end;gap:10px;height:180px;padding-top:8px}
+.hb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.hf{width:70%;background:linear-gradient(180deg,var(--acc),#7a6538);min-height:2px}
+.hb span{font-size:11px;color:var(--mut);margin-top:6px;font-family:Helvetica,Arial,sans-serif}
+.muted{color:var(--mut);font-size:13px;margin-top:12px;font-family:Helvetica,Arial,sans-serif}
+footer{color:var(--mut);font-size:12px;margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-family:Helvetica,Arial,sans-serif}
+</style></head><body><div class="wrap">
+<header><div class="kicker">Website Factory · Hourly</div><h1>Production Ledger</h1>
+<div class="updated">Updated 2026-08-26 00:59 UTC · Source of truth: pitch_log.jsonl + leads.json</div></header>
+<div class="stats">
+<div class="stat"><b>80</b><span>Leads found</span></div>
+<div class="stat"><b>54</b><span>Pitches sent ✓</span></div>
+<div class="stat"><b>7</b><span>Failed sends</span></div>
+<div class="stat"><b>53</b><span>Sites live</span></div>
+<div class="stat"><b>34</b><span>In queue</span></div>
 </div>
-<h2>Leads by Category</h2><div class='stats'><div class='stat'><b>4</b><span>restaurants</span></div><div class='stat'><b>30</b><span>realestate</span></div><div class='stat'><b>5</b><span>other</span></div></div>
-<h2>Buy-Score Leaderboard</h2><table><tr><td>#</td><td>Lead</td><td>Cat</td><td>City</td><td>Score</td></tr><tr><td>1</td><td class='n'>Eldorado Cafe</td><td>restaurants</td><td>Austin</td><td class='score'>78</td></tr>
-<tr><td>2</td><td class='n'>MIAM Cafe - Wynwood</td><td>restaurants</td><td>Miami</td><td class='score'>70</td></tr>
-<tr><td>3</td><td class='n'>Dos Besos</td><td>restaurants</td><td>Pasadena</td><td class='score'>59</td></tr>
-<tr><td>4</td><td class='n'>Sima Haghighi</td><td>realestate</td><td>Santa Monica</td><td class='score'>57</td></tr>
-<tr><td>5</td><td class='n'>Judy Jernigan</td><td>realestate</td><td>Sandy Springs</td><td class='score'>52</td></tr>
-<tr><td>6</td><td class='n'>Chic Maquillage Artistry by Jennifer Noble</td><td>other</td><td>Glendale</td><td class='score'>48</td></tr>
-<tr><td>7</td><td class='n'>Sweet Angeles Bakery Cafe</td><td>restaurants</td><td>Beverly Hills</td><td class='score'>43</td></tr>
-<tr><td>8</td><td class='n'>Lori Goldsmith</td><td>realestate</td><td>Beverly Hills</td><td class='score'>36</td></tr>
-<tr><td>9</td><td class='n'>Francine Caliendo</td><td>realestate</td><td>Naperville</td><td class='score'>36</td></tr>
-<tr><td>10</td><td class='n'>Angel Akhavan</td><td>realestate</td><td>Beverly Hills</td><td class='score'>36</td></tr></table>
-<h2>Sites Built (26)</h2><table><tr><td class='n'>Allen Rothman</td><td><a href='https://allen-rothman.vercel.app' target='_blank'>allen-rothman.vercel.app</a></td></tr>
-<tr><td class='n'>Angel Akhavan</td><td><a href='https://angel-akhavan.vercel.app' target='_blank'>angel-akhavan.vercel.app</a></td></tr>
-<tr><td class='n'>Ash Ghavami | Real Estate Services</td><td><a href='https://ash-ghavami.vercel.app' target='_blank'>ash-ghavami.vercel.app</a></td></tr>
-<tr><td class='n'>BASSA REALTY</td><td><a href='https://bassa-realty.vercel.app' target='_blank'>bassa-realty.vercel.app</a></td></tr>
-<tr><td class='n'>Cafe Creme Della Creme - Pies &amp; Patisserie</td><td><a href='https://cafe-creme-della-creme.vercel.app' target='_blank'>cafe-creme-della-creme.vercel.app</a></td></tr>
-<tr><td class='n'>Center Street Cafe</td><td><a href='https://center-street-cafe.vercel.app' target='_blank'>center-street-cafe.vercel.app</a></td></tr>
-<tr><td class='n'>Chic Maquillage Artistry by Jennifer Noble</td><td><a href='https://chic-maquillage-artistry-by-jennifer-nob.vercel.app' target='_blank'>chic-maquillage-artistry-by-jennifer-nob.vercel.app</a></td></tr>
-<tr><td class='n'>Colleen Cassel</td><td><a href='https://colleen-cassel.vercel.app' target='_blank'>colleen-cassel.vercel.app</a></td></tr>
-<tr><td class='n'>Dennis Kamrany</td><td><a href='https://dennis-kamrany.vercel.app' target='_blank'>dennis-kamrany.vercel.app</a></td></tr>
-<tr><td class='n'>Dos Besos</td><td><a href='https://dos-besos.vercel.app' target='_blank'>dos-besos.vercel.app</a></td></tr>
-<tr><td class='n'>Earthy Coffee</td><td><a href='https://earthy-coffee.vercel.app' target='_blank'>earthy-coffee.vercel.app</a></td></tr>
-<tr><td class='n'>Eldorado Cafe</td><td><a href='https://eldorado-cafe.vercel.app' target='_blank'>eldorado-cafe.vercel.app</a></td></tr>
-<tr><td class='n'>Francine Caliendo</td><td><a href='https://francine-caliendo.vercel.app' target='_blank'>francine-caliendo.vercel.app</a></td></tr>
-<tr><td class='n'>Frank Walker</td><td><a href='https://frank-walker.vercel.app' target='_blank'>frank-walker.vercel.app</a></td></tr>
-<tr><td class='n'>Galicia</td><td><a href='https://galicia.vercel.app' target='_blank'>galicia.vercel.app</a></td></tr>
-<tr><td class='n'>Gary Palmer</td><td><a href='https://gary-palmer.vercel.app' target='_blank'>gary-palmer.vercel.app</a></td></tr>
-<tr><td class='n'>Harriet Kleppel</td><td><a href='https://harriet-kleppel.vercel.app' target='_blank'>harriet-kleppel.vercel.app</a></td></tr>
-<tr><td class='n'>Judy Jernigan</td><td><a href='https://judy-jernigan.vercel.app' target='_blank'>judy-jernigan.vercel.app</a></td></tr>
-<tr><td class='n'>Lori Goldsmith</td><td><a href='https://lori-goldsmith.vercel.app' target='_blank'>lori-goldsmith.vercel.app</a></td></tr>
-<tr><td class='n'>MIAM Cafe - Wynwood</td><td><a href='https://miam-cafe-wynwood.vercel.app' target='_blank'>miam-cafe-wynwood.vercel.app</a></td></tr>
-<tr><td class='n'>Martil Cafe</td><td><a href='https://martil-cafe.vercel.app' target='_blank'>martil-cafe.vercel.app</a></td></tr>
-<tr><td class='n'>Sandra Rodriguez</td><td><a href='https://sandra-rodriguez.vercel.app' target='_blank'>sandra-rodriguez.vercel.app</a></td></tr>
-<tr><td class='n'>Sima Haghighi</td><td><a href='https://sima-haghighi.vercel.app' target='_blank'>sima-haghighi.vercel.app</a></td></tr>
-<tr><td class='n'>Susan Holman</td><td><a href='https://susan-holman.vercel.app' target='_blank'>susan-holman.vercel.app</a></td></tr>
-<tr><td class='n'>Susan Rosales</td><td><a href='https://susan-rosales.vercel.app' target='_blank'>susan-rosales.vercel.app</a></td></tr>
-<tr><td class='n'>Well Street Kitchen London</td><td><a href='https://well-street-kitchen-london.vercel.app' target='_blank'>well-street-kitchen-london.vercel.app</a></td></tr></table>
-<h2>Pitches per Hour (UTC)</h2><div class='chart'><div class='barwrap'><div class='bar' style='height:60%'></div><span>22:42<br><b>3</b></span></div>
-<div class='barwrap'><div class='bar' style='height:60%'></div><span>22:43<br><b>3</b></span></div>
-<div class='barwrap'><div class='bar' style='height:20%'></div><span>22:44<br><b>1</b></span></div>
-<div class='barwrap'><div class='bar' style='height:40%'></div><span>22:46<br><b>2</b></span></div>
-<div class='barwrap'><div class='bar' style='height:100%'></div><span>22:47<br><b>5</b></span></div>
-<div class='barwrap'><div class='bar' style='height:20%'></div><span>22:48<br><b>1</b></span></div>
-<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:32<br><b>2</b></span></div>
-<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:33<br><b>2</b></span></div>
-<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:34<br><b>3</b></span></div>
-<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:35<br><b>2</b></span></div>
-<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:36<br><b>3</b></span></div>
-<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:37<br><b>2</b></span></div>
-<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:38<br><b>3</b></span></div>
-<div class='barwrap'><div class='bar' style='height:20%'></div><span>23:39<br><b>1</b></span></div></div>
-<h2>Errors</h2><p style='color:#e8a'>7 failed pitch(es) logged.</p>
-<footer>Soulcynics404 · website-factory · auto-generated by Hermes</footer>
-</body></html>
+<div class="card"><h2>Pitches per hour (UTC)</h2><div class="chart"><div class="hb"><div class="hf" style="height:140.0px" title="00:00 — 28"></div><span>00</span></div><div class="hb"><div class="hf" style="height:0.0px" title="20:00 — 0"></div><span>20</span></div><div class="hb"><div class="hf" style="height:0.0px" title="21:00 — 0"></div><span>21</span></div><div class="hb"><div class="hf" style="height:75.0px" title="22:00 — 15"></div><span>22</span></div><div class="hb"><div class="hf" style="height:90.0px" title="23:00 — 18"></div><span>23</span></div><div class="hb"><div class="hf" style="height:0.0px" title="24:00 — 0"></div><span>24</span></div></div></div>
+<div class="card"><h2>Leads by category</h2><table><tr><td>realestate</td><td class="num">30</td><td><div class="bar" style="width:100.0%"></div></td></tr><tr><td>gyms</td><td class="num">21</td><td><div class="bar" style="width:70.0%"></div></td></tr><tr><td>other</td><td class="num">15</td><td><div class="bar" style="width:50.0%"></div></td></tr><tr><td>restaurants</td><td class="num">12</td><td><div class="bar" style="width:40.0%"></div></td></tr><tr><td>medical</td><td class="num">2</td><td><div class="bar" style="width:6.666666666666667%"></div></td></tr></table></div>
+<div class="card"><h2>Buy-score leaderboard</h2><table><tr><td>1</td><td>El Meson Tequileria</td><td>restaurants</td><td>Austin, TX</td><td class="num score">84</td></tr><tr><td>2</td><td>Daily Dose Old Town Bar &amp; Grill</td><td>restaurants</td><td>Scottsdale, AZ</td><td class="num score">84</td></tr><tr><td>3</td><td>Eldorado Cafe</td><td>restaurants</td><td>Austin, TX</td><td class="num score">78</td></tr><tr><td>4</td><td>Aster's Ethiopian Kitchen</td><td>restaurants</td><td>Austin, TX</td><td class="num score">76</td></tr><tr><td>5</td><td>PitaLicious Mediterranean Kitchen</td><td>restaurants</td><td>Austin, TX</td><td class="num score">74</td></tr><tr><td>6</td><td>MIAM Cafe - Wynwood</td><td>restaurants</td><td>Miami, FL</td><td class="num score">70</td></tr><tr><td>7</td><td>Dos Besos</td><td>restaurants</td><td>Pasadena, CA</td><td class="num score">59</td></tr><tr><td>8</td><td>Sima Haghighi</td><td>realestate</td><td>Santa Monica, CA</td><td class="num score">57</td></tr><tr><td>9</td><td>Judy Jernigan</td><td>realestate</td><td>Sandy Springs, GA</td><td class="num score">52</td></tr><tr><td>10</td><td>Chic Maquillage Artistry by Jennifer Noble</td><td>other</td><td>Glendale, AZ</td><td class="num score">48</td></tr><tr><td>11</td><td>Sweet Angeles Bakery Cafe</td><td>restaurants</td><td>Beverly Hills, CA</td><td class="num score">43</td></tr><tr><td>12</td><td>Eddy's Concierge Medicine (Eddy Perez Nodarse, NP)</td><td>medical</td><td>Miami, FL</td><td class="num score">38</td></tr><tr><td>13</td><td>Lori Goldsmith</td><td>realestate</td><td>Beverly Hills, CA</td><td class="num score">36</td></tr><tr><td>14</td><td>Francine Caliendo</td><td>realestate</td><td>Naperville, IL</td><td class="num score">36</td></tr><tr><td>15</td><td>Angel Akhavan</td><td>realestate</td><td>Beverly Hills, CA</td><td class="num score">36</td></tr></table></div>
+<div class="card"><h2>Sites built &amp; live (53)</h2><table><tr><td>Agata Kennedy</td><td><a href="https://agata-kennedy.vercel.app" target="_blank">agata-kennedy.vercel.app</a></td></tr><tr><td>Allen Rothman</td><td><a href="https://allen-rothman.vercel.app" target="_blank">allen-rothman.vercel.app</a></td></tr><tr><td>Alli Mexican Cuisine</td><td><a href="https://alli-mexican-cuisine.vercel.app" target="_blank">alli-mexican-cuisine.vercel.app</a></td></tr><tr><td>Angel Akhavan</td><td><a href="https://angel-akhavan.vercel.app" target="_blank">angel-akhavan.vercel.app</a></td></tr><tr><td>Ash Ghavami | Real Estate Services</td><td><a href="https://ash-ghavami.vercel.app" target="_blank">ash-ghavami.vercel.app</a></td></tr><tr><td>Aster's Ethiopian Kitchen</td><td><a href="https://asters-ethiopian-kitchen.vercel.app" target="_blank">asters-ethiopian-kitchen.vercel.app</a></td></tr><tr><td>BASSA REALTY</td><td><a href="https://bassa-realty.vercel.app" target="_blank">bassa-realty.vercel.app</a></td></tr><tr><td>Better Posture Pilates</td><td><a href="https://better-posture-pilates.vercel.app" target="_blank">better-posture-pilates.vercel.app</a></td></tr><tr><td>Cafe Creme Della Creme - Pies &amp; Patisserie</td><td><a href="https://cafe-creme-della-creme.vercel.app" target="_blank">cafe-creme-della-creme.vercel.app</a></td></tr><tr><td>Carter Tappan</td><td><a href="https://carter-tappan.vercel.app" target="_blank">carter-tappan.vercel.app</a></td></tr><tr><td>Center Street Cafe</td><td><a href="https://center-street-cafe.vercel.app" target="_blank">center-street-cafe.vercel.app</a></td></tr><tr><td>Chic Maquillage Artistry by Jennifer Noble</td><td><a href="https://chic-maquillage-artistry-by-jennifer-nob.vercel.app" target="_blank">chic-maquillage-artistry-by-jennifer-nob.vercel.app</a></td></tr><tr><td>Colleen Cassel</td><td><a href="https://colleen-cassel.vercel.app" target="_blank">colleen-cassel.vercel.app</a></td></tr><tr><td>CrossFit Deerfield Beach</td><td><a href="https://crossfit-deerfield-beach.vercel.app" target="_blank">crossfit-deerfield-beach.vercel.app</a></td></tr><tr><td>Cynthia Nossel</td><td><a href="https://cynthia-nossel.vercel.app" target="_blank">cynthia-nossel.vercel.app</a></td></tr><tr><td>Daily Dose Old Town Bar &amp; Grill</td><td><a href="https://daily-dose-old-town-bar-grill.vercel.app" target="_blank">daily-dose-old-town-bar-grill.vercel.app</a></td></tr><tr><td>David Tucker</td><td><a href="https://david-tucker.vercel.app" target="_blank">david-tucker.vercel.app</a></td></tr><tr><td>Dennis Kamrany</td><td><a href="https://dennis-kamrany.vercel.app" target="_blank">dennis-kamrany.vercel.app</a></td></tr><tr><td>Dos Besos</td><td><a href="https://dos-besos.vercel.app" target="_blank">dos-besos.vercel.app</a></td></tr><tr><td>Earthy Coffee</td><td><a href="https://earthy-coffee.vercel.app" target="_blank">earthy-coffee.vercel.app</a></td></tr><tr><td>Eddy's Concierge Medicine (Eddy Perez Nodarse, NP)</td><td><a href="https://eddys-concierge-medicine-eddy-perez-noda.vercel.app" target="_blank">eddys-concierge-medicine-eddy-perez-noda.vercel.app</a></td></tr><tr><td>El Meson Tequileria</td><td><a href="https://el-meson-tequileria.vercel.app" target="_blank">el-meson-tequileria.vercel.app</a></td></tr><tr><td>Elaine Sisman</td><td><a href="https://elaine-sisman.vercel.app" target="_blank">elaine-sisman.vercel.app</a></td></tr><tr><td>Eldorado Cafe</td><td><a href="https://eldorado-cafe.vercel.app" target="_blank">eldorado-cafe.vercel.app</a></td></tr><tr><td>Francine Caliendo</td><td><a href="https://francine-caliendo.vercel.app" target="_blank">francine-caliendo.vercel.app</a></td></tr><tr><td>Frank Walker</td><td><a href="https://frank-walker.vercel.app" target="_blank">frank-walker.vercel.app</a></td></tr><tr><td>Galicia</td><td><a href="https://galicia.vercel.app" target="_blank">galicia.vercel.app</a></td></tr><tr><td>Gary Palmer</td><td><a href="https://gary-palmer.vercel.app" target="_blank">gary-palmer.vercel.app</a></td></tr><tr><td>Harriet Kleppel</td><td><a href="https://harriet-kleppel.vercel.app" target="_blank">harriet-kleppel.vercel.app</a></td></tr><tr><td>Hot Yoga Naperville</td><td><a href="https://hot-yoga-naperville.vercel.app" target="_blank">hot-yoga-naperville.vercel.app</a></td></tr><tr><td>Infinity Fitness AZ</td><td><a href="https://infinity-fitness-az.vercel.app" target="_blank">infinity-fitness-az.vercel.app</a></td></tr><tr><td>Jill Nelson Pilates</td><td><a href="https://jill-nelson-pilates.vercel.app" target="_blank">jill-nelson-pilates.vercel.app</a></td></tr><tr><td>Judy Jernigan</td><td><a href="https://judy-jernigan.vercel.app" target="_blank">judy-jernigan.vercel.app</a></td></tr><tr><td>Lori Goldsmith</td><td><a href="https://lori-goldsmith.vercel.app" target="_blank">lori-goldsmith.vercel.app</a></td></tr><tr><td>MIAM Cafe - Wynwood</td><td><a href="https://miam-cafe-wynwood.vercel.app" target="_blank">miam-cafe-wynwood.vercel.app</a></td></tr><tr><td>Martil Cafe</td><td><a href="https://martil-cafe.vercel.app" target="_blank">martil-cafe.vercel.app</a></td></tr><tr><td>Moving Breath Pilates Studio</td><td><a href="https://moving-breath-pilates-studio.vercel.app" target="_blank">moving-breath-pilates-studio.vercel.app</a></td></tr><tr><td>ONYX Boxing</td><td><a href="https://onyx-boxing.vercel.app" target="_blank">onyx-boxing.vercel.app</a></td></tr><tr><td>Pam Santoro</td><td><a href="https://pam-santoro.vercel.app" target="_blank">pam-santoro.vercel.app</a></td></tr><tr><td>Pilates of Lake Forest</td><td><a href="https://pilates-of-lake-forest.vercel.app" target="_blank">pilates-of-lake-forest.vercel.app</a></td></tr><tr><td>PitaLicious Mediterranean Kitchen</td><td><a href="https://pitalicious-mediterranean-kitchen.vercel.app" target="_blank">pitalicious-mediterranean-kitchen.vercel.app</a></td></tr><tr><td>Sandra Rodriguez</td><td><a href="https://sandra-rodriguez.vercel.app" target="_blank">sandra-rodriguez.vercel.app</a></td></tr><tr><td>Saundra Lieber</td><td><a href="https://saundra-lieber.vercel.app" target="_blank">saundra-lieber.vercel.app</a></td></tr><tr><td>Sheree Leake-Bowens</td><td><a href="https://sheree-leakebowens.vercel.app" target="_blank">sheree-leakebowens.vercel.app</a></td></tr><tr><td>Sima Haghighi</td><td><a href="https://sima-haghighi.vercel.app" target="_blank">sima-haghighi.vercel.app</a></td></tr><tr><td>Stephanie Nelson</td><td><a href="https://stephanie-nelson.vercel.app" target="_blank">stephanie-nelson.vercel.app</a></td></tr><tr><td>Studio 8 Pilates</td><td><a href="https://studio-8-pilates.vercel.app" target="_blank">studio-8-pilates.vercel.app</a></td></tr><tr><td>Susan Holman</td><td><a href="https://susan-holman.vercel.app" target="_blank">susan-holman.vercel.app</a></td></tr><tr><td>Susan Rosales</td><td><a href="https://susan-rosales.vercel.app" target="_blank">susan-rosales.vercel.app</a></td></tr><tr><td>The Pound Gym</td><td><a href="https://the-pound-gym.vercel.app" target="_blank">the-pound-gym.vercel.app</a></td></tr><tr><td>Trang Huynh</td><td><a href="https://trang-huynh.vercel.app" target="_blank">trang-huynh.vercel.app</a></td></tr><tr><td>Well Street Kitchen London</td><td><a href="https://well-street-kitchen-london.vercel.app" target="_blank">well-street-kitchen-london.vercel.app</a></td></tr><tr><td>Whip My Soul</td><td><a href="https://whip-my-soul.vercel.app" target="_blank">whip-my-soul.vercel.app</a></td></tr></table></div>
+<div class="card"><h2>Errors / Retried</h2><table><tr><td>Center Street Cafe</td><td class="num fail">1 failed send(s)</td></tr><tr><td>BASSA REALTY</td><td class="num fail">1 failed send(s)</td></tr><tr><td>Ash Ghavami | Real Estate Services</td><td class="num fail">1 failed send(s)</td></tr><tr><td>Galicia</td><td class="num fail">1 failed send(s)</td></tr><tr><td>Earthy Coffee</td><td class="num fail">1 failed send(s)</td></tr><tr><td>Cafe Creme Della Creme - Pies &amp; Patisserie</td><td class="num fail">1 failed send(s)</td></tr><tr><td>Well Street Kitchen London</td><td class="num fail">1 failed send(s)</td></tr></table><p class="muted">Failed first attempts; builder retry loop recovered them.</p></div>
+<footer>Website Factory dashboard · rebuilt every hour at :55 · Harsshh</footer>
+</div></body></html>
