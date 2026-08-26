@@ -1,96 +1,173 @@
 #!/usr/bin/env python3
-"""Rebuild factory dashboard index.html from pitch_log.jsonl + leads.json."""
-import json, datetime
+"""Regenerate dashboard/index.html as a self-contained control panel.
+
+Reads factory data files and embeds them as a JSON blob in the page.
+Run hourly:  python3 /home/ubuntu/factory/dashboard/build_dashboard.py
+"""
+import json
+import os
+import re
 from collections import Counter
+from datetime import datetime, timezone
 
-FACT = '/home/ubuntu/factory'
-leads = [json.loads(l) for l in open(f'{FACT}/leads.json') if l.strip()]
-pitches = [json.loads(l) for l in open(f'{FACT}/pitch_log.jsonl') if l.strip()]
-ok = [p for p in pitches if p.get('ok')]
-fails = [p for p in pitches if not p.get('ok')]
-cats = Counter(l.get('category', '?') for l in leads)
-seen = {}
-for p in ok:
-    seen.setdefault(p['lead'], p['url'])
-hours = Counter(datetime.datetime.utcfromtimestamp(p['ts']).strftime('%H') for p in pitches)
-maxh = max(hours.values()) or 1
-top = sorted(leads, key=lambda l: l.get('buy_score') or 0, reverse=True)[:15]
-now = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
+FACTORY = "/home/ubuntu/factory"
+OUT = os.path.join(FACTORY, "dashboard", "index.html")
+
+def load_jsonl(path):
+    out = []
+    if not os.path.exists(path):
+        return out
+    for line in open(path):
+        line = line.strip()
+        if line:
+            try:
+                out.append(json.loads(line))
+            except json.JSONDecodeError:
+                pass
+    return out
+
+# ---------- load data ----------
+stats = {}
 try:
-    queued = json.load(open(f'{FACT}/stats.json')).get('remaining_queued', '?')
+    stats = json.load(open(os.path.join(FACTORY, "stats.json")))
 except Exception:
-    queued = '?'
+    pass
 
-def esc(s):
-    return str(s).replace('&', '&amp;').replace('<', '&lt;')
+leads = []
+with open(os.path.join(FACTORY, "leads.json")) as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            leads.append(json.loads(line))
+        except json.JSONDecodeError:
+            pass
 
-cat_rows = ''.join(
-    f'<tr><td>{c}</td><td class="num">{n}</td><td><div class="bar" style="width:{n / max(cats.values()) * 100}%"></div></td></tr>'
-    for c, n in cats.most_common())
-lb_rows = ''.join(
-    f'<tr><td>{i + 1}</td><td>{esc(l["name"])}</td><td>{l.get("category", "")}</td>'
-    f'<td>{l.get("city", "")}, {l.get("state", "")}</td><td class="num score">{l.get("buy_score", 0)}</td></tr>'
-    for i, l in enumerate(top))
-site_rows = ''.join(
-    f'<tr><td>{esc(n)}</td><td><a href="{u}" target="_blank">{esc(u.split("//")[1])}</a></td></tr>'
-    for n, u in sorted(seen.items()))
-hour_bars = ''.join(
-    f'<div class="hb"><div class="hf" style="height:{hours.get(h, 0) / maxh * 140}px" title="{h}:00 — {hours.get(h, 0)}"></div><span>{h}</span></div>'
-    for h in sorted(set(list(hours) + [f'{i:02d}' for i in range(20, 25)])))
-err_rows = ''
-if fails:
-    fc = Counter(p['lead'] for p in fails)
-    err_rows = ('<div class="card"><h2>Errors / Retried</h2><table>'
-                + ''.join(f'<tr><td>{esc(k)}</td><td class="num fail">{v} failed send(s)</td></tr>' for k, v in fc.items())
-                + '</table><p class="muted">Failed first attempts; builder retry loop recovered them.</p></div>')
+pitches = load_jsonl(os.path.join(FACTORY, "pitch_log.jsonl"))
 
-html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Factory Dashboard</title>
-<style>
-:root{{--bg:#0e0e10;--panel:#161618;--ink:#e8e6e3;--mut:#8a8782;--acc:#c9a86a;--line:#26262a}}
-*{{box-sizing:border-box;margin:0}}
-body{{background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif;padding:48px 24px}}
-.wrap{{max-width:960px;margin:0 auto}}
-header{{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:32px}}
-h1{{font-weight:normal;font-size:34px;letter-spacing:.5px}}
-.kicker{{color:var(--acc);font-size:12px;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;font-family:Helvetica,Arial,sans-serif}}
-.updated{{color:var(--mut);font-size:13px;margin-top:8px;font-family:Helvetica,Arial,sans-serif}}
-.stats{{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:36px}}
-.stat{{background:var(--panel);border:1px solid var(--line);padding:20px}}
-.stat b{{display:block;font-size:34px;color:var(--acc);font-family:Helvetica,Arial,sans-serif;font-weight:600}}
-.stat span{{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:2px;font-family:Helvetica,Arial,sans-serif}}
-.card{{background:var(--panel);border:1px solid var(--line);padding:24px;margin-bottom:28px}}
-h2{{font-size:13px;text-transform:uppercase;letter-spacing:2.5px;color:var(--acc);margin-bottom:16px;font-family:Helvetica,Arial,sans-serif;font-weight:600}}
-table{{width:100%;border-collapse:collapse;font-size:14px}}
-td{{padding:7px 8px;border-bottom:1px solid var(--line)}}
-.num{{text-align:right;font-family:Helvetica,Arial,sans-serif}}
-.score{{color:var(--acc);font-weight:bold}}
-.fail{{color:#d06a5f}}
-.bar{{height:8px;background:var(--acc);opacity:.85;min-width:4px}}
-a{{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--mut)}} a:hover{{color:var(--acc)}}
-.chart{{display:flex;align-items:flex-end;gap:10px;height:180px;padding-top:8px}}
-.hb{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}}
-.hf{{width:70%;background:linear-gradient(180deg,var(--acc),#7a6538);min-height:2px}}
-.hb span{{font-size:11px;color:var(--mut);margin-top:6px;font-family:Helvetica,Arial,sans-serif}}
-.muted{{color:var(--mut);font-size:13px;margin-top:12px;font-family:Helvetica,Arial,sans-serif}}
-footer{{color:var(--mut);font-size:12px;margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-family:Helvetica,Arial,sans-serif}}
-</style></head><body><div class="wrap">
-<header><div class="kicker">Website Factory · Hourly</div><h1>Production Ledger</h1>
-<div class="updated">Updated {now} · Source of truth: pitch_log.jsonl + leads.json</div></header>
-<div class="stats">
-<div class="stat"><b>{len(leads)}</b><span>Leads found</span></div>
-<div class="stat"><b>{len(ok)}</b><span>Pitches sent ✓</span></div>
-<div class="stat"><b>{len(fails)}</b><span>Failed sends</span></div>
-<div class="stat"><b>{len(seen)}</b><span>Sites live</span></div>
-<div class="stat"><b>{queued}</b><span>In queue</span></div>
-</div>
-<div class="card"><h2>Pitches per hour (UTC)</h2><div class="chart">{hour_bars}</div></div>
-<div class="card"><h2>Leads by category</h2><table>{cat_rows}</table></div>
-<div class="card"><h2>Buy-score leaderboard</h2><table>{lb_rows}</table></div>
-<div class="card"><h2>Sites built &amp; live ({len(seen)})</h2><table>{site_rows}</table></div>
-{err_rows}
-<footer>Website Factory dashboard · rebuilt every hour at :55 · Harsshh</footer>
-</div></body></html>"""
-open('/home/ubuntu/factory/dashboard/index.html', 'w').write(html)
-print('dashboard written:', len(html), 'bytes;', len(leads), 'leads;', len(ok), 'sent;', len(seen), 'sites')
+audit = []
+try:
+    audit = json.load(open(os.path.join(FACTORY, "audit.json")))
+except Exception:
+    pass
+
+lessons_raw = ""
+lp = os.path.join(FACTORY, "lessons.md")
+if os.path.exists(lp):
+    lessons_raw = open(lp).read()
+
+generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+# ---------- derive per-lead status ----------
+pitches_by_lead = {}
+for p in pitches:
+    pitches_by_lead.setdefault(p.get("lead", ""), []).append(p)
+
+EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+
+for l in leads:
+    email_ok = bool(l.get("email") and EMAIL_RE.match(l["email"]))
+    lp_ = pitches_by_lead.get(l.get("name"), [])
+    l["_email_found"] = bool(email_ok)
+    l["_pitched"] = len(lp_) > 0
+    l["_awaiting"] = any(p.get("ok") for p in lp_)
+    l["_send_failed"] = any(not p.get("ok") for p in lp_)
+    # normalize malformed emails out of display
+    if l.get("email") and not EMAIL_RE.match(l["email"]):
+        l["_bad_email"] = l["email"]
+        l["email"] = ""
+
+# ---------- sites grid ----------
+slug_to_lead = {}
+def slugify(name):
+    return re.sub(r"-{2,}", "-", re.sub(r"[^a-z0-9]+", "-", name.lower())).strip("-")
+
+lead_by_slug = {slugify(l["name"]): l for l in leads}
+pitch_by_url = {}
+for p in pitches:
+    u = p.get("url")
+    if u:
+        cur = pitch_by_url.get(u)
+        ts = p.get("ts", 0)
+        if cur is None or ts >= cur.get("ts", 0):
+            pitch_by_url[u] = p
+
+sites = []
+for a in audit:
+    url = a.get("url", "")
+    proj = a.get("project", "")
+    lead = lead_by_slug.get(proj)
+    http = a.get("http")
+    verdict = "FAIL" if http != 200 else ("NEEDS REBUILD" if a.get("verdict") == "rebuild" else "PASS")
+    pp = pitch_by_url.get(url)
+    sites.append({
+        "project": proj,
+        "url": url,
+        "http": http,
+        "category": a.get("category", ""),
+        "size_bytes": a.get("size_bytes"),
+        "verdict": verdict,
+        "reasons": [r for r in a.get("reasons", []) if r.startswith("why:") or r.startswith("text_chars") or r.startswith("subpages")] or a.get("reasons", []),
+        "pages_found": a.get("pages_found", []),
+        "business": lead.get("name", proj.replace("-", " ").title()) if lead else proj.replace("-", " ").title(),
+        "city": lead.get("city", "") if lead else "",
+        "state": lead.get("state", "") if lead else "",
+        "built_at": datetime.fromtimestamp(pp["ts"], tz=timezone.utc).strftime("%Y-%m-%d %H:%M") if pp else "",
+        "pitched": bool(pp),
+        "pitch_ok": bool(pp and pp.get("ok")),
+        "pitched_to": pp.get("to", "") if pp else "",
+    })
+sites.sort(key=lambda s: s["business"].lower())
+
+# ---------- pitches timeline (chronological) ----------
+timeline = sorted(pitches, key=lambda p: p.get("ts", 0))
+timeline = [{
+    "lead": p.get("lead", ""),
+    "to": p.get("to", ""),
+    "url": p.get("url", ""),
+    "agent": p.get("agent", ""),
+    "ts": p.get("ts"),
+    "when": datetime.fromtimestamp(p["ts"], tz=timezone.utc).strftime("%Y-%m-%d %H:%M") if p.get("ts") else "",
+    "ok": bool(p.get("ok")),
+} for p in timeline]
+
+# ---------- overview numbers ----------
+cats = Counter(l.get("category", "?") for l in leads)
+sites_built = len(sites)
+pitches_sent = len(pitches)
+pending_reply = sum(1 for l in leads if l["_awaiting"])
+dead_sites = [s for s in sites if s["http"] != 200]
+rebuild_queue = sum(1 for s in sites if s["verdict"] == "NEEDS REBUILD" or s["verdict"] == "FAIL")
+failed_sends = [p for p in pitches if not p.get("ok")]
+
+DATA = {
+    "generated_at": generated_at,
+    "overview": {
+        "total_leads": len(leads),
+        "per_category": dict(cats.most_common()),
+        "sites_built": sites_built,
+        "pitches_sent": pitches_sent,
+        "pitches_delivered": sum(1 for p in pitches if p.get("ok")),
+        "pitches_failed": len(failed_sends),
+        "pending_reply": pending_reply,
+        "dead_sites": len(dead_sites),
+        "rebuild_queue": rebuild_queue,
+    },
+    "leads": leads,
+    "sites": sites,
+    "pitches": timeline,
+    "dead_sites": [{"project": s["project"], "url": s["url"], "http": s["http"]} for s in dead_sites],
+    "failed_sends": failed_sends,
+    "lessons_md": lessons_raw,
+}
+
+BLOB = json.dumps(DATA, ensure_ascii=False).replace("</", "<\\/")
+
+TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "template.html")
+html = open(TEMPLATE_PATH).read()
+html = html.replace("__GENERATED_AT__", generated_at).replace("__DATA_BLOB__", BLOB)
+with open(OUT, "w") as f:
+    f.write(html)
+
+print(f"Wrote {OUT} ({os.path.getsize(OUT)} bytes), generated {generated_at}")
