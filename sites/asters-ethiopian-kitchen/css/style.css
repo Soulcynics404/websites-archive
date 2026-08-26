@@ -121,7 +121,8 @@ a { color: var(--berbere-dark); text-decoration-thickness: 1px; text-underline-o
 /* Footer */
 .site-footer { background: var(--coffee); color: #cdbba2; padding-block: 3rem 1.5rem; margin-top: 3rem; }
 .site-footer a { color: var(--cream); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(217,154,43,.3); }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(217,154,43,.3); }
+.footer-grid p { overflow-wrap: anywhere; }
 .site-footer h4 { color: var(--gold); font-size: .76rem; letter-spacing: .24em; text-transform: uppercase; margin: 0 0 .6rem; font-weight: 700; }
 .foot-brand span { color: var(--gold); }
 .copyright { font-size: .82rem; padding-top: 1.5rem; margin: 0; }

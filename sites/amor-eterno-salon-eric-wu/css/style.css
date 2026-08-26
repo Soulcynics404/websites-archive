@@ -131,7 +131,8 @@ a { color: var(--plum-deep); text-decoration-thickness: 1px; text-underline-offs
 /* Footer */
 .site-footer { background: var(--plum-deep); color: #d8c3cc; padding-block: 3rem 1.5rem; margin-top: 3rem; }
 .site-footer a { color: var(--white); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.14); }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.14); }
+.footer-grid p { overflow-wrap: anywhere; }
 .site-footer h4 { color: var(--champagne); font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; margin: 0 0 .6rem; font-weight: 500; }
 .foot-brand span { color: var(--champagne); }
 .copyright { font-size: .82rem; padding-top: 1.5rem; margin: 0; }

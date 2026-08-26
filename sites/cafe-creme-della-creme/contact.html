@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit & Order · Café Crème Della Crème</title>
+<meta name="description" content="Order whole pies and custom cakes: cremedellacreme2570@gmail.com. Open Wed–Sun, 8am–5pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥧</text></svg>">
+</head>
+<body>
+<header class="site-header"><nav class="nav container">
+<a class="brand" href="index.html">Café Crème<span>Della Crème · Pies &amp; Patisserie</span></a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Patisserie</a></li><li><a href="about.html">Our Craft</a></li><li><a href="contact.html" class="active">Visit</a></li></ul></nav></header>
+<main><section class="section container reveal">
+<p class="kicker">Visit &amp; order</p><h2 class="title">Save you a slice?</h2>
+<div class="contact-wrap">
+<div class="detail">
+<h3>Custom orders</h3><p><a href="mailto:cremedellacreme2570@gmail.com">cremedellacreme2570@gmail.com</a><br>Please allow 48 hours for whole pies &amp; celebration cakes.</p>
+<h3>Hours</h3><p>Wed–Sun · 8am – 5pm<br>Closed Mon &amp; Tue (we're baking ahead)</p>
+<h3>Good to know</h3><p>Whole pies travel best in a box on a flat seat — we'll pack them for the road.</p>
+</div>
+<form onsubmit="event.preventDefault();this.innerHTML='<p><strong>Thank you!</strong> We\'ll confirm your order by email within a day.</p>';">
+<label for="cn">Name</label><input id="cn" required>
+<label for="ce">Email</label><input id="ce" type="email" required>
+<label for="co">Order</label><select id="co"><option>Whole pie (from the menu)</option><option>Celebration cake</option><option>A box of pastries</option><option>Just saying hello</option></select>
+<label for="cd">Details (flavor, date, serves how many?)</label><textarea id="cd" rows="4"></textarea>
+<p style="margin-top:1.3rem"><button class="btn" type="submit">Send order request</button></p>
+</form>
+</div></section></main>
+<footer class="site-footer"><div class="container footer-grid">
+<div><p class="brand">Café Crème<span>Della Crème · Pies &amp; Patisserie</span></p><p>Pies, tarts and viennoiserie baked in small batches, every morning.</p></div>
+<div><h4>Explore</h4><p><a href="menu.html">Patisserie</a> · <a href="about.html">Our Craft</a> · <a href="contact.html">Visit</a></p></div>
+<div><h4>Orders</h4><p><a href="mailto:cremedellacreme2570@gmail.com">cremedellacreme2570@gmail.com</a></p></div>
+<div><h4>Hours</h4><p>Wed–Sun · 8am – 5pm<br>Custom pie orders · 48h notice</p></div>
+</div><p class="fineprint container">© 2026 Café Crème Della Crème · Pies &amp; Patisserie</p></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
