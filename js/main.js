@@ -15,6 +15,7 @@ const MartilCart = (() => {
   const write = (items) => {
     localStorage.setItem(KEY, JSON.stringify(items));
     render();
+    window.dispatchEvent(new CustomEvent("martil-cart-changed"));
   };
 
   const items = read;
@@ -185,6 +186,36 @@ document.addEventListener("click", (e) => {
   // Close when a nav link is used or when resizing back to desktop
   document.querySelectorAll(".nav-links a").forEach((a) => a.addEventListener("click", close));
   window.addEventListener("resize", () => { if (window.innerWidth > 820) close(); });
+})();
+
+/* ---------------- 3D pointer tilt (tilt-card) ---------------- */
+(() => {
+  const fine = window.matchMedia("(pointer: fine)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!fine || reduced) return;
+  const MAX = 7; // degrees
+  document.querySelectorAll(".tilt-card").forEach((card) => {
+    card.style.willChange = "transform";
+    let raf = null, rx = 0, ry = 0;
+    const apply = () => {
+      raf = null;
+      card.style.transition = "transform .12s ease-out";
+      card.style.transform = "perspective(950px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg)";
+    };
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - .5;
+      const py = (e.clientY - r.top) / r.height - .5;
+      ry = px * MAX;
+      rx = -py * MAX;
+      if (!raf) raf = requestAnimationFrame(apply);
+    });
+    card.addEventListener("pointerleave", () => {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      card.style.transition = "transform .55s cubic-bezier(.22,1,.36,1)";
+      card.style.transform = "";
+    });
+  });
 })();
 
 /* ---------------- Footer year ---------------- */

@@ -83,6 +83,8 @@
   if (clearBtn) clearBtn.addEventListener("click", () => MartilCart.clear());
 
   renderSummary();
+  // live-update the summary when items are added anywhere on the page
+  window.addEventListener("martil-cart-changed", renderSummary);
 
   /* ---------------- form: attach summary, show thanks ---------------- */
   const form = document.getElementById("order-form");
