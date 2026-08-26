@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Us · Buongiorno Cafeteria</title>
+<meta name="description" content="Buongiorno Cafeteria — 20E Selsdon Rd, South Croydon CR2 6PA. Open Mon–Fri from 7am, Sat from 8am, Sun from 8:30am. Rated 4.9★.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">BUONGIORNO<span>Cafeteria</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Find Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">Find us</p>
+  <h1>Selsdon Road, corner table.</h1>
+  <p class="lede">Two minutes from South Croydon station. Look for the terracotta awning.</p>
+</section>
+
+<section class="section container contact-grid">
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Address</h3>
+      <p>20E Selsdon Rd<br>South Croydon CR2 6PA<br>United Kingdom</p>
+    </div>
+    <div class="contact-card">
+      <h3>Hours</h3>
+      <p>Mon–Fri · 7:00 – 16:00<br>Sat · 8:00 – 16:00<br>Sun · 8:30 – 14:00</p>
+    </div>
+    <div class="contact-card">
+      <h3>Good to know</h3>
+      <p>Laptops welcome till noon · dogs welcome always · step-free entry · card &amp; cash</p>
+    </div>
+    <div class="contact-card">
+      <h3>Groups &amp; catering</h3>
+      <p>Meeting the whole team? Email us two days ahead for the long table and a pastry platter.</p>
+    </div>
+  </div>
+
+  <form id="contact-form" class="contact-form card-form" novalidate>
+    <h2>Drop us a note</h2>
+    <label>Name
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>What's it about?
+      <select name="topic">
+        <option>Saying hello</option>
+        <option>Group booking</option>
+        <option>Catering enquiry</option>
+        <option>Lost umbrella</option>
+      </select>
+    </label>
+    <label>Message
+      <textarea name="message" rows="5" placeholder="Dates, headcount, your usual order…"></textarea>
+    </label>
+    <button class="btn" type="submit">Send message</button>
+    <p class="form-note" id="form-note" role="status"></p>
+  </form>
+</section>
+
+<section class="map-note">
+  <div class="container map-inner">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=70" alt="Café tables outside on a sunny pavement" loading="lazy">
+    <div class="map-caption">
+      <h2>On-street tables in summer</h2>
+      <p>Sun traps on the pavement from March onwards. The flat white travels well.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">BUONGIORNO<span>Cafeteria</span></p>
+      <p>An Italian-style coffee bar serving South Croydon from Selsdon Road.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>20E Selsdon Rd<br>South Croydon CR2 6PA<br>United Kingdom</p>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Mon–Fri · 7:00–16:00<br>Sat · 8:00–16:00<br>Sun · 8:30–14:00</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">Our Story</a><br><a href="contact.html">Find Us</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Buongiorno Cafeteria · Rated ★ 4.9 by 319 locals</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
