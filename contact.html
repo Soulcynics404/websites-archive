@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Class | Iron Forge Athletics</title>
+<meta name="description" content="Book your free first class at Iron Forge Athletics in Miami Beach, or send us a message.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap nav-inner">
+<a class="logo" href="index.html">Iron Forge Athletics<span>.</span></a>
+<nav aria-label="Main"><button class="nav-toggle" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+<ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="classes.html">Classes</a></li><li><a href="trainers.html">Trainers</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav></div></header><main>
+<section><div class="wrap contact-cols">
+<div>
+<p class="section-tag">Free trial class</p>
+<h2>Book your spot</h2>
+<form class="form-grid" style="margin-top:1.6rem" data-validate data-success="booking-success" novalidate>
+<div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" required autocomplete="name"><p class="field-err">Please enter your name.</p></div>
+<div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" required autocomplete="email"><p class="field-err">Please enter a valid email.</p></div>
+<div class="field"><label for="bk-class">Class</label><select id="bk-class" name="class" required><option value="">Choose&hellip;</option><option>Sunrise Strength (Mon 06:30)</option><option>Lunch Express HIIT (Mon 12:15)</option><option>Boxing Fundamentals (Mon 18:00)</option><option>Vinyasa Flow (Tue 07:00)</option><option>Reformer Pilates (Tue 17:30)</option><option>BJJ Basics (Tue 19:00)</option><option>Engine Room (Cardio) (Wed 06:30)</option><option>Powerlifting Club (Wed 18:00)</option><option>Kickboxing (Wed 19:30)</option><option>Restorative Yoga (Thu 09:30)</option></select><p class="field-err">Pick a class.</p></div>
+<div class="field"><label for="bk-level">Experience</label><select id="bk-level" name="level" required><option value="">Choose&hellip;</option><option>Complete beginner</option><option>Some experience</option><option>Experienced</option></select><p class="field-err">Pick your level.</p></div>
+<div class="field full"><label for="bk-notes">Notes (optional)</label><textarea id="bk-notes" name="notes" rows="3"></textarea></div>
+<div class="full"><button class="btn primary" type="submit">Confirm Booking</button></div>
+</form>
+<div id="booking-success" class="form-success" role="status">You're booked in! We've saved your spot and will email the details. See you at {ADDRESS}.</div>
+</div>
+<div class="contact-info">
+<p class="section-tag">Visit us</p>
+<h2>Iron Forge Athletics</h2>
+<dl>
+<div><dt>Address</dt><dd>{ADDRESS}, Miami Beach</dd></div>
+<div><dt>Phone</dt><dd><a href="tel:(305) 555-0177">(305) 555-0177</a></dd></div>
+<div><dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd></div>
+<div><dt>Hours</dt><dd>Staffed Mon-Fri 6am-9pm, Sat-Sun 8am-6pm. Members have 24/7 key access.</dd></div>
+</dl>
+<p class="form-note">Prefer social? Find us at {INSTAGRAM}.</p>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap foot">
+<div><strong>Iron Forge Athletics</strong><br>{ADDRESS}, Miami Beach</div>
+<div>Phone <a href="tel:(305) 555-0177">(305) 555-0177</a><br>Email <a href="mailto:{EMAIL}">{EMAIL}</a></div>
+<div><a href="{INSTAGRAM}">Instagram</a><br>&copy; 2026 Iron Forge Athletics</div>
+</div></footer>
+<script src="script.js"></script></body></html>
