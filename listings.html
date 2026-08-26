@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings — Sarah Mitchell | Sterling &amp; Rowe Realty, Beverly Hills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf7f1;--card:#ffffff;--oak:#c8a97e;--oak-d:#a9885c;--ink:#2b2925;--soft:#6f6a61;--line:#e7e0d4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:'Fraunces',serif;font-weight:500;font-size:20px}.brand span{color:var(--oak-d)}
+nav.links{display:flex;gap:32px;font-size:13px;color:var(--soft)}
+nav.links a{padding:4px 0;border-bottom:1px solid transparent;transition:.25s}
+nav.links a:hover,.links a[aria-current]{color:var(--ink);border-bottom-color:var(--oak)}
+@media(max-width:720px){nav.links{gap:16px;font-size:12px}}
+.page-head{text-align:center;padding:70px 0 30px}
+.kicker{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--oak-d)}
+h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,4.6vw,52px);margin:14px 0 12px}
+h1 em{font-style:italic;color:var(--oak-d)}
+.page-head p{color:var(--soft);max-width:50ch;margin:0 auto}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:34px 0 44px}
+.chip{padding:10px 24px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--soft);font-size:12.5px;font-family:'Inter';cursor:pointer;transition:.25s}
+.chip:hover{border-color:var(--oak);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;padding-bottom:40px}
+.home{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.home:hover{transform:translateY(-4px);box-shadow:0 22px 44px -20px rgba(43,41,37,.28)}
+.home .ph{aspect-ratio:16/10;overflow:hidden;position:relative}
+.home img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.home:hover img{transform:scale(1.05)}
+.tag{position:absolute;top:14px;left:14px;padding:5px 14px;border-radius:999px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(250,247,241,.92);color:var(--oak-d);font-weight:500}
+.bd{padding:20px 22px 22px;flex:1}
+.price{font-family:'Fraunces',serif;font-weight:400;font-size:23px}
+.addr{font-size:15.5px;margin-top:4px}
+.hood{font-size:13px;color:var(--soft)}
+.meta{display:flex;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
+.meta b{color:var(--ink);font-weight:500}
+.empty{text-align:center;color:var(--soft);padding:60px 0 80px;display:none}
+footer{border-top:1px solid var(--line);background:#f4efe6;padding:52px 0 34px;margin-top:30px}
+.f-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:13.5px;color:var(--soft)}
+.f-brand{font-family:'Fraunces',serif;font-size:17px;color:var(--ink)}
+.f-grid nav{display:flex;gap:26px}
+.f-grid a:hover{color:var(--oak-d)}
+.copy{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);opacity:.6;font-size:12px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <div class="brand">Sarah Mitchell<span>.</span></div>
+  <nav class="links">
+    <a href="index.html">Home</a><a href="listings.html" aria-current="page">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="page-head wrap">
+  <p class="kicker">Available Now · Beverly Hills</p>
+  <h1>Homes currently <em>on offer.</em></h1>
+  <p>Each of these is live in CRMLS. Filter by style — and if nothing fits, I often know what's coming before it lists.</p>
+  <div class="filters" role="tablist" aria-label="Filter listings">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="house">Houses</button>
+    <button class="chip" data-f="apt">Apartments</button>
+    <button class="chip" data-f="new">New</button>
+  </div>
+</section>
+
+<section class="wrap"><div class="grid" id="grid">
+
+  <article class="home" data-t="house new">
+    <div class="ph"><span class="tag">New</span><img src="https://picsum.photos/seed/Beverly Hills-sc-list1/640/400.jpg" alt="Light-filled home with pale wood interiors" loading="lazy"></div>
+    <div class="bd"><div class="price">$745,000</div><div class="addr">88 Linden Way</div><div class="hood">North Beverly Hills · 3 bed · 2 bath · 1,850 sqft</div>
+    <div class="meta"><span><b>3</b> bd</span><span><b>2</b> ba</span><span><b>1,850</b> sqft</span><span><b>2019</b> built</span></div></div>
+  </article>
+
+  <article class="home" data-t="apt">
+    <div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-sc-list2/640/400.jpg" alt="Bright minimal apartment with large windows" loading="lazy"></div>
+    <div class="bd"><div class="price">$462,000</div><div class="addr">14 Grove Court, #204</div><div class="hood">Garden District · Top-floor corner unit</div>
+    <div class="meta"><span><b>2</b> bd</span><span><b>1.5</b> ba</span><span><b>990</b> sqft</span><span><b>HOA $340</b>/mo</span></div></div>
+  </article>
+
+  <article class="home" data-t="house new">
+    <div class="ph"><span class="tag">Open Sun</span><img src="https://picsum.photos/seed/Beverly Hills-sc-list3/640/400.jpg" alt="Scandinavian-style house with black timber frame" loading="lazy"></div>
+    <div class="bd"><div class="price">$1,265,000</div><div class="addr">240 Cedar Hollow</div><div class="hood">Ridgeline · Architect-designed, wooded lot</div>
+    <div class="meta"><span><b>4</b> bd</span><span><b>3</b> ba</span><span><b>2,720</b> sqft</span><span><b>0.6</b> acre</span></div></div>
+  </article>
+
+  <article class="home" data-t="house">
+    <div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-sc-list4/640/400.jpg" alt="Cozy cottage home with garden" loading="lazy"></div>
+    <div class="bd"><div class="price">$618,000</div><div class="addr">9 Rowan Street</div><div class="hood">Old Beverly Hills · Character cottage, walkable block</div>
+    <div class="meta"><span><b>2</b> bd</span><span><b>1</b> ba</span><span><b>1,140</b> sqft</span><span><b>1948</b> built</span></div></div>
+  </article>
+
+  <article class="home" data-t="apt new">
+    <div class="ph"><span class="tag">Just Listed</span><img src="https://picsum.photos/seed/Beverly Hills-sc-list5/640/400.jpg" alt="Loft apartment with oak floors" loading="lazy"></div>
+    <div class="bd"><div class="price">$534,000</div><div class="addr">301 Mill Works, #118</div><div class="hood">Arts Quarter · Oak floors, shared courtyard</div>
+    <div class="meta"><span><b>1</b> bd + den</span><span><b>1</b> ba</span><span><b>860</b> sqft</span><span><b>HOA $295</b>/mo</span></div></div>
+  </article>
+
+  <article class="home" data-t="house">
+    <div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-sc-list6/640/400.jpg" alt="Single-level family home with patio" loading="lazy"></div>
+    <div class="bd"><div class="price">$893,000</div><div class="addr">1120 Meadowbrook Drive</div><div class="hood">Westfield · Single-level, south-facing garden</div>
+    <div class="meta"><span><b>4</b> bd</span><span><b>2.5</b> ba</span><span><b>2,180</b> sqft</span><span><b>1996</b> built</span></div></div>
+  </article>
+
+</div>
+<p class="empty" id="empty">Nothing in that category right now — message me about off-market homes in Beverly Hills, Bel Air &amp; West Hollywood.</p>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div><div class="f-brand">Sarah Mitchell<span style="color:var(--oak-d)">.</span></div><p style="margin-top:4px">Sterling &amp; Rowe Realty</p></div>
+    <nav><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div>(310) 555-0142<br>sarah.mitchell@sterlingrowe.com</div>
+  </div>
+  <p class="copy">© 2026 Sarah Mitchell · Sterling &amp; Rowe Realty. Equal Housing Opportunity. License CA DRE #02219984. Serving Beverly Hills, Bel Air &amp; West Hollywood.</p>
+</div></footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip'),cards=document.querySelectorAll('.home'),empty=document.getElementById('empty');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on')});c.classList.add('on');
+    var f=c.dataset.f,n=0;
+    cards.forEach(function(k){var s=(f==='all')||k.dataset.t.split(' ').indexOf(f)>-1;k.style.display=s?'':'none';if(s)n++});
+    empty.style.display=n?'none':'block';
+  })});
+})();
+</script>
+</body>
+</html>

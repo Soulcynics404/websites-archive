@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Mitchell — Sterling &amp; Rowe Realty | Beverly Hills Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf7f1;--card:#ffffff;--oak:#c8a97e;--oak-d:#a9885c;--ink:#2b2925;--soft:#6f6a61;--line:#e7e0d4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:.01em}
+.brand span{color:var(--oak-d)}
+nav.links{display:flex;gap:32px;font-size:13px;color:var(--soft)}
+nav.links a{padding:4px 0;border-bottom:1px solid transparent;transition:.25s}
+nav.links a:hover,.links a[aria-current]{color:var(--ink);border-bottom-color:var(--oak)}
+@media(max-width:720px){nav.links{gap:16px;font-size:12px}}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:80px 0 60px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:44px;padding-top:56px}}
+.kicker{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--oak-d);margin-bottom:18px}
+h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(36px,5.4vw,62px);line-height:1.08;letter-spacing:-.01em;margin-bottom:22px}
+h1 em{font-style:italic;color:var(--oak-d)}
+.hero p.lead{color:var(--soft);max-width:46ch;margin-bottom:32px;font-size:17px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 34px;border-radius:999px;font-size:13.5px;font-weight:400;letter-spacing:.04em;transition:.3s;border:1px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--oak-d);border-color:var(--oak-d)}
+.btn.ghost:hover{background:rgba(200,169,126,.14)}
+
+/* ---- pure CSS 3D house showcase ---- */
+.stage{perspective:1100px;display:flex;justify-content:center;padding:30px 0 70px}
+.house{position:relative;width:280px;height:280px;transform-style:preserve-3d;animation:spin 26s linear infinite}
+@media(prefers-reduced-motion:reduce){.house{animation:none;transform:rotateX(-14deg) rotateY(-32deg)}}
+@keyframes spin{from{transform:rotateX(-14deg) rotateY(0)}to{transform:rotateX(-14deg) rotateY(360deg)}}
+.face{position:absolute;background:var(--card);border:1px solid var(--line)}
+.f-front,.f-back{width:220px;height:150px;left:30px}
+.f-front{transform:translateZ(110px)}.f-back{transform:translateZ(-110px) rotateY(180deg)}
+.f-left,.f-right{width:220px;height:150px;top:0}
+.f-left{transform:rotateY(90deg) translateZ(140px)}
+.f-right{transform:rotateY(90deg) translateZ(80px)}
+.win{position:absolute;background:linear-gradient(160deg,#dfe8ea,#c3d2d6);border:1px solid var(--line);box-shadow:inset 0 0 0 3px var(--card)}
+.w1{width:52px;height:64px;top:38px;left:26px}.w2{width:52px;height:64px;top:38px;right:26px}
+.door{position:absolute;width:44px;height:78px;bottom:0;left:50%;transform:translateX(-50%);background:var(--oak);border-radius:6px 6px 0 0}
+.f-side{top:0;width:220px;height:150px}
+.f-side.l{transform:rotateY(-90deg) translateZ(80px);left:-80px}
+.roof-a,.roof-b{position:absolute;width:270px;height:96px;top:8px;left:5px;background:var(--ink)}
+.roof-a{transform:rotateX(58deg) translateZ(75px) translateY(-48px);opacity:.94}
+.roof-b{transform:rotateX(-58deg) translateZ(75px) translateY(-48px);display:none}
+.base{position:absolute;width:280px;height:40px;top:190px;left:0;background:var(--oak);transform:rotateX(90deg) translateZ(-20px);opacity:.35}
+.shadow{position:absolute;width:340px;height:60px;top:236px;left:-30px;border-radius:50%;background:radial-gradient(ellipse,rgba(43,41,37,.16),transparent 68%)}
+.caption{text-align:center;font-size:12.5px;color:var(--soft);letter-spacing:.06em;margin-top:-46px;padding-bottom:60px}
+
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:70px}
+@media(max-width:720px){.strip{grid-template-columns:1fr}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 26px;transition:.3s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(43,41,37,.25)}
+.tile b{font-family:'Fraunces',serif;font-weight:400;font-size:19px;display:block;margin-bottom:6px}
+.tile p{font-size:14px;color:var(--soft)}
+
+section.feature{padding:70px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(26px,3.6vw,40px);line-height:1.15}
+.sec-head a{font-size:13.5px;color:var(--oak-d);white-space:nowrap;border-bottom:1px solid var(--oak);padding-bottom:2px}
+.homes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.home{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.35s}
+.home:hover{transform:translateY(-4px);box-shadow:0 22px 44px -20px rgba(43,41,37,.28)}
+.home .ph{aspect-ratio:16/10;overflow:hidden}
+.home img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.home:hover img{transform:scale(1.05)}
+.home .bd{padding:18px 20px 20px}
+.price{font-family:'Fraunces',serif;font-size:21px;color:var(--ink)}
+.addr{font-size:14.5px;margin-top:3px}
+.hood{font-size:12.5px;color:var(--soft)}
+
+.quote-band{background:var(--ink);color:var(--paper);border-radius:20px;padding:56px 40px;text-align:center;margin:20px 0 80px}
+.quote-band p{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(19px,2.6vw,27px);max-width:34ch;margin:0 auto 10px;line-height:1.45}
+.quote-band span{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--oak)}
+
+footer{border-top:1px solid var(--line);background:#f4efe6;padding:52px 0 34px}
+.f-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:13.5px;color:var(--soft)}
+.f-brand{font-family:'Fraunces',serif;font-size:17px;color:var(--ink)}
+.f-grid nav{display:flex;gap:26px}
+.f-grid a:hover{color:var(--oak-d)}
+.copy{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);opacity:.6;font-size:12px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <div class="brand">Sarah Mitchell<span>.</span></div>
+  <nav class="links">
+    <a href="index.html" aria-current="page">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero wrap">
+  <div>
+    <p class="kicker">Sterling &amp; Rowe Realty · Beverly Hills, CA</p>
+    <h1>Quiet homes, <em>considered</em> living.</h1>
+    <p class="lead">I help people across Beverly Hills find and sell homes with calm, honest guidance — $240M+ closings and a simple promise: no pressure, just clarity.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="listings.html">View Listings</a>
+      <a class="btn ghost" href="contact.html">Say Hello</a>
+    </div>
+  </div>
+
+  <!-- CSS 3D HOUSE -->
+  <div class="stage" aria-hidden="true">
+    <div class="house">
+      <div class="face f-front"><div class="win w1"></div><div class="win w2"></div><div class="door"></div></div>
+      <div class="face f-back"><div class="win w1"></div><div class="win w2"></div></div>
+      <div class="face f-side l"><div class="win" style="width:120px;height:56px;top:44px;left:50px"></div></div>
+      <div class="face f-left"><div class="win" style="width:120px;height:56px;top:44px;left:50px"></div></div>
+      <div class="roof-a"></div>
+      <div class="base"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+</section>
+<p class="caption">Every listing gets thoughtful staging, natural-light photography and an unhurried walkthrough.</p>
+
+<section class="wrap strip">
+  <div class="tile"><b>Buyer representation</b><p>From first viewing to final signature across Beverly Hills, Bel Air &amp; West Hollywood — with honest advice on every offer.</p></div>
+  <div class="tile"><b>Listing & marketing</b><p>Staging, photography and pricing grounded in live Beverly Hills comps. Median time to offer: $4.2M.</p></div>
+  <div class="tile"><b>Valuations</b><p>A free, no-obligation read on what your home is worth in today's market.</p></div>
+</section>
+
+<section class="feature wrap">
+  <div class="sec-head">
+    <h2>Recently placed.</h2>
+    <a href="listings.html">All listings →</a>
+  </div>
+  <div class="homes">
+    <article class="home"><div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-scandi1/600/380.jpg" alt="Light-filled family home with wood facade" loading="lazy"></div><div class="bd"><div class="price">$842,000</div><div class="addr">22 Birchwood Lane</div><div class="hood">North Beverly Hills</div></div></article>
+    <article class="home"><div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-scandi2/600/380.jpg" alt="Minimalist apartment interior in daylight" loading="lazy"></div><div class="bd"><div class="price">$498,000</div><div class="addr">57 Alder Street, #3</div><div class="hood">Garden District</div></div></article>
+    <article class="home"><div class="ph"><img src="https://picsum.photos/seed/Beverly Hills-scandi3/600/380.jpg" alt="Modern cabin-style home among trees" loading="lazy"></div><div class="bd"><div class="price">$1,120,000</div><div class="addr">310 Fjord Road</div><div class="hood">Ridgeline</div></div></article>
+  </div>
+</section>
+
+<section class="wrap quote-band">
+  <p>“127 five-star reviews”</p>
+  <span>Client of Sarah Mitchell, Beverly Hills</span>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div><div class="f-brand">Sarah Mitchell<span style="color:var(--oak-d)">.</span></div><p style="margin-top:4px">Sterling &amp; Rowe Realty</p></div>
+    <nav><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div>(310) 555-0142<br>sarah.mitchell@sterlingrowe.com</div>
+  </div>
+  <p class="copy">© 2026 Sarah Mitchell · Sterling &amp; Rowe Realty. Equal Housing Opportunity. License CA DRE #02219984. Serving Beverly Hills, Bel Air &amp; West Hollywood.</p>
+</div></footer>
+
+</body>
+</html>

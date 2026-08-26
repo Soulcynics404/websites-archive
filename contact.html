@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Sarah Mitchell | Sterling &amp; Rowe Realty, Beverly Hills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf7f1;--card:#ffffff;--oak:#c8a97e;--oak-d:#a9885c;--ink:#2b2925;--soft:#6f6a61;--line:#e7e0d4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:'Fraunces',serif;font-weight:500;font-size:20px}.brand span{color:var(--oak-d)}
+nav.links{display:flex;gap:32px;font-size:13px;color:var(--soft)}
+nav.links a{padding:4px 0;border-bottom:1px solid transparent;transition:.25s}
+nav.links a:hover,.links a[aria-current]{color:var(--ink);border-bottom-color:var(--oak)}
+@media(max-width:720px){nav.links{gap:16px;font-size:12px}}
+.page-head{text-align:center;padding:70px 0 44px}
+.kicker{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--oak-d)}
+h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,4.6vw,52px);margin:14px 0 12px}
+h1 em{font-style:italic;color:var(--oak-d)}
+.page-head p{color:var(--soft);max-width:48ch;margin:0 auto}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;padding-bottom:80px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px}
+label{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin:18px 0 6px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-family:'Inter';font-size:14.5px;font-weight:300;transition:.25s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--oak);box-shadow:0 0 0 3px rgba(200,169,126,.2)}
+select option{background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+.btn{width:100%;margin-top:26px;padding:15px;border-radius:999px;border:none;background:var(--ink);color:var(--paper);font-size:14px;font-family:'Inter';letter-spacing:.04em;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--oak-d)}
+.form-note{font-size:12px;color:var(--soft);text-align:center;margin-top:14px}
+.info h2{font-family:'Fraunces',serif;font-weight:300;font-size:24px;margin-bottom:14px}
+.info>p{color:var(--soft);font-size:14.5px;margin-bottom:22px}
+.dl div{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}
+.dl dt{color:var(--soft)}.dl dd{text-align:right}
+.dl a:hover{color:var(--oak-d)}
+.hours{margin-top:24px;font-size:13px;color:var(--soft)}
+.hours b{color:var(--ink);font-weight:500}
+footer{border-top:1px solid var(--line);background:#f4efe6;padding:52px 0 34px}
+.f-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:13.5px;color:var(--soft)}
+.f-brand{font-family:'Fraunces',serif;font-size:17px;color:var(--ink)}
+.f-grid nav{display:flex;gap:26px}
+.f-grid a:hover{color:var(--oak-d)}
+.copy{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);opacity:.6;font-size:12px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <div class="brand">Sarah Mitchell<span>.</span></div>
+  <nav class="links">
+    <a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="page-head wrap">
+  <p class="kicker">Sterling &amp; Rowe Realty · Beverly Hills</p>
+  <h1>Let's have a <em>conversation.</em></h1>
+  <p>No scripts, no pressure. Call or write and we'll talk through your move whenever suits you.</p>
+</section>
+
+<section class="wrap grid">
+  <form class="panel" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('ok').style.display='block'">
+    <label for="n">Name</label><input id="n" name="name" required autocomplete="name" placeholder="Your full name">
+    <label for="e">Email</label><input id="e" name="email" type="email" required autocomplete="email" placeholder="you@email.com">
+    <label for="p">Phone</label><input id="p" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000">
+    <label for="i">How can I help?</label>
+    <select id="i" name="intent">
+      <option>We're thinking of selling</option>
+      <option>We're starting to look in Beverly Hills</option>
+      <option>A valuation on our current home</option>
+      <option>A question about a listing</option>
+      <option>Just saying hello</option>
+    </select>
+    <label for="m">Message</label><textarea id="m" name="message" placeholder="Tell me a little about your timeline and what you're looking for…"></textarea>
+    <button class="btn" type="submit">Send Note →</button>
+    <p class="form-note">I reply personally — usually the same day.</p>
+  </form>
+
+  <div class="panel info">
+    <h2>Direct lines</h2>
+    <p>A Beverly Hills luxury specialist known for calm, data-driven guidance and a client-first approach.</p>
+    <dl class="dl">
+      <div><dt>Phone</dt><dd><a href="tel:(310) 555-0142">(310) 555-0142</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:sarah.mitchell@sterlingrowe.com">sarah.mitchell@sterlingrowe.com</a></dd></div>
+      <div><dt>Office</dt><dd>Sterling &amp; Rowe Realty, Beverly Hills, CA</dd></div>
+      <div><dt>Serving</dt><dd>Beverly Hills, Bel Air &amp; West Hollywood</dd></div>
+      <div><dt>License</dt><dd>CA DRE #02219984</dd></div>
+    </dl>
+    <p class="hours"><b>Hours:</b> Mon–Sat 8am–7pm · Sun by appointment.<br>Showings arranged evenings & weekends across Beverly Hills, Bel Air &amp; West Hollywood.</p>
+    <p class="hours" id="ok" style="display:none;color:var(--oak-d)">Thank you — connect this form to an endpoint to go live.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div><div class="f-brand">Sarah Mitchell<span style="color:var(--oak-d)">.</span></div><p style="margin-top:4px">Sterling &amp; Rowe Realty</p></div>
+    <nav><a href="index.html">Home</a><a href="listings.html">Listings</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div>(310) 555-0142<br>sarah.mitchell@sterlingrowe.com</div>
+  </div>
+  <p class="copy">© 2026 Sarah Mitchell · Sterling &amp; Rowe Realty. Equal Housing Opportunity. License CA DRE #02219984. Serving Beverly Hills, Bel Air &amp; West Hollywood.</p>
+</div></footer>
+
+</body>
+</html>
