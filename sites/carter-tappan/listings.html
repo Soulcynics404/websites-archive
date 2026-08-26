@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings · Carter Tappan — Palo Alto Real Estate</title>
+<meta name="description" content="Current and recent listings from Carter Tappan, Coldwell Banker Palo Alto — Eichlers, estates and new construction across Silicon Valley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CARTER&nbsp;TAPPAN<span></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html" aria-current="page">Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Home valuation</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container listing-head">
+    <div>
+      <p class="eyebrow">Portfolio</p>
+      <h1>Current &amp; recent listings</h1>
+      <p class="lede">Representative Palo Alto properties. Ask about anything — I'll send the full package, disclosures included.</p>
+    </div>
+    <label class="filter-label" for="statusFilter">Show
+      <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="pending">Pending</option>
+        <option value="sold">Sold</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="grid-3 cards listing-grid" id="listingGrid">
+    <article class="listing-card card" data-status="active">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Eichler atrium home exterior" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$3,495,000</p>
+        <h3>37200A · Greenmeadow Eichler</h3>
+        <p class="lc-meta">4 bd · 2 ba · 1,640 sqft · 1954 mid-century</p>
+        <p>Cathedral ceilings, original paneling, radiant heat rebuilt in 2021. Two doors from the community pool.</p>
+        <div class="lc-foot"><span class="tag tag-active">Active</span><span class="lc-id">#CT-1042</span></div>
+      </div>
+    </article>
+    <article class="listing-card card" data-status="active">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Home with pool at dusk" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$6,250,000</p>
+        <h3>Crescent Park traditional</h3>
+        <p class="lc-meta">5 bd · 4 ba · 3,850 sqft · 1926 revival</p>
+        <p>Period details, modern systems, pool-sized lot on a walk street near the Peninsula school corridor.</p>
+        <div class="lc-foot"><span class="tag tag-active">Active</span><span class="lc-id">#CT-1047</span></div>
+      </div>
+    </article>
+    <article class="listing-card card" data-status="pending">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Living room with floor to ceiling glass" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$2,995,000</p>
+        <h3>Fairmeadow post-&amp;-beam</h3>
+        <p class="lc-meta">3 bd · 2 ba · 1,310 sqft · 1955 Eichler</p>
+        <p>An open-plan classic with walls of glass onto a walled garden. Offers reviewed as received.</p>
+        <div class="lc-foot"><span class="tag tag-pending">Pending</span><span class="lc-id">#CT-1039</span></div>
+      </div>
+    </article>
+    <article class="listing-card card" data-status="sold">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Renovated kitchen" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$4,120,000</p>
+        <h3>Midtown remodeled ranch</h3>
+        <p class="lc-meta">4 bd · 3 ba · 2,150 sqft · Sold May 2026</p>
+        <p>Architect-led remodel minutes from El Carmelo. Sold with multiple offers over seven days.</p>
+        <div class="lc-foot"><span class="tag tag-sold">Sold</span><span class="lc-id">#CT-1021</span></div>
+      </div>
+    </article>
+    <article class="listing-card card" data-status="active">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80" alt="Modern home with carport" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$5,875,000</p>
+        <h3>Professorville Craftsman</h3>
+        <p class="lc-meta">5 bd · 4 ba · 3,240 sqft · 1904 landmark</p>
+        <p>A registered Professorville treasure — wide porch, carriage house, and a garden designed for entertaining.</p>
+        <div class="lc-foot"><span class="tag tag-active">Active</span><span class="lc-id">#CT-1051</span></div>
+      </div>
+    </article>
+    <article class="listing-card card" data-status="sold">
+      <figure class="tilt lc-media"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Townhome courtyard" width="900" height="620"></figure>
+      <div class="lc-body">
+        <p class="lc-price">$1,985,000</p>
+        <h3>College Terrace townhome</h3>
+        <p class="lc-meta">2 bd · 2 ba · 1,180 sqft · Sold Mar 2026</p>
+        <p>Walk-everywhere living by Stanford. Perfect first Peninsula purchase or faculty landing pad.</p>
+        <div class="lc-foot"><span class="tag tag-sold">Sold</span><span class="lc-id">#CT-1013</span></div>
+      </div>
+    </article>
+  </div>
+  <p class="empty-note" id="emptyNote" hidden>No listings match that filter right now.</p>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-row">
+    <div>
+      <h2>Off-market opportunities exist.</h2>
+      <p>Some of the best Palo Alto homes never reach the portals. Ask what's quiet this month.</p>
+    </div>
+    <a class="btn btn-light" href="contact.html">Ask about off-market</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CARTER&nbsp;TAPPAN</p><p>Coldwell Banker Realty<br>Palo Alto, California</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+16503256161">(650) 325-6161</a><br><a href="mailto:cartertappan@gmail.com">cartertappan@gmail.com</a></p></div>
+    <div><p class="foot-h">Service area</p><p>Palo Alto · Menlo Park<br>Atherton · Mountain View</p></div>
+  </div>
+  <p class="fineprint container">© 2026 Carter Tappan · Coldwell Banker Realty. Equal Housing Opportunity. DRE #02021417.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

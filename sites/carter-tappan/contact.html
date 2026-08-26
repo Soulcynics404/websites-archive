@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Carter Tappan — Palo Alto Real Estate</title>
+<meta name="description" content="Contact Carter Tappan, Coldwell Banker Palo Alto. Call (650) 325-6161 or request a confidential home valuation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CARTER&nbsp;TAPPAN<span></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Home valuation</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Request a confidential valuation</h1>
+    <p class="lede">Tell me about the property and I'll come back with comps, timing thoughts and an honest range — usually within two business days.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="split contact-split">
+    <form class="contact-card form" id="contactForm" novalidate>
+      <h2>The details</h2>
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email">
+      <label for="cf-phone">Phone</label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+      <label for="cf-intent">I'm thinking about</label>
+      <select id="cf-intent" name="intent">
+        <option>Selling my home</option>
+        <option>Buying a home</option>
+        <option>Both — selling to buy</option>
+        <option>Just curious about value</option>
+      </select>
+      <label for="cf-msg">About the property</label>
+      <textarea id="cf-msg" name="message" rows="5" required placeholder="Address, style (Eichler? ranch?), rough square footage, timing…"></textarea>
+      <button class="btn" type="submit">Send request</button>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+
+    <aside class="info-card">
+      <h2>Carter Tappan</h2>
+      <dl class="facts">
+        <div><dt>Office</dt><dd>Coldwell Banker Realty<br>El Camino Real, Palo Alto, CA</dd></div>
+        <div><dt>Direct</dt><dd><a href="tel:+16503256161">(650) 325-6161</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:cartertappan@gmail.com">cartertappan@gmail.com</a></dd></div>
+        <div><dt>Hours</dt><dd>Mon–Sat · 9:00 – 18:00 PT<br>Sundays at open homes</dd></div>
+      </dl>
+      <div class="tilt info-media"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Bright California living room" width="800" height="560"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-row">
+    <div>
+      <h2>Prefer to just call?</h2>
+      <p>If the phone is easier, it rings straight through.</p>
+    </div>
+    <a class="btn btn-light" href="tel:+16503256161">(650) 325-6161</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CARTER&nbsp;TAPPAN</p><p>Coldwell Banker Realty<br>Palo Alto, California</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="listings.html">Listings</a><br><a href="about.html">About</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+16503256161">(650) 325-6161</a><br><a href="mailto:cartertappan@gmail.com">cartertappan@gmail.com</a></p></div>
+    <div><p class="foot-h">Service area</p><p>Palo Alto · Menlo Park<br>Atherton · Mountain View</p></div>
+  </div>
+  <p class="fineprint container">© 2026 Carter Tappan · Coldwell Banker Realty. Equal Housing Opportunity. DRE #02021417.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
