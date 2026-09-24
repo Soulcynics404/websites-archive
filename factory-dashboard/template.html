@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SITE FACTORY — Control Panel</title>
+<style>
+:root{
+  --bg:#0e0e10; --bg2:#141416; --panel:#18181b; --panel2:#1d1d21;
+  --line:#2a2a2f; --line2:#35353b;
+  --gold:#c9a86a; --gold-dim:#8a744a; --gold-fade:rgba(201,168,106,.12);
+  --ink:#e8e4dc; --ink-dim:#9a968e; --ink-faint:#6b675f;
+  --red:#d96a5b; --red-bg:rgba(217,106,91,.10);
+  --green:#7fb98a; --green-bg:rgba(127,185,138,.10);
+  --amber:#d9a95b; --amber-bg:rgba(217,169,91,.10);
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --mono:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line);padding:28px 32px 0;background:
+  radial-gradient(1200px 300px at 20% -80px, rgba(201,168,106,.07), transparent), var(--bg)}
+.masthead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;max-width:1280px;margin:0 auto}
+.masthead h1{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:.04em;color:var(--ink)}
+.masthead h1 em{font-style:normal;color:var(--gold)}
+.masthead .meta{font-size:12px;color:var(--ink-faint);letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono)}
+
+/* ---------- tabs ---------- */
+nav.tabs{max-width:1280px;margin:22px auto 0;display:flex;gap:2px;overflow-x:auto}
+nav.tabs button{
+  background:none;border:none;border-bottom:2px solid transparent;color:var(--ink-dim);
+  font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  padding:12px 18px 14px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s
+}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+main{max-width:1280px;margin:0 auto;padding:34px 32px 90px}
+section.tab{display:none}
+section.tab.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+h2.sec{font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:6px}
+p.sub{color:var(--ink-dim);font-size:13.5px;margin-bottom:26px}
+
+/* ---------- overview cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:36px}
+.card{background:var(--panel);border:1px solid var(--line);padding:20px 22px;position:relative}
+.card::before{content:"";position:absolute;top:0;left:0;width:34px;height:2px;background:var(--gold)}
+.card .num{font-family:var(--serif);font-size:40px;color:var(--gold);line-height:1.1}
+.card.warn .num{color:var(--red)}
+.card .lbl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-dim);margin-top:8px}
+.catgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.catrow{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--panel);border:1px solid var(--line)}
+.catrow .cname{font-size:13px;color:var(--ink-dim);text-transform:capitalize;letter-spacing:.05em}
+.catrow .cnum{font-family:var(--serif);font-size:22px;color:var(--ink)}
+
+/* ---------- chips / badges ---------- */
+.chip{display:inline-block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--ink-dim);margin:1px 3px 1px 0;white-space:nowrap}
+.chip.gold{color:var(--gold);border-color:var(--gold-dim);background:var(--gold-fade)}
+.chip.green{color:var(--green);border-color:rgba(127,185,138,.4);background:var(--green-bg)}
+.chip.red{color:var(--red);border-color:rgba(217,106,91,.4);background:var(--red-bg)}
+.chip.amber{color:var(--amber);border-color:rgba(217,169,91,.4);background:var(--amber-bg)}
+.badge{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:4px 11px;font-weight:600}
+.badge.PASS{color:var(--green);background:var(--green-bg);border:1px solid rgba(127,185,138,.4)}
+.badge.FAIL{color:var(--red);background:var(--red-bg);border:1px solid rgba(217,106,91,.45)}
+.badge.NEEDS-REBUILD,.badge.NEEDS_REBUILD{color:var(--amber);background:var(--amber-bg);border:1px solid rgba(217,169,91,.4)}
+
+/* ---------- leads table ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.filters label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-right:2px}
+.filters select,.filters input{background:var(--panel);border:1px solid var(--line2);color:var(--ink);padding:8px 12px;font-family:var(--sans);font-size:13px;border-radius:2px}
+.filters select:focus,.filters input:focus{outline:none;border-color:var(--gold-dim)}
+.filters input[type=search]{min-width:220px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:960px}
+thead th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line2);cursor:pointer;user-select:none;white-space:nowrap;background:var(--bg2)}
+thead th:hover{color:var(--gold)}
+thead th .arr{color:var(--gold);margin-left:4px}
+tbody tr.lead-row{cursor:pointer;border-bottom:1px solid var(--line);transition:background .12s}
+tbody tr.lead-row:hover{background:var(--panel2)}
+tbody td{padding:11px 14px;vertical-align:top}
+.biz{font-weight:600;color:var(--ink)}
+.loc{color:var(--ink-dim);font-size:12.5px}
+.num-cell{font-variant-numeric:tabular-nums}
+tr.detail-row td{background:var(--bg2);padding:0;border-bottom:1px solid var(--line)}
+.detail{padding:22px 26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.detail h4{font-family:var(--serif);font-weight:400;font-size:15px;color:var(--gold);margin-bottom:8px;letter-spacing:.03em}
+.detail dl{font-size:13px}
+.detail dt{color:var(--ink-faint);font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;margin-top:9px}
+.detail dd{color:var(--ink);word-break:break-word}
+.actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;grid-column:1/-1}
+.btn{background:none;border:1px solid var(--gold-dim);color:var(--gold);padding:8px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:var(--sans);transition:all .15s}
+.btn:hover{background:var(--gold-fade)}
+.btn.danger{border-color:rgba(217,106,91,.5);color:var(--red)}
+.btn.danger:hover{background:var(--red-bg)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.empty{padding:40px;text-align:center;color:var(--ink-faint);font-style:italic}
+
+/* ---------- sites grid ---------- */
+.sitegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.sitecard{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .15s}
+.sitecard:hover{border-color:var(--line2)}
+.sitecard.fail{border-color:rgba(217,106,91,.5);box-shadow:inset 0 0 0 1px rgba(217,106,91,.25)}
+.thumb{aspect-ratio:16/9;background:
+  linear-gradient(160deg,#232327 0%,#19191d 60%,#141417 100%);
+  border-bottom:1px solid var(--line);position:relative;display:flex;align-items:flex-end;padding:12px}
+.thumb .wire{position:absolute;inset:14px 14px auto;display:flex;flex-direction:column;gap:6px;opacity:.5}
+.thumb .wire i{display:block;height:7px;background:var(--line2);border-radius:2px}
+.thumb .wire i:nth-child(1){width:38%;background:var(--gold-dim);height:10px}
+.thumb .wire i:nth-child(2){width:82%}.thumb .wire i:nth-child(3){width:64%}.thumb .wire i:nth-child(4){width:74%}
+.sitecard.fail .thumb{background:linear-gradient(160deg,#2a1d1b 0%,#1c1414 70%)}
+.sitecard.fail .wire i{background:rgba(217,106,91,.25)}.sitecard.fail .wire i:nth-child(1){background:var(--red)}
+.thumbcode{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:.08em}
+.sitebody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.sitename{font-family:var(--serif);font-size:16.5px;color:var(--ink)}
+.sitemeta{font-size:12px;color:var(--ink-faint);font-family:var(--mono)}
+.reasons{font-size:11.5px;color:var(--red);background:var(--red-bg);border-left:2px solid var(--red);padding:8px 10px;margin-top:auto}
+.reasons li{margin-left:14px;margin-bottom:2px}
+
+/* ---------- timeline ---------- */
+.tl{border-left:1px solid var(--line2);margin-left:8px;padding-left:26px}
+.tl-item{position:relative;padding:14px 0 16px;border-bottom:1px dashed var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-item::before{content:"";position:absolute;left:-31px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--bg)}
+.tl-item.failed::before{background:var(--red)}
+.tl-head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.tl-when{font-family:var(--mono);font-size:11px;color:var(--ink-faint);min-width:118px}
+.tl-who{font-weight:600}
+.tl-sub{font-size:12.5px;color:var(--ink-dim);margin-top:3px;word-break:break-all}
+.tl-sub code{font-family:var(--mono);font-size:11.5px;color:var(--gold-dim)}
+
+/* ---------- errors & lessons ---------- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel-box{background:var(--panel);border:1px solid var(--line);padding:22px 24px}
+.panel-box h3{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--gold);margin-bottom:14px}
+.panel-box h3 small{font-size:11px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.06em;margin-left:8px}
+.errlist li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.errlist li:last-child{border-bottom:none}
+.errlist .url{font-family:var(--mono);font-size:11.5px;word-break:break-all;display:block;margin-top:2px}
+.errlist .http{color:var(--red);font-weight:700;font-family:var(--mono);margin-right:8px}
+.lessons{font-size:13.5px;color:var(--ink-dim);max-height:640px;overflow-y:auto}
+.lessons h2,.lessons h1{font-family:var(--serif);font-size:14.5px;color:var(--gold);margin:16px 0 6px;font-weight:400}
+.lessons ul{margin:4px 0 10px 18px}
+.lessons li{margin-bottom:6px}
+.lessons code{font-family:var(--mono);font-size:11.5px;color:var(--amber);background:var(--amber-bg);padding:1px 5px;border-radius:2px}
+
+footer{border-top:1px solid var(--line);padding:22px 32px;text-align:center;font-size:11.5px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.08em}
+
+@media(max-width:900px){
+  .detail{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  main,header{padding-left:18px;padding-right:18px}
+  .masthead h1{font-size:23px}
+  .card .num{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <h1>Site Factory <em>/ Control Panel</em></h1>
+    <div class="meta">Generated __GENERATED_AT__ · Harsshh Ops</div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="overview" class="active">Overview</button>
+    <button data-tab="leads">Leads</button>
+    <button data-tab="sites">Sites</button>
+    <button data-tab="pitches">Pitches</button>
+    <button data-tab="errors">Errors &amp; Lessons</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="tab active" id="tab-overview">
+  <h2 class="sec">Overview</h2>
+  <p class="sub">Factory state at a glance. Numbers derive live from stats.json, leads.json, pitch_log.jsonl and audit.json at generation time.</p>
+  <div class="cards" id="cards"></div>
+  <h2 class="sec" style="font-size:19px">Leads by category</h2>
+  <p class="sub"></p>
+  <div class="catgrid" id="catgrid"></div>
+</section>
+
+<!-- ============ LEADS ============ -->
+<section class="tab" id="tab-leads">
+  <h2 class="sec">Leads</h2>
+  <p class="sub">Click a row to expand everything known about the lead. Click column headers to sort.</p>
+  <div class="filters">
+    <label>Category</label>
+    <select id="f-cat"><option value="">All</option></select>
+    <label>Min buy score</label>
+    <select id="f-score">
+      <option value="0">Any</option><option value="50">50+</option>
+      <option value="60">60+</option><option value="70">70+</option><option value="80">80+</option>
+    </select>
+    <label>Status</label>
+    <select id="f-status">
+      <option value="">All</option><option value="pitched">Pitched</option>
+      <option value="awaiting">Awaiting reply</option><option value="email">Email found</option>
+      <option value="failed">Send failed</option>
+    </select>
+    <input type="search" id="f-q" placeholder="Search name, city, email…">
+    <span class="chip gold" id="lead-count"></span>
+  </div>
+  <div class="tblwrap">
+    <table id="leads-table">
+      <thead><tr id="leads-head"></tr></thead>
+      <tbody id="leads-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ SITES ============ -->
+<section class="tab" id="tab-sites">
+  <h2 class="sec">Built Sites</h2>
+  <p class="sub">One card per audited site. QA verdict from audit.json — red cards need attention first.</p>
+  <div class="filters">
+    <label>Verdict</label>
+    <select id="s-verdict"><option value="">All</option><option>FAIL</option><option>NEEDS REBUILD</option><option>PASS</option></select>
+    <span class="chip gold" id="site-count"></span>
+  </div>
+  <div class="sitegrid" id="sitegrid"></div>
+</section>
+
+<!-- ============ PITCHES ============ -->
+<section class="tab" id="tab-pitches">
+  <h2 class="sec">Pitches Timeline</h2>
+  <p class="sub">Every outreach email, chronologically. Green dot = delivered, red = send failure.</p>
+  <div class="filters">
+    <select id="p-filter"><option value="">All pitches</option><option value="ok">Delivered only</option><option value="fail">Failed only</option></select>
+    <span class="chip gold" id="pitch-count"></span>
+  </div>
+  <div class="tl" id="timeline"></div>
+</section>
+
+<!-- ============ ERRORS ============ -->
+<section class="tab" id="tab-errors">
+  <h2 class="sec">Errors &amp; Lessons</h2>
+  <p class="sub">Current failures on the left, what the agents learned on the right.</p>
+  <div class="two-col">
+    <div class="panel-box">
+      <h3>Dead Sites <small id="dead-count"></small></h3>
+      <ul class="errlist" id="deadlist"></ul>
+      <h3 style="margin-top:26px">Failed Sends <small id="fail-count"></small></h3>
+      <ul class="errlist" id="faillist"></ul>
+    </div>
+    <div class="panel-box">
+      <h3>Lessons <small>lessons.md</small></h3>
+      <div class="lessons" id="lessons"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>SITE FACTORY CONTROL PANEL · regenerated hourly by build_dashboard.py · display-only controls</footer>
+
+<script>
+const DATA = __DATA_BLOB__;
+
+/* ---------- tabs ---------- */
+document.getElementById('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+});
+
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n==null?'—':n.toLocaleString();
+
+/* ================= OVERVIEW ================= */
+(function(){
+  const o = DATA.overview;
+  const cards = [
+    ['Total Leads', o.total_leads, ''],
+    ['Sites Built', o.sites_built, ''],
+    ['Pitches Sent', o.pitches_sent, `${o.pitches_delivered} delivered · ${o.pitches_failed} failed`],
+    ['Pending Reply', o.pending_reply, 'delivered, no response yet'],
+    ['Dead Sites (404)', o.dead_sites, 'non-200 in audit', true],
+    ['Rebuild Queue', o.rebuild_queue, 'verdict rebuild/fail', true],
+  ];
+  document.getElementById('cards').innerHTML = cards.map(c =>
+    `<div class="card${c[3]?' warn':''}"><div class="num">${fmt(c[1])}</div><div class="lbl">${esc(c[0])}</div>${c[2]?`<div class="lbl" style="margin-top:4px;text-transform:none;letter-spacing:.02em">${esc(c[2])}</div>`:''}</div>`
+  ).join('');
+  document.getElementById('catgrid').innerHTML = Object.entries(o.per_category).map(([k,v])=>
+    `<div class="catrow"><span class="cname">${esc(k)}</span><span class="cnum">${fmt(v)}</span></div>`
+  ).join('');
+})();
+
+/* ================= LEADS ================= */
+let sortKey='buy_score', sortDir=-1, expanded=new Set();
+const COLS=[['name','Business'],['category','Category'],['city','Location'],['rating','Rating'],['reviews','Reviews'],['email','Email'],['phone','Phone'],['buy_score','Score'],['_status','Status']];
+document.getElementById('leads-head').innerHTML = COLS.map(c=>
+  `<th data-k="${c[0]}">${esc(c[1])}<span class="arr"></span></th>`).join('');
+
+function statusChips(l){
+  let s='';
+  if(l._email_found) s+='<span class="chip green">✉ email found</span>';
+  if(l._bad_email) s+='<span class="chip amber">bad email fmt</span>';
+  if(l._pitched) s+='<span class="chip gold">pitched</span>';
+  if(l._awaiting) s+='<span class="chip amber">awaiting reply</span>';
+  if(l._send_failed) s+='<span class="chip red">send failed</span>';
+  return s;
+}
+
+function filteredLeads(){
+  const cat=document.getElementById('f-cat').value,
+        minS=+document.getElementById('f-score').value,
+        st=document.getElementById('f-status').value,
+        q=document.getElementById('f-q').value.toLowerCase();
+  return DATA.leads.filter(l=>{
+    if(cat && l.category!==cat) return false;
+    if((l.buy_score||0)<minS) return false;
+    if(st==='pitched'&&!l._pitched) return false;
+    if(st==='awaiting'&&!l._awaiting) return false;
+    if(st==='email'&&!l._email_found) return false;
+    if(st==='failed'&&!l._send_failed) return false;
+    if(q && ![l.name,l.city,l.state,l.email,l.phone].join(' ').toLowerCase().includes(q)) return false;
+    return true;
+  }).sort((a,b)=>{
+    let x=a[sortKey], y=b[sortKey];
+    if(sortKey==='_status'){x=statusChips(a);y=statusChips(b);}
+    if(x==null||x==='')return 1; if(y==null||y==='')return -1;
+    if(typeof x==='number'&&typeof y==='number')return (x-y)*sortDir;
+    return String(x).localeCompare(String(y))*sortDir;
+  });
+}
+
+function renderLeads(){
+  const rows=filteredLeads();
+  document.getElementById('lead-count').textContent=rows.length+' of '+DATA.leads.length+' leads';
+  document.querySelectorAll('#leads-head th').forEach(th=>{
+    th.querySelector('.arr').textContent = th.dataset.k===sortKey ? (sortDir<0?'▼':'▲') : '';
+  });
+  document.getElementById('leads-body').innerHTML = rows.map((l,i)=>{
+    const idx=DATA.leads.indexOf(l);
+    const open=expanded.has(idx);
+    let row=`<tr class="lead-row${open?' open':''}" data-i="${idx}">
+      <td><span class="biz">${esc(l.name)}</span></td>
+      <td><span class="chip gold">${esc(l.category||'—')}</span></td>
+      <td><span class="loc">${esc(l.city)}, ${esc(l.state)}</span></td>
+      <td class="num-cell">${l.rating!=null?l.rating.toFixed(1)+'★':'—'}</td>
+      <td class="num-cell">${fmt(l.reviews)}</td>
+      <td>${esc(l.email)||'<span class="loc">—</span>'}</td>
+      <td>${esc(l.phone)||'<span class="loc">—</span>'}</td>
+      <td class="num-cell"><strong>${l.buy_score!=null?l.buy_score:'—'}</strong></td>
+      <td>${statusChips(l)}</td>
+    </tr>`;
+    if(open){
+      const pitches=(DATA.pitches||[]).filter(p=>p.lead===l.name);
+      row+=`<tr class="detail-row"><td colspan="9"><div class="detail">
+        <div><h4>Firmographics &amp; Sourcing</h4><dl>
+          <dt>Category</dt><dd>${esc(l.category||'—')}</dd>
+          <dt>Rating / Reviews</dt><dd>${l.rating!=null?l.rating.toFixed(1)+'★':'—'} (${fmt(l.reviews)} reviews)</dd>
+          <dt>City / State</dt><dd>${esc(l.city)}, ${esc(l.state)}</dd>
+          <dt>Buy Score</dt><dd><strong>${l.buy_score!=null?l.buy_score:'—'}</strong></dd>
+          <dt>Found At (source)</dt><dd>${l.found_at?`<a href="${esc(l.found_at)}" target="_blank" rel="noopener">${esc(l.found_at)}</a>`:'—'}</dd>
+          ${l.notes?`<dt>Notes</dt><dd>${esc(l.notes)}</dd>`:''}
+        </dl></div>
+        <div><h4>Contact &amp; Pipeline</h4><dl>
+          <dt>Email</dt><dd>${esc(l.email)||(l._bad_email?`malformed: ${esc(l._bad_email)}`:'not found')}</dd>
+          <dt>Phone</dt><dd>${esc(l.phone)||'—'}</dd>
+          <dt>Status</dt><dd>${statusChips(l)}</dd>
+          <dt>Pitch History (${pitches.length})</dt><dd>${pitches.length?pitches.map(p=>`${p.when} → ${esc(p.to)} via ${esc(p.agent)} [${p.ok?'ok':'FAILED'}]`).join('<br>'):'none yet'}</dd>
+        </dl>
+        <div class="actions">
+          <button class="btn" onclick="alert('[stub] Rebuild site pipeline for '+${JSON.stringify(l.name)})">Rebuild site</button>
+          <button class="btn" onclick="alert('[stub] Send follow-up to '+(${JSON.stringify(l.email||'')}||'no address'))">Send follow-up</button>
+          <button class="btn danger" onclick="alert('[stub] Mark do-not-contact: '+${JSON.stringify(l.name)})">Mark do-not-contact</button>
+        </div></div>
+      </div></td></tr>`;
+    }
+    return row;
+  }).join('') || `<tr><td colspan="9"><div class="empty">No leads match the current filters.</div></td></tr>`;
+}
+
+document.getElementById('leads-body').addEventListener('click', e=>{
+  const tr=e.target.closest('.lead-row'); if(!tr)return;
+  const i=+tr.dataset.i;
+  expanded.has(i)?expanded.delete(i):expanded.add(i);
+  renderLeads();
+});
+['f-cat','f-score','f-status'].forEach(id=>document.getElementById(id).addEventListener('change',renderLeads));
+document.getElementById('f-q').addEventListener('input',renderLeads);
+document.getElementById('leads-head').addEventListener('click',e=>{
+  const th=e.target.closest('th'); if(!th)return;
+  const k=th.dataset.k;
+  if(sortKey===k)sortDir*=-1; else {sortKey=k;sortDir=(k==='name'||k==='category'||k==='city'||k==='_status')?1:-1;}
+  renderLeads();
+});
+(function(){ // populate category filter
+  const cats=[...new Set(DATA.leads.map(l=>l.category).filter(Boolean))].sort();
+  document.getElementById('f-cat').innerHTML += cats.map(c=>`<option>${esc(c)}</option>`).join('');
+})();
+renderLeads();
+
+/* ================= SITES ================= */
+function renderSites(){
+  const v=document.getElementById('s-verdict').value;
+  const sites=DATA.sites.filter(s=>!v||s.verdict===v);
+  document.getElementById('site-count').textContent=sites.length+' of '+DATA.sites.length+' sites';
+  document.getElementById('sitegrid').innerHTML=sites.map(s=>{
+    const badge=s.verdict==='FAIL'?'FAIL':(s.verdict==='NEEDS REBUILD'?'NEEDS-REBUILD':'PASS');
+    return `<div class="sitecard${s.verdict==='FAIL'?' fail':''}">
+      <div class="thumb">
+        <div class="wire"><i></i><i></i><i></i><i></i></div>
+        <span class="thumbcode">HTTP ${s.http||'?'} · ${fmt(s.size_bytes)} B</span>
+      </div>
+      <div class="sitebody">
+        <div class="sitename">${esc(s.business)}</div>
+        <div><span class="badge ${badge}">${s.verdict}</span></div>
+        <div class="sitemeta">${esc(s.city||'')}${s.city?', ':''}${esc(s.category||'')}</div>
+        <div class="sitemeta">${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url.replace(/^https?:\/\//,''))}</a>`:'no url'}</div>
+        <div class="sitemeta">${s.built_at?('built '+esc(s.built_at)):'no pitch record'}</div>
+        <div>${s.pitched?(s.pitch_ok?'<span class="chip green">pitch delivered</span>':'<span class="chip red">pitch failed</span>')+(s.pitched_to?`<span class="chip">${esc(s.pitched_to)}</span>`:''):'<span class="chip">unpitched</span>'}</div>
+        ${(s.verdict!=='PASS'&&s.reasons&&s.reasons.length)?`<ul class="reasons">${s.reasons.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:''}
+      </div>
+    </div>`;
+  }).join('') || '<div class="empty">No sites match.</div>';
+}
+document.getElementById('s-verdict').addEventListener('change',renderSites);
+renderSites();
+
+/* ================= PITCHES ================= */
+function renderPitches(){
+  const f=document.getElementById('p-filter').value;
+  const ps=[...DATA.pitches].reverse().filter(p=>f==='ok'?p.ok:f==='fail'?!p.ok:true);
+  document.getElementById('pitch-count').textContent=ps.length+' of '+DATA.pitches.length+' events';
+  document.getElementById('timeline').innerHTML=ps.map(p=>`
+    <div class="tl-item${p.ok?'':' failed'}">
+      <div class="tl-head">
+        <span class="tl-when">${esc(p.when||'')}</span>
+        <span class="tl-who">${esc(p.lead)}</span>
+        <span class="chip ${p.ok?'green':'red'}">${p.ok?'delivered':'send failed'}</span>
+        <span class="chip">${esc(p.agent)}</span>
+      </div>
+      <div class="tl-sub">→ <code>${esc(p.to)}</code> · site: <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.url.replace(/^https?:\/\//,''))}</a></div>
+    </div>`).join('') || '<div class="empty">Nothing here yet.</div>';
+}
+document.getElementById('p-filter').addEventListener('change',renderPitches);
+renderPitches();
+
+/* ================= ERRORS & LESSONS ================= */
+document.getElementById('dead-count').textContent='('+DATA.dead_sites.length+')';
+document.getElementById('deadlist').innerHTML=DATA.dead_sites.map(d=>`
+  <li><span class="http">HTTP ${d.http||'?'}</span>${esc(d.project.replace(/-/g,' '))}
+    <span class="url">${d.url?`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.url)}</a>`:''}</span>
+  </li>`).join('') || '<li style="color:var(--green)">No dead sites — all audits returned 200.</li>';
+
+document.getElementById('fail-count').textContent='('+DATA.failed_sends.length+')';
+document.getElementById('faillist').innerHTML=DATA.failed_sends.map(f=>`
+  <li>${esc(f.lead)} → <code style="font-family:var(--mono);font-size:11.5px;color:var(--red)">${esc(f.to)}</code>
+    <span class="url">via ${esc(f.agent)} · ${new Date(f.ts*1000).toISOString().slice(0,16).replace('T',' ')} UTC</span>
+  </li>`).join('') || '<li style="color:var(--green)">No failed sends recorded.</li>';
+
+// minimal markdown rendering for lessons.md
+document.getElementById('lessons').innerHTML=(()=> {
+  let md=esc(DATA.lessons_md||'_lessons.md not found_');
+  md=md.replace(/^### (.*)$/gm,'<h2>$1</h2>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h2>$1</h2>');
+  md=md.replace(/`([^`]+)`/g,'<code>$1</code>');
+  md=md.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  md=md.replace(/(^|\n)((?:[-*] .*(?:\n|$))+)/g,(m,p,block)=>
+    p+'<ul>'+block.trim().split('\n').map(li=>'<li>'+li.replace(/^[-*] /,'')+'</li>').join('')+'</ul>');
+  return md.split(/\n{2,}/).map(b=>/^<(ul|h2)/.test(b.trim())?b:'<p>'+b.replace(/\n/g,'<br>')+'</p>').join('');
+})();
+</script>
+</body>
+</html>
