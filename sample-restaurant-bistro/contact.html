@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Réservations — Maison Verte Manhattan</title>
+<meta name="description" content="Find Maison Verte at 3 Rue de Vieux Marché, Manhattan. Hours, directions and table reservations. Call us on (212) 555-0189.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E241C'/%3E%3Ctext x='32' y='42' font-size='30' text-anchor='middle' fill='%23C9A227' font-family='Georgia'%3EB%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">B</span> Maison Verte</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">La Carte</a></li>
+        <li><a href="about.html">Maison</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Nous trouver · Réserver</span>
+    <h1>3 Rue de Vieux Marché, Manhattan.</h1>
+    <p>Follow the brass plaque and the smell of garlic butter. The zinc bar is at the back.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+
+    <!-- hours & info -->
+    <div class="reveal">
+      <div class="info-block">
+        <h3>Horaires — Opening Hours</h3>
+        <table class="hours-table">
+          <tr><td>Sunday – Monday</td><td>Closed</td></tr>
+          <tr><td>Tuesday – Thursday</td><td>17:30 – 23:00</td></tr>
+          <tr><td>Friday – Saturday</td><td>17:30 – 23:30</td></tr>
+          <tr><td>Lunch (Fri only)</td><td>12:00 – 14:30</td></tr>
+        </table>
+      </div>
+      <div class="info-block">
+        <h3>Nous trouver — Getting Here</h3>
+        <p>Maison Verte, 3 Rue de Vieux Marché, Manhattan.<br>
+        8 minutes from Central Station via the old quarter. Valet parking Friday–Saturday evenings.</p>
+        <p style="margin-top:10px"><strong>Téléphone:</strong> <a href="tel:(212) 555-0189">(212) 555-0189</a><br>
+        <strong>Email:</strong> bonjour@{RESTAURANT_NAME.toLowerCase().replace(/[^a-z]/g,"")}.co.uk</p>
+      </div>
+      <div class="info-block">
+        <h3>Bon à savoir — Good to Know</h3>
+        <p>Step-free access via the courtyard. Corkage waived Tue–Wed. Children’s portions of any plat on request. Private dining for 12 in the cellar room.</p>
+      </div>
+    </div>
+
+    <!-- reservation form -->
+    <div class="reveal">
+      <form class="res-form">
+        <h2 style="margin-bottom:6px;font-style:italic;font-weight:500;font-size:1.6rem">Réservation</h2>
+        <p class="muted" style="font-size:.88rem;margin-bottom:8px">Parties above 8 and the cellar room: please telephone (212) 555-0189.</p>
+        <div class="res-row">
+          <div><label for="c-name">Name</label><input id="c-name" required placeholder="Full name"></div>
+          <div><label for="c-phone">Telephone</label><input id="c-phone" type="tel" required placeholder="07••• ••••••"></div>
+        </div>
+        <div class="res-row">
+          <div><label for="c-date">Date</label><input id="c-date" type="date" required></div>
+          <div><label for="c-time">Time</label><input id="c-time" type="time" required value="19:30"></div>
+        </div>
+        <label for="c-guests">Guests</label>
+        <select id="c-guests"><option>2 guests</option><option selected>4 guests</option><option>6 guests</option><option>8+ (telephone)</option></select>
+        <label for="c-seating">Seating preference</label>
+        <select id="c-seating"><option>No preference</option><option>Window table</option><option>Near the bar</option><option>Cellar room (12+)</option></select>
+        <label for="c-note">Notes</label>
+        <textarea id="c-note" rows="3" placeholder="Allergies, celebrations…"></textarea>
+        <button class="btn btn-brass" type="submit">Request Reservation</button>
+        <p class="form-note">We confirm by telephone within one working hour during opening times.</p>
+      </form>
+
+      <div class="map-frame">
+        <iframe title="Map to Maison Verte in Manhattan" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=2.33%2C48.85%2C2.37%2C48.87&layer=mapnik"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><h4>Maison Verte</h4><p style="color:#C9CDBF">Classical bistro cooking in Manhattan since 2012.</p></div>
+    <div><h4>Explore</h4><ul><li><a href="menu.html">La Carte</a></li><li><a href="about.html">La Maison</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+    <div><h4>Visit</h4><ul><li>3 Rue de Vieux Marché, Manhattan</li><li>(212) 555-0189</li><li>Tue–Sat, 17:30–23:00</li></ul></div>
+  </div>
+  <div class="footer-base">© 2026 Maison Verte, Manhattan.</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
