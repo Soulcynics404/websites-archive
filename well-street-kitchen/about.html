@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Well Street Kitchen | A Hackney Neighbourhood Kitchen Since Day One</title>
+<meta name="description" content="The story of Well Street Kitchen — a small kitchen on 203 Well Street, Hackney E9 serving modern British brunch to the neighbourhood since day one. Rated 4.7★ by 683 locals.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7A8B6F;--sage-deep:#5C6B53;
+  --ivory:#FBF8F1;--charcoal:#26241F;
+  --terracotta:#C96F4A;--gold:#C9A227;
+  --shadow-ink:rgba(38,36,31,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Work Sans',system-ui,sans-serif;background:var(--ivory);color:var(--charcoal);line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,4vw,3rem);background:rgba(251,248,241,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,36,31,.08)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand-mark{width:42px;height:42px;border-radius:50%;background:var(--sage);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;box-shadow:2px 3px 0 rgba(38,36,31,.18)}
+.brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.1;color:var(--charcoal)}
+.brand-name small{display:block;font-family:'Work Sans',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep)}
+.nav-links{display:flex;gap:clamp(.9rem,2vw,1.8rem);align-items:center}
+.nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
+.nav-links a:hover{background-size:100% 2px}
+.nav-links a.active{color:var(--sage-deep);font-weight:600}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
+
+.page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2.6rem;background:
+  radial-gradient(ellipse 70% 90% at 80% -30%, rgba(122,139,111,.16), transparent 60%),
+  radial-gradient(ellipse 60% 80% at 10% -20%, rgba(201,111,74,.10), transparent 60%),var(--ivory)}
+.page-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,4.6vw,3.5rem);margin-bottom:.8rem;text-wrap:balance}
+.page-head p{color:#55524a;max-width:42rem;margin:0 auto}
+
+.hero-img-wrap{max-width:1150px;margin:-1rem auto 0;padding:0 clamp(1.2rem,4vw,3rem)}
+.hero-img{width:100%;height:clamp(280px,44vw,480px);object-fit:cover;border-radius:26px;border:6px solid #fff;box-shadow:0 30px 60px -20px var(--shadow-ink)}
+
+.section{padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem)}
+.narrow{max-width:760px;margin:0 auto}
+.narrow h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.2vw,2.4rem);margin:2.2rem 0 .8rem}
+.narrow h2:first-child{margin-top:0}
+.narrow p{color:#4a4740;margin-bottom:1.1rem}
+.narrow em{color:var(--sage-deep)}
+.drop::first-letter{font-family:'Fraunces',serif;font-size:3.3em;float:left;line-height:.85;padding-right:.12em;color:var(--terracotta)}
+
+.quote-band{background:var(--sage-deep);color:var(--ivory);text-align:center;padding:clamp(3rem,6vw,4.5rem) 1.5rem}
+.quote-band blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.35rem,3vw,2rem);max-width:820px;margin:0 auto 1rem;line-height:1.35}
+.quote-band cite{font-style:normal;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,248,241,.95)}
+
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:2.5rem auto 0;padding:0 clamp(1.2rem,4vw,3rem)}
+.value-card{background:#fff;border-radius:18px;padding:1.7rem 1.6rem;box-shadow:0 14px 32px -14px var(--shadow-ink);border-top:3px solid var(--sage);transition:transform .3s ease,box-shadow .3s ease}
+.value-card:hover{transform:translateY(-6px);box-shadow:0 24px 46px -16px rgba(38,36,31,.26)}
+.value-card .ico{font-size:1.9rem;margin-bottom:.7rem}
+.value-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.25rem;margin-bottom:.45rem}
+.value-card p{font-size:.93rem;color:#55524a;margin:0}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;max-width:1150px;margin:2.5rem auto 0;padding:0 clamp(1.2rem,4vw,3rem)}
+.gallery figure{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 16px 36px -16px var(--shadow-ink)}
+.gallery img{width:100%;height:270px;object-fit:cover;transition:transform .7s ease}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(transparent, rgba(38,36,31,.88));
+  color:var(--ivory);font-size:.86rem;padding:2.4rem 1.1rem .9rem;font-weight:500;
+}
+
+.team-band{display:flex;gap:clamp(2rem,5vw,4rem);align-items:center;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem)}
+.team-band img{flex:1 1 360px;min-width:300px;border-radius:22px;border:6px solid #fff;box-shadow:0 26px 50px -18px var(--shadow-ink)}
+.team-copy{flex:1 1 380px;min-width:300px}
+.team-copy h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1rem}
+.team-copy p{color:#4a4740;margin-bottom:1rem}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:.9rem 1.6rem;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary:hover{background:#b85c38;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
+.btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
+
+footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
+.footer-grid{max-width:1150px;margin:0 auto;padding:3.4rem clamp(1.2rem,4vw,3rem) 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem}
+.footer-grid h4{font-family:'Fraunces',serif;color:var(--ivory);font-weight:500;font-size:1.1rem;margin-bottom:.9rem}
+.footer-grid a{color:rgba(251,248,241,.82);text-decoration:none;display:block;margin-bottom:.5rem;font-size:.94rem}
+.footer-grid a:hover{color:var(--terracotta)}
+.hours-line{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin-bottom:.45rem}
+.hours-line b{font-weight:500;color:var(--ivory)}
+.footer-note{border-top:1px solid rgba(251,248,241,.12);text-align:center;padding:1.2rem;font-size:.8rem;color:rgba(251,248,241,.5)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease, transform .75s cubic-bezier(.2,.65,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name">Well Street Kitchen<small>Brunch · Hackney E9</small></span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="menu.html" class="nav-cta">Order Pickup</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+
+<header class="page-head">
+  <h1>Born on Well Street,<br>raised by Hackney</h1>
+  <p>The story of a very small kitchen with a very big table — and the neighbourhood that pulled up a chair.</p>
+</header>
+
+<div class="hero-img-wrap reveal">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" alt="Warm cafe interior with wooden tables and plants">
+</div>
+
+<section class="section">
+  <div class="narrow reveal in-view-check">
+    <h2>It started with one espresso machine</h2>
+    <p class="drop">We opened Well Street Kitchen with one espresso machine, a four-burner griddle and a simple belief: the best brunch spot in E9 shouldn't feel like a concept — it should feel like someone's kitchen. Ours, ideally.</p>
+    <p>Day one was quiet. Day two, the lady from the bakery two doors down came in "just to see". By the first weekend there was a queue, and someone had already asked if we did bottomless filter. (We do. Before noon. Always have.)</p>
+
+    <h2>Grown by the neighbourhood</h2>
+    <p>We've never advertised. Every table of ours exists because someone told their neighbour, their nan, their postman. That's what people mean when they call us a <em>neighbourhood gem</em> — and after <strong>683 Google reviews at 4.7★</strong>, we've decided to believe them.</p>
+    <p>Our eggs come from a farm that delivers before we've unlocked the door. The sourdough arrives warm from the bakery next door. The Well Street market — yards from our window — sorts the rest.</p>
+
+    <h2>What "modern British" means here</h2>
+    <p>It means a full English that respects tradition but isn't afraid of harissa. It means hotcakes next to kippers. It means halal-friendly plates without a footnote, proper vegan options that aren't afterthoughts, and tea served in a pot big enough for a proper catch-up.</p>
+    <p>Above all it means generous food, fairly priced, cooked by people who'll probably say hello when you walk back in tomorrow.</p>
+  </div>
+</section>
+
+<section class="quote-band">
+  <blockquote>"You can taste when a kitchen loves its street. This one adores it."</blockquote>
+  <cite>— The Well Word, local newsletter</cite>
+</section>
+
+<section class="section">
+  <div class="narrow reveal in-view-check" style="text-align:center">
+    <h2 style="text-align:center">What we stand on</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="ico">🥚</div>
+      <h3>Proper ingredients</h3>
+      <p>Free-range always, market-first whenever Well Street has it, and bread from next door — literally next door.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="ico">🫶</div>
+      <h3>Neighbours first</h3>
+      <p>Regulars' orders remembered, dogs watered, pushchairs parked, birthdays celebrated uninvited.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="ico">🌱</div>
+      <h3>Everyone's table</h3>
+      <p>Halal-friendly cooking, vegans treated as guests not problems, kids' plates till late, no fuss ever.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="ico">☕</div>
+      <h3>Coffee taken seriously</h3>
+      <p>Small-batch espresso, rotating guest roasts, and a flat white we'd put up against any in London.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#F3EFE4;padding-bottom:0">
+  <div class="narrow reveal in-view-check" style="text-align:center;margin-bottom:0">
+    <h2 style="text-align:center;margin:0 0 .4rem">A few mornings around here</h2>
+    <p style="color:#55524a;text-align:center">Shot on actual Well Street mornings — no styling required.</p>
+  </div>
+  <div class="gallery">
+    <figure class="reveal"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Barista working behind the counter" loading="lazy"><figcaption>Mornings start behind the machine at 7am</figcaption></figure>
+    <figure class="reveal"><img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=800&q=80" alt="Sunlight through cafe windows" loading="lazy"><figcaption>The front window — best people-watching in E9</figcaption></figure>
+    <figure class="reveal"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Tables set for service" loading="lazy"><figcaption>Tables set and waiting for the regulars</figcaption></figure>
+  </div>
+</section>
+
+<section class="team-band">
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Chef plating breakfast dishes in the kitchen" loading="lazy">
+  <div class="team-copy reveal">
+    <h2>Pull up a chair</h2>
+    <p>Five years in, the espresso machine is still the same one (rebuilt twice), the griddle is seasoned with five years of Sundays, and most orders are still known by heart.</p>
+    <p>Whether it's your first visit or your four-hundredth — the kettle's on, the hotcakes are rising, and there's a table with your name on it. Sort of. We write names on the waitlist now.</p>
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.2rem">
+      <a class="btn-primary" href="menu.html">Come hungry →</a>
+      <a class="btn-ghost" href="contact.html">Find us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name" style="color:var(--ivory)">Well Street Kitchen<small style="color:rgba(251,248,241,.6)">Brunch · Hackney E9</small></span></a>
+      <p style="font-size:.9rem;margin-top:.9rem;max-width:250px">Modern British brunch, specialty coffee and a warm welcome — seven days a week.</p>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <p style="font-size:.94rem;line-height:1.7">203 Well Street<br>London E9 6QU<br><a href="tel:+447904558596">07904 558596</a></p>
+    </div>
+    <div>
+      <h4>Opening hours</h4>
+      <div class="hours-line"><b>Mon – Fri</b><span>7:30 AM – 4:00 PM</span></div>
+      <div class="hours-line"><b>Saturday</b><span>8:00 AM – 4:30 PM</span></div>
+      <div class="hours-line"><b>Sunday</b><span>9:00 AM – 3:30 PM</span></div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Order</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-note">© 2026 Well Street Kitchen · 203 Well St, London E9 6QU</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+/* scroll reveals */
+var els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>

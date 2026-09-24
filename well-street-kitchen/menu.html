@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu &amp; Order Online — Well Street Kitchen | Brunch in Hackney E9</title>
+<meta name="description" content="Full menu for Well Street Kitchen: brunch classics, hotcakes, grain bowls, specialty coffee. Add to your pickup order — ready in 15 minutes. 203 Well St, London E9 6QU.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,500;0,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7A8B6F;--sage-deep:#5C6B53;
+  --ivory:#FBF8F1;--charcoal:#26241F;
+  --terracotta:#C96F4A;--gold:#C9A227;
+  --shadow-ink:rgba(38,36,31,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Work Sans',system-ui,sans-serif;background:var(--ivory);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1rem,4vw,3rem);background:rgba(251,248,241,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,36,31,.08)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand-mark{width:42px;height:42px;border-radius:50%;background:var(--sage);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;box-shadow:2px 3px 0 rgba(38,36,31,.18)}
+.brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.1;color:var(--charcoal)}
+.brand-name small{display:block;font-family:'Work Sans',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep)}
+.nav-links{display:flex;gap:clamp(.9rem,2vw,1.8rem);align-items:center}
+.nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;transition:background-size .28s ease}
+.nav-links a:hover{background-size:100% 2px}
+.nav-links a.active{color:var(--sage-deep);font-weight:600}
+.nav-cta{background:#A85534!important;color:#fff!important;padding:.5rem 1.15rem!important;border-radius:999px!important;box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
+
+.cart-btn{
+  position:relative;display:inline-flex;align-items:center;gap:.5rem;
+  background:#5C6B53!important;color:#fff!important;
+  padding:.5rem 1.05rem!important;border-radius:999px!important;
+  font-weight:600;cursor:pointer;border:none;font-family:inherit;font-size:.92rem;
+  background-size:0 0!important;box-shadow:2px 3px 0 rgba(38,36,31,.18);
+}
+.cart-btn:hover{transform:translateY(-1px)}
+#cartCount{background:#fff;color:var(--sage-deep);font-size:.75rem;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
+
+.page-head{text-align:center;padding:8.2rem clamp(1.2rem,4vw,3rem) 2.4rem;background:
+  radial-gradient(ellipse 70% 90% at 85% -30%, rgba(122,139,111,.16), transparent 60%),
+  radial-gradient(ellipse 60% 80% at 5% -20%, rgba(201,111,74,.10), transparent 60%),var(--ivory)}
+.page-head h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);margin-bottom:.7rem;text-wrap:balance}
+.page-head p{color:#55524a;max-width:40rem;margin:0 auto}
+.page-head .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);border:1px solid rgba(122,139,111,.45);background:rgba(122,139,111,.10);padding:.38rem .9rem;border-radius:999px;margin-bottom:1.1rem}
+
+.cat-tabs{position:sticky;top:64px;z-index:900;display:flex;gap:.6rem;overflow-x:auto;justify-content:center;padding:1rem clamp(1rem,4vw,2rem);background:rgba(251,248,241,.92);backdrop-filter:blur(10px);border-bottom:1px dashed rgba(122,139,111,.4);scrollbar-width:none}
+.cat-tabs::-webkit-scrollbar{display:none}
+.cat-tab{flex-shrink:0;font-family:inherit;font-size:.88rem;font-weight:600;color:var(--charcoal);background:#fff;border:1.5px solid rgba(38,36,31,.14);border-radius:999px;padding:.5rem 1.15rem;cursor:pointer;transition:all .22s ease}
+.cat-tab:hover{border-color:var(--sage)}
+.cat-tab.active{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
+
+.menu-section{padding:2.6rem clamp(1.2rem,4vw,3rem);max-width:1180px;margin:0 auto}
+.menu-section h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.3rem}
+.menu-section .sub{color:#6a665c;font-size:.95rem;margin-bottom:1.8rem}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.6rem}
+.dish-card{position:relative;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 16px 36px -16px var(--shadow-ink);display:flex;flex-direction:column;transition:transform .35s ease, box-shadow .35s ease}
+.dish-card:hover{transform:translateY(-7px);box-shadow:0 30px 54px -20px rgba(38,36,31,.28)}
+.dish-card figure{height:190px;overflow:hidden;margin:0;position:relative}
+.dish-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.dish-card:hover img{transform:scale(1.06)}
+.tagchip{position:absolute;top:12px;left:12px;background:rgba(251,248,241,.94);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:.28rem .7rem;text-transform:uppercase}
+.tagchip.veg{color:#4C7A3F}.tagchip.hot{color:#A85534}.tagchip.halal{color:#3E7D5B}
+.dish-body{padding:1.15rem 1.25rem 1.25rem;display:flex;flex-direction:column;flex-grow:1}
+.dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin-bottom:.35rem}
+.dish-top h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;line-height:1.2}
+.price-tag{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--sage-deep);font-weight:600;white-space:nowrap}
+.dish-body p{font-size:.9rem;color:#5d594f;margin-bottom:1.1rem;flex-grow:1}
+.addbtn{
+  width:100%;font-family:inherit;font-weight:600;font-size:.95rem;
+  background:var(--ivory);color:var(--charcoal);
+  border:1.5px solid var(--charcoal);border-radius:999px;
+  padding:.68rem 1rem;cursor:pointer;
+  transition:all .22s ease;
+}
+.addbtn:hover{background:var(--charcoal);color:var(--ivory)}
+.addbtn.added{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff}
+
+.order-bar{
+  position:fixed;left:50%;bottom:1.1rem;transform:translateX(-50%) translateY(150%);
+  z-index:1100;width:min(560px,calc(100vw - 2rem));
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:var(--charcoal);color:var(--ivory);
+  border-radius:999px;padding:.8rem .8rem .8rem 1.5rem;
+  box-shadow:0 18px 44px -12px rgba(38,36,31,.5);
+  transition:transform .4s cubic-bezier(.34,1.3,.64,1);
+}
+.order-bar.show{transform:translateX(-50%) translateY(0)}
+.order-bar b{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem}
+.order-bar small{display:block;font-size:.75rem;opacity:.72;font-family:'Work Sans',sans-serif}
+.view-order-btn{background:#A85534;color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:.95rem;padding:.72rem 1.35rem;cursor:pointer;transition:background .2s}
+.view-order-btn:hover{background:#b85c38}
+
+/* drawer */
+.drawer-overlay{position:fixed;inset:0;background:rgba(38,36,31,.45);z-index:1200;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-overlay.open{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:1300;
+  width:min(430px,94vw);
+  background:var(--ivory);
+  transform:translateX(105%);
+  transition:transform .38s cubic-bezier(.32,.9,.35,1);
+  display:flex;flex-direction:column;
+  box-shadow:-24px 0 60px rgba(38,36,31,.25);
+}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem 1rem;border-bottom:1px solid rgba(38,36,31,.1)}
+.drawer-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem}
+.close-x{background:none;border:none;font-size:1.7rem;line-height:1;cursor:pointer;color:var(--charcoal);padding:.2rem .5rem}
+.close-x:hover{color:var(--terracotta)}
+.drawer-body{flex-grow:1;overflow-y:auto;padding:1.2rem 1.5rem}
+.empty-cart{text-align:center;color:#6a665c;padding:3.5rem 1rem}
+.empty-cart .big{font-size:2.6rem;margin-bottom:.6rem}
+.ci{display:flex;gap:.9rem;align-items:center;padding:.9rem 0;border-bottom:1px dashed rgba(38,36,31,.14)}
+.ci-thumb{width:54px;height:54px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.ci-info{flex-grow:1;min-width:0}
+.ci-info b{display:block;font-size:.96rem}
+.ci-info span{font-size:.84rem;color:#6a665c}
+.qty{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.qty button{width:27px;height:27px;border-radius:50%;border:1.5px solid var(--charcoal);background:#fff;font-weight:700;font-size:.95rem;cursor:pointer;line-height:1;transition:all .18s}
+.qty button:hover{background:var(--charcoal);color:#fff}
+.qty b{min-width:18px;text-align:center;font-size:.95rem}
+.drawer-foot{padding:1.2rem 1.5rem 1.5rem;border-top:1px solid rgba(38,36,31,.1);background:#fff}
+.totline{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:.45rem}
+.totline.grand{font-weight:700;font-size:1.12rem;font-family:'Fraunces',serif;margin:.7rem 0 1rem}
+.checkout{width:100%;background:#A85534;color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;font-size:1.02rem;padding:.95rem;cursor:pointer;box-shadow:3px 4px 0 rgba(38,36,31,.22);transition:all .2s}
+.checkout:hover{background:#b85c38;transform:translateY(-2px);box-shadow:4px 6px 0 rgba(38,36,31,.25)}
+
+.confirm-pop{
+  position:fixed;inset:0;z-index:1400;display:flex;align-items:center;justify-content:center;padding:1.5rem;
+  background:rgba(38,36,31,.5);opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.confirm-pop.show{opacity:1;pointer-events:auto}
+.pop-card{background:var(--ivory);border-radius:24px;max-width:480px;width:100%;padding:2.3rem 2.1rem;text-align:center;box-shadow:0 40px 80px -20px rgba(38,36,31,.5);transform:translateY(14px);transition:transform .3s}
+.confirm-pop.show .pop-card{transform:none}
+.pop-check{width:64px;height:64px;border-radius:50%;background:var(--sage);color:#fff;font-size:1.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem}
+.pop-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.65rem;margin-bottom:.5rem}
+.pop-card p{color:#55524a;font-size:.95rem;margin-bottom:.4rem}
+.order-ref{display:inline-block;background:#fff;border:1.5px dashed var(--sage);border-radius:10px;padding:.45rem 1rem;font-weight:700;letter-spacing:.06em;margin:.7rem 0 1.3rem}
+.pop-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;border-radius:999px;padding:.8rem 1.5rem;transition:all .2s}
+.btn-primary{background:#A85534;color:#fff;border:none;box-shadow:3px 4px 0 rgba(38,36,31,.22)}
+.btn-primary:hover{background:#b85c38;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
+.btn-ghost:hover{background:var(--charcoal);color:var(--ivory)}
+
+footer{background:var(--charcoal);color:rgba(251,248,241,.82);margin-top:3rem}
+.footer-grid{max-width:1150px;margin:0 auto;padding:3.4rem clamp(1.2rem,4vw,3rem) 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem}
+.footer-grid h4{font-family:'Fraunces',serif;color:var(--ivory);font-weight:500;font-size:1.1rem;margin-bottom:.9rem}
+.footer-grid a{color:rgba(251,248,241,.82);text-decoration:none;display:block;margin-bottom:.5rem;font-size:.94rem}
+.footer-grid a:hover{color:var(--terracotta)}
+.hours-line{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin-bottom:.45rem}
+.hours-line b{font-weight:500;color:var(--ivory)}
+.footer-note{border-top:1px solid rgba(251,248,241,.12);text-align:center;padding:1.2rem;font-size:.8rem;color:rgba(251,248,241,.5)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name">Well Street Kitchen<small>Brunch · Hackney E9</small></span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button class="cart-btn" id="openCart" aria-label="Open your order">🛒 Order <span id="cartCount">0</span></button>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+
+<header class="page-head">
+  <span class="kicker">Kitchen open · pickup in ~15 min</span>
+  <h1>The Menu</h1>
+  <p>Everything made to order from a kitchen the size of your mate's — worth the wait, never rushed. Tap <b>Add to Order</b>, then collect on Well Street.</p>
+</header>
+
+<div class="cat-tabs" role="tablist" aria-label="Menu categories">
+  <button class="cat-tab active" data-cat="brunch">Brunch Classics</button>
+  <button class="cat-tab" data-cat="sweet">Sweet Plates</button>
+  <button class="cat-tab" data-cat="bowls">Bowls &amp; Greens</button>
+  <button class="cat-tab" data-cat="sides">Sides &amp; Toasts</button>
+  <button class="cat-tab" data-cat="coffee">Coffee &amp; Drinks</button>
+  <button class="cat-tab" data-cat="bakery">Bakery</button>
+</div>
+
+<main>
+<!-- ============ BRUNCH ============ -->
+<section class="menu-section" id="cat-brunch">
+  <h2>Brunch Classics</h2>
+  <p class="sub">Served till 4pm · free-range eggs, proper bread, no shortcuts</p>
+  <div class="dish-grid">
+
+    <article class="dish-card" data-id="full-monty">
+      <figure><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80" alt="The Well Street Full breakfast board" loading="lazy">
+        <span class="tagchip halal">Halal friendly</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>The Well Street Full</h3><span class="price-tag">£11.50</span></div>
+        <p>Free-range eggs any style, herby sausages, smoked streaky bacon*, roasted tomato, mushrooms, sourdough.</p>
+        <button class="addbtn">+ Add to Order · £11.50</button>
+      </div>
+    </article>
+
+    <article class="dish-card" data-id="veggie-breakfast">
+      <figure><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Veggie breakfast plate with eggs and toast" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Garden Veggie Full</h3><span class="price-tag">£10.00</span></div>
+        <p>Eggs any style, halloumi, garlicky mushrooms, roast tomatoes, smashed peas, toasted sourdough.</p>
+        <button class="addbtn">+ Add to Order · £10.00</button>
+      </div>
+    </article>
+
+    <article class="dish-card" data-id="avo-toast">
+      <figure><img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=800&q=80" alt="Avocado toast with poached eggs" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Well Street Avo Toast</h3><span class="price-tag">£9.25</span></div>
+        <p>Sourdough, smashed avo, poached eggs, chilli flakes, lemon oil, dukkah. The one that started it all.</p>
+        <button class="addbtn">+ Add to Order · £9.25</button>
+      </div>
+    </article>
+
+    <article class="dish-card" data-id="eggs-royale">
+      <figure><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="Eggs benedict style dish" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Eggs Well Royale</h3><span class="price-tag">£10.50</span></div>
+        <p>Poached eggs on muffins with wilted spinach and silky hollandaise — add smoked salmon or bacon.</p>
+        <button class="addbtn">+ Add to Order · £10.50</button>
+      </div>
+    </article>
+
+    <article class="dish-card" data-id="shakshuka">
+      <figure><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" alt="Shakshuka style baked eggs" loading="lazy">
+        <span class="tagchip veg">Veggie</span><span class="tagchip halal">Halal</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>E9 Shakshuka</h3><span class="price-tag">£9.95</span></div>
+        <p>Baked eggs in smoky pepper-tomato sauce, feta, herbs, charred flatbread for mopping.</p>
+        <button class="addbtn">+ Add to Order · £9.95</button>
+      </div>
+    </article>
+
+    <article class="dish-card" data-id="breakfast-muffin">
+      <figure><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&crossorigin&w=800&q=80" alt="Breakfast muffin sandwich" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>The Commuter Muffin</h3><span class="price-tag">£6.50</span></div>
+        <p>Fried egg, cheese, and your choice of sausage or bacon in a toasted muffin. Grab-and-go hero.</p>
+        <button class="addbtn">+ Add to Order · £6.50</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SWEET ============ -->
+<section class="menu-section" id="cat-sweet">
+  <h2>Sweet Plates</h2>
+  <p class="sub">Because someone at the table always will</p>
+  <div class="dish-grid">
+    <article class="dish-card" data-id="hotcakes">
+      <figure><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="Ricotta hotcake stack with berries" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Ricotta Hotcakes</h3><span class="price-tag">£9.75</span></div>
+        <p>Tall cloud-light pancakes, macerated berries, whipped butter, proper maple syrup.</p>
+        <button class="addbtn">+ Add to Order · £9.75</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="french-toast">
+      <figure><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80" alt="French toast with fruit" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Brioche French Toast</h3><span class="price-tag">£9.50</span></div>
+        <p>Custard-soaked brioche griddled golden, caramelised banana, salted caramel, toasted pecans.</p>
+        <button class="addbtn">+ Add to Order · £9.50</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="berry-pancakes">
+      <figure><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=800&q=80" alt="Pancakes with berry compote" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Compote Pancakes</h3><span class="price-tag">£8.95</span></div>
+        <p>Buttermilk stack with warm berry compote and vanilla mascarpone cream.</p>
+        <button class="addbtn">+ Add to Order · £8.95</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ BOWLS ============ -->
+<section class="menu-section" id="cat-bowls">
+  <h2>Bowls &amp; Greens</h2>
+  <p class="sub">For the "something lighter" crowd — we see you</p>
+  <div class="dish-grid">
+    <article class="dish-card" data-id="grain-bowl">
+      <figure><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Garden grain bowl" loading="lazy">
+        <span class="tagchip veg">Vegan option</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Garden Grain Bowl</h3><span class="price-tag">£10.25</span></div>
+        <p>Herby freekeh, roast squash, pickled slaw, feta, tahini-lemon dressing.</p>
+        <button class="addbtn">+ Add to Order · £10.25</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="superfood-salad">
+      <figure><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Superfood salad plate" loading="lazy">
+        <span class="tagchip veg">Vegan</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Market Superfood Salad</h3><span class="price-tag">£9.75</span></div>
+        <p>Kale, quinoa, avocado, beetroot, seeds and a sharp lemon vinaigrette.</p>
+        <button class="addbtn">+ Add to Order · £9.75</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="salmon-bowl">
+      <figure><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Salmon and greens bowl" loading="lazy">
+        <span class="tagchip hot">Chef's pick</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Hot-Smoked Salmon Bowl</h3><span class="price-tag">£12.50</span></div>
+        <p>Flaked hot-smoked salmon, new potatoes, greens, soft egg, mustard dill dressing.</p>
+        <button class="addbtn">+ Add to Order · £12.50</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SIDES ============ -->
+<section class="menu-section" id="cat-sides">
+  <h2>Sides &amp; Toasts</h2>
+  <p class="sub">The supporting cast that steals scenes</p>
+  <div class="dish-grid">
+    <article class="dish-card" data-id="hash-browns">
+      <figure><img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=800&q=80" alt="Golden hash browns and breakfast sides" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Triple-Cooked Hash Browns</h3><span class="price-tag">£4.25</span></div>
+        <p>Crisp outside, fluffy inside, properly seasoned. Get two portions. Trust us.</p>
+        <button class="addbtn">+ Add to Order · £4.25</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="halloumi-toasts">
+      <figure><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80" alt="Grilled halloumi on toast with salad" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Griddled Halloumi Toast</h3><span class="price-tag">£7.25</span></div>
+        <p>Sourdough, honey-drizzled halloumi, rocket, chilli flake honey glaze.</p>
+        <button class="addbtn">+ Add to Order · £7.25</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="smashed-av-side">
+      <figure><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt="Smashed avocado side" loading="lazy">
+        <span class="tagchip veg">Vegan</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Smashed Peas &amp; Avo Side</h3><span class="price-tag">£4.75</span></div>
+        <p>Minted smashed peas and avocado on toast, olive oil, sea salt.</p>
+        <button class="addbtn">+ Add to Order · £4.75</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ COFFEE ============ -->
+<section class="menu-section" id="cat-coffee">
+  <h2>Coffee &amp; Drinks</h2>
+  <p class="sub">House espresso, rotating guests, bottomless filter before noon</p>
+  <div class="dish-grid">
+    <article class="dish-card" data-id="flat-white">
+      <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Flat white with latte art" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>House Flat White</h3><span class="price-tag">£3.40</span></div>
+        <p>Small-batch espresso, silky microfoam. Our most ordered drink by a mile.</p>
+        <button class="addbtn">+ Add to Order · £3.40</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="latte">
+      <figure><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=800&q=80" alt="Latte on cafe table" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Oat Latte</h3><span class="price-tag">£3.90</span></div>
+        <p>Double shot, steamed oat milk, dusting of cocoa. Creamiest on the block.</p>
+        <button class="addbtn">+ Add to Order · £3.90</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="filter">
+      <figure><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Pour over filter coffee" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Batch Brew Filter</h3><span class="price-tag">£2.80</span></div>
+        <p>Rotating single origin, brewed all morning. Free top-ups before noon.</p>
+        <button class="addbtn">+ Add to Order · £2.80</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="fresh-juice">
+      <figure><img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=800&q=80" alt="Smoothie bowls and fresh juice" loading="lazy">
+        <span class="tagchip veg">Vegan</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Well St Green Juice</h3><span class="price-tag">£4.50</span></div>
+        <p>Apple, cucumber, spinach, ginger, lime — pressed fresh each morning.</p>
+        <button class="addbtn">+ Add to Order · £4.50</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ BAKERY ============ -->
+<section class="menu-section" id="cat-bakery">
+  <h2>Bakery</h2>
+  <p class="sub">Out of the oven from 7:30am — gone by noon-ish</p>
+  <div class="dish-grid">
+    <article class="dish-card" data-id="almond-croissant">
+      <figure><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Fresh croissants" loading="lazy"></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Almond Croissant</h3><span class="price-tag">£3.60</span></div>
+        <p>Twice-baked, frangipane-filled, snowed under with icing sugar.</p>
+        <button class="addbtn">+ Add to Order · £3.60</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="sourdough-jam">
+      <figure><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Sourdough loaf slices" loading="lazy">
+        <span class="tagchip veg">Vegan</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Sourdough &amp; Jam</h3><span class="price-tag">£3.95</span></div>
+        <p>Toasted house sourdough, proper butter or coconut oil, seasonal jam.</p>
+        <button class="addbtn">+ Add to Order · £3.95</button>
+      </div>
+    </article>
+    <article class="dish-card" data-id="polenta-cake">
+      <figure><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" alt="Berry polenta cake slice" loading="lazy">
+        <span class="tagchip veg">Veggie</span></figure>
+      <div class="dish-body">
+        <div class="dish-top"><h3>Lemon Polenta Cake</h3><span class="price-tag">£4.25</span></div>
+        <p>Gluten-free wedge with sharp lemon syrup and crème fraîche.</p>
+        <button class="addbtn">+ Add to Order · £4.25</button>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- floating order bar -->
+<div class="order-bar" id="orderBar">
+  <div><b id="barTotal">£0.00</b><small id="barMeta">Your order is empty</small></div>
+  <button class="view-order-btn" id="viewOrderBtn">View Order →</button>
+</div>
+
+<!-- cart drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Your order">
+  <div class="drawer-head">
+    <h2>Your Order</h2>
+    <button class="close-x" id="closeCart" aria-label="Close order panel">×</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="totline"><span>Subtotal</span><span id="sumSubtotal">£0.00</span></div>
+    <div class="totline"><span>Packaging (one-off)</span><span id="sumPackaging">£0.00</span></div>
+    <div class="totline grand"><span>Total</span><span id="sumTotal">£0.00</span></div>
+    <button class="checkout" id="checkoutBtn">Place Pickup Order →</button>
+    <p style="text-align:center;font-size:.78rem;color:#6a665c;margin-top:.7rem">Pay at collection · we'll have it ready in ~15 min · call <a href="tel:+447904558596" style="color:var(--sage-deep)">07904 558596</a> for anything bigger</p>
+  </div>
+  <div class="confirm-pop" id="confirmPop">
+    <div class="pop-card">
+      <div class="pop-check">✓</div>
+      <h3>Order placed!</h3>
+      <p>Your food's going on the grill. Show this ref at the counter:</p>
+      <div class="order-ref" id="orderRef">WSK-0000</div>
+      <p>Ready in about 15 minutes · pay on collection</p>
+      <div class="pop-actions">
+        <a class="btn-primary" href="index.html">Back to Home</a>
+        <a class="btn-ghost" href="contact.html">Find Us</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a class="brand" href="index.html"><span class="brand-mark">W</span><span class="brand-name" style="color:var(--ivory)">Well Street Kitchen<small style="color:rgba(251,248,241,.6)">Brunch · Hackney E9</small></span></a>
+      <p style="font-size:.9rem;margin-top:.9rem;max-width:250px">Modern British brunch, specialty coffee and a warm welcome — seven days a week.</p>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <p style="font-size:.94rem;line-height:1.7">203 Well Street<br>London E9 6QU<br><a href="tel:+447904558596">07904 558596</a></p>
+    </div>
+    <div>
+      <h4>Opening hours</h4>
+      <div class="hours-line"><b>Mon – Fri</b><span>7:30 AM – 4:00 PM</span></div>
+      <div class="hours-line"><b>Saturday</b><span>8:00 AM – 4:30 PM</span></div>
+      <div class="hours-line"><b>Sunday</b><span>9:00 AM – 3:30 PM</span></div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Order</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-note">© 2026 Well Street Kitchen · 203 Well St, London E9 6QU</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var STORE_KEY='wsk_order_v1';
+var PACKAGING_FEE=0.35;
+
+var MENU=[
+ {id:"full-monty",name:"The Well Street Full",price:11.50,img:"https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=200&q=60"},
+ {id:"veggie-breakfast",name:"Garden Veggie Full",price:10.00,img:"https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=200&q=60"},
+ {id:"avo-toast",name:"Well Street Avo Toast",price:9.25,img:"https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=200&q=60"},
+ {id:"eggs-royale",name:"Eggs Well Royale",price:10.50,img:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=200&q=60"},
+ {id:"shakshuka",name:"E9 Shakshuka",price:9.95,img:"https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=200&q=60"},
+ {id:"breakfast-muffin",name:"The Commuter Muffin",price:6.50,img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=60"},
+ {id:"hotcakes",name:"Ricotta Hotcakes",price:9.75,img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=200&q=60"},
+ {id:"french-toast",name:"Brioche French Toast",price:9.50,img:"https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=200&q=60"},
+ {id:"berry-pancakes",name:"Compote Pancakes",price:8.95,img:"https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=200&q=60"},
+ {id:"grain-bowl",name:"Garden Grain Bowl",price:10.25,img:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=60"},
+ {id:"superfood-salad",name:"Market Superfood Salad",price:9.75,img:"https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=60"},
+ {id:"salmon-bowl",name:"Hot-Smoked Salmon Bowl",price:12.50,img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=200&q=60"},
+ {id:"hash-browns",name:"Triple-Cooked Hash Browns",price:4.25,img:"https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=200&q=60"},
+ {id:"halloumi-toast",name:"Griddled Halloumi Toast",price:7.25,img:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=200&q=60"},
+ {id:"smashed-av-side",name:"Smashed Peas & Avo Side",price:4.75,img:"https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=200&q=60"},
+ {id:"flat-white",name:"House Flat White",price:3.40,img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=60"},
+ {id:"latte",name:"Oat Latte",price:3.90,img:"https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=200&q=60"},
+ {id:"filter",name:"Batch Brew Filter",price:2.80,img:"https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=200&q=60"},
+ {id:"fresh-juice",name:"Well St Green Juice",price:4.50,img:"https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=200&q=60"},
+ {id:"almond-croissant",name:"Almond Croissant",price:3.60,img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=60"},
+ {id:"sourdough-jam",name:"Sourdough & Jam",price:3.95,img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=60"},
+ {id:"polenta-cake",name:"Lemon Polenta Cake",price:4.25,img:"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=200&q=60"}
+];
+
+var state={items:{}}; // id -> qty
+function load(){try{state.items=JSON.parse(localStorage.getItem(STORE_KEY))||{}}catch(e){state.items={}}}
+function save(){localStorage.setItem(STORE_KEY,JSON.stringify(state.items))}
+function money(n){return '£'+n.toFixed(2)}
+function count(){return Object.values(state.items).reduce(function(a,b){return a+b},0)}
+function subtotal(){return Object.entries(state.items).reduce(function(a,pair){
+  var m=MENU.find(function(x){return x.id===pair[0]});
+  return m ? a+m.price*pair[1] : a;
+},0)}
+
+function renderAll(){
+  // badge
+  var n=count();
+  document.getElementById('cartCount').textContent=n;
+  // bar
+  var bar=document.getElementById('orderBar');
+  if(n>0){bar.classList.add('show');}else{bar.classList.remove('show');}
+  document.getElementById('barTotal').textContent=money(subtotal()+ (n>0?PACKAGING_FEE:0));
+  document.getElementById('barMeta').textContent = n>0 ? n+' item'+(n>1?'s':'')+' · ready in ~15 min' : 'Your order is empty';
+  // drawer lines
+  var wrap=document.getElementById('cartItems');
+  var ids=Object.keys(state.items);
+  if(ids.length===0){
+    wrap.innerHTML='<div class="empty-cart"><div class="big">🥞</div><b>Your order is looking peckish</b><p style="margin-top:.4rem">Add something tasty from the menu.</p></div>';
+  } else {
+    wrap.innerHTML='';
+    ids.forEach(function(id){
+      var m=MENU.find(function(x){return x.id===id}); if(!m)return;
+      var q=state.items[id];
+      var row=document.createElement('div'); row.className='ci';
+      row.innerHTML=
+        '<img class="ci-thumb" src="'+m.img+'" alt="">'+
+        '<div class="ci-info"><b>'+m.name+'</b><span>'+money(m.price)+' each</span>'+
+          '<div style="margin-top:.45rem"><button class="rm" aria-label="Remove '+m.name+'">Remove</button></div></div>'+
+        '<div class="qty"><button class="dec" aria-label="One less '+m.name+'">−</button><b>'+q+'</b><button class="inc" aria-label="One more '+m.name+'">+</button></div>';
+      row.querySelector('.rm').style.cssText='background:none;border:none;color:#B3402A;font-size:.78rem;cursor:pointer;text-decoration:underline;padding:0';
+      row.querySelector('.rm').addEventListener('click',function(){delete state.items[id];persist();});
+      row.querySelector('.dec').addEventListener('click',function(){state.items[id]--;if(state.items[id]<1)delete state.items[id];persist();});
+      row.querySelector('.inc').addEventListener('click',function(){state.items[id]++;persist();});
+      wrap.appendChild(row);
+    });
+  }
+  // totals
+  var sub=subtotal(), pack=n>0?PACKAGING_FEE:0;
+  document.getElementById('sumSubtotal').textContent=money(sub);
+  document.getElementById('sumPackaging').textContent=money(pack);
+  document.getElementById('sumTotal').textContent=money(sub+pack);
+  save();
+}
+
+function persist(){renderAll();}
+
+/* wire add buttons */
+document.querySelectorAll('.dish-card').forEach(function(card){
+  var id=card.dataset.id;
+  var btn=card.querySelector('.addbtn');
+  btn.addEventListener('click',function(){
+    state.items[id]=(state.items[id]||0)+1;
+    renderAll();
+    btn.classList.add('added');btn.textContent='✓ Added!';
+    setTimeout(function(){btn.classList.remove('added');btn.textContent='+ Add to Order · £'+(MENU.find(function(x){return x.id===id})||{}).price.toFixed(2)},900);
+  });
+});
+
+/* drawer open/close */
+var drawer=document.getElementById('cartDrawer'),overlay=document.getElementById('drawerOverlay');
+function openDrawer(){drawer.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden'}
+function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('openCart').addEventListener('click',openDrawer);
+document.getElementById('viewOrderBtn').addEventListener('click',openDrawer);
+document.getElementById('closeCart').addEventListener('click',closeDrawer);
+overlay.addEventListener('click',closeDrawer);
+
+/* checkout -> confirm pop (client-side order summary) */
+document.getElementById('checkoutBtn').addEventListener('click',function(){
+  if(count()===0)return;
+  closeDrawer();
+  var total=subtotal()+PACKAGING_FEE;
+  var ref='WSK-'+String(Math.floor(1000+Math.random()*9000));
+  document.getElementById('orderRef').textContent=ref;
+  try{sessionStorage.setItem('wsk_last_order',JSON.stringify({ref:ref,total:total,items:state.items,at:new Date().toISOString()}))}catch(e){}
+  state.items={};renderAll();
+  document.getElementById('confirmPop').classList.add('show');
+});
+document.getElementById('confirmPop').addEventListener('click',function(e){
+  if(e.target===this)this.classList.remove('show');
+});
+
+/* category tabs */
+document.querySelectorAll('.cat-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    var el=document.getElementById('cat-'+tab.dataset.cat);
+    if(el){
+      var y=el.getBoundingClientRect().top+window.scrollY-130;
+      window.scrollTo({top:y,behavior:'smooth'});
+    }
+  });
+});
+
+load();
+renderAll();
+})();
+</script>
+</body>
+</html>

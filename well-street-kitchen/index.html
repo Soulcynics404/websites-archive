@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Well Street Kitchen — Modern British Brunch in Hackney, East London</title>
+<meta name="description" content="Well Street Kitchen, 203 Well St, London E9 6QU. Modern British brunch, specialty coffee and all-day plates. Rated 4.7★ from 683 Google reviews. Call 07904 558596.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7A8B6F;
+  --sage-deep:#5C6B53;
+  --ivory:#FBF8F1;
+  --charcoal:#26241F;
+  --terracotta:#C96F4A;
+  --gold:#C9A227;
+  --shadow-ink:rgba(38,36,31,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Work Sans',system-ui,sans-serif;
+  background:var(--ivory);
+  color:var(--charcoal);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:'Fraunces',Georgia,serif}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem clamp(1rem,4vw,3rem);
+  background:rgba(251,248,241,.82);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(38,36,31,.08);
+}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand-mark{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--sage);
+  color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;
+  box-shadow:2px 3px 0 rgba(38,36,31,.18);
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.brand:hover .brand-mark{transform:rotate(-10deg) scale(1.06)}
+.brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;line-height:1.1}
+.brand-name small{display:block;font-family:'Work Sans',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep)}
+.nav-links{display:flex;gap:clamp(.9rem,2vw,1.8rem);align-items:center}
+.nav-links a{
+  text-decoration:none;font-size:.92rem;font-weight:500;color:var(--charcoal);
+  padding-bottom:3px;background:linear-gradient(var(--sage),var(--sage)) left bottom / 0 2px no-repeat;
+  transition:background-size .28s ease;
+}
+.nav-links a:hover{background-size:100% 2px}
+.nav-links a.active{color:var(--sage-deep);font-weight:600}
+.nav-cta{
+  background:#A85534!important;color:#fff!important;
+  padding:.5rem 1.15rem!important;border-radius:999px;
+  box-shadow:2px 3px 0 rgba(38,36,31,.2);
+  transition:transform .2s ease, box-shadow .2s ease!important;
+}
+.nav-cta:hover{background:#b85c38!important;transform:translateY(-2px);box-shadow:3px 5px 0 rgba(38,36,31,.25);background-size:0 0!important}
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .nav{padding-bottom:.9rem}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;padding:0 11px;background:none;border:1.5px solid rgba(38,36,31,.25);border-radius:10px;cursor:pointer}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);border-radius:2px;transition:transform .22s ease,opacity .22s ease}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:999;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;padding:5.4rem 1.6rem 1.6rem;background:var(--ivory);border-left:1px solid rgba(38,36,31,.08);box-shadow:-18px 0 44px rgba(38,36,31,.16);transform:translateX(105%);transition:transform .26s ease}
+  .nav-links.open{transform:none}
+  .nav-links a,.nav-links button{font-size:1.02rem}
+  body.nav-open{overflow:hidden}
+  body.nav-open::before{content:"";position:fixed;inset:0;z-index:998;background:rgba(38,36,31,.45)}
+}
+
+/* ---------- HERO (3D parallax scene) ---------- */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  perspective:1100px;
+  overflow:hidden;
+  padding:8rem 1.5rem 4rem;
+  background:
+    radial-gradient(ellipse 90% 65% at 70% -10%, rgba(122,139,111,.20), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 8% 108%, rgba(201,111,74,.13), transparent 62%),
+    var(--ivory);
+}
+/* slow-drifting grain-free texture blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;z-index:0}
+.blob.b1{width:46vw;height:46vw;min-width:340px;min-height:340px;background:rgba(122,139,111,.30);top:-14%;left:-12%;animation:drift 26s ease-in-out infinite alternate}
+.blob.b2{width:38vw;height:38vw;min-width:280px;min-height:280px;background:rgba(201,111,74,.20);bottom:-16%;right:-10%;animation:drift 32s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(5%,7%) scale(1.09)}}
+/* fine grid floor for depth cue */
+.hero-floor{
+  position:absolute;left:-30%;right:-30%;bottom:-6%;height:52%;
+  background-image:linear-gradient(rgba(122,139,111,.13) 1px, transparent 1px),linear-gradient(90deg, rgba(122,139,111,.13) 1px, transparent 1px);
+  background-size:54px 54px;
+  transform:rotateX(66deg);transform-origin:bottom center;
+  mask-image:linear-gradient(to top, rgba(0,0,0,.75), transparent 82%);
+  -webkit-mask-image:linear-gradient(to top, rgba(0,0,0,.75), transparent 82%);
+  pointer-events:none;z-index:0;
+}
+.hero-inner{
+  position:relative;z-index:3;
+  display:flex;align-items:center;justify-content:space-between;gap:3rem;
+  width:min(1180px,100%);
+  transform-style:preserve-3d;
+}
+.hero-copy{max-width:560px;will-change:transform}
+.kicker{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sage-deep);
+  border:1px solid rgba(122,139,111,.45);
+  background:rgba(122,139,111,.10);
+  padding:.42rem .95rem;border-radius:999px;margin-bottom:1.4rem;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--terracotta);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,111,74,.45)}60%{box-shadow:0 0 0 7px rgba(201,111,74,0)}}
+h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(2.6rem,6vw,4.6rem);
+  line-height:1.04;letter-spacing:-.01em;
+  margin-bottom:1.2rem;
+  text-wrap:balance;
+}
+h1 em{font-style:italic;color:var(--sage-deep)}
+.lede{font-size:clamp(1rem,1.4vw,1.17rem);color:#4a4740;max-width:33rem;margin-bottom:2rem}
+.lede strong{color:var(--charcoal)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.4rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;border:none;
+  padding:.95rem 1.7rem;border-radius:999px;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+  will-change:transform;
+}
+.btn-primary{background:#A85534;color:#fff;box-shadow:3px 5px 0 rgba(38,36,31,.22)}
+.btn-primary:hover{transform:translate(-2px,-3px);box-shadow:6px 9px 0 rgba(38,36,31,.24)}
+.btn-primary:active{transform:translate(1px,2px);box-shadow:2px 3px 0 rgba(38,36,31,.2)}
+.btn-ghost{background:transparent;color:var(--charcoal);border:1.5px solid var(--charcoal)}
+.btn-ghost:hover{background:var(--charcoal);color:var(--ivory);transform:translateY(-2px)}
+.rating-row{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.stars{color:#8C6510;letter-spacing:2px;font-size:1.05rem;text-shadow:0 1px 1px rgba(255,255,255,.6)}
+.rating-row b{font-size:1.05rem}
+.rating-row span{font-size:.92rem;color:#5d594f}
+.rating-row .sep{opacity:.4}
+
+/* hero visual: stacked 3D food cards */
+.hero-scene{
+  position:relative;width:min(480px,44vw);aspect-ratio:4/4.6;
+  transform-style:preserve-3d;flex-shrink:0;
+}
+.card3d{
+  position:absolute;border-radius:22px;overflow:hidden;
+  box-shadow:0 30px 60px -18px var(--shadow-ink), 0 12px 24px -12px rgba(38,36,31,.25);
+  will-change:transform;
+}
+.card3d img{width:100%;height:100%;object-fit:cover}
+.card-main{
+  width:78%;aspect-ratio:4/4.7;top:6%;left:11%;
+  z-index:3;
+  border:6px solid #fff;
+  animation:bob 7s ease-in-out infinite;
+}
+.card-back{
+  width:52%;aspect-ratio:1/1.05;top:0;right:-4%;
+  z-index:1;border:5px solid #fff;
+  animation:bob 8.5s ease-in-out infinite reverse;
+}
+.card-side{
+  width:40%;aspect-ratio:1/1;bottom:2%;left:-6%;
+  z-index:2;border:5px solid #fff;
+  animation:bob 6s ease-in-out infinite;
+  animation-delay:.9s;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.chip{
+  position:absolute;z-index:5;
+  background:rgba(251,248,241,.94);
+  border:1px solid rgba(38,36,31,.08);
+  border-radius:16px;
+  box-shadow:0 14px 30px -10px rgba(38,36,31,.3);
+  padding:.6rem 1rem;font-size:.85rem;font-weight:600;
+  backdrop-filter:blur(6px);
+  white-space:nowrap;
+  will-change:transform;
+}
+.chip small{display:block;font-weight:400;color:#6a665c;font-size:.72rem}
+.chip.c1{top:16%;left:-14%}
+.chip.c2{bottom:24%;right:-12%}
+.chip.c3{bottom:-4%;left:8%}
+.chip .up{color:var(--sage-deep)}
+@media(max-width:900px){
+  .hero-inner{flex-direction:column;text-align:center;gap:2.6rem}
+  .hero-copy{max-width:640px;display:flex;flex-direction:column;align-items:center}
+  .hero-scene{width:min(420px,86vw)}
+  .chip.c1{left:0}.chip.c2{right:0}
+}
+
+/* ---------- TICKER STRIP ---------- */
+.ticker{
+  position:relative;z-index:4;
+  background:var(--charcoal);color:var(--ivory);
+  overflow:hidden;white-space:nowrap;
+  border-top:3px solid var(--sage);border-bottom:3px solid var(--sage);
+  padding:.8rem 0;
+  font-family:'Fraunces',serif;font-size:1.02rem;letter-spacing:.04em;
+}
+.ticker-track{display:inline-block;animation:tick 34s linear infinite}
+.ticker span{margin:0 1.6rem}
+.ticker i{color:var(--terracotta);font-style:normal;margin-right:1.6rem}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SECTION SHELL + SCROLL REVEALS ---------- */
+.section{padding:clamp(4rem,8vw,6.5rem) clamp(1.2rem,4vw,3rem)}
+.section-head{max-width:720px;margin:0 auto 3.2rem;text-align:center}
+.section-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.12;margin-bottom:.8rem;text-wrap:balance}
+.section-head p{color:#55524a;font-size:1.04rem}
+.reveal{opacity:0;transform:translateY(34px) scale(.985);transition:opacity .8s cubic-bezier(.2,.65,.3,1), transform .8s cubic-bezier(.2,.65,.3,1);will-change:transform,opacity}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.12s}
+.reveal[data-delay="2"]{transition-delay:.24s}
+.reveal[data-delay="3"]{transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
+/* ---------- SIGNATURE DISHES ---------- */
+.dishes-section{background:linear-gradient(180deg,var(--ivory),#F3EFE4)}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;max-width:1180px;margin:0 auto}
+.dish-card{
+  position:relative;border-radius:20px;overflow:hidden;background:#fff;
+  box-shadow:0 16px 36px -16px var(--shadow-ink);
+  transition:transform .45s cubic-bezier(.2,.65,.3,1), box-shadow .45s ease;
+  transform-style:preserve-3d;
+}
+.dish-card:hover{transform:translateY(-9px) rotateX(2.4deg);box-shadow:0 34px 60px -22px rgba(38,36,31,.3)}
+.dish-card figure{height:230px;overflow:hidden;margin:0}
+.dish-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.dish-card:hover img{transform:scale(1.07)}
+.dish-body{padding:1.25rem 1.35rem 1.5rem}
+.dish-body h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.28rem;margin-bottom:.35rem}
+.dish-body p{font-size:.92rem;color:#5d594f;margin-bottom:.9rem}
+.price-tag{
+  font-family:'Fraunces',serif;font-size:1.14rem;color:var(--sage-deep);font-weight:600;
+  float:right;
+}
+.dishes-cta{text-align:center;margin-top:3rem}
+
+/* ---------- NUMBERS BAND ---------- */
+.numbers{background:var(--sage-deep);color:var(--ivory)}
+.numbers .section-head h2{color:var(--ivory)}
+.numbers .section-head p{color:rgba(251,248,241,.95)}
+.numbers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2rem;max-width:1050px;margin:0 auto;text-align:center}
+.num-item b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:#fff}
+.num-item b em{font-style:normal;color:#FFE49B}
+.num-item span{font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;color:#FFE49B}
+
+/* ---------- STORY SPLIT ---------- */
+.story-split{
+  display:flex;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  max-width:1150px;margin:0 auto;flex-wrap:wrap;
+}
+.story-imgs{position:relative;flex:1 1 380px;min-width:300px}
+.story-imgs img{border-radius:20px;border:5px solid #fff;box-shadow:0 24px 50px -18px rgba(38,36,31,.28);width:100%}
+.story-imgs .im2{position:absolute;width:56%;right:-6%;bottom:-12%;transform:rotate(3deg)}
+.story-copy{flex:1 1 380px;min-width:300px}
+.story-copy h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.12;margin-bottom:1rem}
+.story-copy p{color:#55524a;margin-bottom:1rem}
+.story-copy .btn{margin-top:1rem}
+@media(max-width:800px){.story-imgs{margin-bottom:2.5rem}}
+
+/* ---------- REVIEWS PREVIEW STRIP ---------- */
+.rev-strip{background:#F3EFE4}
+.rev-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;max-width:1150px;margin:0 auto 2.6rem}
+.rev-card{
+  background:#fff;border-radius:18px;padding:1.5rem 1.6rem;
+  box-shadow:0 14px 32px -14px var(--shadow-ink);
+  border-top:3px solid var(--sage);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.rev-card:hover{transform:translateY(-6px);box-shadow:0 26px 48px -18px rgba(38,36,31,.26)}
+.rev-card .stars{font-size:.95rem}
+.rev-card p{font-size:.95rem;color:#4a4740;margin:.7rem 0 1rem}
+.rev-meta{display:flex;align-items:center;gap:.7rem;font-size:.84rem;color:#6a665c}
+.avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--sage);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:.9rem;flex-shrink:0;
+  text-shadow:0 1px 2px rgba(38,36,31,.45);
+}
+.glogo{
+  margin-left:auto;color:#e7711b;font-family:'Product Sans',Arial,sans-serif;font-weight:700;font-style:italic;font-size:1rem;
+}
+.strip-cta{text-align:center}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--charcoal);color:rgba(251,248,241,.82)}
+.footer-grid{
+  max-width:1150px;margin:0 auto;
+  padding:3.6rem clamp(1.2rem,4vw,3rem) 2rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.4rem;
+}
+.footer-grid h4{font-family:'Fraunces',serif;color:var(--ivory);font-weight:500;font-size:1.1rem;margin-bottom:.9rem}
+.footer-grid a{color:rgba(251,248,241,.82);text-decoration:none;display:block;margin-bottom:.5rem;font-size:.94rem}
+.footer-grid a:hover{color:var(--terracotta)}
+.footer-brand .brand-name{color:var(--ivory)}
+.footer-brand .brand-name small{color:rgba(251,248,241,.6)}
+.open-badge{display:inline-block;background:rgba(122,139,111,.25);color:#DCE7D4;font-size:.76rem;font-weight:600;letter-spacing:.08em;padding:.3rem .8rem;border-radius:999px;margin-top:.8rem}
+.hours-line{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin-bottom:.45rem}
+.hours-line b{font-weight:500;color:var(--ivory)}
+.footer-note{border-top:1px solid rgba(251,248,241,.12);text-align:center;padding:1.2rem;font-size:.8rem;color:rgba(251,248,241,.5)}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <a class="brand" href="index.html" aria-label="Well Street Kitchen home">
+    <span class="brand-mark">W</span>
+    <span class="brand-name">Well Street Kitchen<small>Brunch · Hackney E9</small></span>
+  </a>
+  <div class="nav-links" id="navlinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="menu.html" class="nav-cta">Order Pickup</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');
+  if(!t||!l)return;
+  function close(){t.classList.remove('open');l.classList.remove('open');document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false')}
+  t.addEventListener('click',function(){var o=!l.classList.contains('open');t.classList.toggle('open',o);l.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false')});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="heroScene">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero-floor"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy" data-depth="14">
+      <span class="kicker"><span class="dot"></span> Hackney's neighbourhood brunch kitchen · Est. on Well Street</span>
+      <h1>Proper British brunch, <em>done properly.</em></h1>
+      <p class="lede">Slow mornings, strong coffee and generous plates on <strong>203 Well Street, E9</strong>. The local favourite behind <strong>683 five-star stories</strong> — pop in or order pickup in minutes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="menu.html">See the Menu →</a>
+        <a class="btn btn-ghost" href="tel:+447904558596">☎ 07904 558596</a>
+      </div>
+      <div class="rating-row">
+        <span class="stars">★★★★★</span><b>4.7</b>
+        <span class="sep">|</span><span>683 Google reviews</span>
+        <span class="sep">|</span><span>Halal-friendly · Veggie-heavy</span>
+      </div>
+    </div>
+
+    <div class="hero-scene" data-depth="26" aria-hidden="true">
+      <figure class="card3d card-back" data-depthx="34">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy">
+      </figure>
+      <figure class="card3d card-main" data-depthx="58">
+        <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=800&q=80" alt="Avocado toast with poached egg" loading="lazy" fetchpriority="high">
+      </figure>
+      <figure class="card3d card-side" data-depthx="80">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy">
+      </figure>
+      <div class="chip c1" data-depthx="104">☕ Flat whites, all day<small>House-roasted espresso</small></div>
+      <div class="chip c2" data-depthx="88"><span class="up">★ 4.7</span> neighbourhood gem<small>683 reviews &amp; counting</small></div>
+      <div class="chip c3" data-depthx="120">🥑 Fresh from Well St market<small>Sourced yards away</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== TICKER ===================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <i>✳</i><span>Fresh pastries every morning</span><i>✳</i><span>Bottomless filter before noon</span><i>✳</i><span>Dog-friendly garden out back</span><i>✳</i><span>Weekend specials from the market</span><i>✳</i><span>Kids' plates till 4pm</span>
+    <i>✳</i><span>Fresh pastries every morning</span><i>✳</i><span>Bottomless filter before noon</span><i>✳</i><span>Dog-friendly garden out back</span><i>✳</i><span>Weekend specials from the market</span><i>✳</i><span>Kids' plates till 4pm</span>
+  </div>
+</div>
+
+<!-- ===================== SIGNATURES ===================== -->
+<section class="section dishes-section">
+  <div class="section-head reveal">
+    <h2>The plates people come back for</h2>
+    <p>Brunch classics with a modern British accent — everything cooked to order, nothing rushed but you.</p>
+  </div>
+  <div class="dish-grid">
+    <article class="dish-card reveal">
+      <figure><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Full English breakfast plate" loading="lazy"></figure>
+      <div class="dish-body">
+        <span class="price-tag">£11.50</span>
+        <h3>The Well Street Full</h3>
+        <p>Free-range eggs any style, dry-cured bacon, herby sausages, roasted tomato, sourdough toast.</p>
+      </div>
+    </article>
+    <article class="dish-card reveal" data-delay="1">
+      <figure><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="Fluffy pancake stack with berries" loading="lazy"></figure>
+      <div class="dish-body">
+        <span class="price-tag">£9.75</span>
+        <h3>Ricotta Hotcakes</h3>
+        <p>Tall, cloud-light pancakes with macerated berries, whipped butter and proper maple syrup.</p>
+      </div>
+    </article>
+    <article class="dish-card reveal" data-delay="2">
+      <figure><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Fresh salad bowl" loading="lazy"></figure>
+      <div class="dish-body">
+        <span class="price-tag">£10.25</span>
+        <h3>Garden Grain Bowl</h3>
+        <p>Herby freekeh, roast squash, pickled slaw, feta and tahini-lemon dressing. Vegan on request.</p>
+      </div>
+    </article>
+    <article class="dish-card reveal" data-delay="3">
+      <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Flat white with latte art" loading="lazy"></figure>
+      <div class="dish-body">
+        <span class="price-tag">£3.40</span>
+        <h3>House Flat White</h3>
+        <p>Small-batch espresso, silky microfoam. Our most ordered drink — by a mile.</p>
+      </div>
+    </article>
+  </div>
+  <div class="dishes-cta reveal"><a class="btn btn-primary" href="menu.html">Build your order on the full menu →</a></div>
+</section>
+
+<!-- ===================== NUMBERS ===================== -->
+<section class="section numbers">
+  <div class="section-head reveal">
+    <h2>A little kitchen with big numbers</h2>
+    <p>We count in cups poured, doors opened — and neighbours who became regulars.</p>
+  </div>
+  <div class="numbers-grid">
+    <div class="num-item reveal"><b>4.7<em>★</em></b><span>Google rating</span></div>
+    <div class="num-item reveal" data-delay="1"><b id="counterReviews" data-target="683">0</b><span>Google reviews</span></div>
+    <div class="reveal num-item" data-delay="2"><b id="counterCoffees" data-target="214000">0</b><span>Cups poured since day one</span></div>
+    <div class="num-item reveal" data-delay="3"><b>7<em> days</em></b><span>Open every week</span></div>
+  </div>
+</section>
+
+<!-- ===================== STORY TEASER ===================== -->
+<section class="section">
+  <div class="story-split">
+    <div class="story-imgs reveal">
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80" alt="Inside Well Street Kitchen — warm cafe interior" loading="lazy">
+      <img class="im2" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Pouring a flat white at the counter" loading="lazy">
+    </div>
+    <div class="story-copy reveal" data-delay="1">
+      <span class="kicker">Our story</span>
+      <h2>Born on Well Street, raised by Hackney</h2>
+      <p>We opened with one espresso machine, a griddle and a simple idea: the best brunch spot in E9 should feel like someone's kitchen — because it is.</p>
+      <p>Five years on we still know most orders by heart. That's what a neighbourhood gem means to us.</p>
+      <a class="btn btn-ghost" href="about.html">Read our story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEW TEASERS ===================== -->
+<section class="section rev-strip">
+  <div class="section-head reveal">
+    <h2>What the neighbourhood says</h2>
+    <p>Real words from real regulars — read them all on our reviews wall.</p>
+  </div>
+  <div class="rev-cards">
+    <div class="rev-card reveal">
+      <span class="stars">★★★★★</span>
+      <p>"Absolutely brilliant brunch — the hotcakes alone are worth crossing London for."</p>
+      <div class="rev-meta"><span class="avatar">S</span><span><b>Sarah M.</b> · 2 weeks ago</span><span class="glogo">G</span></div>
+    </div>
+    <div class="rev-card reveal" data-delay="1">
+      <span class="stars">★★★★★</span>
+      <p>"Proper local gem. Friendly faces, faultless flat whites and the garden in summer is heaven."</p>
+      <div class="rev-meta"><span class="avatar">J</span><span><b>James O.</b> · 1 month ago</span><span class="glogo">G</span></div>
+    </div>
+    <div class="rev-card reveal" data-delay="2">
+      <span class="stars">★★★★★</span>
+      <p>"Our Sunday ritual since they opened. Best full English in E9, no contest."</p>
+      <div class="rev-meta"><span class="avatar">P</span><span><b>Priya K.</b> · 3 weeks ago</span><span class="glogo">G</span></div>
+    </div>
+  </div>
+  <div class="strip-cta reveal"><a class="btn btn-primary" href="reviews.html">Read all 683 reviews →</a></div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">W</span>
+        <span class="brand-name">Well Street Kitchen<small>Brunch · Hackney E9</small></span>
+      </a>
+      <p style="font-size:.9rem;margin-top:.9rem;max-width:250px">Modern British brunch, specialty coffee and a warm welcome — seven days a week.</p>
+      <span class="open-badge">● Open now · until 4:00 PM</span>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <p style="font-size:.94rem;line-height:1.7">203 Well Street<br>London E9 6QU<br><a href="tel:+447904558596">07904 558596</a><br><a href="mailto:hello@wellstreetkitchen.co.uk">hello@wellstreetkitchen.co.uk</a></p>
+    </div>
+    <div>
+      <h4>Opening hours</h4>
+      <div class="hours-line"><b>Mon – Fri</b><span>7:30 AM – 4:00 PM</span></div>
+      <div class="hours-line"><b>Saturday</b><span>8:00 AM – 4:30 PM</span></div>
+      <div class="hours-line"><b>Sunday</b><span>9:00 AM – 3:30 PM</span></div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Order</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-note">© 2026 Well Street Kitchen · 203 Well St, London E9 6QU · Made with sage &amp; terracotta in Hackney</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- mouse parallax (rAF-throttled) ---------- */
+  var scene = document.getElementById('heroScene');
+  if(scene && !reduced && matchMedia('(pointer:fine)').matches){
+    var copy = document.querySelector('.hero-copy');
+    var visual = document.querySelector('.hero-scene');
+    var depthEls = scene.querySelectorAll('[data-depthx]');
+    var tx=0, ty=0, cx=0, cy=0, raf=null;
+    scene.addEventListener('mousemove', function(e){
+      var r = scene.getBoundingClientRect();
+      tx = (e.clientX - r.left)/r.width - .5;
+      ty = (e.clientY - r.top)/r.height - .5;
+      if(!raf) raf = requestAnimationFrame(applyTilt);
+    });
+    scene.addEventListener('mouseleave', function(){ tx=0; ty=0; if(!raf) raf=requestAnimationFrame(applyTilt); });
+    function applyTilt(){
+      raf=null;
+      cx += (tx-cx)*.08; cy += (ty-cy)*.08;
+      copy.style.transform   = 'rotateY('+(cx*-6)+'deg) rotateX('+(cy*5)+'deg)';
+      visual.style.transform = 'rotateY('+(cx*10)+'deg) rotateX('+(cy*-8)+'deg)';
+      depthEls.forEach(function(el){
+        var d = parseFloat(el.dataset.depthx)||0;
+        el.style.transform = 'translate3d('+(cx*d)+'px,'+(cy*d)+'px,0)';
+      });
+      // keep animating while easing toward target
+      if(Math.abs(tx-cx)>.001 || Math.abs(ty-cy)>.001) raf=requestAnimationFrame(applyTilt);
+    }
+  }
+
+  /* ---------- scroll reveals ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.14});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- number counters ---------- */
+  function animateCount(el){
+    var target = parseInt(el.dataset.target,10)||0;
+    var t0=null, DUR=1800;
+    function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min((ts-t0)/DUR,1);
+      var eased=1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased).toLocaleString('en-GB');
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters=document.querySelectorAll('[data-target]');
+  if('IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ animateCount(en.target); cio.unobserve(en.target);} });
+    },{threshold:.5});
+    counters.forEach(function(el){ cio.observe(el); });
+  } else { counters.forEach(animateCount); }
+})();
+</script>
+</body>
+</html>
