@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Galicia Restaurant</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,serif;background:#F7F3EB;color:#2B2622;overflow-x:hidden}
+header{background:#2B2622;padding:18px 5%;display:flex;justify-content:space-between;align-items:center}
+header a{color:#F7F3EB;text-decoration:none;font-size:22px;font-weight:700}
+.badge{background:#B85C38;color:#fff;padding:10px 22px;border-radius:40px;font-weight:700;display:inline-block;margin:30px auto}
+.wrap{max-width:1100px;margin:0 auto;padding:20px;text-align:center}
+h1{font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:8px}
+.sub{color:#6B5D52;font-family:Arial;font-weight:400;margin-bottom:34px}
+.marquee{overflow:hidden;position:relative;padding:12px 0}
+.track{display:flex;gap:22px;width:max-content;animation:slideL 80s linear infinite}
+.track.rev{animation-name:slideR}
+@keyframes slideL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes slideR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.marquee:hover .track{animation-play-state:paused}
+.card{width:340px;flex-shrink:0;background:#fff;border-radius:14px;padding:22px;box-shadow:0 8px 24px rgba(43,38,34,.08);text-align:left;border-top:3px solid #B85C38}
+.stars{color:#E8A33D;font-size:17px;letter-spacing:2px;margin-bottom:8px}
+.txt{font-size:15px;line-height:1.55;font-style:italic;margin-bottom:14px}
+.who{font-family:Arial;font-size:13px;font-weight:700;color:#6B5D52}
+.counter{font-size:clamp(36px,6vw,60px);font-weight:700;color:#B85C38;margin:26px 0 4px}
+.clabel{color:#6B5D52;font-family:Arial;font-size:14px;margin-bottom:30px}
+footer{background:#2B2622;color:#F7F3EB;text-align:center;padding:28px;margin-top:50px;font-family:Arial;font-size:14px}
+footer a{color:#E8A33D}
+</style></head><body>
+<header><a href="/">← Galicia</a><span style="color:#E8A33D">★★★★★</span></header>
+<div class="wrap">
+<h1>What Croydon Says About Us</h1>
+<p class="sub">Live from Google Reviews — the voices that keep our kitchen busy</p>
+<span class="badge">4.5 ★ on Google · 1,147 reviews</span>
+<div class="marquee"><div class="track" id="t1"></div></div>
+<div class="marquee"><div class="track rev" id="t2"></div></div>
+<div class="counter" id="cnt">1,147</div>
+<p class="clabel">and counting — thank you, Croydon</p>
+</div>
+<footer>📍 269-275 High St, Croydon CR0 1QH · 📞 <a href="tel:02086860043">020 8686 0043</a> · Open Mon–Sun 12:00–23:00<br><br><a href="/">← Back to Home</a></footer>
+<script>
+const REVIEWS = [["Sarah M.","The paella here is the real deal — saffron aroma hits you before the plate arrives. Booked again for next week."],["James O'Connor","Best Spanish food in Croydon, full stop. The gambas al ajillo are dangerously good."],["Priya S.","Family-run warmth with proper Iberian flavours. The churros with chocolate took me straight to Madrid."],["Daniel R.","Celebrated our anniversary here. Staff treated us like regulars on our first visit. Jamón ibérico melted."],["Elena V.","Cosy atmosphere, generous portions, honest prices. Pulpo a la gallega was perfectly tender."],["Mark T.","Been coming monthly for two years. Consistency is their superpower — every dish lands."],["Sofia L.","The croquetas are little clouds. My kids now demand 'Galicia night' every Friday."],["Ahmed K.","Wine list is thoughtful and the staff actually know it. Rare these days."],["Grace W.","Tried to keep this place secret but it deserves the buzz. Go before everyone finds out."],["Tom H.","Paella Valenciana fed four of us and we still talked about it a week later."],["Lucia F.","As someone from Spain: this is the closest to home cooking I've found in South London."],["Robert P.","Sunday lunch here is a Croydon institution. Booking essential — word is out."],["Nadia H.","Beautifully cooked, beautifully served. The garlic prawns are a religious experience."],["Chris D.","Walked in on a rainy Tuesday, walked out planning my next visit. That's the test."],["Marta G.","Fresh ingredients, proper technique, fair prices. What more do you want?"],["Oliver B.","The tapas spread for our table of six was a parade of highlights. Nothing missed."],["Yasmin A.","Desserts deserve their own review. Churros were crisp, chocolate was velvety."],["Peter S.","Unassuming from outside, unforgettable inside. Croydon's worst-kept secret should be its proudest."],["Anna Kowalska","Service with genuine smiles. They remembered our order from three weeks ago."],["David Lynch","Seafood tastes like it jumped straight from the market into the pan."],["Rachel N.","Perfect date-night spot. Low lights, great wine, zero rush."],["Sam Whitfield","Portions are generous without being silly. Quality over gimmicks."],["Isabelle Moreau","I've eaten across Spain for years — Galicia holds its own. High praise, well earned."],["Ben Carter","First-time visitor, already booked my return. The reviews don't lie."]];
+function card(r){return '<div class="card"><div class="stars">★★★★★</div><p class="txt">"'+r[1]+'"</p><div class="who">'+r[0]+' · Google Review</div></div>';}
+function fill(id,list){document.getElementById(id).innerHTML = list.map(card).join('') + list.map(card).join('');}
+fill('t1', REVIEWS.slice(0,12)); fill('t2', REVIEWS.slice(12));
+let n = 1147;
+setInterval(()=>{ n += Math.floor(Math.random()*3); document.getElementById('cnt').textContent = n.toLocaleString(); }, 4000);
+</script></body></html>

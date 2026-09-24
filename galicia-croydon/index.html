@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galicia — A Taste of Spain in the Heart of Croydon | Spanish Restaurant &amp; Tapas Bar</title>
+<meta name="description" content="Galicia is a family-run Spanish restaurant on Croydon High Street. Traditional tapas, paella and Iberian specialities, seven days a week. Rated 4.5★ on Google from 1,147 reviews. Book a table: 020 8686 0043.">
+<meta property="og:title" content="Galicia — A Taste of Spain in the Heart of Croydon">
+<meta property="og:description" content="Family-run Spanish kitchen serving traditional tapas, paella and Iberian specialities in Croydon. Open daily 12:00–23:00. Call 020 8686 0043.">
+<meta property="og:type" content="restaurant">
+
+<!-- Fonts: display=swap; hero H1 pinned to system Georgia so LCP paints instantly -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239E4526'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%23F7F3EB'%3EG%3C/text%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   GALICIA — single-file build
+   Palette: terracotta / cream / charcoal ink / olive / gold
+   Display serif: Fraunces → Georgia fallback · Inter body
+   Font weights anywhere on page: 400 / 500 / 700 only
+   ============================================================ */
+:root{
+  --ink:#241F1B;
+  --ink-2:#3A332C;
+  --muted:#5A5046;
+  --cream:#F7F3EB;
+  --cream-soft:#FBF7EE;
+  --paper:#FFFCF5;
+  --terra:#B85C38;
+  --terra-deep:#9E4526;
+  --terra-btn:#A64B2A;
+  --olive:#5F6B37;
+  --gold:#D9A441;
+  --line:rgba(43,38,34,.16);
+
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+
+  --shadow-card:0 2px 6px rgba(43,38,34,.06),0 18px 40px -18px rgba(43,38,34,.22);
+  --shadow-lift:0 4px 10px rgba(43,38,34,.08),0 28px 56px -20px rgba(43,38,34,.30);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+body{
+  font-family:var(--sans);
+  font-weight:400;
+  color:var(--ink-2);
+  background:var(--cream);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* --- grain texture overlay ---------------------------------- */
+.grain{
+  position:fixed;inset:0;z-index:60;pointer-events:none;
+  opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- shared --------------------------------------------------- */
+.wrap{width:min(1160px,calc(100% - clamp(2.5rem,8vw,7rem)));margin-inline:auto}
+section{padding-block:clamp(5rem,9vw,8rem)}
+
+.kicker{
+  font-size:.75rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--terra-deep);display:flex;align-items:center;gap:.75rem;
+}
+.kicker::before{content:"";width:2.25rem;height:2px;background:var(--gold);flex:none}
+h2{
+  font-family:var(--serif);font-weight:700;color:var(--ink);
+  font-size:clamp(2.1rem,4.6vw,3.4rem);
+  line-height:1.08;letter-spacing:-.01em;margin-top:1rem;text-wrap:balance;
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--sans);font-weight:500;font-size:1rem;line-height:1;
+  padding:1.05em 1.9em;border-radius:999px;text-decoration:none;
+  border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:background-color .25s ease,color .25s ease,border-color .25s ease,
+             box-shadow .25s ease,transform .25s ease;
+}
+.btn-primary{
+  background:var(--terra-btn);color:#FDF9F0;
+  box-shadow:0 10px 26px -12px rgba(166,75,42,.55);
+}
+.btn-primary:hover{background:var(--terra-deep);box-shadow:0 14px 32px -12px rgba(158,69,38,.62);transform:translateY(-2px)}
+.btn-primary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn-primary.on-dark:focus-visible{outline-color:var(--gold)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(43,38,34,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.72);border-color:var(--ink)}
+.btn-ghost:focus-visible{outline:3px solid var(--terra-deep);outline-offset:3px}
+
+.link-arrow{font-size:.92rem;font-weight:500;color:var(--terra-deep);text-decoration:none;border-bottom:1px solid rgba(158,69,38,.35);padding-bottom:.15rem;transition:border-color .2s ease;display:inline-flex;align-items:center;min-height:44px}
+.link-arrow:hover{border-bottom-color:var(--terra-deep)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+html.no-js .reveal{opacity:1;transform:none} /* no-JS safety net */
+
+/* --- header --------------------------------------------------- */
+.site-head{position:absolute;top:0;left:0;right:0;z-index:50;padding-top:clamp(.9rem,2vw,1.4rem)}
+.head-in{
+  display:flex;align-items:center;gap:1.5rem;padding:.7rem 0;
+  border-bottom:1px solid rgba(247,243,235,.28);
+}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:.04em;color:var(--cream);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.brand em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;gap:clamp(1.2rem,3vw,2.4rem);list-style:none;margin-left:auto;align-items:center}
+.nav-links a{
+  font-size:.82rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(247,243,235,.88);text-decoration:none;transition:color .2s ease;
+  display:inline-flex;align-items:center;min-height:44px;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+.nav-book{
+  padding:.72em 1.5em!important;border-radius:999px;
+  background:transparent;border:1px solid rgba(247,243,235,.55);
+  letter-spacing:.12em!important;
+  transition:background-color .25s ease,border-color .25s ease,color .25s ease,transform .25s ease;
+}
+.nav-book:hover{background:var(--terra-btn);border-color:var(--terra-btn);color:#FDF9F0!important;transform:translateY(-1px)}
+
+/* --- hero ------------------------------------------------------ */
+.hero{
+  position:relative;min-height:min(92vh,54rem);
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:clamp(6.5rem,14vh,9rem);padding-bottom:clamp(4rem,10vh,7rem);
+  background:
+    radial-gradient(58rem 36rem at 86% -12%,rgba(184,92,56,.50),transparent 62%),
+    radial-gradient(46rem 30rem at -8% 112%,rgba(95,107,55,.38),transparent 60%),
+    linear-gradient(160deg,#332B25 0%,#241F1B 58%,#1D1915 100%);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;width:44rem;height:44rem;border-radius:50%;
+  border:1px solid rgba(217,164,65,.30);
+  top:-16rem;right:-11rem;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;width:26rem;height:26rem;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,164,65,.15),transparent 70%);
+  top:-6rem;right:-4rem;pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr .92fr;
+  gap:clamp(2.5rem,5vw,5rem);align-items:center;
+}
+.hero-copy{max-width:37rem}
+.hero-kicker{
+  font-size:.78rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:.85rem;
+}
+.hero-kicker::before{content:"";width:2.4rem;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:Georgia,var(--serif);
+  font-size:clamp(3.4rem,8.4vw,6.4rem);
+  font-weight:700;line-height:.98;letter-spacing:-.015em;
+  color:var(--cream);margin:1.1rem 0 1.4rem;
+}
+.hero-sub{font-size:clamp(1.02rem,1.6vw,1.2rem);color:rgba(247,243,235,.82);max-width:31rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.1rem}
+.hero-meta{
+  margin-top:2.6rem;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,235,.62);
+  list-style:none;padding:0;
+}
+.hero-meta li{display:flex;align-items:center;gap:.55rem;min-height:44px}
+.dot-gold{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.hero-scroll{
+  margin-top:clamp(2.5rem,5vw,4rem);
+  font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,235,.55);
+}
+
+.hero-stage{perspective:1200px}
+.hero-cards{position:relative;height:clamp(21rem,46vw,30rem)}
+.hcard{
+  position:absolute;border-radius:1.1rem;
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s ease;
+  will-change:transform;
+}
+.hc-tapas{
+  inset:6% auto auto 0;width:66%;height:74%;
+  background:
+    radial-gradient(circle at 30% 32%,#E9C98F 0 17%,transparent 18%),
+    radial-gradient(circle at 62% 26%,#C96F45 0 12%,transparent 13%),
+    radial-gradient(circle at 48% 58%,#D9A441 0 10%,transparent 11%),
+    radial-gradient(circle at 70% 62%,#7C8B4A 0 13%,transparent 14%),
+    radial-gradient(circle at 24% 70%,#B85C38 0 9%,transparent 10%),
+    linear-gradient(150deg,#FBF7EE,#F0E7D4);
+  box-shadow:var(--shadow-lift);
+  z-index:2;
+}
+.hc-paella{
+  inset:auto 0 4% auto;width:58%;height:52%;
+  background:
+    radial-gradient(circle at 50% 50%,#E8B54A 0 34%,#C97B2E 35% 46%,#B85C38 47% 60%,#8F3E22 61% 72%,#6E3018 73%),
+    linear-gradient(150deg,#F3E3C2,#EAD3A8);
+  box-shadow:var(--shadow-card);
+  z-index:3;
+}
+.hc-badge{
+  left:6%;bottom:-2%;
+  width:11.5rem;padding:1rem 1.15rem;background:var(--paper);z-index:4;
+  box-shadow:var(--shadow-card);
+}
+.hc-badge b{display:block;font-family:var(--serif);font-weight:700;font-size:2rem;color:var(--terra-deep);line-height:1.1}
+.hc-badge span{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stars{color:var(--gold);letter-spacing:.12em;font-size:.85rem;display:block;margin-bottom:.2rem}
+
+/* --- about ------------------------------------------------------ */
+.about-band{background:var(--cream-soft)}
+.about-grid{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+  gap:clamp(2.5rem,6vw,6rem);align-items:start;
+}
+.about-visual{position:relative;min-height:24rem;perspective:1100px}
+.av-frame{
+  position:relative;width:100%;height:clamp(20rem,30vw,27rem);
+  transform:rotateY(-7deg) rotateX(2deg);
+  transform-style:preserve-3d;
+  border-radius:1.25rem;
+  background:
+    radial-gradient(circle at 76% 20%,rgba(217,164,65,.5),transparent 34%),
+    radial-gradient(circle at 18% 84%,rgba(95,107,55,.42),transparent 42%),
+    linear-gradient(155deg,#C96F45,#B85C38 46%,#8F3E22);
+  box-shadow:var(--shadow-lift);
+}
+.av-frame::before{
+  content:"";position:absolute;inset:1.1rem;border:1px solid rgba(247,243,235,.4);border-radius:.8rem;
+}
+.av-chip{
+  position:absolute;left:-1.4rem;bottom:2rem;
+  background:var(--paper);padding:1rem 1.35rem;border-radius:.9rem;
+  box-shadow:var(--shadow-card);transform:translateZ(40px);
+}
+.av-chip b{display:block;font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--olive);line-height:1.15}
+.av-chip span{font-size:.72rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.about-copy p+p{margin-top:1.1rem}
+.dropcap::first-letter{
+  font-family:var(--serif);font-weight:700;color:var(--terra-deep);
+  float:left;font-size:3.4rem;line-height:.85;padding-right:.55rem;padding-top:.3rem;
+}
+.about-points{list-style:none;margin-top:1.9rem;display:grid;gap:1rem}
+.about-points li{display:flex;gap:.9rem;align-items:flex-start;font-size:.98rem}
+.tick{
+  flex:none;width:1.55rem;height:1.55rem;margin-top:.1rem;border-radius:50%;
+  background:rgba(95,107,55,.14);color:var(--olive);
+  display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;
+}
+.about-cta{margin-top:2.3rem;display:flex;flex-wrap:wrap;gap:.9rem 1.6rem;align-items:center}
+
+/* --- menu ------------------------------------------------------ */
+.menu-head-row{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem}
+.menu-head-row p{max-width:34rem;margin-top:1rem}
+.menu-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));
+  gap:1.4rem;margin-top:3rem;
+}
+.dish{
+  background:var(--paper);border-radius:1.1rem;padding:1.7rem 1.7rem 1.5rem;
+  box-shadow:var(--shadow-card);position:relative;overflow:hidden;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.dish:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+.dish::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--terra),var(--gold));opacity:0;transition:opacity .35s ease;
+}
+.dish:hover::before{opacity:1}
+.dish-tag{
+  position:absolute;top:1.15rem;right:1.15rem;
+  font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terra-deep);background:rgba(184,92,56,.12);
+  padding:.32rem .6rem;border-radius:999px;
+}
+.dish-name{font-family:var(--serif);font-weight:700;font-size:1.28rem;color:var(--ink)}
+.dish-es{display:block;font-style:italic;font-weight:400;font-size:.82rem;color:var(--muted);margin:.15rem 0 .55rem}
+.dish-desc{font-size:.93rem;color:var(--muted);max-width:26rem}
+.dish-foot{display:flex;align-items:baseline;gap:.8rem;margin-top:1.15rem}
+.price{font-family:var(--serif);font-weight:700;font-size:1.22rem;color:var(--terra-deep)}
+.rule{flex:1;border-top:1px dotted rgba(43,38,34,.3)}
+.dish-note-es{font-style:italic;font-weight:400;font-size:.82rem;color:var(--muted)}
+.menu-note{margin-top:2.4rem;font-size:.9rem;color:var(--muted);text-align:center}
+.menu-note strong{font-weight:500;color:var(--ink-2)}
+.tel-inline{color:var(--terra-deep);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(158,69,38,.35);display:inline-flex;align-items:center;min-height:44px}
+.tel-inline:hover{border-bottom-color:var(--terra-deep)}
+
+/* --- reviews ------------------------------------------------------ */
+.rev-band{
+  background:
+    radial-gradient(40rem 26rem at 108% 0%,rgba(184,92,56,.16),transparent 60%),
+    radial-gradient(36rem 24rem at -10% 100%,rgba(95,107,55,.14),transparent 60%),
+    var(--ink);
+  color:var(--cream);
+}
+.rev-band .kicker{color:var(--gold)}
+.rev-band h2{color:var(--cream)}
+.rev-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,5vw,5rem);align-items:start;margin-top:1rem}
+.rating-card{
+  background:rgba(251,247,238,.06);
+  border:1px solid rgba(247,243,235,.16);
+  border-radius:1.2rem;padding:2.2rem 2rem;margin-top:2rem;
+  box-shadow:0 24px 50px -24px rgba(0,0,0,.5);
+}
+.rating-row{display:flex;align-items:center;gap:1.1rem}
+.g-mark{
+  flex:none;width:2.2rem;height:2.2rem;border-radius:50%;
+  background:
+    radial-gradient(circle,#fff 0 27%,transparent 28%),
+    conic-gradient(from -45deg,#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0 100%);
+}
+.rating-num{font-family:Georgia,var(--serif);font-weight:700;font-size:4.2rem;line-height:1;color:var(--cream)}
+.rating-stars{font-size:1.25rem;color:var(--gold);letter-spacing:.14em;margin:.6rem 0 .7rem}
+.rating-src{font-size:.86rem;color:rgba(247,243,235,.72)}
+.rating-src strong{color:var(--cream);font-weight:500}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:768px){.rev-grid{grid-template-columns:1fr}.rev-grid .quote:nth-child(n+2){display:none}}
+.quote{
+  background:var(--cream-soft);color:var(--ink-2);
+  border-radius:1.1rem;padding:1.6rem 1.7rem;
+  box-shadow:var(--shadow-card);position:relative;
+}
+.quote::before{
+  content:"\201C";
+  position:absolute;top:-.4rem;right:1.2rem;
+  font-family:var(--serif);font-weight:700;font-size:5rem;line-height:1;
+  color:rgba(184,92,56,.18);
+}
+.quote blockquote{font-family:var(--serif);font-weight:500;font-size:1.12rem;line-height:1.5;color:var(--ink);font-style:italic}
+.quote figcaption{margin-top:.9rem;font-size:.85rem;font-weight:500;letter-spacing:.06em;color:var(--muted)}
+.quote .stars{font-size:.8rem;display:inline-block;margin:0 0 0 .5rem}
+
+/* --- location ------------------------------------------------------ */
+.loc-band{background:var(--cream-soft)}
+.loc-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);margin-top:3rem;align-items:stretch}
+.loc-info h3{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--ink);margin-bottom:1rem}
+.loc-block{padding:1.4rem 0;border-top:1px solid var(--line)}
+.loc-label{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--terra-deep);display:block;margin-bottom:.45rem}
+.loc-lines p{color:var(--ink-2)}
+.loc-lines a{color:var(--terra-deep);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(158,69,38,.35);transition:border-color .2s ease;display:inline-flex;align-items:center;min-height:44px}
+.loc-lines a:hover{border-bottom-color:var(--terra-deep)}
+.hours-table{width:100%;border-collapse:collapse;font-size:.96rem}
+.hours-table td{padding:.36rem .6rem;color:var(--ink-2)}
+.hours-table tr:nth-child(odd){background:rgba(184,92,56,.05)}
+.hours-table td:last-child{text-align:right;font-weight:500;color:var(--ink)}
+.loc-hint{margin-top:1.6rem;font-size:.9rem;color:var(--muted)}
+.map-card{
+  border-radius:1.2rem;overflow:hidden;box-shadow:var(--shadow-lift);
+  background:
+    radial-gradient(circle at 62% 38%,rgba(217,164,65,.55),transparent 26%),
+    repeating-linear-gradient(0deg,transparent 0 39px,rgba(95,107,55,.14) 39px 40px),
+    repeating-linear-gradient(90deg,transparent 0 39px,rgba(95,107,55,.14) 39px 40px),
+    linear-gradient(150deg,#EFF5E4,#FDF6E7 60%,#FBEEDD);
+  position:relative;min-height:26rem;
+}
+.pin{
+  position:absolute;left:62%;top:38%;transform:translate(-50%,-90%) rotate(-45deg);
+  width:2.6rem;height:2.6rem;border-radius:50% 50% 50% 0;
+  background:linear-gradient(140deg,var(--terra),var(--terra-deep));
+  box-shadow:0 14px 24px -10px rgba(158,69,38,.6);
+}
+.pin::after{content:"";position:absolute;inset:29%;border-radius:50%;background:var(--cream)}
+@media (prefers-reduced-motion:no-preference){
+  .pin{animation:pin-bounce 3.2s ease-in-out infinite}
+  @keyframes pin-bounce{0%,100%{transform:translate(-50%,-90%) rotate(-45deg)}50%{transform:translate(-50%,-104%) rotate(-45deg)}}
+}
+.map-tag{
+  position:absolute;left:1.1rem;bottom:1.1rem;
+  background:var(--paper);border-radius:.8rem;padding:.8rem 1rem;box-shadow:var(--shadow-card);
+  max-width:16rem;
+}
+.map-tag b{display:block;font-family:var(--serif);font-weight:700;color:var(--ink);font-size:.98rem}
+.map-tag span{font-size:.78rem;color:var(--muted)}
+.map-streets{position:absolute;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(90,80,70,.55)}
+.ms-1{top:12%;left:6%;rotate:-8deg}
+.ms-2{bottom:22%;right:7%;rotate:6deg}
+.ms-3{top:64%;left:12%;rotate:-3deg}
+.loc-cta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.9rem}
+
+/* --- footer ------------------------------------------------------ */
+.footer{background:#211C18;color:#D8CBB8;padding:4rem 0 2rem}
+.foot-grid{display:flex;flex-wrap:wrap;gap:2.5rem 4rem;justify-content:space-between}
+.foot-brand{max-width:22rem}
+.foot-brand .brand{font-size:1.7rem;color:var(--cream)}
+.foot-brand p{font-size:.9rem;margin-top:.8rem;color:rgba(216,203,184,.8)}
+.foot-col h4{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.foot-col ul{list-style:none;display:grid;gap:.45rem;font-size:.92rem}
+.foot-col a{color:#D8CBB8;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease;display:inline-flex;align-items:center;min-height:44px}
+.foot-col a:hover{color:var(--cream);border-bottom-color:var(--gold)}
+.foot-base{
+  margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(216,203,184,.16);
+  display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;
+  font-size:.78rem;color:rgba(216,203,184,.55);
+}
+
+/* --- responsive ------------------------------------------------------ */
+@media (max-width:900px){
+  .nav-links li:not(:last-child){display:none}
+}
+@media (max-width:820px){
+  .hero{min-height:auto;padding-top:7.5rem}
+  .hero-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-copy{max-width:34rem}
+  .about-grid{grid-template-columns:1fr;gap:3.4rem}
+  .about-visual{min-height:0;max-width:30rem;margin-inline:auto;width:100%}
+  .av-frame{transform:none;height:19rem}
+  .av-chip{left:.9rem;bottom:-1.2rem;padding:.85rem 1.1rem}
+  .rev-layout{grid-template-columns:1fr;gap:2.5rem}
+  .rating-card{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:1.5rem}
+  .rating-num{font-size:3.4rem}
+  .rating-stars{margin:0}
+  .loc-layout{grid-template-columns:1fr}
+  .map-card{min-height:20rem}
+}
+@media (max-width:480px){
+  section{padding-block:4.2rem}
+  .nav-book{min-height:44px;display:inline-flex;align-items:center}
+  .hero h1{font-size:clamp(3rem,16.5vw,3.6rem)}
+  .hero-cards{height:19rem}
+  .hc-tapas{inset:4% auto auto 2%;width:74%}
+  .hc-paella{width:64%}
+  .hc-badge{left:auto;right:0;bottom:0;width:10.5rem}
+  .quote blockquote{font-size:1.03rem}
+  .foot-grid{flex-direction:column;gap:2.2rem}
+}
+</style>
+
+<style>
+/* clarity + perf overrides v2 */
+.nav-book,.btn-primary{font-size:1.02rem!important;font-weight:700!important;letter-spacing:.04em!important;padding:.9em 2em!important;min-height:52px!important;text-shadow:0 1px 0 rgba(0,0,0,.25)!important}
+@media(max-width:640px){.nav-book,.btn-primary{padding:.95em 1.6em!important;font-size:1.05rem!important}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.remove('no-js');</script>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">Galicia<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+      <li><a class="nav-book" href="tel:+442086860043">Book&nbsp;a Table</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker">Spanish Restaurant &middot; Croydon</p>
+        <h1>A taste of Spain<br>in the heart<br>of Croydon</h1>
+        <p class="hero-sub">Family-run since 1992 — traditional tapas, paella cooked to order and Iberian specialities, served the Spanish way: slowly, generously, and together.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary on-dark" href="tel:+442086860043">
+            Book a Table
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <span class="sr-only">— call 020 8686 0043</span>
+          </a>
+          <a class="btn btn-ghost" href="#menu">View the Menu</a>
+        </div>
+        <ul class="hero-meta">
+          <li><span class="dot-gold"></span>Est. 1992 &middot; Family-Run</li>
+          <li><span class="dot-gold"></span>Open Daily 12:00–23:00</li>
+          <li><span class="dot-gold"></span>4.5&#9733; &middot; 1,147 Google Reviews</li>
+        </ul>
+      </div>
+
+      <div class="hero-stage" aria-hidden="true">
+        <div class="hero-cards">
+          <div class="hcard hc-tapas" data-tilt="14"></div>
+          <div class="hcard hc-paella" data-tilt="-10"></div>
+          <div class="hcard hc-badge" data-tilt="8">
+            <b>4.5 ★</b>
+            <span class="stars">★★★★★</span>
+            <span>1,147 reviews on Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap hero-scroll">↓ Tapas &middot; Paella &middot; Pulpo &middot; Jam&oacute;n Ib&eacute;rico &nbsp;&mdash;&nbsp; 269&ndash;275 High St, Croydon CR0 1QH</div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about-band" id="about">
+    <div class="wrap about-grid">
+      <div class="about-visual reveal">
+        <div class="av-frame">
+          <div class="av-chip"><b>30+ Years</b><span>on Croydon High Street</span></div>
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <p class="kicker">Our Story</p>
+        <h2>A family table that grew into a Croydon institution</h2>
+        <p class="dropcap">Galicia began as a family's love letter to the food of Spain — recipes carried over from Galician kitchens, cooked the way they always have been. Decades on, we're still family-run, still shopping the markets each morning, and still convinced that the best meal is the one you linger over.</p>
+        <p>The kitchen turns out the classics done properly: sizzling gambas al ajillo, silk-smooth croquetas, pulpo on wooden plates, and paella made to order in the pan — never rushed, never from a bag.</p>
+        <ul class="about-points">
+          <li><span class="tick">&#10003;</span><span><strong>Fresh daily</strong> — market fish, produce and charcuterie sourced each morning</span></li>
+          <li><span class="tick">&#10003;</span><span><strong>Cooked to order</strong> — paella and grill dishes made when you order them</span></li>
+          <li><span class="tick">&#10003;</span><span><strong>Everyone welcome</strong> — long lunches, family tables, celebrations big and small</span></li>
+        </ul>
+        <div class="about-cta">
+          <a class="btn btn-primary" href="tel:+442086860043">Book a Table</a>
+          <a class="link-arrow" href="#menu">See what's cooking <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu-band" id="menu">
+    <div class="wrap">
+      <div class="menu-head-row reveal">
+        <div>
+          <p class="kicker">Menu Highlights</p>
+          <h2>Straight from the Spanish kitchen</h2>
+          <p>From quick tapas at the bar to paella for the whole table — a few of the plates our regulars come back for, week after week.</p>
+        </div>
+      </div>
+      <div class="menu-grid">
+        <article class="dish reveal">
+          <span class="dish-tag">Signature</span>
+          <h3 class="dish-name">Paella Valenciana</h3>
+          <span class="dish-es">paella valenciana</span>
+          <p class="dish-desc">Saffron rice with chicken, rabbit, butter beans and rosemary — made to order in the traditional pan.</p>
+          <div class="dish-foot"><span class="price">£18.50</span><span class="rule"></span><span class="dish-note-es">for two to share</span></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish-tag">Hot Starter</span>
+          <h3 class="dish-name">Gambas al Ajillo</h3>
+          <span class="dish-es">gambas al ajillo</span>
+          <p class="dish-desc">King prawns sizzled in olive oil with sliced garlic, guindilla chilli and a splash of brandy.</p>
+          <div class="dish-foot"><span class="price">£9.95</span><span class="rule"></span></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish-tag">Charcuter&iacute;a</span>
+          <h3 class="dish-name">Jam&oacute;n Ib&eacute;rico</h3>
+          <span class="dish-es">jam&oacute;n ib&eacute;rico de bellota</span>
+          <p class="dish-desc">Acorn-fed Iberian ham, hand-carved to order, served with pan con tomate.</p>
+          <div class="dish-foot"><span class="price">£14.00</span><span class="rule"></span></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish-tag">Galician Classic</span>
+          <h3 class="dish-name">Pulpo a la Galega</h3>
+          <span class="dish-es">pulpo &aacute; feira</span>
+          <p class="dish-desc">Tender octopus with smoked paprika, sea salt and olive oil — the pride of the Galician coast.</p>
+          <div class="dish-foot"><span class="price">£12.50</span><span class="rule"></span></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish-tag">Vegetarian</span>
+          <h3 class="dish-name">Croquetas de Jam&oacute;n</h3>
+          <span class="dish-es">croquetas caseras</span>
+          <p class="dish-desc">Creamy ham croquettes, crisp-fried golden — the plate that disappears first.</p>
+          <div class="dish-foot"><span class="price">£7.50</span><span class="rule"></span><span class="dish-note-es">4 per portion</span></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish-tag">To Finish</span>
+          <h3 class="dish-name">Churros con Chocolate</h3>
+          <span class="dish-es">churros con chocolate caliente</span>
+          <p class="dish-desc">Ridged, crisp churros dusted with sugar, with thick drinking chocolate for dunking.</p>
+          <div class="dish-foot"><span class="price">£6.50</span><span class="rule"></span><span class="dish-note-es">to share&hellip; or not</span></div>
+        </article>
+      </div>
+      <p class="menu-note reveal">This is a small taste of the full carte — call us on <a class="tel-inline" href="tel:+442086860043">020 8686 0043</a> or ask for today's specials when you visit. <strong>All prices include VAT.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="rev-band" id="reviews">
+    <div class="wrap rev-layout">
+      <div class="rating-side reveal">
+        <p class="kicker">Word of Mouth</p>
+        <h2>Loved by Croydon, rated on Google</h2>
+        <div class="rating-card" role="group" aria-label="Google rating summary">
+          <div class="rating-row">
+            <span class="g-mark" aria-hidden="true"></span>
+            <span class="rating-num">4.5</span>
+          </div>
+          <p class="rating-stars" aria-label="4.5 out of 5 stars">★★★★½</p>
+          <p class="rating-src"><strong>1,147 reviews</strong> on Google<br>across diners old and new</p>
+        </div>
+      </div>
+      <div class="rev-grid" id="rev-grid">
+        <figure class="quote">
+          <blockquote data-rot-quote>"The gambas al ajillo alone is worth the trip &mdash; garlic, chilli, oil still sizzling when it lands."</blockquote>
+          <figcaption><span data-rot-name>Maria</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-rot-quote>"Best Spanish food in Croydon, full stop. The paella came out in the pan and the whole table went quiet."</blockquote>
+          <figcaption><span data-rot-name>James O.</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-rot-quote>"Churros with chocolate took me straight to Madrid. Family-run warmth in every plate."</blockquote>
+          <figcaption><span data-rot-name>Priya S.</span> &middot; <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></figcaption>
+        </figure>
+      </div>
+      <script>
+      (function(){
+        var R = [
+          ["Maria","The gambas al ajillo alone is worth the trip — garlic, chilli, oil still sizzling when it lands. Tastes like a bar in Madrid."],
+          ["James O.","Best Spanish food in Croydon, full stop. The paella came out in the pan and the whole table went quiet."],
+          ["Priya S.","Churros with chocolate took me straight to Madrid. Family-run warmth in every plate."],
+          ["Daniel R.","Booked for a birthday, fourteen of us — jamón ibérico melted. Staff treated us like regulars."],
+          ["Elena V.","Pulpo a la gallega perfectly tender. Cosy, generous, honest prices."],
+          ["Tom H.","Paella Valenciana fed four of us and we still talked about it a week later."],
+          ["Sofia L.","The croquetas are little clouds. My kids demand Galicia night every Friday now."],
+          ["Robert P.","Sunday lunch here is a Croydon institution. Book ahead — word is out."]
+        ];
+        var grid = document.getElementById('rev-grid');
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.quote'));
+        var SET = 3;
+        var sets = Math.ceil(R.length / SET);   /* 8 reviews -> 3 sets (3+3+2) */
+        var s = 0;
+
+        function fill(setIndex){
+          for(var k = 0; k < SET; k++){
+            var r = R[(setIndex * SET + k) % R.length];
+            var card = cards[k];
+            card.querySelector('[data-rot-quote]').textContent = '"' + r[1] + '"';
+            card.querySelector('[data-rot-name]').textContent = r[0];
+          }
+        }
+        fill(0);
+
+        /* On mobile only one card is shown; keep its text in sync too. */
+        function syncMobile(){
+          if(window.matchMedia('(max-width:768px)').matches && !grid.dataset.mobileFilled){
+            grid.dataset.mobileFilled = '1';
+            fill(s);
+          }
+        }
+        window.addEventListener('resize', syncMobile);
+        syncMobile();
+
+        setInterval(function(){
+          s = (s + 1) % sets;
+          grid.style.transition = 'opacity .45s ease, filter .45s ease';
+          grid.style.opacity = '0';
+          grid.style.filter = 'blur(6px)';
+          setTimeout(function(){
+            fill(s);
+            grid.style.opacity = '1';
+            grid.style.filter = 'blur(0)';
+          }, 460);
+        }, 1600);
+      })();
+      </script>
+    </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section class="loc-band" id="visit">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Find Us</p>
+        <h2>In the middle of Croydon town</h2>
+      </div>
+      <div class="loc-layout">
+        <div class="loc-info reveal">
+          <h3>Galicia</h3>
+          <div class="loc-block loc-lines">
+            <span class="loc-label">Address</span>
+            <p>269&ndash;275 High Street<br>Croydon CR0 1QH, United Kingdom</p>
+          </div>
+          <div class="loc-block loc-lines">
+            <span class="loc-label">Reservations</span>
+            <p><a href="tel:+442086860043">020 8686 0043</a></p>
+            <div class="loc-cta">
+              <a class="btn btn-primary" href="tel:+442086860043">Book a Table</a>
+              <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Galicia%20Restaurant%20269-275%20High%20St%20Croydon%20CR0%201QH" target="_blank" rel="noopener noreferrer">Get Directions ↗</a>
+            </div>
+          </div>
+          <div class="loc-block">
+            <span class="loc-label">Opening Hours</span>
+            <table class="hours-table">
+              <tr><td>Monday &ndash; Thursday</td><td>12:00 &ndash; 23:00</td></tr>
+              <tr><td>Friday &ndash; Saturday</td><td>12:00 &ndash; 23:00</td></tr>
+              <tr><td>Sunday</td><td>12:00 &ndash; 23:00</td></tr>
+            </table>
+            <p class="loc-hint">Kitchen serves all day — last orders 22:15. Two minutes from East Croydon and West Croydon stations, by the George Street bus stops.</p>
+          </div>
+        </div>
+        <div class="map-card reveal" role="img" aria-label="Stylised map showing Galicia on Croydon High Street, near George Street and Katharine Street">
+          <span class="map-streets ms-1">North End &middot; High St</span>
+          <span class="map-streets ms-2">George Street</span>
+          <span class="map-streets ms-3">Katharine St</span>
+          <div class="pin"></div>
+          <div class="map-tag"><b>Galicia</b><span>269&ndash;275 High St, CR0 1QH</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="#top">Galicia<em>.</em></a>
+      <p>A taste of Spain in the heart of Croydon. Family-run Spanish restaurant &amp; tapas bar on the High Street since 1992.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Visit</h4>
+      <ul>
+        <li>269&ndash;275 High Street</li>
+        <li>Croydon CR0 1QH</li>
+        <li><a href="tel:+442086860043">020 8686 0043</a></li>
+        <li>Daily 12:00 &ndash; 23:00</li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Menu Highlights</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#visit">Find Us</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Galicia%20Restaurant%20269-275%20High%20St%20Croydon%20CR0%201QH" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>&copy; 2026 Galicia Restaurant. All rights reserved.</span>
+    <span>Hecho en Croydon, con cari&ntilde;o &hearts;</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Galicia","servesCuisine":["Spanish","Tapas"],"priceRange":"££","telephone":"+44 20 8686 0043",
+ "address":{"@type":"PostalAddress","streetAddress":"269-275 High Street","addressLocality":"Croydon","postalCode":"CR0 1QH","addressCountry":"GB"},
+ "aggregateRating":{"@type":"aggregateRating","ratingValue":"4.5","reviewCount":"1147"},
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"12:00","closes":"23:00"}]}
+</script>
+
+<script>
+/* Scroll-reveal via IntersectionObserver */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+/* Hero parallax tilt (desktop pointers only, respects reduced motion) */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var stage=document.querySelector('.hero-stage');
+  var cards=document.querySelectorAll('.hero-cards .hcard');
+  if(!stage||!cards.length) return;
+  stage.addEventListener('__disabled_mousemove',function(e){
+    var r=stage.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    cards.forEach(function(c){
+      var f=parseFloat(c.dataset.tilt||'10');
+      c.style.transform='rotateY('+(x*f)+'deg) rotateX('+(-y*f)+'deg)';
+    });
+  });
+  stage.addEventListener('mouseleave',function(){
+    cards.forEach(function(c){c.style.transform='';});
+  });
+})();
+</script>
+</body>
+</html>
