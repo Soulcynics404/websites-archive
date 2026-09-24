@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Buongiorno Cafeteria</title>
+<meta name="description" content="Espresso, cappuccino, cornetti and all-day brunch at Buongiorno Cafeteria, 20E Selsdon Rd, South Croydon. Simple menu, honest prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">BUONGIORNO<span>Cafeteria</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Find Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">The menu</p>
+  <h1>Short list, big flavour.</h1>
+  <p class="lede">Everything is made to order or baked the same morning. Tap a category to jump.</p>
+  <div class="chips" role="group" aria-label="Menu categories">
+    <button class="chip is-active" data-target="coffee">Coffee</button>
+    <button class="chip" data-target="bakes">Cornetti &amp; Bakes</button>
+    <button class="chip" data-target="brunch">Brunch</button>
+  </div>
+</section>
+
+<section class="section container menu-section" id="coffee">
+  <h2 class="with-rule">Coffee</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=600&q=60" alt="Double ristretto in a white cup" loading="lazy">
+      <div class="mi-body">
+        <h3>Ristretto <span>£2.20</span></h3>
+        <p>Hand-lever pulled, syrupy short shot with a hazelnut finish.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=60" alt="Cappuccino with dusted cocoa" loading="lazy">
+      <div class="mi-body">
+        <h3>Cappuccino Classico <span>£3.10</span></h3>
+        <p>Dry velvet foam, single-origin bean, cocoa snowfall.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=60" alt="Latte beside a window" loading="lazy">
+      <div class="mi-body">
+        <h3>Caffè Latte <span>£3.40</span></h3>
+        <p>Milky and mellow — oat, soy or whole at no extra charge.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=60" alt="Fresh roasted coffee beans" loading="lazy">
+      <div class="mi-body">
+        <h3>Retail Beans <span>£11.50</span></h3>
+        <p>This month's single origin, roasted for filter. Take a bag home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container menu-section alt" id="bakes">
+  <h2 class="with-rule">Cornetti &amp; Bakes</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=60" alt="Flaky croissant" loading="lazy">
+      <div class="mi-body">
+        <h3>Butter Cornetto <span>£2.60</span></h3>
+        <p>Laminated over three days, baked at 5am, gone by ten.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=600&q=60" alt="Pastries on a tray" loading="lazy">
+      <div class="mi-body">
+        <h3>Pistachio Cream Cornetto <span>£3.40</span></h3>
+        <p>The one people cross town for. Sicilian pistachio, real cream.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=60" alt="Sliced rustic sourdough loaf" loading="lazy">
+      <div class="mi-body">
+        <h3>Toasted Loaf &amp; Jam <span>£2.90</span></h3>
+        <p>Thick-cut sourdough, seasonal jam, salted butter.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=60" alt="Small dessert with cream" loading="lazy">
+      <div class="mi-body">
+        <h3>Affogato <span>£4.20</span></h3>
+        <p>Fior di latte gelato drowned in a double ristretto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container menu-section" id="brunch">
+  <h2 class="with-rule">Brunch · all day</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=60" alt="Eggs and sourdough brunch plate" loading="lazy">
+      <div class="mi-body">
+        <h3>The Selsdon Plate <span>£8.90</span></h3>
+        <p>Eggs any style, whipped ricotta, charred sourdough, chilli honey.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=60" alt="Avocado toast with poached egg" loading="lazy">
+      <div class="mi-body">
+        <h3>Verde Toast <span>£7.50</span></h3>
+        <p>Smashed avocado, confit tomato, dukkah, poached eggs.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=600&q=60" alt="French toast with berries" loading="lazy">
+      <div class="mi-body">
+        <h3>Cornetto French Toast <span>£7.90</span></h3>
+        <p>Yesterday's cornetto, today's genius. Berries, mascarpone, maple.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=60" alt="Seasonal salad bowl" loading="lazy">
+      <div class="mi-body">
+        <h3>Insalata del Giorno <span>£6.80</span></h3>
+        <p>Whatever the market gave us this morning, dressed simply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2>Hungry yet?</h2>
+  <p>Bakes sell out — the early bird gets the pistachio cornetto.</p>
+  <a class="btn" href="contact.html">Find us on Selsdon Road</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">BUONGIORNO<span>Cafeteria</span></p>
+      <p>An Italian-style coffee bar serving South Croydon from Selsdon Road.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>20E Selsdon Rd<br>South Croydon CR2 6PA<br>United Kingdom</p>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Mon–Fri · 7:00–16:00<br>Sat · 8:00–16:00<br>Sun · 8:30–14:00</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">Our Story</a><br><a href="contact.html">Find Us</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Buongiorno Cafeteria · Rated ★ 4.9 by 319 locals</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

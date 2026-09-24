@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Caffe Cinos — Bromley</title>
+<meta name="description" content="The Caffe Cinos menu — espresso, filter and iced coffee, all-day brunch, fresh bakes. Add items to your order and collect at the counter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CAFFE<span>CINOS</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Visit us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Eat &amp; drink</p>
+    <h1>The menu</h1>
+    <p class="lede">Small enough to do well. Tap anything to add it to your pickup order — pay at the counter when you collect.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="menu-head">
+    <div class="section-head"><h2>Coffee &amp; drinks</h2></div>
+    <a class="cart-pill" href="#orderBox" id="cartPill">🛒 Order · <b id="cartCount">0</b> · £<span id="cartTotal">0.00</span></a>
+  </div>
+  <div class="menu-grid" data-menu-section>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80" alt="Flat white with latte art" width="800" height="520"></div>
+      <div class="mi-body"><h3>Flat white</h3><p>Double ristretto, silky milk, no nonsense.</p>
+        <div class="mi-foot"><span class="price">£3.10</span><button class="add-btn" data-name="Flat white" data-price="3.10">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80" alt="Cappuccino dusted with cocoa" width="800" height="520"></div>
+      <div class="mi-body"><h3>Cappuccino</h3><p>Classic thirds, cocoa on top if you like.</p>
+        <div class="mi-foot"><span class="price">£3.00</span><button class="add-btn" data-name="Cappuccino" data-price="3.00">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Pour-over filter coffee" width="800" height="520"></div>
+      <div class="mi-body"><h3>Filter of the month</h3><p>Rotating single origin, brewed to order.</p>
+        <div class="mi-foot"><span class="price">£2.90</span><button class="add-btn" data-name="Filter of the month" data-price="2.90">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Iced coffee in a tall glass" width="800" height="520"></div>
+      <div class="mi-body"><h3>Iced latte</h3><p>Double shot over milk and ice.</p>
+        <div class="mi-foot"><span class="price">£3.40</span><button class="add-btn" data-name="Iced latte" data-price="3.40">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80" alt="Matcha latte" width="800" height="520"></div>
+      <div class="mi-body"><h3>Matcha latte</h3><p>Ceremonial-grade whisked, your choice of milk.</p>
+        <div class="mi-foot"><span class="price">£3.60</span><button class="add-btn" data-name="Matcha latte" data-price="3.60">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80" alt="Pot of tea" width="800" height="520"></div>
+      <div class="mi-body"><h3>Pot of tea</h3><p>Loose-leaf, brewed properly, refills free.</p>
+        <div class="mi-foot"><span class="price">£2.60</span><button class="add-btn" data-name="Pot of tea" data-price="2.60">Add +</button></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head"><h2>All-day brunch</h2></div>
+  <div class="menu-grid" data-menu-section>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Avocado toast" width="800" height="520"></div>
+      <div class="mi-body"><h3>Avo &amp; egg toast</h3><p>Sourdough, smashed avo, soft egg, chilli.</p>
+        <div class="mi-foot"><span class="price">£7.50</span><button class="add-btn" data-name="Avo &amp; egg toast" data-price="7.50">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80" alt="Grilled cheese sandwich" width="800" height="520"></div>
+      <div class="mi-body"><h3>Three-cheese toastie</h3><p>Mature cheddar, mozzarella, red Leicester on sourdough.</p>
+        <div class="mi-foot"><span class="price">£6.20</span><button class="add-btn" data-name="Three-cheese toastie" data-price="6.20">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Full english breakfast" width="800" height="520"></div>
+      <div class="mi-body"><h3>The Cinos full english</h3><p>Eggs any style, bacon, sausage, beans, toast.</p>
+        <div class="mi-foot"><span class="price">£9.50</span><button class="add-btn" data-name="The Cinos full english" data-price="9.50">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" alt="Grain bowl with greens" width="800" height="520"></div>
+      <div class="mi-body"><h3>Garden grain bowl</h3><p>Freekeh, roast squash, feta, seeds, lemon dressing.</p>
+        <div class="mi-foot"><span class="price">£8.00</span><button class="add-btn" data-name="Garden grain bowl" data-price="8.00">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Croissants and pastries" width="800" height="520"></div>
+      <div class="mi-body"><h3>Bakery basket</h3><p>Butter croissant, pain au raisin, jam.</p>
+        <div class="mi-foot"><span class="price">£5.40</span><button class="add-btn" data-name="Bakery basket" data-price="5.40">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80" alt="Chocolate brownie" width="800" height="520"></div>
+      <div class="mi-body"><h3>Salt-dark brownie</h3><p>Fudgy middle, flaky salt, warm it up?</p>
+        <div class="mi-foot"><span class="price">£3.30</span><button class="add-btn" data-name="Salt-dark brownie" data-price="3.30">Add +</button></div></div>
+    </article>
+  </div>
+
+  <aside class="order-box" id="orderBox" aria-label="Your pickup order">
+    <h3>Your pickup order</h3>
+    <ul class="order-lines" id="orderLines"><li class="order-empty">Nothing here yet — tap “Add” on anything above.</li></ul>
+    <p class="order-total">Total <b>£<span id="obTotal">0.00</span></b></p>
+    <button class="btn" id="checkoutBtn" type="button">Send order to the kitchen</button>
+    <p class="form-note" id="orderNote" role="status"></p>
+  </aside>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Collect in 10 minutes</h2>
+    <p>Order ahead on 07495 649336 and we'll have it ready at the counter.</p>
+    <a class="btn btn-light" href="tel:+447495649336">Call 07495 649336</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CAFFE<span>CINOS</span></p><p>Independent café · Bromley<br>5 Old Bromley Road, Bromley BR1 4LB</p></div>
+    <div><p class="foot-h">Hours</p><p>Mon–Fri 7:00–15:30<br>Sat–Sun 8:00–15:00</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="reviews.html">Reviews</a><br><a href="about.html">About</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+447495649336">07495 649336</a><br><a href="mailto:caffecinos@gmail.com">caffecinos@gmail.com</a></p></div>
+  </div>
+  <p class="fineprint container">© 2026 Caffe Cinos. Made with care in Bromley.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

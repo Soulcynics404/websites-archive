@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings · Allen Rothman — Compass NYC</title>
+<meta name="description" content="Current and representative listings from The Horowitz Rothman Team at Compass NYC — estate properties, pre-war co-ops, and condominiums across Manhattan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">ALLEN<span>ROTHMAN</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html" aria-current="page">Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero container">
+  <p class="eyebrow">The Horowitz Rothman Team · Compass NYC</p>
+  <h1>Listings &amp; representative sales</h1>
+  <p class="lede">A selection of current offerings and recent estate sales across Manhattan. Many of our best homes are marketed quietly — ask about off-market availability.</p>
+</section>
+
+<section class="container section">
+  <div class="filter-bar" role="toolbar" aria-label="Filter listings">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="Uptown">Uptown</button>
+    <button class="chip" data-filter="Midtown">Midtown</button>
+    <button class="chip" data-filter="Downtown">Downtown</button>
+  </div>
+  <div class="cards grid-3" id="listingGrid"></div>
+  <p id="noResults" hidden>No listings in this area right now — check back or ask about off-market options.</p>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Don't see your neighborhood?</h2>
+    <p>We represent sellers citywide — and many sales never reach the public market.</p>
+    <a class="btn" href="contact.html">Ask about off-market homes</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">ALLEN<span>ROTHMAN</span></p><p>Licensed Real Estate Sales Agent<br>The Horowitz Rothman Team at Compass NYC</p></div>
+    <div><p class="footer-h">Contact</p><p><a href="tel:+19172706310">(917) 270-6310</a><br>New York, NY 10023</p></div>
+    <div><p class="footer-h">Explore</p><p><a href="index.html">Home</a><br><a href="listings.html">Listings</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p></div>
+  </div>
+  <p class="copyright container">© 2026 Allen Rothman · Equal Housing Opportunity · Representative properties shown for illustration.</p>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

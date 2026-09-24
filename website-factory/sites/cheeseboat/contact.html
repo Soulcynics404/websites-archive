@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit · Cheeseboat</title>
+<meta name="description" content="Cheeseboat in Williamsburg, Brooklyn. Call 929-295-8401 for pickup, email cheeseboatbk@gmail.com. Baked-to-order khachapuri daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">CHEESE<span>BOAT</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">Visit</p>
+  <h1>Dock at the counter.</h1>
+  <p class="lede">We're in the heart of Williamsburg — walk in for a counter seat, or call ahead and grab your boat to go.</p>
+</section>
+
+<section class="section container contact-grid">
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Neighborhood</h3>
+      <p>Williamsburg<br>Brooklyn, New York</p>
+    </div>
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p><a href="tel:+19292958401">929-295-8401</a></p>
+      <p class="meta">Call-ahead pickup · boats ready in ~12 min</p>
+    </div>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p><a href="mailto:cheeseboatbk@gmail.com">cheeseboatbk@gmail.com</a></p>
+      <p class="meta">Catering, press &amp; very serious cheese questions</p>
+    </div>
+    <div class="contact-card">
+      <h3>Good to know</h3>
+      <p>Counter seating · takeout boxes engineered against sogginess · vegetarian-friendly · card accepted</p>
+    </div>
+  </div>
+
+  <form id="contact-form" class="contact-form card-form" novalidate>
+    <h2>Say hello</h2>
+    <label>Name
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>What's up?
+      <select name="topic">
+        <option>Just saying hi</option>
+        <option>Catering / big order</option>
+        <option>Feedback</option>
+        <option>Press</option>
+      </select>
+    </label>
+    <label>Message
+      <textarea name="message" rows="5" placeholder="Party size, date, or your favorite cheese…"></textarea>
+    </label>
+    <button class="btn" type="submit">Send message</button>
+    <p class="form-note" id="form-note" role="status"></p>
+  </form>
+</section>
+
+<section class="map-note">
+  <div class="container map-inner">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=70" alt="Table full of hearty food ready to share" loading="lazy">
+    <div class="map-caption">
+      <h2>Bring the whole crew</h2>
+      <p>Big orders travel well — call a day ahead for parties of six or more and we'll stagger the bakes so every boat lands hot.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">CHEESE<span>BOAT</span></p>
+      <p>Georgian cheese boats &amp; street food from our little galley in Williamsburg, Brooklyn.</p>
+    </div>
+    <div>
+      <h4>Find us</h4>
+      <p>Williamsburg, Brooklyn NY<br><a href="tel:+19292958401">929-295-8401</a><br><a href="mailto:cheeseboatbk@gmail.com">cheeseboatbk@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Ratings</h4>
+      <p>★ 4.3 on Google<br>547 reviews</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">About</a><br><a href="contact.html">Visit</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Cheeseboat · Williamsburg, Brooklyn</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

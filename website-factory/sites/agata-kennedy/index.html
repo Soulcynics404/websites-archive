@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agata Kennedy · Scottsdale Luxury Real Estate</title>
+<meta name="description" content="Agata Kennedy — Top 1% Scottsdale, AZ realtor. Luxury homes in North Scottsdale, Desert Ridge & Troon. (602) 697-0401">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌵</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">AGATA<span>KENNEDY</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://picsum.photos/seed/scottsdale-desert-lux-hero/1800/1100.jpg" alt="Luxury desert home at dusk in North Scottsdale" fetchpriority="high">
+  </div>
+  <div class="hero-content container">
+    <p class="eyebrow">Top 1% of all Arizona Realtors® · HomeSmart, Scottsdale</p>
+    <h1>Desert living,<br><em>elevated.</em></h1>
+    <p class="lede">Agata Kennedy is a luxury real estate expert and multi-million dollar producer serving North Scottsdale, Troon, DC Ranch and Paradise Valley.</p>
+    <div class="hero-actions">
+      <a class="btn" href="listings.html">View Listings</a>
+      <a class="btn btn-ghost" href="contact.html">(602) 697-0401</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats container" aria-label="Market performance">
+  <div class="stat"><strong>$142M+</strong><span>Career sales volume</span></div>
+  <div class="stat"><strong>Top&nbsp;1%</strong><span>of all Arizona Realtors®</span></div>
+  <div class="stat"><strong>26K</strong><span>Instagram followers @scottsdaleazrealtor</span></div>
+  <div class="stat"><strong>$1.18M</strong><span>Avg. North Scottsdale sale price*</span></div>
+</section>
+
+<section class="section container">
+  <p class="eyebrow">Featured listings</p>
+  <h2>Homes she's proud of</h2>
+  <div class="grid cards">
+    <article class="card">
+      <img src="https://picsum.photos/seed/agata-list-troon-villa/800/540.jpg" alt="Troon modern villa" loading="lazy">
+      <div class="card-body">
+        <p class="price">$3,450,000</p>
+        <h3>Desert Modern Villa</h3>
+        <p class="meta">Troon North · 4 bd · 4.5 ba · 4,120 sqft</p>
+        <a class="text-link" href="listings.html">See details →</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://picsum.photos/seed/agata-list-mcm-1955/800/540.jpg" alt="Reimagined mid-century home in Arcadia" loading="lazy">
+      <div class="card-body">
+        <p class="price">$2,150,000</p>
+        <h3>The 1955 Mid-Century</h3>
+        <p class="meta">Arcadia · 3 bd · 3 ba · 2,780 sqft</p>
+        <a class="text-link" href="listings.html">See details →</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://picsum.photos/seed/agata-list-dcranch-est/800/540.jpg" alt="DC Ranch estate home" loading="lazy">
+      <div class="card-body">
+        <p class="price">$5,900,000</p>
+        <h3>Silverleaf Estate</h3>
+        <p class="meta">DC Ranch · 6 bd · 7 ba · 8,050 sqft</p>
+        <a class="text-link" href="listings.html">See details →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Interactive tour</p>
+      <h2>Walk the floor plan</h2>
+      <p>Tap any room to explore what makes this Troon listing special — square footage, finishes and the view it captures. Drag the house model to spin it.</p>
+      <ul class="room-detail" id="room-detail" aria-live="polite"></ul>
+    </div>
+    <div class="floorplan-wrap">
+      <div class="floorplan" id="floorplan">
+        <button class="room room-great" data-room="great">Great Room<br><small>780 sqft</small></button>
+        <button class="room room-kitchen" data-room="kitchen">Kitchen<br><small>420 sqft</small></button>
+        <button class="room room-primary" data-room="primary">Primary Suite<br><small>560 sqft</small></button>
+        <button class="room room-office" data-room="office">Office<br><small>190 sqft</small></button>
+        <button class="room room-patio" data-room="patio">Terrace<br><small>1,100 sqft</small></button>
+      </div>
+      <p class="hint">Tap rooms · drag to rotate ↓</p>
+      <div class="house3d-scene">
+        <div class="house3d" id="house3d">
+          <div class="face face-front"></div>
+          <div class="face face-side"></div>
+          <div class="face face-top"></div>
+          <div class="face face-roof"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <p class="eyebrow">Client story</p>
+  <blockquote class="quote">
+    “My husband and I highly recommend Agata Kennedy. We could not have been happier with the process and results of working with her to sell our home. Her knowledge and experience were a huge help.”
+    <footer>— Verified seller review via realtor.com / RateMyAgent</footer>
+  </blockquote>
+</section>
+
+<section class="section section-alt container neighborhoods">
+  <p class="eyebrow">Where she works</p>
+  <h2>Neighborhoods</h2>
+  <div class="gallery">
+    <figure><img src="https://picsum.photos/seed/agata-hood-troon/600/700.jpg" alt="Troon golf course homes" loading="lazy"><figcaption>Troon North</figcaption></figure>
+    <figure><img src="https://picsum.photos/seed/agata-hood-dcranch/600/700.jpg" alt="DC Ranch market street" loading="lazy"><figcaption>DC Ranch</figcaption></figure>
+    <figure><img src="https://picsum.photos/seed/agata-hood-grayhawk/600/700.jpg" alt="Grayhawk community" loading="lazy"><figcaption>Grayhawk</figcaption></figure>
+    <figure><img src="https://picsum.photos/seed/agata-hood-paradise/600/700.jpg" alt="Paradise Valley estate" loading="lazy"><figcaption>Paradise Valley</figcaption></figure>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Thinking about a move?</h2>
+    <p>Call or text Agata directly — she answers her own phone.</p>
+    <a class="btn btn-light" href="contact.html">(602) 697-0401 · agata@agata.con</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">AGATA<span>KENNEDY</span></p>
+      <p>Luxury real estate · Scottsdale, AZ<br>HomeSmart · 21000 N Pima Rd, Scottsdale, AZ 85258</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br>(602) 697-0401<br><a href="mailto:agata@agata.con">agata@agata.con</a></p>
+    </div>
+    <div>
+      <p><strong>Serving</strong><br>Scottsdale · Paradise Valley · Arcadia · Desert Ridge · Fountain Hills</p>
+    </div>
+  </div>
+  <p class="fineprint container">*Approximate local market figure for illustration. Equal Housing Opportunity. © 2026 Agata Kennedy.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
