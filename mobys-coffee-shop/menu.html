@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu &amp; Ordering — Moby's Coffee Shop | Inglewood, CA</title>
+  <meta name="description" content="Full menu for Moby's Coffee Shop: diner breakfasts, omelettes, griddle classics, bottomless coffee and daily pies. Add items to your order online, then pick up at 3008 W Manchester Blvd, Inglewood.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="cup">☕</span> Moby's <em>Coffee Shop</em></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="cart-link" href="#order-summary">Cart<span id="cart-count" class="empty">0</span></a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="mobyToggleNav()">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Served 6 AM – 3 PM · Daily</span>
+    <h1>The Menu</h1>
+    <p>Everything cooked to order on the same flat-top since 1959. Add items to your order below — we'll have it hot at the counter. Coffee refills are always free.</p>
+  </div>
+</section>
+
+<main class="section" style="padding-top:40px;">
+  <div class="wrap">
+
+    <!-- ============ BREAKFAST ============ -->
+    <div class="menu-section-title"><h2>🍳 Breakfast Classics</h2></div>
+    <div class="menu-grid">
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=800&q=80" alt="Two eggs with bacon, hash browns and toast" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Two-Egg Breakfast</h3><span class="price-tag">$10.99</span></div>
+          <p class="desc">Two eggs any style, bacon or sausage, golden hash browns, and choice of toast.</p>
+          <button class="add-btn"
+            data-id="two-egg-breakfast" data-name="Two-Egg Breakfast" data-price="10.99"
+            data-img="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=200&q=70">Add to Order · $10.99</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80" alt="Stack of buttermilk pancakes with butter and syrup" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Buttermilk Pancakes (3)</h3><span class="price-tag">$7.99</span></div>
+          <p class="desc">Three fluffy flapjacks, whipped butter, warm maple syrup. Add blueberries +$1.50.</p>
+          <button class="add-btn"
+            data-id="buttermilk-pancakes" data-name="Buttermilk Pancakes (3)" data-price="7.99"
+            data-img="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=200&q=70">Add to Order · $7.99</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80" alt="Country fried steak breakfast plate with gravy" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Country Fried Steak &amp; Eggs</h3><span class="price-tag">$13.49</span></div>
+          <p class="desc">Hand-breaded steak smothered in peppered country gravy, two eggs, hash browns.</p>
+          <button class="add-btn"
+            data-id="country-fried-steak" data-name="Country Fried Steak & Eggs" data-price="13.49"
+            data-img="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=200&q=70">Add to Order · $13.49</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Denver omelette with cheese" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Denver Omelette</h3><span class="price-tag">$11.49</span></div>
+          <p class="desc">Three eggs with ham, bell peppers, onion and cheddar. Served with hash browns &amp; toast.</p>
+          <button class="add-btn"
+            data-id="denver-omelette" data-name="Denver Omelette" data-price="11.49"
+            data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=200&q=70">Add to Order · $11.49</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" alt="Biscuits and gravy" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Biscuits &amp; Gravy</h3><span class="price-tag">$8.99</span></div>
+          <p class="desc">Two fresh-baked biscuits under a ladle of sage sausage gravy. A Moby's favorite.</p>
+          <button class="add-btn"
+            data-id="biscuits-gravy" data-name="Biscuits & Gravy" data-price="8.99"
+            data-img="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=200&q=70">Add to Order · $8.99</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80" alt="French toast with powdered sugar and berries" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Cinnamon French Toast</h3><span class="price-tag">$8.49</span></div>
+          <p class="desc">Thick-cut bread soaked in cinnamon-vanilla egg batter, grilled golden, dusted with sugar.</p>
+          <button class="add-btn"
+            data-id="french-toast" data-name="Cinnamon French Toast" data-price="8.49"
+            data-img="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=200&q=70">Add to Order · $8.49</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ COFFEE ============ -->
+    <div class="menu-section-title"><h2>☕ Bottomless Coffee Bar</h2></div>
+    <div class="menu-grid">
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Fresh cup of bottomless diner coffee" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Diner Coffee — Bottomless</h3><span class="price-tag">$2.75</span></div>
+          <p class="desc">Fresh pot, never bitter. Your cup stays full as long as you stay.</p>
+          <button class="add-btn"
+            data-id="bottomless-coffee" data-name="Bottomless Diner Coffee" data-price="2.75"
+            data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=70">Add to Order · $2.75</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Latte with foam art" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Café Latte</h3><span class="price-tag">$4.25</span></div>
+          <p class="desc">Double espresso with steamed milk. Ask for it iced when the boulevard heats up.</p>
+          <button class="add-btn"
+            data-id="cafe-latte" data-name="Café Latte" data-price="4.25"
+            data-img="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=200&q=70">Add to Order · $4.25</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Mocha topped with whipped cream" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Mocha</h3><span class="price-tag">$4.75</span></div>
+          <p class="desc">Espresso, chocolate, steamed milk, whipped cream. Dessert you can drink.</p>
+          <button class="add-btn"
+            data-id="mocha" data-name="Mocha" data-price="4.75"
+            data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=200&q=70">Add to Order · $4.75</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=80" alt="Fresh orange juice and coffee service" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Fresh Orange Juice</h3><span class="price-tag">$3.95</span></div>
+          <p class="desc">Squeezed every morning. Pulp or no pulp — your call.</p>
+          <button class="add-btn"
+            data-id="orange-juice" data-name="Fresh Orange Juice" data-price="3.95"
+            data-img="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=200&q=70">Add to Order · $3.95</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80" alt="Espresso shot at the counter" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Espresso Doppio</h3><span class="price-tag">$3.25</span></div>
+          <p class="desc">Two shots of our dark roast blend. Straight up, no fuss.</p>
+          <button class="add-btn"
+            data-id="espresso-doppio" data-name="Espresso Doppio" data-price="3.25"
+            data-img="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=200&q=70">Add to Order · $3.25</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80" alt="Thick milkshake in a tall glass" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Old-Fashioned Shake</h3><span class="price-tag">$5.49</span></div>
+          <p class="desc">Vanilla, chocolate or strawberry — hand-spun thick, served with the extra in the metal cup.</p>
+          <button class="add-btn"
+            data-id="shake" data-name="Old-Fashioned Milkshake" data-price="5.49"
+            data-img="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=200&q=70">Add to Order · $5.49</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ PIES ============ -->
+    <div class="menu-section-title"><h2>🥧 Fresh-Baked Pies</h2></div>
+    <div class="menu-grid">
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Slice of apple pie" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Apple Pie</h3><span class="price-tag">$4.75</span></div>
+          <p class="desc">Cinnamon-spiced apples in a flaky crust. Warm it up &amp; add a scoop à la mode +$1.25.</p>
+          <button class="add-btn"
+            data-id="apple-pie" data-name="Apple Pie Slice" data-price="4.75"
+            data-img="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=200&q=70">Add to Order · $4.75</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80" alt="Banana cream pie slice" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Banana Cream Pie</h3><span class="price-tag">$4.95</span></div>
+          <p class="desc">The pie people drive across town for. Real custard, real whipped cream.</p>
+          <button class="add-btn"
+            data-id="banana-cream-pie" data-name="Banana Cream Pie Slice" data-price="4.95"
+            data-img="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=200&q=70">Add to Order · $4.95</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" alt="Cherry pie dessert" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Cherry Pie</h3><span class="price-tag">$4.75</span></div>
+          <p class="desc">Sweet-tart cherry filling, lattice top. Best paired with bottomless coffee.</p>
+          <button class="add-btn"
+            data-id="cherry-pie" data-name="Cherry Pie Slice" data-price="4.75"
+            data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=200&q=70">Add to Order · $4.75</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" alt="Whole pecan pie" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pecan Pie</h3><span class="price-tag">$4.95</span></div>
+          <p class="desc">Gooey, caramel-y, packed with pecans. Take a whole one home — just ask.</p>
+          <button class="add-btn"
+            data-id="pecan-pie" data-name="Pecan Pie Slice" data-price="4.95"
+            data-img="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=200&q=70">Add to Order · $4.95</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d1">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Coconut cream pie slice" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Coconut Cream Pie</h3><span class="price-tag">$4.95</span></div>
+          <p class="desc">Toasted coconut over vanilla custard. Saturday's most-requested slice.</p>
+          <button class="add-btn"
+            data-id="coconut-cream-pie" data-name="Coconut Cream Pie Slice" data-price="4.95"
+            data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=70">Add to Order · $4.95</button>
+        </div>
+      </article>
+
+      <article class="dish-card reveal d2">
+        <div class="dish-photo"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Seasonal pie special at the counter" loading="lazy"></div>
+        <div class="dish-body">
+          <div class="dish-top"><h3>Pie Flight — 3 Slivers</h3><span class="price-tag">$8.95</span></div>
+          <p class="desc">Can't decide? Three slivers of whatever came out of the oven this morning.</p>
+          <button class="add-btn"
+            data-id="pie-flight" data-name="Pie Flight (3 Slivers)" data-price="8.95"
+            data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=70">Add to Order · $8.95</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ ORDER SUMMARY / CART ============ -->
+    <div class="menu-section-title" id="order-summary"><h2>🧾 Your Order</h2></div>
+    <div class="cart-panel-wrap">
+      <div id="cart-lines"></div>
+      <div id="cart-summary" style="display:none;">
+        <div class="cart-summary-row"><span>Subtotal (<span id="sum-count">0</span> items)</span><span id="sum-subtotal">$0.00</span></div>
+        <div class="cart-summary-row total"><span>Total</span><span id="sum-total">$0.00</span></div>
+        <div class="cart-actions">
+          <a class="btn btn-primary" href="contact.html">Call It In → Contact</a>
+          <button class="btn btn-outline" onclick="clearMobyCart()">Clear Order</button>
+        </div>
+        <p style="font-size:0.85rem; color:var(--espresso-soft); margin-top:14px;">
+          Online orders are pick-up only — we'll start cooking when you call <a href="tel:+13237502515">(323) 750-2515</a>. Prices exclude tax.
+        </p>
+      </div>
+      <div id="empty-cart-msg" class="empty-cart">
+        <h3 style="margin-bottom:8px;">Your tray is empty 🍽️</h3>
+        <p>Add some pancakes, a bottomless coffee… maybe a slice of banana cream for the road.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Sticky cart bar -->
+<div class="cart-bar hidden" id="cart-bar">
+  <div class="cart-bar-info">
+    <strong id="bar-total">$0.00</strong>
+    <span id="bar-count">0 items in your order</span>
+  </div>
+  <a class="view-cart-btn" href="#order-summary" onclick="scrollToSummary(event)">View Order ↓</a>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">☕ Moby's Coffee Shop</div>
+        <p>Serving Inglewood breakfast, coffee and pie since 1959. Family-owned, griddle-fresh, and always glad to see you.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>3008 W Manchester Blvd</li>
+          <li>Inglewood, CA 90305</li>
+          <li><a href="tel:+13237502515">(323) 750-2515</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Moby's Coffee Shop · Inglewood, CA</span>
+      <span>Open Daily 6AM–3PM ☕</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

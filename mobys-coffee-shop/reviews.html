@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews — Moby's Coffee Shop | 4.2★ on Google, Inglewood</title>
+  <meta name="description" content="See why Inglewood rates Moby's Coffee Shop 4.2 stars on Google from 900+ reviews. Real words from real regulars about our breakfasts, bottomless coffee and fresh-baked pies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="cup">☕</span> Moby's <em>Coffee Shop</em></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html" class="active">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="cart-link" href="menu.html#order-summary">Cart<span id="cart-count" class="empty">0</span></a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="mobyToggleNav()">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Word on the boulevard</span>
+    <h1>What Inglewood Says About Us</h1>
+    <p>Nearly a thousand neighbors have rated us on Google — hover over the wall below to stop and read. Every review reflects the same thing: a solid classic diner that shows up every morning.</p>
+  </div>
+</section>
+
+<!-- Dual-direction marquee -->
+<section class="section" style="padding-top:36px;">
+  <div class="wrap" style="margin-bottom:26px;">
+    <div class="section-head reveal" style="margin-bottom:10px;">
+      <span class="kicker">★★★★☆ 4.2 average · 900+ reviews</span>
+      <h2>The Living Review Wall</h2>
+      <p>Row one drifts right-to-left, row two drifts left-to-right. Hover to pause and read.</p>
+    </div>
+  </div>
+
+  <div class="marquee-zone" aria-label="Rotating customer reviews">
+    <div class="marquee-row" id="marquee-top"></div>
+  </div>
+  <div style="height:24px;"></div>
+  <div class="marquee-zone" aria-label="More customer reviews">
+    <div class="marquee-row reverse" id="marquee-bottom"></div>
+  </div>
+</section>
+
+<!-- Live counter -->
+<section class="counter-strip">
+  <div class="wrap">
+    <div class="rating-badge"><span class="rc-stars">★★★★☆</span> 4.2 on Google</div>
+    <div class="counter-num" id="review-counter">907</div>
+    <p class="counter-label">Google reviews and counting — thank you, Inglewood ☕</p>
+  </div>
+</section>
+
+<!-- Leave a review CTA -->
+<section class="section alt">
+  <div class="wrap" style="max-width:640px; text-align:center;">
+    <div class="reveal">
+      <span class="kicker">Been in lately?</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.4rem); margin-bottom:12px;">Got a Moby's Story?</h2>
+      <p style="color:var(--espresso-soft); margin-bottom:24px;">If a waitress remembered your order or the pie made your week, tell Google about it — it keeps a 66-year-old coffee shop humming.</p>
+      <a class="btn btn-primary" href="https://www.google.com/search?q=Moby%27s+Coffee+Shop+3008+W+Manchester+Blvd+Inglewood" target="_blank" rel="noopener">Leave a Google Review ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">☕ Moby's Coffee Shop</div>
+        <p>Serving Inglewood breakfast, coffee and pie since 1959. Family-owned, griddle-fresh, and always glad to see you.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>3008 W Manchester Blvd</li>
+          <li>Inglewood, CA 90305</li>
+          <li><a href="tel:+13237502515">(323) 750-2515</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu &amp; Ordering</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Moby's Coffee Shop · Inglewood, CA</span>
+      <span>Open Daily 6AM–3PM ☕</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+<script src="js/reviews.js"></script>
+</body>
+</html>

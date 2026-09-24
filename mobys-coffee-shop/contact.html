@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Location — Moby's Coffee Shop | Inglewood, CA</title>
+  <meta name="description" content="Find Moby's Coffee Shop at 3008 W Manchester Blvd, Inglewood, CA 90305. Call (323) 750-2515, email us, or send a message — we answer every one. Open daily 6am–3pm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="cup">☕</span> Moby's <em>Coffee Shop</em></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a class="cart-link" href="menu.html#order-summary">Cart<span id="cart-count" class="empty">0</span></a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="mobyToggleNav()">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Say hello · order ahead</span>
+    <h1>Contact Us</h1>
+    <p>Call for takeout, write to us about catering or your group breakfast, or just use the form below — it lands straight in our inbox and we read every message.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px;">
+  <div class="wrap contact-grid">
+
+    <!-- Form -->
+    <div class="contact-form-card reveal">
+      <h2 style="margin-bottom:6px;">Send Us a Message</h2>
+      <p style="font-size:0.92rem; color:var(--espresso-soft); margin-bottom:22px;">We usually reply within a day (we're busy flipping pancakes).</p>
+
+      <form action="https://formsubmit.co/harshraj8253@gmail.com" method="POST">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New message from mobyscoffeeshop website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-field">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Denise T.">
+        </div>
+        <div class="form-field">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone <span style="font-weight:400; color:var(--espresso-soft);">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(310) 555-0100">
+        </div>
+        <div class="form-field">
+          <label for="topic">What's this about?</label>
+          <select id="topic" name="topic">
+            <option>General question</option>
+            <option>Pickup order / call-ahead</option>
+            <option>Catering or large group</option>
+            <option>Pie pre-order</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message ☕</button>
+        <p style="font-size:0.8rem; color:var(--espresso-soft); margin-top:12px; text-align:center;">
+          First-time submissions get a quick confirmation email from FormSubmit — that's normal.
+        </p>
+      </form>
+    </div>
+
+    <!-- Info + map -->
+    <div class="reveal d1">
+      <h2 style="margin-bottom:14px;">Visit the Shop</h2>
+      <ul class="contact-info-list">
+        <li><span class="ico">📍</span><span><strong>3008 W Manchester Blvd</strong><br>Inglewood, CA 90305<br><a href="https://maps.google.com/?q=Moby's+Coffee+Shop+3008+W+Manchester+Blvd+Inglewood+CA+90305" target="_blank" rel="noopener">Open in Google Maps ↗</a></span></li>
+        <li><span class="ico">📞</span><span><a href="tel:+13237502515">(323) 750-2515</a></span></li>
+        <li><span class="ico">✉️</span><span>Prefer email? Use the form — it reaches us instantly.</span></li>
+        <li><span class="ico">🅿️</span><span>Free parking lot behind the shop off Hazel St.</span></li>
+      </ul>
+
+      <h2 style="margin-bottom:10px;">Hours</h2>
+      <table class="hours-table" style="max-width:360px; margin-bottom:26px;">
+        <tr><td>Monday – Friday</td><td>6:00 AM – 3:00 PM</td></tr>
+        <tr><td>Saturday</td><td>6:00 AM – 3:00 PM</td></tr>
+        <tr><td>Sunday</td><td>6:00 AM – 3:00 PM</td></tr>
+        <tr><td>Holidays</td><td>Call ahead</td></tr>
+      </table>
+
+      <div class="map-embed">
+        <iframe
+          title="Map to Moby's Coffee Shop, 3008 W Manchester Blvd, Inglewood, CA 90305"
+          src="https://www.google.com/maps?q=3008%20W%20Manchester%20Blvd%2C%20Inglewood%2C%20CA%2090305&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Big CTA strip -->
+<section class="info-strip">
+  <div class="wrap" style="text-align:center;">
+    <h2 class="reveal" style="color:var(--cream);">Hungry Now? We're on the Griddle.</h2>
+    <p class="reveal" style="color:#D8C7BB; margin-bottom:26px;">Skip the line — call your order in and it'll be boxed and waiting.</p>
+    <a class="btn btn-primary reveal d1" href="tel:+13237502515">📞 Call (323) 750-2515</a>
+    <a class="btn btn-outline reveal d1" href="menu.html" style="border-color:var(--cream); color:var(--cream)!important; margin-left:12px;">Browse the Menu</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">☕ Moby's Coffee Shop</div>
+        <p>Serving Inglewood breakfast, coffee and pie since 1959. Family-owned, griddle-fresh, and always glad to see you.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>3008 W Manchester Blvd</li>
+          <li>Inglewood, CA 90305</li>
+          <li><a href="tel:+13237502515">(323) 750-2515</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu &amp; Ordering</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Moby's Coffee Shop · Inglewood, CA</span>
+      <span>Open Daily 6AM–3PM ☕</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

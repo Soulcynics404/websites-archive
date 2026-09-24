@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moby's Coffee Shop — Classic Diner Breakfast in Inglewood, CA</title>
+  <meta name="description" content="Moby's Coffee Shop has served hearty diner breakfasts, bottomless coffee and famous pies at 3008 W Manchester Blvd, Inglewood since 1959. Open daily 6am–3pm. Call (323) 750-2515.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="cup">☕</span> Moby's <em>Coffee Shop</em></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="cart-link" href="menu.html#order-summary">Cart<span id="cart-count" class="empty">0</span></a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="mobyToggleNav()">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner" id="hero-scene">
+    <div class="hero-copy">
+      <span class="kicker">☕ Inglewood's classic diner · est. 1959</span>
+      <h1>Big Breakfasts.<br>Hot Coffee. <span class="accent">Since&nbsp;1959.</span></h1>
+      <p class="lede">A real coffee shop on West Manchester Boulevard — griddle-hot pancakes, crispy hash browns, bottomless cups, and a pie case you can see from the sidewalk.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="menu.html">View the Menu</a>
+        <a class="btn btn-outline" href="tel:+13237502515">📞 (323) 750-2515</a>
+      </div>
+      <div class="hero-meta">
+        <span><strong>★ 4.2</strong> · 900+ Google reviews</span>
+        <span>📍 3008 W Manchester Blvd</span>
+        <span>🕒 Open daily 6am – 3pm</span>
+      </div>
+    </div>
+
+    <div class="hero-scene" data-depth="1.0">
+      <div class="scene-card card-main" data-depth="0.55"><img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=800&q=80" alt="Classic American diner breakfast plate with eggs, bacon and hash browns"></div>
+      <div class="scene-card card-mid" data-depth="0.85"><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80" alt="Stack of fluffy buttermilk pancakes with syrup"></div>
+      <div class="scene-card card-small" data-depth="0.35"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Fresh cup of diner coffee"></div>
+      <div class="chip chip-stars" data-depth="0.2">★★★★☆ <small>4.2 on Google · 900+ reviews</small></div>
+      <div class="chip chip-hours" data-depth="0.25">🕒 Open Daily <small>6:00 AM — 3:00 PM</small></div>
+      <div class="chip chip-pie" data-depth="0.15">🥧 Pie of the Day <small>Banana Cream — ask for it warm</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Signature plates -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Griddle classics</span>
+      <h2>What the Regulars Order</h2>
+      <p>The plates that keep Manchester Boulevard coming back — cooked to order, portions like grandma's house.</p>
+    </div>
+    <div class="grid-3">
+      <article class="feature-card reveal d1">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80" alt="Two-egg breakfast with meat and potatoes" loading="lazy">
+        <div class="fc-body">
+          <h3>Two-Egg Breakfast</h3>
+          <p>Eggs any style, choice of bacon or sausage, hash browns, and toast off the grill.</p>
+          <span class="price-tag">$10.99</span>
+        </div>
+      </article>
+      <article class="feature-card reveal d2">
+        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80" alt="Pancake stack with butter and maple syrup" loading="lazy">
+        <div class="fc-body">
+          <h3>Buttermilk Pancakes</h3>
+          <p>A stack of three golden flapjacks, whipped butter, warm maple syrup.</p>
+          <span class="price-tag">$7.99</span>
+        </div>
+      </article>
+      <article class="feature-card reveal d3">
+        <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=80" alt="Fresh-baked pie slices on a diner counter" loading="lazy">
+        <div class="fc-body">
+          <h3>Pie Case Classics</h3>
+          <p>Banana cream, apple, cherry — baked in-house daily. Ask your server what's fresh.</p>
+          <span class="price-tag">$4.75 / slice</span>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top:44px;" class="reveal">
+      <a class="btn btn-primary" href="menu.html">See the Full Menu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Story teaser -->
+<section class="section alt">
+  <div class="wrap split">
+    <div class="reveal">
+      <img class="rounded" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Inside Moby's — counter seats and warm morning light" loading="lazy">
+    </div>
+    <div class="reveal d1">
+      <span class="kicker">Our story</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.5rem); margin-bottom:14px;">Sixty-Six Years of "Coffee, Hon?"</h2>
+      <p style="color:var(--espresso-soft); margin-bottom:20px;">Three generations of Inglewood families have started their mornings in these booths. The grill is the same one from 1959 (re-seasoned a few hundred times), the coffee's always hot, and nobody rushes you out of your seat.</p>
+      <a class="btn btn-outline" href="about.html">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews teaser -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Word on the boulevard</span>
+      <h2>Inglewood Keeps Coming Back</h2>
+      <p><strong style="color:var(--gold-text);">★ 4.2 / 5</strong> from 900+ Google reviewers — see why neighbors call us their second kitchen.</p>
+    </div>
+    <div class="grid-3">
+      <article class="feature-card reveal d1" style="padding:26px;">
+        <div class="rc-stars" style="color:var(--gold-text); letter-spacing:2px;">★★★★★</div>
+        <p style="margin:12px 0;">"Solid classic diner. The pancakes are huge, coffee never hits empty, and the waitresses remember your order after one visit."</p>
+        <strong>— Denise T., Inglewood</strong>
+      </article>
+      <article class="feature-card reveal d2" style="padding:26px;">
+        <div class="rc-stars" style="color:var(--gold-text); letter-spacing:2px;">★★★★☆</div>
+        <p style="margin:12px 0;">"Old-school in the best way. Cash-friendly, fast service even on Sunday rush, and that banana cream pie is no joke."</p>
+        <strong>— Marcus R., LA</strong>
+      </article>
+      <article class="feature-card reveal d3" style="padding:26px;">
+        <div class="rc-stars" style="color:var(--gold-text); letter-spacing:2px;">★★★★★</div>
+        <p style="margin:12px 0;">"Been coming here since the Forum shows in the '80s. Same booth, same great corned beef hash. A true Inglewood landmark."</p>
+        <strong>— Eleanor G., Morningside Park</strong>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top:44px;" class="review-teaser-cta reveal">
+      <a class="btn btn-outline" href="reviews.html">Read All 900+ Reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Info strip -->
+<section class="info-strip">
+  <div class="wrap">
+    <h2 class="reveal">Visit Us on the Boulevard</h2>
+    <p class="reveal" style="color:#D8C7BB;">Free parking lot behind the shop · walk-ins welcome</p>
+    <div class="info-grid">
+      <div class="info-item reveal d1">
+        <h3>📍 Address</h3>
+        <p>3008 W Manchester Blvd<br>Inglewood, CA 90305</p>
+      </div>
+      <div class="info-item reveal d2">
+        <h3>📞 Phone</h3>
+        <p><a href="tel:+13237502515" style="color:#E8DCD2;">(323) 750-2515</a></p>
+      </div>
+      <div class="info-item reveal d3">
+        <h3>🕒 Hours</h3>
+        <p>Mon – Sun · 6:00 AM – 3:00 PM<br>Holidays may vary — call ahead</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">☕ Moby's Coffee Shop</div>
+        <p>Serving Inglewood breakfast, coffee and pie since 1959. Family-owned, griddle-fresh, and always glad to see you.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>3008 W Manchester Blvd</li>
+          <li>Inglewood, CA 90305</li>
+          <li><a href="tel:+13237502515">(323) 750-2515</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="menu.html">Menu &amp; Ordering</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Moby's Coffee Shop · Inglewood, CA</span>
+      <span>Open Daily 6AM–3PM ☕</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
