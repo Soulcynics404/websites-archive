@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Order | Fig Tree Cafe London</title>
+<meta name="description" content="Review your Fig Tree Cafe collection order before paying at the counter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="order">
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Fig Tree Cafe home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FAF7EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Fig Tree Cafe</span>
+        <span class="brand-sub">Garden Brunch · London</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a>Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="phone-chip" href="tel:+447342740103">📞 <span class="lbl">07342&nbsp;740103</span></a>
+      <button class="cart-chip" data-open-cart type="button">🛒 <span data-cart-count>0</span></button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header><script src="js/main.js"></script>
+
+<main>
+<section class="page-banner">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> · Your Order</nav>
+    <span class="kicker">Collection order</span>
+    <h1 class="h-lg" style="margin-top:.6rem">Order summary</h1>
+    <p class="lede" style="margin-top:.8rem">Check everything's here, then show this screen at the counter — pay on collection.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:clamp(40px,6vw,70px)">
+  <div class="wrap summary-wrap">
+    <div id="summary-body"><!-- rendered by js/main.js --></div>
+  </div>
+</section>
+</main>
+
+<script>
+window.renderSummaryPage = function () {
+  var body = document.getElementById('summary-body');
+  var items = window.FIG.items();
+  if (!items.length) {
+    body.innerHTML =
+      '<div class="summary-table" style="text-align:center;padding:3rem 1.5rem">' +
+      '<p style="font-size:2.4rem" aria-hidden="true">🧺</p>' +
+      '<h2 style="font-family:var(--serif);color:var(--leaf-deep);margin:.6rem 0 .4rem">Your basket is empty</h2>' +
+      '<p style="color:var(--muted)">The pancakes are getting lonely. Go pick a few favourites.</p>' +
+      '<a class="btn btn-primary" href="menu.html" style="margin-top:1.4rem">Browse the menu →</a></div>';
+    return;
+  }
+  var rows = items.map(function (i) {
+    return '<div class="summary-line">' +
+      '<img src="' + i.img + '" alt="">' +
+      '<div><h4>' + i.name + '</h4><div class="sub">£' + i.price.toFixed(2) + ' each</div>' +
+      '<div class="qty" style="margin-top:.35rem">' +
+      '<button data-sum="dec" data-id="' + i.id + '" aria-label="Decrease ' + i.name + '">−</button>' +
+      '<span>' + i.qty + '</span>' +
+      '<button data-sum="inc" data-id="' + i.id + '" aria-label="Increase ' + i.name + '">+</button>' +
+      '<button data-sum="rm" data-id="' + i.id + '" aria-label="Remove ' + i.name + '" title="Remove" style="margin-left:.35rem">✕</button>' +
+      '</div></div>' +
+      '<span></span>' +
+      '<strong style="color:var(--terra-deep);font-family:var(--serif);font-size:1.05rem">£' + (i.price * i.qty).toFixed(2) + '</strong>' +
+      '</div>';
+  }).join('');
+  var count = window.FIG.count();
+  body.innerHTML =
+    '<div class="summary-table">' + rows +
+    '<div class="summary-total"><span>' + count + ' item' + (count === 1 ? '' : 's') + ' · collection</span>' +
+    '<span>Total&nbsp;&nbsp;<strong>£' + window.FIG.total().toFixed(2) + '</strong></span></div></div>' +
+    '<div class="summary-actions">' +
+    '<a class="btn btn-primary" href="contact.html">Confirm by phone / message 📞</a>' +
+    '<a class="btn btn-ghost" href="menu.html">Add more</a>' +
+    '<button class="btn btn-ghost" data-clear-cart type="button">Clear order</button></div>' +
+    '<p class="mini-note">Orders are collected in person — pay at the counter. For tables of 6+, give us a ring on 07342 740103.</p>';
+};
+window.renderSummaryPage();
+
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-sum]');
+  if (!b) return;
+  var id = b.dataset.id;
+  var it = window.FIG.items().find(function (x) { return x.id === id; });
+  if (!it) return;
+  if (b.dataset.sum === 'inc') window.FIG.setQty(id, it.qty + 1);
+  else if (b.dataset.sum === 'dec') window.FIG.setQty(id, it.qty - 1);
+  else if (b.dataset.sum === 'rm') window.FIG.remove(id);
+});
+</script>
+
+
+</body>
+</html>

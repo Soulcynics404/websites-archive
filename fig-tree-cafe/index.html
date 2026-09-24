@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fig Tree Cafe — Garden Brunch &amp; Fresh Juices in London</title>
+<meta name="description" content="Fig Tree Cafe is a leafy garden brunch cafe in London. All-day brunch, fresh juices and proper coffee — rated 4.7★ from 436 Google reviews. Find us &amp; book a table in the garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<!-- ================= HEADER (identical across all pages) ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Fig Tree Cafe home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FAF7EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Fig Tree Cafe</span>
+        <span class="brand-sub">Garden Brunch · London</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="phone-chip" href="tel:+447342740103">📞 <span class="lbl">07342&nbsp;740103</span></a>
+      <button class="cart-chip" data-open-cart type="button">🛒 <span data-cart-count>0</span></button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= 3D HERO ================= -->
+<section class="hero">
+  <div class="hero-bg-blob blob-a"></div>
+  <div class="hero-bg-blob blob-b"></div>
+  <div class="hero-bg-blob blob-c"></div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">Garden brunch · all day</span>
+      <h1 class="h-xl" style="margin-top:.6rem">Brunch under<br>the fig tree.</h1>
+      <p class="lede" style="margin-top:1rem">A leafy London hideaway for slow mornings — fluffy pancakes, shakshuka straight from the pan, cold-pressed juices and coffee worth crossing town for.</p>
+      <div class="rating-pill">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>4.7</strong> on Google · <strong id="rev-count-inline">436</strong> reviews
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="menu.html">Explore the Menu</a>
+        <a class="btn btn-ghost" href="contact.html">Find the Garden →</a>
+      </div>
+      <p class="hero-note">Open daily · 8:00–16:00 weekdays · 9:00–17:00 weekends</p>
+    </div>
+
+    <!-- Dimensional scene: layered cards, mouse-parallax -->
+    <div class="stage reveal" aria-hidden="true">
+      <div class="scene">
+        <figure class="float-card fc-main" data-depth="-14">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="" loading="eager" fetchpriority="high">
+        </figure>
+        <figure class="float-card fc-a" data-depth="26">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy">
+        </figure>
+        <figure class="float-card fc-b" data-depth="42">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy">
+        </figure>
+        <figure class="float-card fc-c" data-depth="20">
+          <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy">
+        </figure>
+        <span class="float-tag tag-a" data-depth="56">🌿 The Garden Room</span>
+        <span class="float-tag tag-b" data-depth="64">🍊 Juiced every morning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US TRIO ================= -->
+<section class="section" style="padding-top:clamp(30px,4vw,50px)">
+  <div class="wrap">
+    <div class="trio">
+      <article class="trio-card reveal">
+        <span class="trio-icon" aria-hidden="true">🥞</span>
+        <h3>All-day brunch</h3>
+        <p>Buttermilk pancakes, chilli eggs and sourdough toasties — served until close, because breakfast shouldn't have a deadline.</p>
+      </article>
+      <article class="trio-card reveal d1">
+        <span class="trio-icon" aria-hidden="true">🍊</span>
+        <h3>Juiced at dawn</h3>
+        <p>Cold-pressed every morning: fig &amp; apple, green reset with mint, or blood orange when it's in season. Never from a carton.</p>
+      </article>
+      <article class="trio-card reveal d2">
+        <span class="trio-icon" aria-hidden="true">🌱</span>
+        <h3>The garden</h3>
+        <p>Fifty covers under the fig tree, string lights at dusk and pots of herbs you're welcome to pinch a leaf from.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DISH PREVIEW ================= -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Fresh from the kitchen</span>
+    <h2 class="h-lg" style="margin:.6rem 0 2.2rem">Plates people come back for</h2>
+    <div class="dish-row">
+      <article class="dish-card reveal">
+        <div class="dish-media">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" alt="Stack of buttermilk pancakes with berries and honey" loading="lazy">
+          <span class="dish-price">£9.50</span>
+        </div>
+        <div class="dish-body">
+          <h3>Fig Tree Pancakes</h3>
+          <p>Buttermilk stack, mascarpone, macerated berries &amp; toasted pecans.</p>
+        </div>
+      </article>
+      <article class="dish-card reveal d1">
+        <div class="dish-media">
+          <img src="https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=800&q=80" alt="Shakshuka baked eggs in spiced tomato sauce" loading="lazy">
+          <span class="dish-price">£11.00</span>
+        </div>
+        <div class="dish-body">
+          <h3>Garden Shakshuka</h3>
+          <p>Baked eggs, smoked paprika tomato, feta &amp; charred sourdough.</p>
+        </div>
+      </article>
+      <article class="dish-card reveal d2">
+        <div class="dish-media">
+          <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" alt="Glass of freshly pressed orange juice" loading="lazy">
+          <span class="dish-price">£4.80</span>
+        </div>
+        <div class="dish-body">
+          <h3>Sunrise Orange</h3>
+          <p>Double-pressed Valencia oranges — nothing added, everything sunshine.</p>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.4rem">
+      <a class="btn btn-solid" href="menu.html">See the full menu &amp; order →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARDEN SPLIT ================= -->
+<section class="section" style="padding-top:0">
+  <div class="wrap split">
+    <div class="split-img reveal">
+      <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80" alt="Sunlit garden path with lush greenery" loading="lazy">
+      <div class="split-badge">🌤️ <strong>Dog-friendly terrace</strong><br>Water bowls &amp; puppuccinos on the house.</div>
+    </div>
+    <div class="reveal d1">
+      <span class="kicker">Our little patch of green</span>
+      <h2 class="h-lg" style="margin:.6rem 0 1rem">A cafe that grew out of a garden</h2>
+      <p class="lede">What started as six tables between the fig trees is now London's leafiest brunch spot — same soil, same slow mornings, same family recipes. Herbs for the kitchen are still picked steps from your table.</p>
+      <ul style="margin-top:1.2rem;display:flex;flex-direction:column;gap:.55rem;font-weight:600;color:var(--leaf-deep)">
+        <li>✓ 50-seat garden terrace, open all seasons</li>
+        <li>✓ Seasonal menu, rewritten every month</li>
+        <li>✓ Beans roasted in Hackney, ground to order</li>
+      </ul>
+      <a class="btn btn-primary" href="about.html" style="margin-top:1.6rem">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS TEASER ================= -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="teaser reveal">
+      <div class="stars-big" aria-hidden="true">★★★★★</div>
+      <h2 class="h-lg" style="margin:.5rem 0 .8rem">4.7 stars. 436 reviews. One fig tree.</h2>
+      <p>The nicest things people say about us keep rolling in — see why London keeps coming back for brunch in the garden.</p>
+      <a class="btn btn-primary" href="reviews.html" style="margin-top:1.6rem">Read live reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="section" style="padding-top:0;padding-bottom:clamp(40px,6vw,70px)">
+  <div class="wrap cta-band reveal">
+    <div>
+      <h2>Hungry already?</h2>
+      <p>Browse the full brunch menu, build your order, and we'll have it ready when you arrive.</p>
+    </div>
+    <a class="btn" href="menu.html">Start an order 🛒</a>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER (identical across all pages) ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="f-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FAF7EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </span>
+        <span>
+          <span class="brand-name">Fig Tree Cafe</span>
+          <span class="brand-sub">Garden Brunch · London</span>
+        </span>
+      </div>
+      <p style="font-size:.92rem;max-width:34ch">All-day brunch, fresh juices and a leafy garden in the heart of London. Come hungry, leave happy.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h4>Visit</h4>
+      <ul class="footer-links">
+        <li>14 Fig Tree Yard, London E2 7QR</li>
+        <li><a href="tel:+447342740103">07342 740103</a></li>
+        <li><a href="mailto:hello@figtreecafe.co.uk">hello@figtreecafe.co.uk</a></li>
+        <li><a href="contact.html">Directions &amp; map →</a></li>
+      </ul>
+    </div>
+    <div class="footer-hours">
+      <h4>Opening hours</h4>
+      <div><span>Mon – Fri</span><span>8:00 – 16:00</span></div>
+      <div><span>Saturday</span><span>9:00 – 17:00</span></div>
+      <div><span>Sunday</span><span>9:00 – 16:00</span></div>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <span data-year>2026</span> Fig Tree Cafe. All rights reserved.</span>
+    <span>Brunch under the fig tree · ★ 4.7 on Google</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
