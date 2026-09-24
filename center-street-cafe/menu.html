@@ -1,5 +1,159 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Center Street Cafe</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Center Street Cafe</a><nav>
-<a href="index.html">Home</a><a href="services.html">Menu</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Menu</h2><div class="cards"><div class="card"><h3>Espresso & Coffee</h3><p>Single-origin beans, pulled on a hand-lever machine.</p></div><div class="card"><h3>Pastries & Bakes</h3><p>Baked in-house every morning, sold until they run out.</p></div><div class="card"><h3>Brunch & Light Bites</h3><p>Seasonal plates made to order, all day.</p></div></div></section><footer>&copy; Center Street Cafe &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Center Street Cafe</title>
+<meta name="description" content="All-day breakfast, pressed sandwiches and local-roast coffee at Center Street Cafe, Anaheim. Simple menu, honest prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">CENTER&nbsp;ST<span>CAFÉ</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">The menu</p>
+  <h1>Eleven things, done right.</h1>
+  <p class="lede">Filter the list, or just scroll and get hungrier.</p>
+  <div class="chips" role="group" aria-label="Filter menu items">
+    <button class="chip is-active" data-filter="all">Everything</button>
+    <button class="chip" data-filter="breakfast">Breakfast</button>
+    <button class="chip" data-filter="lunch">Sandwiches</button>
+    <button class="chip" data-filter="coffee">Coffee</button>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="grid cards" id="menu-grid">
+    <article class="card" data-cat="breakfast">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=70" alt="Eggs, potatoes and toast plate" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Promenade Plate <span class="price">$9.50</span></h3>
+        <p>Two eggs any style, crisp potatoes, buttered sourdough.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="breakfast">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=900&q=70" alt="French toast with berries" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Brioche French Toast <span class="price">$9.00</span></h3>
+        <p>Thick-cut, cinnamon egg wash, berries, whipped butter.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="breakfast">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=70" alt="Avocado toast with poached egg" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Green Toast <span class="price">$8.50</span></h3>
+        <p>Smashed avocado, poached eggs, chili flakes, lime.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="lunch">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=70" alt="Pressed turkey panini" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Promenade Panini <span class="price">$10.75</span></h3>
+        <p>Turkey, sharp cheddar, pesto, pressed till it crackles.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="lunch">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=900&q=70" alt="Grilled cheese with tomato soup" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Three-Cheese Melt <span class="price">$8.75</span></h3>
+        <p>Cheddar, gruyère, mozzarella — add tomato soup for $2.50.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="lunch">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=70" alt="Seasonal greens salad bowl" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Market Salad <span class="price">$9.25</span></h3>
+        <p>Whatever's best at the market, lemon vinaigrette, seeded crunch.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="coffee">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=70" alt="Latte art in a ceramic cup" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Latte <span class="price">$4.75</span></h3>
+        <p>Local-roast espresso, silky milk, oat at no upcharge.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="coffee">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=900&q=70" alt="Double espresso shot" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Doppio <span class="price">$3.00</span></h3>
+        <p>Two ounces of "good morning" in a warm cup.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="coffee">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=70" alt="Cortado in a small glass" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Cortado <span class="price">$4.00</span></h3>
+        <p>Equal parts espresso and steamed milk. The regular's pick.</p>
+      </div>
+    </article>
+  </div>
+  <p class="lede" id="no-results" hidden>Nothing on that filter yet — ask at the counter about off-menu specials.</p>
+</section>
+
+<section class="cta container">
+  <h2>Order ahead, skip the wait.</h2>
+  <p>Call (714) 333-3534 and we'll have it boxed or brewed when you arrive.</p>
+  <a class="btn" href="tel:+17143333534">Call (714) 333-3534</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">CENTER&nbsp;ST<span>CAFÉ</span></p>
+      <p>A neighborhood cafe on the Center Street Promenade, downtown Anaheim.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>140 W Center Street Promenade<br>Anaheim, CA 92805<br><a href="tel:+17143333534">(714) 333-3534</a></p>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Mon–Fri · 7am–3pm<br>Sat–Sun · 8am–3pm</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">About</a><br><a href="contact.html">Visit</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Center Street Cafe · Anaheim, CA</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,12 +1,152 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Allen Rothman</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Allen Rothman</a><nav>
-<a href="index.html">Home</a><a href="services.html">Listings</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in the neighbourhood. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> 917-270-6310<br><strong>Area:</strong> the neighbourhood</p>
-<form action="mailto:allen1840@gmail.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; Allen Rothman &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Allen Rothman · Compass NYC · (917) 270-6310</title>
+<meta name="description" content="Contact Allen Rothman at (917) 270-6310 for confidential estate property sales on the Upper West Side and across Manhattan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23B08D57'/%3E%3Ctext x='32' y='42' font-size='30' text-anchor='middle' fill='%23FAF7F0' font-family='Georgia'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AR</span><span>Allen Rothman<span class="brand-sub">Compass NYC · UWS</span></span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-sm nav-cta active" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">Contact</p>
+    <h1>Let's talk about your home.</h1>
+    <p>Every inquiry is answered personally by Allen and kept strictly confidential.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px;">
+  <div class="wrap split" style="align-items:start;">
+    <div class="form-card reveal">
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="cf-phone">Phone (optional)</label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="(212) 555-0182">
+        </div>
+        <div class="field">
+          <label for="cf-message">Tell us about your property</label>
+          <textarea id="cf-message" name="message" placeholder="Building, neighborhood, timeline — whatever feels comfortable sharing."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;">Send request</button>
+        <p class="form-note" id="form-status" role="status"></p>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:18px;">Direct line</h2>
+      <ul class="contact-lines">
+        <li><span class="cl-label">Phone</span><a href="tel:+19172706310">(917) 270-6310</a></li>
+        <li><span class="cl-label">Team</span>The Horowitz Rothman Team</li>
+        <li><span class="cl-label">Brokerage</span>Compass · New York City</li>
+      </ul>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); margin:34px 0 12px;">Territory</h2>
+      <p>Upper West Side · New York, NY 10023<br>Serving all of Manhattan on request.</p>
+      <p style="margin-top:14px;" class="form-note">Licensed Real Estate Sales Agent, State of New York. Inquiries from executors, trustees and attorneys welcome.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Prefer to talk it through first? <em>Call directly.</em></h2>
+      <p>No obligation, no pressure, no mailing lists.</p>
+    </div>
+    <a class="btn btn-primary" href="tel:+19172706310">Call (917) 270-6310</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">ALLEN ROTHMAN</p>
+      <p class="footer-note">Licensed Real Estate Sales Agent · The Horowitz Rothman Team at Compass NYC · Upper West Side, New York, NY 10023</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Neighborhoods</h4>
+      <ul>
+        <li>Upper West Side</li>
+        <li>Central Park West</li>
+        <li>Tribeca</li>
+        <li>Brooklyn Heights</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+19172706310">(917) 270-6310</a></li>
+        <li>Upper West Side · NY 10023</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>Equal Housing Opportunity. © <span id="yr">2026</span> Allen Rothman.</span>
+    <span>Licensed Real Estate Sales Agent, State of New York</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* Contact form: front-end validation + confirmation (no backend on this site) */
+(() => {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    if (!name || !/.+@.+\..+/.test(email)) {
+      status.textContent = "Please add your name and a valid email so Allen can reply.";
+      status.style.color = "#A4552F";
+      return;
+    }
+    status.style.color = "";
+    status.textContent = "Thank you, " + name.split(" ")[0] + ". Your note is ready to send — every inquiry is answered personally.";
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

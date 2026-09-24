@@ -1,5 +1,150 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cheeseboat</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Cheeseboat</a><nav>
-<a href="index.html">Home</a><a href="services.html">Menu</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Menu</h2><div class="cards"><div class="card"><h3>Espresso & Coffee</h3><p>Single-origin beans, pulled on a hand-lever machine.</p></div><div class="card"><h3>Pastries & Bakes</h3><p>Baked in-house every morning, sold until they run out.</p></div><div class="card"><h3>Brunch & Light Bites</h3><p>Seasonal plates made to order, all day.</p></div></div></section><footer>&copy; Cheeseboat &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Cheeseboat</title>
+<meta name="description" content="The Cheeseboat menu — Adjarian khachapuri, Imeretian cheese bread, boat fries, sweet boats and drinks. Williamsburg, Brooklyn. Call 929-295-8401.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">CHEESE<span>BOAT</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">The fleet</p>
+  <h1>Pick your vessel.</h1>
+  <p class="lede">Every boat is baked to order. Filter by craving.</p>
+  <div class="chips" role="group" aria-label="Filter the menu">
+    <button class="chip is-active" data-filter="all">Everything</button>
+    <button class="chip" data-filter="boats">Cheese Boats</button>
+    <button class="chip" data-filter="sides">Sides</button>
+    <button class="chip" data-filter="sweet">Sweet</button>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="grid cards" id="menu-grid">
+    <article class="card" data-cat="boats">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=900&q=70" alt="Adjarian khachapuri with runny egg" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Adjarian <span class="price">$14</span></h3>
+        <p>Molten cheese, egg yolk, butter paddle. The captain's orders.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="boats">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1552767059-ce182ead6c1b?auto=format&fit=crop&w=900&q=70" alt="Round cheese bread" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Imeretian <span class="price">$11</span></h3>
+        <p>No egg, just cheese. Round, rustic, ruthless.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="boats">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=70" alt="Pizza-style cheese boat with toppings" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Brooklynite <span class="price">$16</span></h3>
+        <p>Our boat, NYC attitude — pepperoni, hot honey, mozzarella blend.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="boats">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=70" alt="Creamy cheese pasta skillet" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Cheese Skillet <span class="price">$13</span></h3>
+        <p>Skillet-baked three cheeses with warm flatbread strips for dunking.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="sides">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=70" alt="Loaded cheese fries" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Boat Fries <span class="price">$8</span></h3>
+        <p>Cheese sauce, scallion, dill. Add bacon +$2.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="sides">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=70" alt="Hearty plated comfort dish" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Market Salad <span class="price">$7</span></h3>
+        <p>Yes, a salad. Somebody at your table will need this. Sharp vinaigrette.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="sweet">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=70" alt="Golden toasted sweet-savory melt" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Sweet Boat <span class="price">$9</span></h3>
+        <p>Nutella, crushed hazelnut, powdered snow. The dessert boat sails nightly.</p>
+      </div>
+    </article>
+    <article class="card" data-cat="sweet">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=70" alt="Creamy dessert glass" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Lemonade / Ayran <span class="price">$4</span></h3>
+        <p>Squeeze lemonade or the salty Georgian yogurt drink. Be brave once.</p>
+      </div>
+    </article>
+  </div>
+  <p class="lede" id="no-results" hidden>Nothing docked under that flag yet.</p>
+</section>
+
+<section class="cta container">
+  <h2>Hungry already?</h2>
+  <p>Call ahead — boats come out of the oven about 12 minutes after you dial.</p>
+  <a class="btn" href="tel:+19292958401">Call 929-295-8401</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">CHEESE<span>BOAT</span></p>
+      <p>Georgian cheese boats &amp; street food from our little galley in Williamsburg, Brooklyn.</p>
+    </div>
+    <div>
+      <h4>Find us</h4>
+      <p>Williamsburg, Brooklyn NY<br><a href="tel:+19292958401">929-295-8401</a><br><a href="mailto:cheeseboatbk@gmail.com">cheeseboatbk@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Ratings</h4>
+      <p>★ 4.3 on Google<br>547 reviews</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">About</a><br><a href="contact.html">Visit</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Cheeseboat · Williamsburg, Brooklyn</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

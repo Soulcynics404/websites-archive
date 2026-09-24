@@ -1,12 +1,121 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chic Maquillage Artistry by Jennifer Noble</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Chic Maquillage Artistry by Jennifer Noble</a><nav>
-<a href="index.html">Home</a><a href="services.html">Services</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in the neighbourhood. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> 623-399-7654<br><strong>Area:</strong> the neighbourhood</p>
-<form action="mailto:chicmaquillageartistry@yahoo.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; Chic Maquillage Artistry by Jennifer Noble &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book · Chic Maquillage Artistry</title>
+<meta name="description" content="Book a bridal trial or event appointment with Jennifer Noble — (623) 399-7654 or chicmaquillageartistry@yahoo.com. Serving Glendale &amp; metro Phoenix, AZ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">Chic&nbsp;Maquillage<span>Artistry by Jennifer Noble</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Book a Trial</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">Booking</p>
+  <h1>Let's hold your date.</h1>
+  <p class="lede">Text or call is fastest — otherwise send the form and include your date, venue and party size for an exact quote.</p>
+</section>
+
+<section class="section container contact-grid">
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Call or text</h3>
+      <p><a href="tel:+16233997654">(623) 399-7654</a></p>
+      <p class="meta">Replies between appointments — evenings &amp; weekends too</p>
+    </div>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p><a href="mailto:chicmaquillageartistry@yahoo.com">chicmaquillageartistry@yahoo.com</a></p>
+      <p class="meta">Include your wedding date in the subject line</p>
+    </div>
+    <div class="contact-card">
+      <h3>Service area</h3>
+      <p>Glendale · Phoenix · Scottsdale · Peoria</p>
+      <p class="meta">On-location only — Jennifer comes to you. Travel beyond metro Phoenix quoted individually.</p>
+    </div>
+    <div class="contact-card">
+      <h3>What to include</h3>
+      <p>Date · venue · getting-ready location · headcount · inspiration photos welcome</p>
+    </div>
+  </div>
+
+  <form id="contact-form" class="contact-form card-form" novalidate>
+    <h2>Booking enquiry</h2>
+    <label>Name
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>I'm interested in
+      <select name="service">
+        <option>Bridal makeup + trial</option>
+        <option>Bridal trial first</option>
+        <option>Bridal party / group booking</option>
+        <option>Event or occasion makeup</option>
+      </select>
+    </label>
+    <label>Event date
+      <input type="text" name="date" placeholder="e.g. October 17, 2026">
+    </label>
+    <label>Message
+      <textarea name="message" rows="5" placeholder="Venue, party size, timeline questions…"></textarea>
+    </label>
+    <button class="btn" type="submit">Send enquiry</button>
+    <p class="form-note" id="form-note" role="status"></p>
+  </form>
+</section>
+
+<section class="map-note">
+  <div class="container map-inner">
+    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=70" alt="Couple at golden hour after the ceremony" loading="lazy">
+    <div class="map-caption">
+      <h2>From first text to last dance</h2>
+      <p>You'll hear back within a day with availability, a quote, and next steps toward your trial.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">Chic&nbsp;Maquillage<span>Artistry by Jennifer Noble</span></p>
+      <p>Bridal &amp; event makeup artistry based in Glendale, serving metro Phoenix.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+16233997654">(623) 399-7654</a><br>
+      <a href="mailto:chicmaquillageartistry@yahoo.com">chicmaquillageartistry@yahoo.com</a></p>
+    </div>
+    <div>
+      <h4>Serving</h4>
+      <p>Glendale · Phoenix<br>Scottsdale · Peoria<br>Metro Arizona weddings</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="services.html">Services</a><br><a href="about.html">About</a><br><a href="contact.html">Book</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Chic Maquillage Artistry by Jennifer Noble · Glendale, AZ</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

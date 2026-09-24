@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Website Factory — Dashboard</title>
+<style>
+:root{--bg:#111214;--card:#1a1c1f;--ink:#e8e4da;--mut:#8a8578;--acc:#d4a24e;--line:#2a2d31}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,'Times New Roman',serif;padding:48px 20px;max-width:960px;margin:auto}
+h1{font-size:34px;font-weight:400;letter-spacing:.5px;border-bottom:1px solid var(--line);padding-bottom:14px}
+h1 span{color:var(--acc)}
+.meta{color:var(--mut);font-style:italic;margin:8px 0 32px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:3px;color:var(--acc);margin:40px 0 14px}
+.stats{display:flex;flex-wrap:wrap;gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);padding:18px 26px;min-width:130px}
+.stat b{display:block;font-size:30px;color:var(--ink)}
+.stat span{color:var(--mut);text-transform:uppercase;font-size:11px;letter-spacing:2px;font-family:sans-serif}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+td{padding:10px 14px;border-bottom:1px solid var(--line);font-size:15px}
+.n{font-style:italic} .score{color:var(--acc);font-weight:bold}
+a{color:#a9c4e2;text-decoration:none;border-bottom:1px dotted #555}
+.chart{display:flex;align-items:flex-end;gap:22px;height:180px;background:var(--card);border:1px solid var(--line);padding:20px}
+.barwrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;flex:1}
+.bar{width:46px;background:linear-gradient(#e8c37a,#a97c2f);border-radius:2px 2px 0 0}
+.barwrap span{margin-top:8px;color:var(--mut);font-size:11px;text-align:center;font-family:sans-serif}
+footer{margin-top:56px;color:#555;font-size:12px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>The Website <span>Factory</span></h1>
+<p class='meta'>Hourly production report · 2026-08-25 23:56 UTC</p>
+<h2>Pipeline</h2><div class='stats'>
+<div class='stat'><b>39</b><span>leads found</span></div>
+<div class='stat'><b>26</b><span>sites live</span></div>
+<div class='stat'><b>26</b><span>pitches sent</span></div>
+<div class='stat'><b>7</b><span>pitches failed</span></div>
+</div>
+<h2>Leads by Category</h2><div class='stats'><div class='stat'><b>4</b><span>restaurants</span></div><div class='stat'><b>30</b><span>realestate</span></div><div class='stat'><b>5</b><span>other</span></div></div>
+<h2>Buy-Score Leaderboard</h2><table><tr><td>#</td><td>Lead</td><td>Cat</td><td>City</td><td>Score</td></tr><tr><td>1</td><td class='n'>Eldorado Cafe</td><td>restaurants</td><td>Austin</td><td class='score'>78</td></tr>
+<tr><td>2</td><td class='n'>MIAM Cafe - Wynwood</td><td>restaurants</td><td>Miami</td><td class='score'>70</td></tr>
+<tr><td>3</td><td class='n'>Dos Besos</td><td>restaurants</td><td>Pasadena</td><td class='score'>59</td></tr>
+<tr><td>4</td><td class='n'>Sima Haghighi</td><td>realestate</td><td>Santa Monica</td><td class='score'>57</td></tr>
+<tr><td>5</td><td class='n'>Judy Jernigan</td><td>realestate</td><td>Sandy Springs</td><td class='score'>52</td></tr>
+<tr><td>6</td><td class='n'>Chic Maquillage Artistry by Jennifer Noble</td><td>other</td><td>Glendale</td><td class='score'>48</td></tr>
+<tr><td>7</td><td class='n'>Sweet Angeles Bakery Cafe</td><td>restaurants</td><td>Beverly Hills</td><td class='score'>43</td></tr>
+<tr><td>8</td><td class='n'>Lori Goldsmith</td><td>realestate</td><td>Beverly Hills</td><td class='score'>36</td></tr>
+<tr><td>9</td><td class='n'>Francine Caliendo</td><td>realestate</td><td>Naperville</td><td class='score'>36</td></tr>
+<tr><td>10</td><td class='n'>Angel Akhavan</td><td>realestate</td><td>Beverly Hills</td><td class='score'>36</td></tr></table>
+<h2>Sites Built (26)</h2><table><tr><td class='n'>Allen Rothman</td><td><a href='https://allen-rothman.vercel.app' target='_blank'>allen-rothman.vercel.app</a></td></tr>
+<tr><td class='n'>Angel Akhavan</td><td><a href='https://angel-akhavan.vercel.app' target='_blank'>angel-akhavan.vercel.app</a></td></tr>
+<tr><td class='n'>Ash Ghavami | Real Estate Services</td><td><a href='https://ash-ghavami.vercel.app' target='_blank'>ash-ghavami.vercel.app</a></td></tr>
+<tr><td class='n'>BASSA REALTY</td><td><a href='https://bassa-realty.vercel.app' target='_blank'>bassa-realty.vercel.app</a></td></tr>
+<tr><td class='n'>Cafe Creme Della Creme - Pies &amp; Patisserie</td><td><a href='https://cafe-creme-della-creme.vercel.app' target='_blank'>cafe-creme-della-creme.vercel.app</a></td></tr>
+<tr><td class='n'>Center Street Cafe</td><td><a href='https://center-street-cafe.vercel.app' target='_blank'>center-street-cafe.vercel.app</a></td></tr>
+<tr><td class='n'>Chic Maquillage Artistry by Jennifer Noble</td><td><a href='https://chic-maquillage-artistry-by-jennifer-nob.vercel.app' target='_blank'>chic-maquillage-artistry-by-jennifer-nob.vercel.app</a></td></tr>
+<tr><td class='n'>Colleen Cassel</td><td><a href='https://colleen-cassel.vercel.app' target='_blank'>colleen-cassel.vercel.app</a></td></tr>
+<tr><td class='n'>Dennis Kamrany</td><td><a href='https://dennis-kamrany.vercel.app' target='_blank'>dennis-kamrany.vercel.app</a></td></tr>
+<tr><td class='n'>Dos Besos</td><td><a href='https://dos-besos.vercel.app' target='_blank'>dos-besos.vercel.app</a></td></tr>
+<tr><td class='n'>Earthy Coffee</td><td><a href='https://earthy-coffee.vercel.app' target='_blank'>earthy-coffee.vercel.app</a></td></tr>
+<tr><td class='n'>Eldorado Cafe</td><td><a href='https://eldorado-cafe.vercel.app' target='_blank'>eldorado-cafe.vercel.app</a></td></tr>
+<tr><td class='n'>Francine Caliendo</td><td><a href='https://francine-caliendo.vercel.app' target='_blank'>francine-caliendo.vercel.app</a></td></tr>
+<tr><td class='n'>Frank Walker</td><td><a href='https://frank-walker.vercel.app' target='_blank'>frank-walker.vercel.app</a></td></tr>
+<tr><td class='n'>Galicia</td><td><a href='https://galicia.vercel.app' target='_blank'>galicia.vercel.app</a></td></tr>
+<tr><td class='n'>Gary Palmer</td><td><a href='https://gary-palmer.vercel.app' target='_blank'>gary-palmer.vercel.app</a></td></tr>
+<tr><td class='n'>Harriet Kleppel</td><td><a href='https://harriet-kleppel.vercel.app' target='_blank'>harriet-kleppel.vercel.app</a></td></tr>
+<tr><td class='n'>Judy Jernigan</td><td><a href='https://judy-jernigan.vercel.app' target='_blank'>judy-jernigan.vercel.app</a></td></tr>
+<tr><td class='n'>Lori Goldsmith</td><td><a href='https://lori-goldsmith.vercel.app' target='_blank'>lori-goldsmith.vercel.app</a></td></tr>
+<tr><td class='n'>MIAM Cafe - Wynwood</td><td><a href='https://miam-cafe-wynwood.vercel.app' target='_blank'>miam-cafe-wynwood.vercel.app</a></td></tr>
+<tr><td class='n'>Martil Cafe</td><td><a href='https://martil-cafe.vercel.app' target='_blank'>martil-cafe.vercel.app</a></td></tr>
+<tr><td class='n'>Sandra Rodriguez</td><td><a href='https://sandra-rodriguez.vercel.app' target='_blank'>sandra-rodriguez.vercel.app</a></td></tr>
+<tr><td class='n'>Sima Haghighi</td><td><a href='https://sima-haghighi.vercel.app' target='_blank'>sima-haghighi.vercel.app</a></td></tr>
+<tr><td class='n'>Susan Holman</td><td><a href='https://susan-holman.vercel.app' target='_blank'>susan-holman.vercel.app</a></td></tr>
+<tr><td class='n'>Susan Rosales</td><td><a href='https://susan-rosales.vercel.app' target='_blank'>susan-rosales.vercel.app</a></td></tr>
+<tr><td class='n'>Well Street Kitchen London</td><td><a href='https://well-street-kitchen-london.vercel.app' target='_blank'>well-street-kitchen-london.vercel.app</a></td></tr></table>
+<h2>Pitches per Hour (UTC)</h2><div class='chart'><div class='barwrap'><div class='bar' style='height:60%'></div><span>22:42<br><b>3</b></span></div>
+<div class='barwrap'><div class='bar' style='height:60%'></div><span>22:43<br><b>3</b></span></div>
+<div class='barwrap'><div class='bar' style='height:20%'></div><span>22:44<br><b>1</b></span></div>
+<div class='barwrap'><div class='bar' style='height:40%'></div><span>22:46<br><b>2</b></span></div>
+<div class='barwrap'><div class='bar' style='height:100%'></div><span>22:47<br><b>5</b></span></div>
+<div class='barwrap'><div class='bar' style='height:20%'></div><span>22:48<br><b>1</b></span></div>
+<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:32<br><b>2</b></span></div>
+<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:33<br><b>2</b></span></div>
+<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:34<br><b>3</b></span></div>
+<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:35<br><b>2</b></span></div>
+<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:36<br><b>3</b></span></div>
+<div class='barwrap'><div class='bar' style='height:40%'></div><span>23:37<br><b>2</b></span></div>
+<div class='barwrap'><div class='bar' style='height:60%'></div><span>23:38<br><b>3</b></span></div>
+<div class='barwrap'><div class='bar' style='height:20%'></div><span>23:39<br><b>1</b></span></div></div>
+<h2>Errors</h2><p style='color:#e8a'>7 failed pitch(es) logged.</p>
+<footer>Soulcynics404 · website-factory · auto-generated by Hermes</footer>
+</body></html>

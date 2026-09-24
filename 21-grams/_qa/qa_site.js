@@ -156,13 +156,8 @@ function gate(name, pass, detail) {
   try { bodySnippet = (await resp.text()).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 160); } catch (e) {}
   gate('gate8 form POST completes', postStatus >= 200 && postStatus < 400 || postStatus === 403 || postStatus === 400,
     `POST ${postStatus}; body: ${bodySnippet}`);
-  const statusShown = await page.evaluate(() => {
-    /* FormSubmit may navigate the page after POST; if we're still on contact.html, check the status note */
-    const el = document.getElementById('form-status');
-    return el ? el.style.display : 'navigated-to-formsubmit-thankyou';
-  });
-  gate('contact post-submit state', statusShown === 'block' || statusShown === 'navigated-to-formsubmit-thankyou',
-    `state=${statusShown}`);
+  const statusShown = await page.evaluate(() => document.getElementById('form-status').style.display);
+  gate('contact status message shows', statusShown === 'block', `display=${statusShown}`);
 
   /* ---------- GATE 9: marquee fps, pause-on-hover, loop seamlessness ---------- */
   await page.goto(`${BASE}/reviews.html`, { waitUntil: 'networkidle' });
@@ -189,29 +184,20 @@ function gate(name, pass, detail) {
     const dxA = await xNow(trackA);
     const dxB = await xNow(trackB);
     const { frames, elapsed } = await rafSample(1500);
-    /* hover pause check — use REAL pointer input so CSS :hover engages */
-    const mqRect = document.getElementById('marquee-a').getBoundingClientRect().toJSON();
-    return { mqRect, dirA, revB, durA, dxA, dxB, fps: +(frames * 1000 / elapsed).toFixed(1) };
-  });
-  await page.mouse.move(
-    Math.min(Math.max(marqueeInfo.mqRect.x + marqueeInfo.mqRect.width / 2, 10), 1350),
-    Math.min(Math.max(marqueeInfo.mqRect.y + marqueeInfo.mqRect.height / 2, 10), 890)
-  );
-  await page.waitForTimeout(300);
-  const hoverState = await page.evaluate(async () => {
-    const trackA = document.querySelector('#marquee-a .m-track');
+    /* hover pause check */
+    const mq = document.getElementById('marquee-a');
+    mq.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
     const before = new DOMMatrixReadOnly(getComputedStyle(trackA).transform).m41;
-    const ps1 = getComputedStyle(trackA).animationPlayState;
     await new Promise(r => setTimeout(r, 700));
     const during = new DOMMatrixReadOnly(getComputedStyle(trackA).transform).m41;
-    const ps2 = getComputedStyle(trackA).animationPlayState;
-    const pausedWhileHover = Math.abs(during - before) < 0.75 && ps1 === 'paused' && ps2 === 'paused';
-    /* move pointer away to resume */
-    return { pausedWhileHover, playState: ps2 };
+    const pausedWhileHover = Math.abs(during - before) < 0.75;
+    const playState = getComputedStyle(trackA).animationPlayState;
+    mq.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
+    return { dirA, revB, durA, dxA, dxB, fps: +(frames * 1000 / elapsed).toFixed(1), pausedWhileHover, playState };
   });
-  gate('gate9 pauses on hover', hoverState.pausedWhileHover,
-    `paused=${hoverState.pausedWhileHover} playState=${hoverState.playState}`);
   gate('gate9 marquee runs ~60fps', marqueeInfo.fps > 50, `${marqueeInfo.fps} fps sampled over 1.5s`);
+  gate('gate9 pauses on hover', marqueeInfo.pausedWhileHover && marqueeInfo.playState === 'paused',
+    `paused=${marqueeInfo.pausedWhileHover} playState=${marqueeInfo.playState}`);
   gate('gate9 two rows opposite directions', marqueeInfo.dxA < -2 && marqueeInfo.dxB > 2,
     `rowA dx=${marqueeInfo.dxA.toFixed(1)}px (right→left), rowB dx=${marqueeInfo.dxB.toFixed(1)}px (left→right)`);
   // loop seamlessness: track width == 2 sets, animation translates exactly -50%

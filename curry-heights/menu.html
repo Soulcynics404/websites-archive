@@ -1,5 +1,142 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Curry Heights</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Curry Heights</a><nav>
-<a href="index.html">Home</a><a href="services.html">Menu</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Menu</h2><div class="cards"><div class="card"><h3>Espresso & Coffee</h3><p>Single-origin beans, pulled on a hand-lever machine.</p></div><div class="card"><h3>Pastries & Bakes</h3><p>Baked in-house every morning, sold until they run out.</p></div><div class="card"><h3>Brunch & Light Bites</h3><p>Seasonal plates made to order, all day.</p></div></div></section><footer>&copy; Curry Heights &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Curry Heights — Brooklyn Heights Indian</title>
+<meta name="description" content="The Curry Heights menu — curries, biryani, tandoor and vegetarian classics. Build your order for pickup or free delivery in Brooklyn Heights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CURRY<span>HEIGHTS</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Order now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container menu-hero">
+    <div>
+      <p class="eyebrow">The menu</p>
+      <h1>From the tandoor &amp; the pot.</h1>
+      <p class="lede">Tap “Add” to build a pickup or delivery order. Heat levels: mild · medium · hot · Brooklyn hot.</p>
+    </div>
+    <a class="cart-pill" href="#orderBox">🛒 <b id="cartCount">0</b> items · $<span id="cartTotal">0.00</span></a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head"><h2>Curries &amp; classics</h2></div>
+  <div class="menu-grid" data-menu-section>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" alt="Chicken tikka masala" width="800" height="520"></div>
+      <div class="mi-body"><h3>Chicken Tikka Masala</h3><p>Char-grilled chicken, tomato-cream masala.</p>
+        <div class="mi-foot"><span class="price">$17.95</span><button class="add-btn" data-name="Chicken Tikka Masala" data-price="17.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80" alt="Lamb biryani" width="800" height="520"></div>
+      <div class="mi-body"><h3>Lamb Biryani</h3><p>Saffron basmati sealed and steamed with spiced lamb.</p>
+        <div class="mi-foot"><span class="price">$19.95</span><button class="add-btn" data-name="Lamb Biryani" data-price="19.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Saag paneer" width="800" height="520"></div>
+      <div class="mi-body"><h3>Saag Paneer</h3><p>Slow spinach, hand-pressed house cheese.</p>
+        <div class="mi-foot"><span class="price">$14.95</span><button class="add-btn" data-name="Saag Paneer" data-price="14.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80" alt="Chana masala with chickpeas" width="800" height="520"></div>
+      <div class="mi-body"><h3>Chana Masala</h3><p>Chickpeas simmered with ginger, tomato, amchur. Vegan-friendly.</p>
+        <div class="mi-foot"><span class="price">$13.95</span><button class="add-btn" data-name="Chana Masala" data-price="13.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" alt="Butter chicken with naan" width="800" height="520"></div>
+      <div class="mi-body"><h3>Butter Chicken</h3><p>Tandoor chicken in silky makhani gravy. The crowd-pleaser.</p>
+        <div class="mi-foot"><span class="price">$17.95</span><button class="add-btn" data-name="Butter Chicken" data-price="17.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=800&q=80" alt="Lamb rogan josh" width="800" height="520"></div>
+      <div class="mi-body"><h3>Lamb Rogan Josh</h3><p>Kashmiri-style lamb, slow and deep, with whole spices.</p>
+        <div class="mi-foot"><span class="price">$18.95</span><button class="add-btn" data-name="Lamb Rogan Josh" data-price="18.95">Add +</button></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head"><h2>Tandoor, rice &amp; sides</h2></div>
+  <div class="menu-grid" data-menu-section>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1567337710282-00832b415979?auto=format&fit=crop&w=800&q=80" alt="Vegetable thali platter" width="800" height="520"></div>
+      <div class="mi-body"><h3>Maharaja Thali</h3><p>Tasting of two curries, dal, naan, rice, dessert.</p>
+        <div class="mi-foot"><span class="price">$22.95</span><button class="add-btn" data-name="Maharaja Thali" data-price="22.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" alt="Garlic naan bread" width="800" height="520"></div>
+      <div class="mi-body"><h3>Garlic Naan</h3><p>Pulled to order, brushed with garlic butter.</p>
+        <div class="mi-foot"><span class="price">$3.95</span><button class="add-btn" data-name="Garlic Naan" data-price="3.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1589647363546-ac5fe66c01dc?auto=format&fit=crop&w=800&q=80" alt="Samosas with chutney" width="800" height="520"></div>
+      <div class="mi-body"><h3>Samosas (2)</h3><p>Crisp pastry, spiced potato-pea filling, tamarind chutney.</p>
+        <div class="mi-foot"><span class="price">$6.95</span><button class="add-btn" data-name="Samosas (2)" data-price="6.95">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80" alt="Basmati rice pilaf" width="800" height="520"></div>
+      <div class="mi-body"><h3>Basmati Rice</h3><p>Long-grain, steamed with cumin seed.</p>
+        <div class="mi-foot"><span class="price">$4.50</span><button class="add-btn" data-name="Basmati Rice" data-price="4.50">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Mango lassi in a glass" width="800" height="520"></div>
+      <div class="mi-body"><h3>Mango Lassi</h3><p>Yogurt whipped with alphonso mango. Kids' favorite.</p>
+        <div class="mi-foot"><span class="price">$5.50</span><button class="add-btn" data-name="Mango Lassi" data-price="5.50">Add +</button></div></div>
+    </article>
+    <article class="menu-item">
+      <div class="tilt dish-media"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" alt="Gulab jamun dessert" width="800" height="520"></div>
+      <div class="mi-body"><h3>Gulab Jamun (2)</h3><p>Warm milk dumplings in cardamom syrup.</p>
+        <div class="mi-foot"><span class="price">$6.50</span><button class="add-btn" data-name="Gulab Jamun (2)" data-price="6.50">Add +</button></div></div>
+    </article>
+  </div>
+
+  <aside class="order-box" id="orderBox" aria-label="Your order">
+    <h3>Your order</h3>
+    <ul class="order-lines" id="orderLines"><li class="order-empty">Nothing here yet — tap “Add” on anything above.</li></ul>
+    <p class="order-total">Total <b>$<span id="obTotal">0.00</span></b></p>
+    <button class="btn" id="checkoutBtn" type="button">Place pickup / delivery order</button>
+    <p class="form-note" id="orderNote" role="status"></p>
+  </aside>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-row">
+    <div>
+      <h2>Hungry now?</h2>
+      <p>Phone orders get answered by a human — usually in two rings.</p>
+    </div>
+    <a class="btn btn-light" href="tel:+17182609000">718-260-9000</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CURRY<span>HEIGHTS</span></p><p>Authentic Indian cuisine<br>151 Remsen St, Brooklyn, NY 11201</p></div>
+    <div><p class="foot-h">Hours</p><p>Mon–Thu · 12:00 – 22:30<br>Fri–Sun · 12:00 – 23:00</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p></div>
+    <div><p class="foot-h">Order</p><p><a href="tel:+17182609000">718-260-9000</a><br><a href="mailto:curryheights@gmail.com">curryheights@gmail.com</a></p></div>
+  </div>
+  <p class="fineprint container">© 2026 Curry Heights. Cooked like it matters, because it does.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

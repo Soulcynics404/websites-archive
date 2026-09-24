@@ -1,10 +1,159 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cheeseboat</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Cheeseboat</a><nav>
-<a href="index.html">Home</a><a href="services.html">Menu</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheeseboat · Khachapuri in Williamsburg, Brooklyn</title>
+<meta name="description" content="Cheeseboat — Adjarian khachapuri, cheese pulls and Georgian street food in Williamsburg, Brooklyn. Rated 4.3★ by 547 reviewers. Call 929-295-8401.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<div class="hero"><p></p><h1>Welcome to Cheeseboat</h1>
-<p style="text-transform:none;letter-spacing:0;font-size:17px;color:#2E2A26;font-family:Georgia,serif;">Serving the neighbourhood &mdash; rated 4.3&#9733; by 547 people on Google</p>
-<a class="btn" href="menu.html">Fresh baked daily &rarr;</a></div>
-<div class="stats"><div class="stat"><b>Google rating</b><span>★ 4.3</span></div><div class="stat"><b>Reviews</b><span>547</span></div><div class="stat"><b>In the neighbourhood</b><span>#1</span></div></div>
-<section><h2>What we offer</h2><div class="cards"><div class="card"><h3>Espresso & Coffee</h3><p>Single-origin beans, pulled on a hand-lever machine.</p></div><div class="card"><h3>Pastries & Bakes</h3><p>Baked in-house every morning, sold until they run out.</p></div><div class="card"><h3>Brunch & Light Bites</h3><p>Seasonal plates made to order, all day.</p></div></div></section><footer>&copy; Cheeseboat &middot; Crafted with care</footer></body></html>
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">CHEESE<span>BOAT</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html">Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1800&q=75" alt="Melted golden cheese bubbling in a pan" fetchpriority="high">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <p class="eyebrow">Williamsburg · Brooklyn</p>
+    <h1>A BOAT<br>OF CHEESE,<br><em>DOCKED IN BK.</em></h1>
+    <p class="lede">Adjarian khachapuri — the Georgian bread boat filled with molten cheese, an egg, and a butter paddle. Torn, swirled and gone in minutes since we opened these doors.</p>
+    <div class="hero-actions">
+      <a class="btn" href="menu.html">Board the menu</a>
+      <a class="btn btn-ghost" href="tel:+19292958401">929-295-8401</a>
+    </div>
+  </div>
+</section>
+
+<section class="marquee" aria-label="Ratings ticker">
+  <div class="container marquee-inner">
+    <span>★ 4.3 ON GOOGLE</span><span class="sep">·</span>
+    <span>547 REVIEWS</span><span class="sep">·</span>
+    <span>100% CHEESE-PULL GUARANTEE</span><span class="sep">·</span>
+    <span>BROOKLYN-BORN BREAD</span>
+  </div>
+</section>
+
+<section class="section container">
+  <p class="eyebrow light">The classics</p>
+  <h2>Three boats rule everything.</h2>
+  <div class="grid cards">
+    <article class="card">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=900&q=70" alt="Adjarian khachapuri with egg and butter" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Adjarian</h3>
+        <p>The original boat. Molten sulguni-style cheese, egg yolk, butter paddle. Swirl it yourself.</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1552767059-ce182ead6c1b?auto=format&fit=crop&w=900&q=70" alt="Cheesy bread fresh from the oven" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>The Imeretian</h3>
+        <p>No egg, all cheese. Round, rustic and dangerously shareable (it won't be).</p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-media tilt-media" data-tilt-sm>
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=70" alt="Loaded cheesy fries with toppings" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Boat Fries</h3>
+        <p>Cheese sauce, scallion, dill, optional bacon. The side that outsells the mains.</p>
+      </div>
+    </article>
+  </div>
+  <a class="text-link" href="menu.html">See the full fleet →</a>
+</section>
+
+<section class="split-band">
+  <div class="container split">
+    <figure class="tilt-card" data-tilt>
+      <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=1000&q=70" alt="Board of assorted melted-cheese dishes" loading="lazy">
+      <figcaption>The full spread — bring a friend or two</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">How it works</p>
+      <h2>Eat like a Georgian sailor.</h2>
+      <ol class="steps">
+        <li><strong>Tear.</strong> Rip off one end of the boat. Don't be shy.</li>
+        <li><strong>Paddle.</strong> Stir the egg and butter through the cheese until it turns to velvet.</li>
+        <li><strong>Dip.</strong> Bread end in, swirl, lift, repeat until the boat is dry.</li>
+        <li><strong>Fight for the crust.</strong> The crispy bottom belongs to whoever's quickest.</li>
+      </ol>
+      <a class="text-link" href="about.html">The story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="container">
+    <blockquote>
+      <p>"Came for a photo of the cheese pull. Stayed because it actually tastes even better than it looks."</p>
+      <cite>— Google review, Williamsburg</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container stats-grid">
+    <div class="stat"><strong>4.3★</strong><span>Google rating across 547 reviews and counting</span></div>
+    <div class="stat"><strong>Oven-hot</strong><span>Boats baked to order — never sitting under a lamp</span></div>
+    <div class="stat"><strong>To&nbsp;go</strong><span>Call 929-295-8401 and it's ready at the counter</span></div>
+    <div class="stat"><strong>VEG-FRIENDLY</strong><span>Nearly the whole fleet is meat-free by default</span></div>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2>All aboard.</h2>
+  <p>Find us in Williamsburg — follow the stretchy cheese on everyone's table.</p>
+  <div class="hero-actions center">
+    <a class="btn" href="contact.html">Get directions</a>
+    <a class="btn btn-ghost-dark" href="menu.html">Browse boats</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">CHEESE<span>BOAT</span></p>
+      <p>Georgian cheese boats &amp; street food from our little galley in Williamsburg, Brooklyn.</p>
+    </div>
+    <div>
+      <h4>Find us</h4>
+      <p>Williamsburg, Brooklyn NY<br><a href="tel:+19292958401">929-295-8401</a><br><a href="mailto:cheeseboatbk@gmail.com">cheeseboatbk@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Ratings</h4>
+      <p>★ 4.3 on Google<br>547 reviews</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">About</a><br><a href="contact.html">Visit</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Cheeseboat · Williamsburg, Brooklyn</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

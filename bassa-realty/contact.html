@@ -1,12 +1,44 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BASSA REALTY</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">BASSA REALTY</a><nav>
-<a href="index.html">Home</a><a href="services.html">Listings</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in Van Nuys. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> (818) 384-1575<br><strong>Area:</strong> Van Nuys</p>
-<form action="mailto:bassarealty@yahoo.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; BASSA REALTY &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Bassa Realty</title>
+<meta name="description" content="Reach Bassa Realty: (818) 384-1575 · bassarealty@yahoo.com. Serving the San Fernando Valley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+</head>
+<body>
+<header class="site-header"><nav class="nav container">
+<a class="brand" href="index.html">BASSA<span>REALTY</span></a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+<ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="active">Contact</a></li><li><a class="tel" href="tel:+18183841575">(818) 384-1575</a></li></ul></nav></header>
+<main><section class="section container">
+<h2 class="title">Start the conversation</h2>
+<div class="contact-wrap">
+<div class="detail">
+<h3>Call</h3><p><a href="tel:+18183841575">(818) 384-1575</a></p>
+<h3>Email</h3><p><a href="mailto:bassarealty@yahoo.com">bassarealty@yahoo.com</a></p>
+<h3>Service area</h3><p>All of the San Fernando Valley — North Hollywood, Burbank, Glendale, Tarzana, Sherman Oaks, Van Nuys & more.</p>
+<h3>Hours</h3><p>Mon–Sat · 9am – 6pm<br>Sun · by appointment</p>
+</div>
+<form onsubmit="event.preventDefault();this.innerHTML='<p><strong>Thanks!</strong> We'll call you back within one business day.</p>';">
+<label for="bn">Name</label><input id="bn" required>
+<label for="be">Email</label><input id="be" type="email" required>
+<label for="bp">Phone</label><input id="bp" type="tel">
+<label for="bi">I'm looking to…</label><select id="bi"><option>Buy a home</option><option>Sell a home</option><option>Both</option><option>Just asking questions</option></select>
+<label for="bm">Message</label><textarea id="bm" rows="4"></textarea>
+<p style="margin-top:1.4rem"><button class="btn" type="submit">Send message</button></p>
+</form>
+</div></section></main>
+<footer class="site-footer"><div class="container footer-grid">
+<div><p class="brand">BASSA<span>REALTY</span></p><p>San Fernando Valley residential specialists. DRE #licensed & bonded.</p></div>
+<div><h4>Explore</h4><p><a href="listings.html">Listings</a><br><a href="about.html">About Bassa</a><br><a href="contact.html">Contact</a></p></div>
+<div><h4>Contact</h4><p><a href="tel:+18183841575">(818) 384-1575</a><br><a href="mailto:bassarealty@yahoo.com">bassarealty@yahoo.com</a></p></div>
+</div><p class="fineprint container">© 2026 Bassa Realty · Equal Housing Opportunity · Los Angeles, CA</p></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

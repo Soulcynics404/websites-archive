@@ -1,5 +1,210 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agata Kennedy</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Agata Kennedy</a><nav>
-<a href="index.html">Home</a><a href="services.html">Listings</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Listings</h2><div class="cards"><div class="card"><h3>Home Buying</h3><p>Guided search, negotiation and closing support.</p></div><div class="card"><h3>Home Selling</h3><p>Pricing strategy, staging and marketing that sells.</p></div><div class="card"><h3>Market Analysis</h3><p>Hyper-local data so you never leave money on the table.</p></div></div></section><footer>&copy; Agata Kennedy &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings · Agata Kennedy · Scottsdale Luxury Real Estate</title>
+<meta name="description" content="Current and recent listings from Agata Kennedy — luxury homes across North Scottsdale, Paradise Valley, Arcadia and the Northeast Valley.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23B08D57'/%3E%3Ctext x='32' y='42' font-size='30' text-anchor='middle' fill='%23FAF7F0' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AK</span><span>Agata Kennedy<span class="brand-sub">Scottsdale · HomeSmart</span></span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html" class="active" aria-current="page">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-sm nav-cta" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">Portfolio</p>
+    <h1>Current &amp; recent listings</h1>
+    <p>A selection of homes Agata has listed and sold across North Scottsdale and the Valley. Ask about private previews of homes that never reach the public MLS.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px;">
+  <div class="wrap">
+    <div class="filter-row" role="group" aria-label="Filter listings by price">
+      <button class="chip on" data-filter="all">All</button>
+      <button class="chip" data-filter="under3m">Under $3M</button>
+      <button class="chip" data-filter="over3m">$3M+</button>
+    </div>
+
+    <div id="listing-grid" class="cards-3">
+      <article class="prop-card reveal" data-tilt data-price="over3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Desert modern villa exterior with pool at dusk" loading="lazy" width="900" height="652">
+          <span class="status-chip">Active</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$3,450,000</p>
+          <h2 class="prop-name">Desert Modern Villa</h2>
+          <p class="prop-loc">Troon North, Scottsdale</p>
+          <p class="prop-specs"><b>4 bd</b><span class="dot"></span><b>4.5 ba</b><span class="dot"></span><b>4,120 sqft</b><span class="dot"></span>Built 2019</p>
+          <p class="prop-desc">Glass walls frame Pinnacle Peak views. Chef's kitchen with double islands, negative-edge pool and a detached casita.</p>
+        </div>
+      </article>
+
+      <article class="prop-card reveal" data-tilt data-price="under3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Reimagined mid-century home living room" loading="lazy" width="900" height="652">
+          <span class="status-chip sold">Sold</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$2,150,000</p>
+          <h2 class="prop-name">The 1955 Mid-Century</h2>
+          <p class="prop-loc">Arcadia, Phoenix</p>
+          <p class="prop-specs"><b>3 bd</b><span class="dot"></span><b>3 ba</b><span class="dot"></span><b>2,780 sqft</b><span class="dot"></span>Built 1955</p>
+          <p class="prop-desc">Originally built in 1955 and completely reimagined: open layout, raised ceilings and all-new systems with designer finishes.</p>
+        </div>
+      </article>
+
+      <article class="prop-card reveal" data-tilt data-price="over3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80" alt="Gated golf-front estate exterior" loading="lazy" width="900" height="652">
+          <span class="status-chip">Active</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$5,900,000</p>
+          <h2 class="prop-name">Silverleaf Estate</h2>
+          <p class="prop-loc">DC Ranch, Scottsdale</p>
+          <p class="prop-specs"><b>6 bd</b><span class="dot"></span><b>7 ba</b><span class="dot"></span><b>8,050 sqft</b><span class="dot"></span>Built 2016</p>
+          <p class="prop-desc">Gated golf-front estate with wine wall, home theater, wellness wing and a courtyard of mature olive trees.</p>
+        </div>
+      </article>
+
+      <article class="prop-card reveal" data-tilt data-price="under3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Single-level retreat home with west-facing patio" loading="lazy" width="900" height="652">
+          <span class="status-chip">Pending</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$1,895,000</p>
+          <h2 class="prop-name">Grayhawk Retreat</h2>
+          <p class="prop-loc">Grayhawk, Scottsdale</p>
+          <p class="prop-specs"><b>4 bd</b><span class="dot"></span><b>3.5 ba</b><span class="dot"></span><b>3,340 sqft</b><span class="dot"></span>Built 2004</p>
+          <p class="prop-desc">Single-level plan with a west-facing patio built for winter sunsets, walking distance to Grayhawk's parks and trails.</p>
+        </div>
+      </article>
+
+      <article class="prop-card reveal" data-tilt data-price="over3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80" alt="New-build contemporary home at twilight" loading="lazy" width="900" height="652">
+          <span class="status-chip">Active</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$4,275,000</p>
+          <h2 class="prop-name">Paradise Valley Contemporary</h2>
+          <p class="prop-loc">Paradise Valley</p>
+          <p class="prop-specs"><b>5 bd</b><span class="dot"></span><b>5.5 ba</b><span class="dot"></span><b>5,600 sqft</b><span class="dot"></span>Built 2021</p>
+          <p class="prop-desc">New build on an acre of citrus. Floating stairs, 12-foot sliding doors and a sunken fire lounge anchoring the backyard.</p>
+        </div>
+      </article>
+
+      <article class="prop-card reveal" data-tilt data-price="under3m">
+        <div class="prop-media">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80" alt="Fountain Hills view home with mountain vistas" loading="lazy" width="900" height="652">
+          <span class="status-chip sold">Sold</span>
+        </div>
+        <div class="prop-body">
+          <p class="prop-price">$1,249,000</p>
+          <h2 class="prop-name">Fountain Hills View Home</h2>
+          <p class="prop-loc">Fountain Hills</p>
+          <p class="prop-specs"><b>3 bd</b><span class="dot"></span><b>3 ba</b><span class="dot"></span><b>2,410 sqft</b><span class="dot"></span>Built 1999</p>
+          <p class="prop-desc">Unobstructed fountain and Four Peaks views from every main room. Low-maintenance desert landscaping, EV-ready garage.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="form-note" style="margin-top:28px;">Listing details illustrative for this portfolio site.</p>
+  </div>
+</section>
+
+<!-- ============ OFF-MARKET CTA ============ -->
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Want the <em>off-market list?</em></h2>
+      <p>Several of Agata's best homes never hit the public MLS.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Request private previews</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">AGATA KENNEDY</p>
+      <p class="footer-note">Luxury real estate · Scottsdale, AZ. HomeSmart · 21000 N Pima Rd, Scottsdale, AZ 85258</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Neighborhoods</h4>
+      <ul>
+        <li>Troon North</li>
+        <li>DC Ranch &amp; Silverleaf</li>
+        <li>Arcadia</li>
+        <li>Paradise Valley</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+16026970401">(602) 697-0401</a></li>
+        <li><a href="mailto:agata@agata.con">agata@agata.con</a></li>
+        <li>@scottsdaleazrealtor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>Equal Housing Opportunity. © <span id="yr">2026</span> Agata Kennedy.</span>
+    <span>Licensed in the State of Arizona</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* Listings filter */
+(() => {
+  const chips = document.querySelectorAll(".chip");
+  const cards = document.querySelectorAll("#listing-grid .prop-card");
+  if (!chips.length || !cards.length) return;
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("on"));
+      chip.classList.add("on");
+      const f = chip.dataset.filter;
+      cards.forEach((card) => {
+        const show = f === "all" || card.dataset.price === f;
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

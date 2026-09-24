@@ -1,12 +1,85 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Caffe Cinos</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Caffe Cinos</a><nav>
-<a href="index.html">Home</a><a href="services.html">Menu</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in Bromley. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> 07495 649336<br><strong>Area:</strong> Bromley</p>
-<form action="mailto:hello@example.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; Caffe Cinos &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Caffe Cinos — Bromley</title>
+<meta name="description" content="Find Caffe Cinos at 5 Old Bromley Road, Bromley BR1 4LB. Opening hours, phone 07495 649336 and message form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">CAFFE<span>CINOS</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Visit us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Say hello</p>
+    <h1>Find the café</h1>
+    <p class="lede">On the corner of Old Bromley Road — look for the green awning and the smell of fresh bakes.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="split contact-split">
+    <form class="contact-card form" id="contactForm" novalidate>
+      <h2>Message the counter</h2>
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email">
+      <label for="cf-msg">Your message</label>
+      <textarea id="cf-msg" name="message" rows="5" required placeholder="Table for eight? Catering? Lost a scarf?"></textarea>
+      <button class="btn" type="submit">Send message</button>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+
+    <aside class="info-card">
+      <h2>Caffe Cinos</h2>
+      <dl class="facts">
+        <div><dt>Address</dt><dd>5 Old Bromley Road<br>Bromley BR1 4LB, London</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+447495649336">07495 649336</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:caffecinos@gmail.com">caffecinos@gmail.com</a></dd></div>
+        <div><dt>Hours</dt><dd>Mon–Fri · 7:00 – 15:30<br>Sat–Sun · 8:00 – 15:00</dd></div>
+      </dl>
+      <div class="tilt info-media"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Barista at work in Caffe Cinos" width="800" height="560"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Large orders?</h2>
+    <p>Call two days ahead for catering trays of toasties, bakes and filter urns.</p>
+    <a class="btn btn-light" href="tel:+447495649336">07495 649336</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">CAFFE<span>CINOS</span></p><p>Independent café · Bromley<br>5 Old Bromley Road, Bromley BR1 4LB</p></div>
+    <div><p class="foot-h">Hours</p><p>Mon–Fri 7:00–15:30<br>Sat–Sun 8:00–15:00</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="menu.html">Menu</a><br><a href="about.html">About</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+447495649336">07495 649336</a><br><a href="mailto:caffecinos@gmail.com">caffecinos@gmail.com</a></p></div>
+  </div>
+  <p class="fineprint container">© 2026 Caffe Cinos. Made with care in Bromley.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

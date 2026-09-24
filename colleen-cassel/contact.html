@@ -1,12 +1,95 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colleen Cassel</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Colleen Cassel</a><nav>
-<a href="index.html">Home</a><a href="services.html">Listings</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in the neighbourhood. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> 516-659-9855<br><strong>Area:</strong> the neighbourhood</p>
-<form action="mailto:colleencassel@gmail.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; Colleen Cassel &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Colleen Cassel — Manhattan Real Estate</title>
+<meta name="description" content="Contact Colleen Cassel of Cassel Real Estate. Call (516) 659-9855 or send a note about buying or selling in Manhattan and Brooklyn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="index.html">COLLEEN&nbsp;<span>CASSEL</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="neighborhoods.html">Neighborhoods</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Let's talk</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Start the conversation.</h1>
+    <p class="lede">One honest twenty-minute call — then you decide if we keep going. No drip campaigns, no cold-call follow-ups.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="split contact-split">
+    <form class="contact-card form" id="contactForm" novalidate>
+      <h2>Say hello</h2>
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email">
+      <label for="cf-phone">Phone</label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+      <label for="cf-intent">I'm thinking about</label>
+      <select id="cf-intent" name="intent">
+        <option>Buying my first home</option>
+        <option>Moving up to a bigger place</option>
+        <option>Selling my current home</option>
+        <option>Just exploring the market</option>
+      </select>
+      <label for="cf-msg">What's on your mind?</label>
+      <textarea id="cf-msg" name="message" rows="5" required placeholder="Neighborhoods, timing, must-haves…"></textarea>
+      <button class="btn" type="submit">Send it over</button>
+      <p class="form-note" id="formNote" role="status"></p>
+    </form>
+
+    <aside class="info-card">
+      <h2>Colleen Cassel</h2>
+      <dl class="facts">
+        <div><dt>Brokerage</dt><dd>Cassel Real Estate<br>Manhattan · New York, NY</dd></div>
+        <div><dt>Direct</dt><dd><a href="tel:+15166599855">(516) 659-9855</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:colleencassel@gmail.com">colleencassel@gmail.com</a></dd></div>
+        <div><dt>Hours</dt><dd>Mon–Fri · 9:00 – 19:00<br>Sat by appointment</dd></div>
+      </dl>
+      <div class="tilt info-media"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80" alt="Warm apartment interior with skyline view" width="800" height="560"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-row">
+    <div>
+      <h2>Rather just call?</h2>
+      <p>If I'm with a client, leave a message — I return everything same day.</p>
+    </div>
+    <a class="btn btn-light" href="tel:+15166599855">(516) 659-9855</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><p class="brand">COLLEEN&nbsp;<span>CASSEL</span></p><p>Cassel Real Estate<br>Manhattan · New York</p></div>
+    <div><p class="foot-h">Explore</p><p><a href="index.html">Home</a><br><a href="neighborhoods.html">Neighborhoods</a><br><a href="about.html">About</a></p></div>
+    <div><p class="foot-h">Contact</p><p><a href="tel:+15166599855">(516) 659-9855</a><br><a href="mailto:colleencassel@gmail.com">colleencassel@gmail.com</a></p></div>
+    <div><p class="foot-h">Coverage</p><p>Manhattan · Brooklyn Heights<br>Long Island City</p></div>
+  </div>
+  <p class="fineprint container">© 2026 Colleen Cassel · Cassel Real Estate. Equal Housing Opportunity. Licensed RE Salesperson, NY.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

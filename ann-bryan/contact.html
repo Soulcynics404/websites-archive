@@ -1,12 +1,104 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ann Bryan</title><link rel="stylesheet" href="styles.css"></head><body>
-<header><a class="logo" href="index.html">Ann Bryan</a><nav>
-<a href="index.html">Home</a><a href="services.html">Listings</a><a href="reviews.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
-<section><h2>Get in touch</h2>
-<p>Find us in the neighbourhood. Call, message or drop by &mdash; we&rsquo;d love to see you.</p>
-<p style="margin-top:18px;"><strong>Phone:</strong> 404-567-6450<br><strong>Area:</strong> the neighbourhood</p>
-<form action="mailto:ann.s.bryan@gmail.com" method="post" enctype="text/plain" style="margin-top:22px;display:grid;gap:12px;max-width:480px;">
-<input name="name" placeholder="Your name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<input name="email" type="email" placeholder="Your email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;">
-<textarea name="msg" rows="5" placeholder="Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;font-family:Arial,sans-serif;"></textarea>
-<button class="btn" type="submit" style="border:0;cursor:pointer;">Send message</button></form></section><footer>&copy; Ann Bryan &middot; Crafted with care</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Ann Bryan Realty</title>
+<meta name="description" content="Call or text (404) 567-6450 or email ann.s.bryan@gmail.com — Ann Bryan serves home buyers and sellers in Alpharetta, Milton, Johns Creek & Roswell, GA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,700;1,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand" href="index.html">ANN<span>BRYAN</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="btn btn-sm" href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-head container">
+  <p class="eyebrow">Contact</p>
+  <h1>Say hello.</h1>
+  <p class="lede">Fastest answer: call or text. Otherwise send a note and Ann will get back to you the same day.</p>
+</section>
+
+<section class="section container contact-grid">
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Call or text</h3>
+      <p><a href="tel:+14045676450">(404) 567-6450</a></p>
+      <p class="meta">Weekdays 9–7 · Weekends by appointment</p>
+    </div>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p><a href="mailto:ann.s.bryan@gmail.com">ann.s.bryan@gmail.com</a></p>
+      <p class="meta">Include your timeline &amp; target neighborhoods</p>
+    </div>
+    <div class="contact-card">
+      <h3>Service area</h3>
+      <p>Alpharetta · Milton · Johns Creek · Roswell</p>
+      <p class="meta">North Fulton County, Georgia</p>
+    </div>
+  </div>
+
+  <form id="contact-form" class="contact-form card-form" novalidate>
+    <h2>Send a message</h2>
+    <label>Name
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>I'm looking to
+      <select name="intent">
+        <option>Buy a home</option>
+        <option>Sell a home</option>
+        <option>Both — sell &amp; buy</option>
+        <option>Just asking questions</option>
+      </select>
+    </label>
+    <label>Message
+      <textarea name="message" rows="5" placeholder="Neighborhoods, budget range, timeline…"></textarea>
+    </label>
+    <button class="btn" type="submit">Send it to Ann</button>
+    <p class="form-note" id="form-note" role="status"></p>
+  </form>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="brand">ANN<span>BRYAN</span></p>
+      <p>Residential real estate across Alpharetta, Milton, Johns Creek &amp; Roswell, Georgia.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+14045676450">(404) 567-6450</a><br>
+      <a href="mailto:ann.s.bryan@gmail.com">ann.s.bryan@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Serving</h4>
+      <p>Alpharetta · Milton<br>Johns Creek · Roswell<br>North Fulton County, GA</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <p><a href="index.html">Home</a><br><a href="listings.html">Listings</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+  <p class="fineprint container">© 2026 Ann Bryan · Equal Housing Opportunity</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
