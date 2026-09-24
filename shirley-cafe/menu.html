@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu &amp; Ordering — Shirley Cafe, Croydon | Breakfasts, Cakes &amp; Coffee</title>
+<meta name="description" content="The Shirley Cafe menu: full English breakfasts, pancakes, homemade cakes and proper coffee. Build your order online and collect from our Wickham Road counter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span><span class="brand-name">Shirley Cafe</span><span class="brand-sub">Shirley Village · Croydon</span></span>
+    </a>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="#order">Your Order</a></li>
+      </ul>
+    </nav>
+    <button class="cart-btn" id="cartBtn" type="button" onclick="location.href='#order'">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14h9.9c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.74-.96-3.58 6.48H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7.2z"/></svg>
+      Order <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="menu-layout wrap">
+  <!-- ================= MENU ================= -->
+  <div class="menu-main">
+    <section class="menu-hero reveal in">
+      <p class="eyebrow">The menu</p>
+      <h1>Proper food, honest prices</h1>
+      <p>Served all day until we close. Tap <strong>Add to Order</strong> on anything you fancy — your order waits for you at the bottom of the page.</p>
+    </section>
+
+    <section id="breakfasts" class="menu-section">
+      <h2 class="cat-title">Breakfast Classics</h2>
+      <div class="menu-grid">
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80" alt="Full English breakfast with eggs, bacon and sausage" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>The Full Shirley</h3>
+            <p>Two eggs any style, bacon, sausage, hash brown, beans, grilled tomato, mushroom &amp; toast.</p>
+            <div class="dish-row"><span class="price">£8.95</span><button class="btn btn-honey btn-sm" data-add="The Full Shirley" data-price="8.95">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=600&q=80" alt="Eggs Benedict with hollandaise" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Eggs Benedict</h3>
+            <p>Toasted muffin, ham, two perfectly poached eggs and a proper silky hollandaise.</p>
+            <div class="dish-row"><span class="price">£8.50</span><button class="btn btn-honey btn-sm" data-add="Eggs Benedict" data-price="8.50">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Avocado toast with poached egg" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Avocado &amp; Poached Eggs</h3>
+            <p>Smashed avocado on sourdough, two poached eggs, chilli flakes and a squeeze of lemon.</p>
+            <div class="dish-row"><span class="price">£7.95</span><button class="btn btn-honey btn-sm" data-add="Avocado and Poached Eggs" data-price="7.95">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80" alt="Stack of fluffy pancakes" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Fluffy Buttermilk Pancakes</h3>
+            <p>A stack of three with maple syrup, butter and berries if you're feeling good.</p>
+            <div class="dish-row"><span class="price">£7.50</span><button class="btn btn-honey btn-sm" data-add="Fluffy Buttermilk Pancakes" data-price="7.50">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=600&q=80" alt="French toast with berries" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Brioche French Toast</h3>
+            <p>Thick brioche soaked overnight, griddled golden, dusted with icing sugar and berries.</p>
+            <div class="dish-row"><span class="price">£7.25</span><button class="btn btn-honey btn-sm" data-add="Brioche French Toast" data-price="7.25">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=600&q=80" alt="Beans on toast" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Beans on Sourdough</h3>
+            <p>The nation's favourite, done properly — plenty of beans, buttered sourdough, black pepper.</p>
+            <div class="dish-row"><span class="price">£5.45</span><button class="btn btn-honey btn-sm" data-add="Beans on Sourdough" data-price="5.45">Add to Order</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="lighter" class="menu-section">
+      <h2 class="cat-title">Lighter Starts</h2>
+      <div class="menu-grid">
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1517673400267-0251440c45dc?auto=format&fit=crop&w=600&q=80" alt="Bowl of porridge with banana" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Proper Porridge</h3>
+            <p>Slow-cooked oats with honey, sliced banana and a sprinkle of cinnamon.</p>
+            <div class="dish-row"><span class="price">£4.95</span><button class="btn btn-honey btn-sm" data-add="Proper Porridge" data-price="4.95">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=600&q=80" alt="Granola and yoghurt breakfast bowl" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Granola &amp; Yoghurt Bowl</h3>
+            <p>Honey-toasted granola over thick Greek yoghurt with seasonal fruit.</p>
+            <div class="dish-row"><span class="price">£5.25</span><button class="btn btn-honey btn-sm" data-add="Granola and Yoghurt Bowl" data-price="5.25">Add to Order</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="cakes" class="menu-section">
+      <h2 class="cat-title">Cakes &amp; Bakes</h2>
+      <div class="menu-grid">
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Slice of chocolate fudge cake" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Chocolate Fudge Cake</h3>
+            <p>The one everyone talks about. Three layers, proper fudge icing, dangerously moreish.</p>
+            <div class="dish-row"><span class="price">£3.75</span><button class="btn btn-honey btn-sm" data-add="Chocolate Fudge Cake" data-price="3.75">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80" alt="Strawberry sponge cake slice" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Strawberry Cloud Sponge</h3>
+            <p>Light vanilla sponge, fresh cream and strawberries from the greengrocer up the road.</p>
+            <div class="dish-row"><span class="price">£3.50</span><button class="btn btn-honey btn-sm" data-add="Strawberry Cloud Sponge" data-price="3.50">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Walnut chocolate brownie" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Walnut Brownie</h3>
+            <p>Dense, dark chocolate with toasted walnuts. Warm it up if you ask nicely.</p>
+            <div class="dish-row"><span class="price">£2.95</span><button class="btn btn-honey btn-sm" data-add="Walnut Brownie" data-price="2.95">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80" alt="Layered berry dessert in a glass" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Berry Mess Pot</h3>
+            <p>Cream, crushed meringue and sharp summer berries layered in a glass.</p>
+            <div class="dish-row"><span class="price">£4.25</span><button class="btn btn-honey btn-sm" data-add="Berry Mess Pot" data-price="4.25">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Butter croissants" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Butter Croissant</h3>
+            <p>Baked here every morning. Still warm at half seven, usually gone by nine.</p>
+            <div class="dish-row"><span class="price">£2.20</span><button class="btn btn-honey btn-sm" data-add="Butter Croissant" data-price="2.20">Add to Order</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="drinks" class="menu-section">
+      <h2 class="cat-title">Drinks</h2>
+      <div class="menu-grid">
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" alt="Flat white with latte art" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Flat White</h3>
+            <p>Double shot, silky milk, no nonsense. Our most ordered drink by a mile.</p>
+            <div class="dish-row"><span class="price">£2.80</span><button class="btn btn-honey btn-sm" data-add="Flat White" data-price="2.80">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Americano coffee" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Americano</h3>
+            <p>Long and black, or with room for milk. Refills 60p if you're staying.</p>
+            <div class="dish-row"><span class="price">£2.40</span><button class="btn btn-honey btn-sm" data-add="Americano" data-price="2.40">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Fresh cappuccino" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Cappuccino</h3>
+            <p>Third espresso, third steamed milk, third foam. Cocoa on top, always.</p>
+            <div class="dish-row"><span class="price">£3.00</span><button class="btn btn-honey btn-sm" data-add="Cappuccino" data-price="3.00">Add to Order</button></div>
+          </div>
+        </article>
+        <article class="dish-card">
+          <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=600&q=80" alt="Pot of tea being poured" loading="lazy" onerror="this.classList.add('noimg')">
+          <div class="dish-body">
+            <h3>Pot of Tea for One</h3>
+            <p>Builder's, Earl Grey or green, with an extra pot of hot water. It steeps while you sit.</p>
+            <div class="dish-row"><span class="price">£2.60</span><button class="btn btn-honey btn-sm" data-add="Pot of Tea for One" data-price="2.60">Add to Order</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ORDER SUMMARY ================= -->
+  <aside class="order-panel" id="order" aria-label="Your order summary">
+    <h2>Your Order</h2>
+    <p class="order-sub">Collection from Wickham Road — pay at the counter.</p>
+    <ul id="orderItems"></ul>
+    <div class="order-empty" id="orderEmpty">
+      <span aria-hidden="true">☕</span>
+      <p>Your tray's empty.<br>Add something tasty from the menu!</p>
+    </div>
+    <template id="orderRowTpl">
+      <li class="order-item">
+        <div class="oi-info">
+          <span class="oi-name"></span>
+          <span class="oi-price"></span>
+        </div>
+        <div class="oi-controls">
+          <button type="button" class="qty-btn minus" aria-label="Decrease quantity">−</button>
+          <span class="oi-qty">1</span>
+          <button type="button" class="qty-btn plus" aria-label="Increase quantity">+</button>
+        </div>
+      </li>
+    </template>
+    <div class="order-total-row">
+      <span>Total</span>
+      <strong id="orderTotal">£0.00</strong>
+    </div>
+    <a class="btn btn-rust order-call" href="tel:+442086551111">Call ahead: 020 8655 1111</a>
+    <button class="order-clear" id="clearOrder" type="button">Clear order</button>
+    <p class="order-note">We'll have it ready when you give us a ring — usually 10–15 minutes.</p>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brandline">Shirley Cafe</p>
+      <p>Your local village cafe on Wickham Road, Shirley — serving Croydon a proper breakfast since 1998.</p>
+      <p class="stars" aria-hidden="true">★★★★★</p>
+      <p>4.6 stars · 342 Google reviews</p>
+    </div>
+    <div>
+      <h3>Visit us</h3>
+      <ul>
+        <li>Wickham Road, Shirley<br>Croydon CR0 8SS</li>
+        <li><a href="tel:+442086551111">020 8655 1111</a></li>
+        <li>Mon–Sat 7:00–15:30<br>Sunday 8:00–14:30</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu &amp; Ordering</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Contact &amp; Find Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Shirley Cafe, Croydon. Baked with butter and pride.</span>
+    <span>Wickham Road · Shirley Village · CR0 8SS</span>
+  </div>
+</footer>
+
+<div class="toast" id="cartToast" role="status" aria-live="polite"></div>
+
+<script src="js/cart.js"></script>
+<script>
+/* ---- Order summary rendering (menu page) ---- */
+(function () {
+  var list = document.getElementById("orderItems");
+  var tpl = document.getElementById("orderRowTpl");
+  var emptyEl = document.getElementById("orderEmpty");
+  var totalEl = document.getElementById("orderTotal");
+  var clearBtn = document.getElementById("clearOrder");
+  if (!list || !tpl) return;
+
+  function render() {
+    var items = window.SC.cartItems();
+    list.innerHTML = "";
+    emptyEl.style.display = items.length ? "none" : "block";
+    clearBtn.style.display = items.length ? "inline-block" : "none";
+    var total = 0;
+    items.forEach(function (it) {
+      total += it.price * it.qty;
+      var node = tpl.content.cloneNode(true);
+      node.querySelector(".oi-name").textContent = it.name;
+      node.querySelector(".oi-price").textContent = window.SC.money(it.price);
+      node.querySelector(".oi-qty").textContent = String(it.qty);
+      node.querySelector(".minus").addEventListener("click", function () { window.SC.setQty(it.id, it.qty - 1); });
+      node.querySelector(".plus").addEventListener("click", function () { window.SC.setQty(it.id, it.qty + 1); });
+      node.querySelector(".minus").setAttribute("aria-label", "Remove one " + it.name);
+      node.querySelector(".plus").setAttribute("aria-label", "Add one more " + it.name);
+      list.appendChild(node);
+    });
+    totalEl.textContent = window.SC.money(total);
+  }
+
+  clearBtn.addEventListener("click", function () {
+    window.SC.cartItems().forEach(function (it) { window.SC.removeItem(it.id); });
+  });
+
+  document.addEventListener("cart:changed", render);
+  render();
+})();
+</script>
+</body>
+</html>

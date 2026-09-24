@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Shirley Cafe Croydon | 4.6★ from 342 Google Reviews</title>
+<meta name="description" content="What people say about Shirley Cafe in Shirley Village, Croydon: 4.6 stars from 342 Google reviews. Full English breakfasts, homemade cakes and village warmth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span><span class="brand-name">Shirley Cafe</span><span class="brand-sub">Shirley Village · Croydon</span></span>
+    </a>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reviews.html" aria-current="page">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="menu.html">Order Breakfast</a></li>
+      </ul>
+    </nav>
+    <button class="cart-btn" id="cartBtn" type="button" onclick="location.href='menu.html#order'">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14h9.9c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.74-.96-3.58 6.48H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7.2z"/></svg>
+      Order <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="rev-hero">
+  <div class="wrap rev-hero-grid">
+    <div>
+      <p class="eyebrow">Village cafe warmth</p>
+      <h1>Kind words from<br>our regulars</h1>
+      <p>We've never advertised a day in our lives. This page is just what people say after they've eaten.</p>
+    </div>
+    <div class="counter-card reveal in">
+      <span class="counter-label">Google reviews &amp; counting</span>
+      <span id="reviewCounter">342</span>
+      <span class="stars big-stars" aria-hidden="true">★★★★★</span>
+      <span class="counter-sub"><strong>4.6</strong> average rating · Shirley Cafe</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEES ================= -->
+<div class="marquee-zone" aria-label="Rotating customer reviews">
+  <div class="mq-row mq-left" data-dir="left"></div>
+  <div class="mq-row mq-right" data-dir="right"></div>
+</div>
+
+<section class="wrap rev-foot reveal">
+  <div class="section-head">
+    <p class="eyebrow">Fancy adding one?</p>
+    <h2>The best review is a full plate</h2>
+    <p>Pop in for a fry-up or order ahead — and if you love it, we'd be chuffed if you left us a Google review.</p>
+    <p style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-rust" href="menu.html">Build your order</a>
+      <a class="btn btn-outline" href="contact.html">Visit us</a>
+    </p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brandline">Shirley Cafe</p>
+      <p>Your local village cafe on Wickham Road, Shirley — serving Croydon a proper breakfast since 1998.</p>
+      <p class="stars" aria-hidden="true">★★★★★</p>
+      <p>4.6 stars · 342 Google reviews</p>
+    </div>
+    <div>
+      <h3>Visit us</h3>
+      <ul>
+        <li>Wickham Road, Shirley<br>Croydon CR0 8SS</li>
+        <li><a href="tel:+442086551111">020 8655 1111</a></li>
+        <li>Mon–Sat 7:00–15:30<br>Sunday 8:00–14:30</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu &amp; Ordering</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Contact &amp; Find Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Shirley Cafe, Croydon. Baked with butter and pride.</span>
+    <span>Wickham Road · Shirley Village · CR0 8SS</span>
+  </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script>
+/* ---- Reviews: 24 cards, two counter-rotating marquees, tick-up counter ---- */
+(function () {
+  "use strict";
+
+  var NAMES = [
+    ["Margaret H.", "Local guide"], ["David P.", ""], ["Sandra K.", ""], ["James W.", "Local guide"],
+    ["Aisha R.", ""], ["Tom B.", ""], ["Linda F.", "Local guide"], ["Gary S.", ""],
+    ["Priya M.", ""], ["Colin D.", ""], ["Emma T.", ""], ["Brian A.", "Local guide"],
+    ["Julie N.", ""], ["Michael O'C.", ""], ["Fatima Z.", ""], ["Steve H.", ""],
+    ["Carol G.", ""], ["Dan Whitcombe", "Local guide"], ["Nina L.", ""], ["Peter Ransley", ""],
+    ["Yasmin K.", ""], ["Arthur J.", ""], ["Sophie M.", ""], ["Reg & Pat E.", ""]
+  ];
+
+  var TEXTS = [
+    "The Full Shirley is the best fry-up in Croydon, no contest. Crispy bacon, proper sausages and tea that tastes of actual tea.",
+    "Been coming every Saturday for six years. Margaret behind the till remembers my order before I do.",
+    "Took my mum here for her birthday cake and the staff brought it out with a candle and sang. She hasn't stopped talking about it.",
+    "Proper village cafe. Warm, spotless and the chocolate fudge cake should be illegal.",
+    "Beans on toast and a pot of tea for under a fiver. Where else in London can you do that?",
+    "The eggs benedict hollandaise is silky perfection. Better than places charging double in town.",
+    "Pop in after the school run most weeks. Friendly faces, fast service, flat whites done right.",
+    "Had the pancakes with my granddaughter — three floors of fluff and real maple syrup. She gave it two thumbs up.",
+    "Avocado toast with poached eggs, done properly with runny yolks every single time. My weekend ritual.",
+    "Came in soaked from the bus stop and left twenty minutes later warm, fed and cheerful. That's the whole point of a cafe.",
+    "The croissants at 7:15am are still warm. Still warm! Worth setting an alarm for.",
+    "Honest food, fair prices and they always have time for a chat. This place is Shirley's living room.",
+    "French toast was golden and gooey in the middle. My husband finished his own and half of mine.",
+    "As a builder I eat fry-ups all over South London. These are top three, easily. Tea's strong too.",
+    "Lovely little find near the shops. The strawberry sponge tasted like my nan used to make.",
+    "Wheelchair friendly, patient staff, and they cut my son's pancake without being asked. Little things matter.",
+    "Porridge with honey and banana on a cold morning — simple and perfect. The cafe smells amazing.",
+    "Ordered ahead by phone, walked in ten minutes later and it was boxed and waiting. Brilliant service.",
+    "The berry mess pot got me through a rough week. Cream, meringue, kindness — all in a glass.",
+    "We meet here every Thursday after walking the dog. They even keep biscuits behind the counter for him.",
+    "Best £2.80 in Croydon: their flat white. Silky, strong, no bitterness whatsoever.",
+    "Brought visiting relatives for breakfast and they now ask to come back every time they visit London.",
+    "Clean tables, quick smiles, hot food. Some things shouldn't change and thankfully this hasn't.",
+    "Forty years in Shirley and this is the heart of the high street. Long may it continue."
+  ];
+  var DATES = [
+    "2 days ago","1 week ago","2 weeks ago","3 weeks ago","a month ago","a month ago",
+    "2 months ago","2 months ago","3 months ago","3 months ago","4 months ago","5 months ago",
+    "5 months ago","6 months ago","7 months ago","8 months ago","9 months ago","10 months ago",
+    "a year ago","a year ago","a year ago","2 years ago","2 years ago","2 years ago"
+  ];
+  var STARS = [5,5,5,5,5,5,4,5,5,4,5,5,5,5,5,5,4,5,5,5,5,5,4,5];
+  var AVATAR_HUES = [28, 14, 36, 22, 40, 10];
+
+  function esc(s) {
+    return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  }
+
+  function starStr(n) {
+    var s = "";
+    for (var i = 0; i < n; i++) s += "★";
+    return s;
+  }
+
+  function cardHTML(i) {
+    var hue = AVATAR_HUES[i % AVATAR_HUES.length];
+    var initials = NAMES[i][0].split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+    return '<article class="rev-card">' +
+      '<div class="rc-top">' +
+        '<span class="rc-avatar" style="--h:' + hue + '">' + esc(initials) + '</span>' +
+        '<span class="rc-meta"><strong>' + esc(NAMES[i][0]) + '</strong>' +
+        (NAMES[i][1] ? '<em>' + esc(NAMES[i][1]) + '</em>' : '') +
+        '<cite>' + esc(DATES[i]) + '</cite></span>' +
+        '<span class="gmark" aria-hidden="true">G</span>' +
+      '</div>' +
+      '<div class="rc-stars" aria-label="' + STARS[i] + ' out of 5 stars"><span>' + starStr(STARS[i]) + '</span>' + starStr(5 - STARS[i]).replace(/★/g, "☆") + '</div>' +
+      '<p>' + esc(TEXTS[i]) + '</p>' +
+    '</article>';
+  }
+
+  /* Build each row twice for a seamless -50% loop */
+  var rowLeft = document.querySelector(".mq-left");
+  var rowRight = document.querySelector(".mq-right");
+  var trackL = document.createElement("div");
+  var trackR = document.createElement("div");
+  trackL.className = "mq-track"; trackR.className = "mq-track";
+  trackL.setAttribute("aria-hidden", "false"); trackR.setAttribute("aria-hidden", "false");
+
+  var htmlL = "", htmlR = "";
+  for (var i = 0; i < 24; i++) {
+    if (i % 2 === 0) htmlL += cardHTML(i); else htmlR += cardHTML(i);
+  }
+  trackL.innerHTML = htmlL + htmlL;
+  trackR.innerHTML = htmlR + htmlR;
+  rowLeft.appendChild(trackL);
+  rowRight.appendChild(trackR);
+
+  /* Pause on hover/focus/touch */
+  [rowLeft, rowRight].forEach(function (row) {
+    row.addEventListener("mouseenter", () => { trackL.style.animationPlayState = "paused"; trackR.style.animationPlayState = "paused"; });
+    row.addEventListener("mouseleave", () => { trackL.style.animationPlayState = "running"; trackR.style.animationPlayState = "running"; });
+    row.addEventListener("focusin", () => { trackL.style.animationPlayState = "paused"; trackR.style.animationPlayState = "paused"; });
+    row.addEventListener("focusout", () => { trackL.style.animationPlayState = "running"; trackR.style.animationPlayState = "running"; });
+  });
+
+  /* Counter ticks up from 342 */
+  var el = document.getElementById("reviewCounter");
+  var base = 342;
+  try {
+    var stored = parseInt(localStorage.getItem("sc_review_base"), 10);
+    if (stored === 342 || !isNaN(stored)) base = isNaN(stored) ? 342 : stored;
+  } catch (e) {}
+  var current = base;
+  function paint() { el.textContent = current.toLocaleString("en-GB"); }
+  paint();
+  setInterval(function () {
+    if (Math.random() < 0.45) {
+      current += 1;
+      paint();
+    }
+  }, 4000);
+
+  /* Reduced motion: stop the marquees, show static grid */
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    trackL.style.animation = "none";
+    trackR.style.animation = "none";
+  }
+})();
+</script>
+</body>
+</html>
